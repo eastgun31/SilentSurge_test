@@ -47,7 +47,7 @@ public class Lv1_LCL : MonoBehaviour
     }
 
 
-    private void Down_warrior_1L()
+    private void Down_warrior_1L() //검사 유닛 재화 소모와 인원제한
     {
         if (U < 30)//검사 유닛 제한 30
         {
@@ -55,7 +55,7 @@ public class Lv1_LCL : MonoBehaviour
             {
                 GameManager.instance.gold -= 5;
                 GameObject newObject = Instantiate(Warrior_1L_Obj, transform.position, Quaternion.identity); //검사 1레벨 유닛 생성
-                GameManager.instance.Obj++;
+                GameManager.instance.Obj++; //
                 GameManager.instance.Aobj();
             }
         }

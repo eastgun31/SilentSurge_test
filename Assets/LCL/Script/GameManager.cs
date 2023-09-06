@@ -44,7 +44,7 @@ public class GameManager : MonoBehaviour
 
     public  void Aobj()
     {
-        ObjText.text = " " + Obj.ToString();
+        ObjText.text = " " + Obj.ToString(); //ÇöÀç À¯´Ö
     }
 
 }
