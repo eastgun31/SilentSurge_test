@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028328, g: 0.22571322, b: 0.30692163, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3937,6 +3937,10 @@ MonoBehaviour:
   gold: 1000
   Obj: 0
   ObjText: {fileID: 1560588826677603224}
+  health: 100
+  attackPower: 10
+  defense: 3
+  moveSpeed: 7
 --- !u!1 &7692592248444971362
 GameObject:
   m_ObjectHideFlags: 0
@@ -3967,13 +3971,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   button_warrio_1Lr: {fileID: 5860714194165973458}
-  Warrior_1L_Obj: {fileID: 0}
+  Warrior_1L_Obj: {fileID: 6308763049200563315, guid: f152cdd881504e040ac75125eb9c5234, type: 3}
   button_shield_1Lr: {fileID: 5860714193786054663}
-  Shield_1L_Obj: {fileID: 0}
+  Shield_1L_Obj: {fileID: 6988547608146348804, guid: 09d38cfc2545cce47976027d6eb527a2, type: 3}
   button_archer_1L: {fileID: 5860714195297174698}
-  Archer_1L_Obj: {fileID: 0}
+  Archer_1L_Obj: {fileID: 3777342728722985941, guid: bf763f39f55f5e641a3489f3686c4d06, type: 3}
   button_horseMan_1L: {fileID: 5860714194870466832}
-  HorseMan_1L_Obj: {fileID: 0}
+  HorseMan_1L_Obj: {fileID: 6192744237874549701, guid: 8d8060435b27ac14eb708c8b49181a81, type: 3}
   UpButton2L: {fileID: 5860714193759032264}
 --- !u!4 &7692592248444971372
 Transform:

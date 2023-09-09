@@ -14,6 +14,11 @@ public class GameManager : MonoBehaviour
 
     public static GameManager instance;
 
+    public int health = 100;
+    public int attackPower = 10;
+    public int defense = 3;
+    public float moveSpeed = 7;
+
     public void Awake()
     {
         if (null == instance)
@@ -45,6 +50,14 @@ public class GameManager : MonoBehaviour
     public  void Aobj()
     {
         ObjText.text = " " + Obj.ToString(); //ÇöÀç À¯´Ö
+    }
+
+    public void SetAttributes(int health, int attackPower, int defense, float moveSpeed)
+    {
+        this.health = health;
+        this.attackPower = attackPower;
+        this.defense = defense;
+        this.moveSpeed = moveSpeed;
     }
 
 }
