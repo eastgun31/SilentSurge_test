@@ -23,8 +23,8 @@ public class GameManager : MonoBehaviour
     public Text Allgold_text; //현재 재화 상태
     public int gold = 1000; //초기 재화 + 
 
-    public int Obj = 0;//현재 총 유닛 수
-    public Text ObjText;//유닛 수 보여주는 텍스트
+    public int All_Obj = 0;//현재 총 유닛 수
+    public Text All_ObjText;//유닛 수 보여주는 텍스트
 
  
     //유닛스탯
@@ -58,7 +58,7 @@ public class GameManager : MonoBehaviour
 
     public  void Aobj()
     {
-        ObjText.text = " " + Obj.ToString(); //현재 유닛
+        All_ObjText.text = " " + All_Obj.ToString(); //현재 유닛
     }
 
 

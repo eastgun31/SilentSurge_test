@@ -1030,6 +1030,7 @@ GameObject:
   - component: {fileID: 242213983785810633}
   - component: {fileID: 4671399141077625422}
   - component: {fileID: -76400495438816325}
+  - component: {fileID: -675662746801622081}
   m_Layer: 6
   m_Name: Swordman_L2
   m_TagString: Untagged
@@ -1151,6 +1152,24 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &-675662746801622081
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 182410}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67f131830f341f34d8e84d2f067645b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  unitMarker: {fileID: 8770328360061875810}
+  unitnumber: 4
+  uhealth: 0
+  uattackPower: 0
+  udefense: 0
+  umoveSpeed: 0
 --- !u!1 &182750
 GameObject:
   m_ObjectHideFlags: 0
@@ -1482,3 +1501,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unitMarker: {fileID: 8770328360061875810}
+  unitnumber: 0
+  uhealth: 0
+  uattackPower: 0
+  udefense: 0
+  umoveSpeed: 0

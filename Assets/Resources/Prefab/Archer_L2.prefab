@@ -927,6 +927,7 @@ GameObject:
   - component: {fileID: 237265588284140132}
   - component: {fileID: -7104129411304652449}
   - component: {fileID: 5070752149659594778}
+  - component: {fileID: 7125029558135927268}
   m_Layer: 6
   m_Name: Archer_L2
   m_TagString: Untagged
@@ -984,6 +985,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unitMarker: {fileID: 6856894396404676854}
+  unitnumber: 6
+  uhealth: 0
+  uattackPower: 0
+  udefense: 0
+  umoveSpeed: 0
 --- !u!195 &237265588284140132
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1061,6 +1067,24 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &7125029558135927268
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 179124}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67f131830f341f34d8e84d2f067645b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  unitMarker: {fileID: 6856894396404676854}
+  unitnumber: 0
+  uhealth: 0
+  uattackPower: 0
+  udefense: 0
+  umoveSpeed: 0
 --- !u!1 &179158
 GameObject:
   m_ObjectHideFlags: 0
@@ -1578,3 +1602,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unitMarker: {fileID: 6856894396404676854}
+  unitnumber: 0
+  uhealth: 0
+  uattackPower: 0
+  udefense: 0
+  umoveSpeed: 0

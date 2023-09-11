@@ -4345,29 +4345,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   button_warrio_1Lr: {fileID: 2015794782}
-  Warrior_1L_Obj: {fileID: 6308763049200563315, guid: f152cdd881504e040ac75125eb9c5234, type: 3}
+  Warrior_1L_Obj: {fileID: 182410, guid: de54a0af05ae97c4bb5d0d0397831f40, type: 3}
   button_shield_1Lr: {fileID: 108389525}
-  Shield_1L_Obj: {fileID: 6988547608146348804, guid: 09d38cfc2545cce47976027d6eb527a2, type: 3}
+  Shield_1L_Obj: {fileID: 150198, guid: 5b1da2bc159d3094cbff282a2cdd46a5, type: 3}
   button_archer_1L: {fileID: 512557282}
-  Archer_1L_Obj: {fileID: 3777342728722985941, guid: bf763f39f55f5e641a3489f3686c4d06, type: 3}
+  Archer_1L_Obj: {fileID: 179124, guid: 814cec2dc5c497c44aa68bce0a1d5b70, type: 3}
   button_horseMan_1L: {fileID: 1407041151}
-  HorseMan_1L_Obj: {fileID: 6192744237874549701, guid: 8d8060435b27ac14eb708c8b49181a81, type: 3}
+  HorseMan_1L_Obj: {fileID: 158504, guid: e351eb9db7ad83f4fa1fd5bf111ca44f, type: 3}
   button_warrio_2Lr: {fileID: 1520265885}
-  Warrior_2L_Obj: {fileID: 1992562823711792450, guid: 25fc7204b8d9b1747a617357155888e2, type: 3}
+  Warrior_2L_Obj: {fileID: 182410, guid: 229fd1d34fc6b0c46af61ac8876dda36, type: 3}
   button_shield_2Lr: {fileID: 1003722792}
-  Shield_2L_Obj: {fileID: 3441057918839838919, guid: e61ceb15fc8628e4bbbf2437dfc581c5, type: 3}
+  Shield_2L_Obj: {fileID: 150198, guid: 6e83b2a92467ca940bf8eb8e00359f74, type: 3}
   button_archer_2L: {fileID: 1201814147}
-  Archer_2L_Obj: {fileID: 7671279179571124555, guid: cdb4685029d880b459145b29b4910ded, type: 3}
+  Archer_2L_Obj: {fileID: 179124, guid: ad581838e7cbc2a4bb640aa670a3c5b9, type: 3}
   button_horseMan_2L: {fileID: 316068736}
-  HorseMan_2L_Obj: {fileID: 2217839459893457949, guid: 6f09b3aa799d7cd4dba57443372b8e16, type: 3}
+  HorseMan_2L_Obj: {fileID: 158504, guid: 8ed72d2772e8cfe46914d71517919699, type: 3}
   button_warrio_3Lr: {fileID: 294847225}
-  Warrior_3L_Obj: {fileID: 6334673973389527632, guid: b5d48efd859b9d143a8f1a079374899f, type: 3}
+  Warrior_3L_Obj: {fileID: 182410, guid: ff26a266a4eec664890d60fb69ccc3b7, type: 3}
   button_shield_3Lr: {fileID: 1824253980}
-  Shield_3L_Obj: {fileID: 7504602490975632222, guid: 1eb2956761b61044182b7be1acc9ceda, type: 3}
+  Shield_3L_Obj: {fileID: 150198, guid: 31e4f24204bc43b4787e0ddadcf4840d, type: 3}
   button_archer_3L: {fileID: 61985528}
-  Archer_3L_Obj: {fileID: 87993198744401184, guid: 309de765b06fefd43885df40f9ac37c7, type: 3}
+  Archer_3L_Obj: {fileID: 179124, guid: ef245657bcee746458b5fc79ab7e5f45, type: 3}
   button_horseMan_3L: {fileID: 1786390117}
-  HorseMan_3L_Obj: {fileID: 5879868655809889740, guid: 1bb44923676ce5a459a114818ffd18d1, type: 3}
+  HorseMan_3L_Obj: {fileID: 158504, guid: 60350ed9f9b064842b9b32d3ae3dca22, type: 3}
   UpButton2L: {fileID: 1990481011}
   UpButton3L: {fileID: 1858954433}
 --- !u!4 &108625213
@@ -10424,7 +10424,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &329956370
 Transform:
   m_ObjectHideFlags: 0
@@ -15571,8 +15571,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Allgold_text: {fileID: 821407938}
   gold: 1000
-  Obj: 0
-  ObjText: {fileID: 442173041}
+  All_Obj: 0
+  All_ObjText: {fileID: 442173041}
   health: 100
   attackPower: 10
   defense: 3

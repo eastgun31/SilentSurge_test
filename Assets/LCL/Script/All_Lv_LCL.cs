@@ -63,7 +63,7 @@ public class All_Lv_LCL : MonoBehaviour
     void Update()
     {
         Gold = GameManager.instance.gold;
-        U = GameManager.instance.Obj;
+        U = GameManager.instance.All_Obj;
 
         button_warrio_1Lr.interactable = (Gold >= 5); //검사 1레벨 5코인이 없을 시 버튼 비활성화
         button_shield_1Lr.interactable = (Gold >= 5); //방패병 1레벨 5코인이 없을 시 버튼 비활성화
@@ -93,7 +93,7 @@ public class All_Lv_LCL : MonoBehaviour
             {
                 GameManager.instance.gold -= 5;
                 GameObject newObject = Instantiate(Warrior_1L_Obj, transform.position, Quaternion.identity); //검사 1레벨 유닛 생성
-                GameManager.instance.Obj++;
+                GameManager.instance.All_Obj++;
                 GameManager.instance.Aobj();
             }
         }
@@ -106,7 +106,7 @@ public class All_Lv_LCL : MonoBehaviour
             {
                 GameManager.instance.gold -= 5; //버튼을 누르면 검사 1레벨 필요 재화 5씩 없앰
                 GameObject newObject = Instantiate(Shield_1L_Obj, transform.position, Quaternion.identity); //방패병 1레벨 유닛 생성
-                GameManager.instance.Obj++;
+                GameManager.instance.All_Obj++;
                 GameManager.instance.Aobj();
             }
     }
@@ -118,7 +118,7 @@ public class All_Lv_LCL : MonoBehaviour
             {
                 GameManager.instance.gold -= 8; //버튼을 누르면 궁수 1레벨 필요 재화 8씩 없앰
                 GameObject newObject = Instantiate(Archer_1L_Obj, transform.position, Quaternion.identity); //궁수 1레벨 유닛 생성
-                GameManager.instance.Obj++;
+                GameManager.instance.All_Obj++;
                 GameManager.instance.Aobj();
             }
     }
@@ -130,7 +130,7 @@ public class All_Lv_LCL : MonoBehaviour
             {
                 GameManager.instance.gold -= 15; //버튼을 누르면 기마병 1레벨 필요 재화 15씩 없앰
                 GameObject newObject = Instantiate(HorseMan_1L_Obj, transform.position, Quaternion.identity); //기마병 1레벨 유닛 생성
-                GameManager.instance.Obj++;
+                GameManager.instance.All_Obj++;
                 GameManager.instance.Aobj();
             }
     }
@@ -144,7 +144,7 @@ public class All_Lv_LCL : MonoBehaviour
             {
                 GameManager.instance.gold -= 5;
                 GameObject newObject = Instantiate(Warrior_2L_Obj, transform.position, Quaternion.identity); //검사 2레벨 유닛 생성
-                GameManager.instance.Obj++;
+                GameManager.instance.All_Obj++;
                 GameManager.instance.Aobj();
             }
         }
@@ -157,7 +157,7 @@ public class All_Lv_LCL : MonoBehaviour
             {
                 GameManager.instance.gold -= 5; //버튼을 누르면 검사 1레벨 필요 재화 5씩 없앰
                 GameObject newObject = Instantiate(Shield_2L_Obj, transform.position, Quaternion.identity); //방패병 2레벨 유닛 생성
-                GameManager.instance.Obj++;
+                GameManager.instance.All_Obj++;
                 GameManager.instance.Aobj();
             }
     }
@@ -169,7 +169,7 @@ public class All_Lv_LCL : MonoBehaviour
             {
                 GameManager.instance.gold -= 8; //버튼을 누르면 궁수 1레벨 필요 재화 8씩 없앰
                 GameObject newObject = Instantiate(Archer_2L_Obj, transform.position, Quaternion.identity); //궁수 2레벨 유닛 생성
-                GameManager.instance.Obj++;
+                GameManager.instance.All_Obj++;
                 GameManager.instance.Aobj();
             }
     }
@@ -181,7 +181,7 @@ public class All_Lv_LCL : MonoBehaviour
             {
                 GameManager.instance.gold -= 15; //버튼을 누르면 기마병 1레벨 필요 재화 15씩 없앰
                 GameObject newObject = Instantiate(HorseMan_2L_Obj, transform.position, Quaternion.identity); //기마병 2레벨 유닛 생성
-                GameManager.instance.Obj++;
+                GameManager.instance.All_Obj++;
                 GameManager.instance.Aobj();
             }
     }
@@ -195,7 +195,7 @@ public class All_Lv_LCL : MonoBehaviour
             {
                 GameManager.instance.gold -= 5;
                 GameObject newObject = Instantiate(Warrior_3L_Obj, transform.position, Quaternion.identity); //검사 2레벨 유닛 생성
-                GameManager.instance.Obj++;
+                GameManager.instance.All_Obj++;
                 GameManager.instance.Aobj();
             }
         }
@@ -208,7 +208,7 @@ public class All_Lv_LCL : MonoBehaviour
             {
                 GameManager.instance.gold -= 5; //버튼을 누르면 검사 1레벨 필요 재화 5씩 없앰
                 GameObject newObject = Instantiate(Shield_3L_Obj, transform.position, Quaternion.identity); //방패병 2레벨 유닛 생성
-                GameManager.instance.Obj++;
+                GameManager.instance.All_Obj++;
                 GameManager.instance.Aobj();
             }
     }
@@ -220,7 +220,7 @@ public class All_Lv_LCL : MonoBehaviour
             {
                 GameManager.instance.gold -= 8; //버튼을 누르면 궁수 1레벨 필요 재화 8씩 없앰
                 GameObject newObject = Instantiate(Archer_3L_Obj, transform.position, Quaternion.identity); //궁수 2레벨 유닛 생성
-                GameManager.instance.Obj++;
+                GameManager.instance.All_Obj++;
                 GameManager.instance.Aobj();
             }
     }
@@ -232,7 +232,7 @@ public class All_Lv_LCL : MonoBehaviour
             {
                 GameManager.instance.gold -= 15; //버튼을 누르면 기마병 1레벨 필요 재화 15씩 없앰
                 GameObject newObject = Instantiate(HorseMan_3L_Obj, transform.position, Quaternion.identity); //기마병 2레벨 유닛 생성
-                GameManager.instance.Obj++;
+                GameManager.instance.All_Obj++;
                 GameManager.instance.Aobj();
             }
     }
