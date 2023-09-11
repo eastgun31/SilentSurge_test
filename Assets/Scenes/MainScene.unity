@@ -4344,6 +4344,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fb8b3e2fee474442b8cc341bdcc787d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  warrio_spawnPosition: {x: 0, y: 0, z: 0}
   button_warrio_1Lr: {fileID: 2015794782}
   Warrior_1L_Obj: {fileID: 182410, guid: de54a0af05ae97c4bb5d0d0397831f40, type: 3}
   button_shield_1Lr: {fileID: 108389525}
@@ -29332,7 +29333,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &930402841
 MonoBehaviour:
   m_ObjectHideFlags: 0
