@@ -6,7 +6,8 @@ public class ArcherStat : MonoBehaviour
 {
     bool isDie = false;
 
-    float ArcherHp = 100;
+    public float ArcherHp = 100;
+    public float power = 10;
 
     //부활 전 대기시간
     float resurrectionTime = 5f;

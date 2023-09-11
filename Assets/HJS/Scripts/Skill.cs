@@ -5,24 +5,31 @@ using UnityEngine;
 
 public enum Skills
 {
-    Zeus,       //제우스
-    Poseidon,   //포세이돈
-    Hades,      //하데스
-    Hera,       //헤라
-    Apollo,     //아폴론
-    Athena,     //아테나
-    Aphrodite,  //아프로디테
-    Hephaestus, //헤파이토스
-    Artemis,    //아르테미스
-    Ares,       //아레스
-    Hermes,     //헤르메스
-    Hestia,     //헤스티아
-    Dionysus,   //디오니소스
-    Demeter     //데메테르
+    Zeus,       //제우스        1
+    Poseidon,   //포세이돈      2
+    Hades,      //하데스        3
+    Hera,       //헤라          4
+    Apollo,     //아폴론        5
+    Athena,     //아테나        6
+    Aphrodite,  //아프로디테    7
+    Hermes,     //헤르메스      8
+    Hestia,     //헤스티아      9
+    Dionysus,   //디오니소스    10
+    Demeter,     //데메테르     11
+    Hephaestus, //헤파이토스    12
+    Artemis,    //아르테미스    13
+    Ares       //아레스         14
 }
 
 public class Skill : MonoBehaviour
 {
+    public ArcherStat unitStat;
+
+    float originalDamage; // 능력치 변경 이전의 데미지
+    float buffDuration = 5f; // 스킬 지속 시간
+    bool isBuffActive = false; // 스킬 활성화 여부
+    float buffEndTime; // 스킬 종료 시간
+
     public GameObject skillRangePrefab; // 범위 표시용 프리팹
     private GameObject skillRangeInstance; // 범위 표시용 인스턴스
 
@@ -31,32 +38,37 @@ public class Skill : MonoBehaviour
     private bool isSkillReady = true; // 스킬 사용 가능한지 여부
     private bool isShowSkillRange = false; //범위 표시여부 
 
-    bool isSkillReady_1 = false;
+    bool isSkillReady_1 = true;
     bool isSkillReady_2 = false;
+    bool isSkillReady_3 = false;
 
-    private float skillCooldown = 5.0f; //쿨타임
-    private float currentCooldown = 0.0f; //현재 쿨타임
+    float skillCooldown_1 = 5.0f; //쿨타임
+    float skillCooldown_2 = 10.0f; //쿨타임
+    float currentCooldown_1 = 0.0f; //현재 쿨타임
+    float currentCooldown_2 = 0.0f; //현재 쿨타임
 
     public GameObject skillNum_1; //제우스 액티브
 
     public GameObject skillNum_5; //아폴론 액티브
 
-    public GameObject skillNum_8; //헤파이토스 방패병강화 패시브
-
-    public GameObject skillNum_11; //헤르메스 이속강화 소모
+    public GameObject skillNum_10; //디오니소스 공버프 소모
 
     public GameObject skills { get; set; }
+
+    void Start()
+    {
+        originalDamage = unitStat.power;
+    }
 
     void Update()
     {
         // 1번 키를 누를 때 스킬 범위를 표시
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            if (isSkillReady)
+            if (isSkillReady_1)
             {
                 if (isShowSkillRange)
                 {
-                    isSkillReady_1 = false;
                     CancelSkill();
                 }
                 else
@@ -69,11 +81,10 @@ public class Skill : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
-            if (isSkillReady)
+            if (isSkillReady_2)
             {
                 if (isShowSkillRange)
                 {
-                    isSkillReady_2 = false;
                     CancelSkill();
                 }
                 else
@@ -87,22 +98,11 @@ public class Skill : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0) && skillRangeInstance != null)
         {
-            if (isSkillReady_1 && skillRangeInstance != null)
+            if (isSkillReady_1 && skillRangeInstance != null && isShowSkillRange)
                 UseZeusSkill();
 
-            if (isSkillReady_2 && skillRangeInstance != null)
+            if (isSkillReady_2 && skillRangeInstance != null && isShowSkillRange)
                 UseApolloSkill();
-        }
-        // 스킬 쿨다운 갱신
-        if (!isSkillReady)
-        {
-            currentCooldown -= Time.deltaTime;
-
-            // 쿨다운이 끝나면 스킬을 다시 사용할 수 있게 설정
-            if (currentCooldown <= 0.0f)
-            {
-                isSkillReady = true;
-            }
         }
 
         // 마우스 위치에 스킬 범위를 따라다니도록 업데이트
@@ -110,7 +110,56 @@ public class Skill : MonoBehaviour
         {
             UpdateSkillRangePosition();
         }
+
+
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            UseBuffSkill();
+        }
+
+        if (isBuffActive && Time.time >= buffEndTime)
+        {
+            EndBuffSkill();
+        }
     }
+
+    void UseBuffSkill()
+    {
+        if (!isBuffActive)
+        {
+            // 스킬을 활성화하고 능력치를 증가
+            isBuffActive = true;
+            buffEndTime = Time.time + buffDuration;
+
+            float buffDamage = originalDamage * 2;
+
+            UpdateUnitDamage(buffDamage);
+
+            Debug.Log("스텟 상승");
+        }
+    }
+
+    void EndBuffSkill()
+    {
+        if (isBuffActive)
+        {
+            // 스킬을 비활성화하고 원래 능력치로 되돌림
+            isBuffActive = false;
+
+            // 실제 유닛의 데미지를 원래대로 돌려놓습니다.
+            UpdateUnitDamage(originalDamage);
+
+            Debug.Log("스텟 복구");
+        }
+    }
+
+    void UpdateUnitDamage(float newDamage)
+    {
+        unitStat.power = newDamage;
+        Debug.Log("스텟 변동");
+    }
+
+
 
     //스킬 범위 표시
     void ShowSkillRange()
@@ -144,6 +193,35 @@ public class Skill : MonoBehaviour
         Destroy(skillRangeInstance);
     }
 
+    //스킬 쿨다운
+    void SkillCoolDown_1()
+    {
+        if (!isSkillReady_1)
+        {
+            currentCooldown_1 -= Time.deltaTime;
+
+            // 쿨다운이 끝나면 스킬을 다시 사용할 수 있게 설정
+            if (currentCooldown_1 <= 0.0f)
+            {
+                isSkillReady_1 = true;
+            }
+        }
+    }
+
+    void SkillCoolDown_2()
+    {
+        if (!isSkillReady_2)
+        {
+            currentCooldown_2 -= Time.deltaTime;
+
+            // 쿨다운이 끝나면 스킬을 다시 사용할 수 있게 설정
+            if (currentCooldown_2 <= 0.0f)
+            {
+                isSkillReady_2 = true;
+            }
+        }
+    }
+
     //제우스 스킬
     void UseZeusSkill()
     {
@@ -158,10 +236,10 @@ public class Skill : MonoBehaviour
             Instantiate(skillNum_1, spawnPosition, Quaternion.identity);
         }
 
-        currentCooldown = skillCooldown; //쿨타임 적용
-        isSkillReady = false;
+        currentCooldown_1 = skillCooldown_1; //쿨타임 적용
         isSkillReady_1 = false;
         isShowSkillRange = false;
+        SkillCoolDown_1();
         Destroy(skillRangeInstance);
     }
 
@@ -179,10 +257,10 @@ public class Skill : MonoBehaviour
             Instantiate(skillNum_5, spawnPosition, Quaternion.identity);
         }
 
-        currentCooldown = skillCooldown; //쿨타임 적용
-        isSkillReady = false;
+        currentCooldown_2 = skillCooldown_2; //쿨타임 적용
         isSkillReady_2 = false;
         isShowSkillRange = false;
+        SkillCoolDown_1();
         Destroy(skillRangeInstance);
     }
 
@@ -193,8 +271,8 @@ public class Skill : MonoBehaviour
 
 
     // 다른 이벤트 또는 조건에서 스킬을 사용 가능하게 하려면 isSkillReady를 true로 설정하십시오.
-    public void SetSkillReady(bool skillReady)
-    {
-        isSkillReady = skillReady;
-    }
+    //public void SetSkillReady(bool skillReady)
+    //{
+    //    isSkillReady = skillReady;
+    //}
 }
