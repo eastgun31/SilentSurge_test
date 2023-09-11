@@ -122,7 +122,7 @@ NavMeshSettings:
     preserveTilesOutsideBounds: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 0}
+  m_NavMeshData: {fileID: 23800000, guid: baf34446852d1424c84de30fd8d41403, type: 2}
 --- !u!1 &3352874
 GameObject:
   m_ObjectHideFlags: 0
@@ -314,11 +314,11 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 850490767}
     m_Modifications:
     - target: {fileID: 1019576294999820704, guid: b089433846711634aba31bd96d785c63, type: 3}
       propertyPath: m_Name
-      value: UnitController
+      value: EnemyController
       objectReference: {fileID: 0}
     - target: {fileID: 1019576294999820705, guid: b089433846711634aba31bd96d785c63, type: 3}
       propertyPath: home
@@ -338,7 +338,7 @@ PrefabInstance:
       objectReference: {fileID: 933587122}
     - target: {fileID: 1019576294999820709, guid: b089433846711634aba31bd96d785c63, type: 3}
       propertyPath: m_RootOrder
-      value: 17
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1019576294999820709, guid: b089433846711634aba31bd96d785c63, type: 3}
       propertyPath: m_LocalPosition.x
@@ -358,15 +358,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1019576294999820709, guid: b089433846711634aba31bd96d785c63, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 1019576294999820709, guid: b089433846711634aba31bd96d785c63, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 1019576294999820709, guid: b089433846711634aba31bd96d785c63, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 1019576294999820709, guid: b089433846711634aba31bd96d785c63, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -515,7 +515,7 @@ GameObject:
   - component: {fileID: 12549268}
   - component: {fileID: 12549270}
   - component: {fileID: 12549269}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: rpgpp_lt_terrain_sand_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -943,7 +943,7 @@ GameObject:
   - component: {fileID: 24372526}
   - component: {fileID: 24372528}
   - component: {fileID: 24372527}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: rpgpp_lt_wood_path_01a (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1560,7 +1560,7 @@ GameObject:
   - component: {fileID: 42811759}
   - component: {fileID: 42811761}
   - component: {fileID: 42811760}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: rpgpp_lt_hill_small_02 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1641,7 +1641,7 @@ GameObject:
   - component: {fileID: 44328973}
   - component: {fileID: 44328975}
   - component: {fileID: 44328974}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: rpgpp_lt_terrain_path_01b (18)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2305,7 +2305,7 @@ GameObject:
   - component: {fileID: 56443872}
   - component: {fileID: 56443874}
   - component: {fileID: 56443873}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: rpgpp_lt_wood_path_01a (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2871,7 +2871,7 @@ GameObject:
   - component: {fileID: 75876322}
   - component: {fileID: 75876324}
   - component: {fileID: 75876323}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: rpgpp_lt_terrain_path_01b (13)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2952,7 +2952,7 @@ GameObject:
   - component: {fileID: 78379416}
   - component: {fileID: 78379418}
   - component: {fileID: 78379417}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: rpgpp_lt_terrain_path_01b (23)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3033,7 +3033,7 @@ GameObject:
   - component: {fileID: 78991407}
   - component: {fileID: 78991409}
   - component: {fileID: 78991408}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: rpgpp_lt_wood_path_01b (13)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3114,7 +3114,7 @@ GameObject:
   - component: {fileID: 79578967}
   - component: {fileID: 79578969}
   - component: {fileID: 79578968}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: rpgpp_lt_terrain_path_01b (21)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3735,7 +3735,7 @@ GameObject:
   - component: {fileID: 102116475}
   - component: {fileID: 102116477}
   - component: {fileID: 102116476}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: rpgpp_lt_wood_path_01b (14)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4377,12 +4377,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 108625211}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 960, y: 540, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_Father: {fileID: 329956370}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &108806589
 GameObject:
@@ -4634,7 +4634,7 @@ GameObject:
   - component: {fileID: 117011513}
   - component: {fileID: 117011515}
   - component: {fileID: 117011514}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: rpgpp_lt_wood_path_01b (20)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4704,56 +4704,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 117011512}
   m_Mesh: {fileID: 4300000, guid: f867a2534aa85914d9e6b62f681cdf69, type: 3}
---- !u!1 &117791176
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 117791178}
-  - component: {fileID: 117791177}
-  m_Layer: 0
-  m_Name: GM
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &117791177
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 117791176}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7849354a11861a146a4dc85210243c69, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  aCheck: 0
-  bCheck: 0
-  cCheck: 0
-  check: 0000000000000000000000000000000000000000
-  attacking: 0
-  attackPoint: 0
-  e_population: 0
---- !u!4 &117791178
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 117791176}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 219.74, y: 0, z: 217.97}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 19
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &122879387
 GameObject:
   m_ObjectHideFlags: 0
@@ -4765,7 +4715,7 @@ GameObject:
   - component: {fileID: 122879388}
   - component: {fileID: 122879390}
   - component: {fileID: 122879389}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: rpgpp_lt_terrain_path_01b (87)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4997,7 +4947,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &126426762
 GameObject:
@@ -5010,7 +4960,7 @@ GameObject:
   - component: {fileID: 126426763}
   - component: {fileID: 126426765}
   - component: {fileID: 126426764}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: rpgpp_lt_terrain_path_01b (71)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5348,7 +5298,7 @@ GameObject:
   - component: {fileID: 143543338}
   - component: {fileID: 143543340}
   - component: {fileID: 143543339}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: rpgpp_lt_wood_path_01a (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5854,7 +5804,7 @@ GameObject:
   - component: {fileID: 172740666}
   - component: {fileID: 172740668}
   - component: {fileID: 172740667}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: rpgpp_lt_terrain_path_01b (35)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6693,7 +6643,7 @@ GameObject:
   - component: {fileID: 203396708}
   - component: {fileID: 203396710}
   - component: {fileID: 203396709}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: rpgpp_lt_terrain_path_01b (16)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7008,7 +6958,7 @@ GameObject:
   - component: {fileID: 217046199}
   - component: {fileID: 217046201}
   - component: {fileID: 217046200}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: rpgpp_lt_terrain_path_01b (95)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7123,7 +7073,7 @@ GameObject:
   - component: {fileID: 219177425}
   - component: {fileID: 219177427}
   - component: {fileID: 219177426}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: rpgpp_lt_terrain_path_01b (34)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7600,12 +7550,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 232280069}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 219.74, y: 1, z: 217.97}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 20
+  m_Father: {fileID: 850490767}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &233109770
 GameObject:
@@ -9108,7 +9058,7 @@ GameObject:
   - component: {fileID: 296268216}
   - component: {fileID: 296268218}
   - component: {fileID: 296268217}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: rpgpp_lt_terrain_path_01b (79)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10357,7 +10307,7 @@ GameObject:
   - component: {fileID: 323776435}
   - component: {fileID: 323776437}
   - component: {fileID: 323776436}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: rpgpp_lt_terrain_path_01b (84)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10458,6 +10408,41 @@ Transform:
   - {fileID: 985895681}
   m_Father: {fileID: 1613600874}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &329956369
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 329956370}
+  m_Layer: 0
+  m_Name: UI
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &329956370
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 329956369}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1983905575}
+  - {fileID: 1691826874}
+  - {fileID: 579545879}
+  - {fileID: 2053882498}
+  - {fileID: 108625213}
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &330736560
 GameObject:
@@ -10797,7 +10782,7 @@ GameObject:
   - component: {fileID: 339678134}
   - component: {fileID: 339678136}
   - component: {fileID: 339678135}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: rpgpp_lt_terrain_sand_01 (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10959,7 +10944,7 @@ GameObject:
   - component: {fileID: 344963616}
   - component: {fileID: 344963618}
   - component: {fileID: 344963617}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: rpgpp_lt_terrain_path_01b (69)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11040,7 +11025,7 @@ GameObject:
   - component: {fileID: 349354850}
   - component: {fileID: 349354852}
   - component: {fileID: 349354851}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: rpgpp_lt_terrain_path_01b (86)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11249,7 +11234,7 @@ GameObject:
   - component: {fileID: 367527063}
   - component: {fileID: 367527065}
   - component: {fileID: 367527064}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: rpgpp_lt_hill_small_01 (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11439,7 +11424,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 369246267}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 184, y: -225.4, z: 219}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -11448,8 +11433,8 @@ Transform:
   - {fileID: 39077074}
   - {fileID: 195980494}
   - {fileID: 563900463}
-  m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_Father: {fileID: 1695819066}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &370209242
 GameObject:
@@ -11462,7 +11447,7 @@ GameObject:
   - component: {fileID: 370209243}
   - component: {fileID: 370209245}
   - component: {fileID: 370209244}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: rpgpp_lt_terrain_path_01b (68)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11624,7 +11609,7 @@ GameObject:
   - component: {fileID: 375816119}
   - component: {fileID: 375816121}
   - component: {fileID: 375816120}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: rpgpp_lt_terrain_path_01b (39)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12036,7 +12021,7 @@ GameObject:
   - component: {fileID: 381074036}
   - component: {fileID: 381074038}
   - component: {fileID: 381074037}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: rpgpp_lt_terrain_path_01b (53)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12199,7 +12184,7 @@ GameObject:
   - component: {fileID: 384954972}
   - component: {fileID: 384954974}
   - component: {fileID: 384954973}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: rpgpp_lt_terrain_path_01b (43)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12488,7 +12473,7 @@ GameObject:
   - component: {fileID: 390094051}
   - component: {fileID: 390094053}
   - component: {fileID: 390094052}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: rpgpp_lt_wood_path_01b (17)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12662,17 +12647,16 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 399966535}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 162.06314, y: 109.87367, z: -27.149935}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2045253356}
   - {fileID: 2028629327}
-  - {fileID: 1551866045}
   - {fileID: 1730351891}
   - {fileID: 813441457}
-  m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_Father: {fileID: 1695819066}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &400990594
 GameObject:
@@ -14138,7 +14122,7 @@ GameObject:
   - component: {fileID: 456670436}
   - component: {fileID: 456670438}
   - component: {fileID: 456670437}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: rpgpp_lt_terrain_path_01b (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14765,7 +14749,7 @@ GameObject:
   - component: {fileID: 467704449}
   - component: {fileID: 467704451}
   - component: {fileID: 467704450}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: rpgpp_lt_hill_small_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15486,7 +15470,7 @@ GameObject:
   - component: {fileID: 492037813}
   - component: {fileID: 492037815}
   - component: {fileID: 492037814}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: rpgpp_lt_terrain_path_01b (17)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15609,7 +15593,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &493799305
 GameObject:
@@ -15885,7 +15869,7 @@ GameObject:
   - component: {fileID: 511790030}
   - component: {fileID: 511790032}
   - component: {fileID: 511790031}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: rpgpp_lt_terrain_path_01b (32)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17226,7 +17210,7 @@ GameObject:
   - component: {fileID: 547729192}
   - component: {fileID: 547729194}
   - component: {fileID: 547729193}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: rpgpp_lt_terrain_path_01b (38)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17447,7 +17431,7 @@ GameObject:
   - component: {fileID: 561741279}
   - component: {fileID: 561741281}
   - component: {fileID: 561741280}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: rpgpp_lt_terrain_path_01b (33)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17911,7 +17895,7 @@ GameObject:
   - component: {fileID: 571275425}
   - component: {fileID: 571275427}
   - component: {fileID: 571275426}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: rpgpp_lt_terrain_path_01b (94)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18110,7 +18094,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &579545879
 RectTransform:
   m_ObjectHideFlags: 0
@@ -18126,8 +18110,8 @@ RectTransform:
   - {fileID: 1824253977}
   - {fileID: 61985525}
   - {fileID: 1786390120}
-  m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_Father: {fileID: 329956370}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -18458,7 +18442,7 @@ GameObject:
   - component: {fileID: 595187175}
   - component: {fileID: 595187177}
   - component: {fileID: 595187176}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: rpgpp_lt_wood_path_01a (14)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18636,7 +18620,7 @@ GameObject:
   - component: {fileID: 597441417}
   - component: {fileID: 597441419}
   - component: {fileID: 597441418}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: rpgpp_lt_mountain_01 (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19407,7 +19391,7 @@ GameObject:
   - component: {fileID: 627516818}
   - component: {fileID: 627516820}
   - component: {fileID: 627516819}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: rpgpp_lt_hill_small_01 (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19531,8 +19515,8 @@ Transform:
   - {fileID: 1020654513}
   - {fileID: 38346890}
   - {fileID: 105884080}
-  m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_Father: {fileID: 1695819066}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &634092678
 GameObject:
@@ -19637,7 +19621,7 @@ GameObject:
   - component: {fileID: 643070074}
   - component: {fileID: 643070076}
   - component: {fileID: 643070075}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: rpgpp_lt_mountain_01 (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19877,7 +19861,7 @@ GameObject:
   - component: {fileID: 650938194}
   - component: {fileID: 650938196}
   - component: {fileID: 650938195}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: rpgpp_lt_mountain_01 (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20011,7 +19995,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &657150297
 GameObject:
@@ -20024,7 +20008,7 @@ GameObject:
   - component: {fileID: 657150298}
   - component: {fileID: 657150300}
   - component: {fileID: 657150299}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: rpgpp_lt_terrain_grass_01 (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20813,7 +20797,7 @@ GameObject:
   - component: {fileID: 687261452}
   - component: {fileID: 687261454}
   - component: {fileID: 687261453}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: rpgpp_lt_hill_small_01 (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21586,7 +21570,7 @@ GameObject:
   - component: {fileID: 708286954}
   - component: {fileID: 708286956}
   - component: {fileID: 708286955}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: rpgpp_lt_terrain_path_01b (76)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22470,7 +22454,7 @@ GameObject:
   - component: {fileID: 742779926}
   - component: {fileID: 742779928}
   - component: {fileID: 742779927}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: rpgpp_lt_terrain_path_01b (74)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24369,7 +24353,7 @@ GameObject:
   - component: {fileID: 805475785}
   - component: {fileID: 805475787}
   - component: {fileID: 805475786}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: rpgpp_lt_terrain_path_01b (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24724,7 +24708,7 @@ GameObject:
   - component: {fileID: 812605714}
   - component: {fileID: 812605716}
   - component: {fileID: 812605715}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: rpgpp_lt_wood_path_01b (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24947,7 +24931,7 @@ Transform:
   - {fileID: 1074862426}
   - {fileID: 1560105623}
   m_Father: {fileID: 399966536}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &813666236
 GameObject:
@@ -25139,7 +25123,7 @@ GameObject:
   - component: {fileID: 818981119}
   - component: {fileID: 818981121}
   - component: {fileID: 818981120}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: rpgpp_lt_terrain_path_01b (73)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25333,7 +25317,7 @@ GameObject:
   - component: {fileID: 823521454}
   - component: {fileID: 823521456}
   - component: {fileID: 823521455}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: rpgpp_lt_wood_path_01b (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25926,7 +25910,7 @@ GameObject:
   - component: {fileID: 837578532}
   - component: {fileID: 837578534}
   - component: {fileID: 837578533}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: rpgpp_lt_terrain_path_01b (63)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26007,7 +25991,7 @@ GameObject:
   - component: {fileID: 839509147}
   - component: {fileID: 839509149}
   - component: {fileID: 839509148}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: rpgpp_lt_terrain_path_01b (65)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26351,6 +26335,39 @@ Transform:
   m_Father: {fileID: 547632324}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &850490766
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 850490767}
+  m_Layer: 0
+  m_Name: Enemy_System
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &850490767
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 850490766}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 7471694}
+  - {fileID: 232280071}
+  - {fileID: 1477503253}
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &852511882
 GameObject:
   m_ObjectHideFlags: 0
@@ -26533,7 +26550,7 @@ GameObject:
   - component: {fileID: 855847536}
   - component: {fileID: 855847538}
   - component: {fileID: 855847537}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: rpgpp_lt_terrain_path_01b (80)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26646,7 +26663,7 @@ GameObject:
   - component: {fileID: 859709430}
   - component: {fileID: 859709432}
   - component: {fileID: 859709431}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: rpgpp_lt_terrain_path_01b (82)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26935,7 +26952,7 @@ GameObject:
   - component: {fileID: 863762948}
   - component: {fileID: 863762950}
   - component: {fileID: 863762949}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: rpgpp_lt_mountain_01 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27791,7 +27808,7 @@ GameObject:
   - component: {fileID: 880890525}
   - component: {fileID: 880890527}
   - component: {fileID: 880890526}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: rpgpp_lt_terrain_path_01b (41)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28036,7 +28053,7 @@ GameObject:
   - component: {fileID: 891879684}
   - component: {fileID: 891879686}
   - component: {fileID: 891879685}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: rpgpp_lt_terrain_path_01b (30)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28502,7 +28519,7 @@ GameObject:
   - component: {fileID: 907855286}
   - component: {fileID: 907855288}
   - component: {fileID: 907855287}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: rpgpp_lt_terrain_path_01b (24)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29226,7 +29243,7 @@ GameObject:
   - component: {fileID: 926960873}
   - component: {fileID: 926960875}
   - component: {fileID: 926960874}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: rpgpp_lt_terrain_path_01b (29)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29310,7 +29327,7 @@ GameObject:
   - component: {fileID: 930402842}
   - component: {fileID: 930402841}
   m_Layer: 0
-  m_Name: Controll
+  m_Name: PlayerController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29386,7 +29403,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &933587122
 GameObject:
@@ -29489,7 +29506,7 @@ GameObject:
   - component: {fileID: 934185990}
   - component: {fileID: 934185992}
   - component: {fileID: 934185991}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: rpgpp_lt_terrain_grass_01 (49)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29651,7 +29668,7 @@ GameObject:
   - component: {fileID: 935398307}
   - component: {fileID: 935398309}
   - component: {fileID: 935398308}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: rpgpp_lt_terrain_path_01b (70)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30005,7 +30022,7 @@ GameObject:
   - component: {fileID: 944019474}
   - component: {fileID: 944019476}
   - component: {fileID: 944019475}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: rpgpp_lt_hill_small_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30251,7 +30268,7 @@ GameObject:
   - component: {fileID: 952884612}
   - component: {fileID: 952884614}
   - component: {fileID: 952884613}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: rpgpp_lt_terrain_path_01b (89)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30612,6 +30629,7 @@ GameObject:
   - component: {fileID: 963194228}
   - component: {fileID: 963194227}
   - component: {fileID: 963194226}
+  - component: {fileID: 963194229}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -30677,13 +30695,29 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.15673298, y: 0.34865397, z: -0.07111066, w: 0.92131346}
-  m_LocalPosition: {x: 17, y: 20.2, z: 6.3}
+  m_LocalRotation: {x: 0.34683228, y: 0.2725498, z: -0.10487014, w: 0.8913059}
+  m_LocalPosition: {x: 14.6, y: 16.4, z: 8.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 19.779, y: 41.226, z: -1.324}
+  m_LocalEulerAnglesHint: {x: 42.488, y: 34.07, z: 0.164}
+--- !u!114 &963194229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963194225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0101a1757a5b2740952ab9bb0250e84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  camSpeed: 30
+  scrollSpeed: 50
+  minY: 5
+  maxY: 25
 --- !u!1 &963869311
 GameObject:
   m_ObjectHideFlags: 0
@@ -30776,7 +30810,7 @@ GameObject:
   - component: {fileID: 972660986}
   - component: {fileID: 972660988}
   - component: {fileID: 972660987}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: rpgpp_lt_mountain_01 (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32062,7 +32096,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1006422663}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Terrain_path
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32178,7 +32212,7 @@ GameObject:
   - component: {fileID: 1012469363}
   - component: {fileID: 1012469365}
   - component: {fileID: 1012469364}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: rpgpp_lt_terrain_path_01b (31)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32748,7 +32782,7 @@ GameObject:
   - component: {fileID: 1039134473}
   - component: {fileID: 1039134475}
   - component: {fileID: 1039134474}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: rpgpp_lt_hill_small_02 (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33219,7 +33253,7 @@ GameObject:
   - component: {fileID: 1046986743}
   - component: {fileID: 1046986745}
   - component: {fileID: 1046986744}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: rpgpp_lt_wood_path_01b (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33300,7 +33334,7 @@ GameObject:
   - component: {fileID: 1050432683}
   - component: {fileID: 1050432685}
   - component: {fileID: 1050432684}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: rpgpp_lt_terrain_path_01b (62)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33998,7 +34032,7 @@ GameObject:
   - component: {fileID: 1082466811}
   - component: {fileID: 1082466813}
   - component: {fileID: 1082466812}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: rpgpp_lt_hill_small_01 (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34318,7 +34352,7 @@ GameObject:
   - component: {fileID: 1088374193}
   - component: {fileID: 1088374195}
   - component: {fileID: 1088374194}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: rpgpp_lt_terrain_path_01b (93)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34480,7 +34514,7 @@ GameObject:
   - component: {fileID: 1091648406}
   - component: {fileID: 1091648408}
   - component: {fileID: 1091648407}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: rpgpp_lt_terrain_path_01b (97)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34592,7 +34626,7 @@ GameObject:
   - component: {fileID: 1094227529}
   - component: {fileID: 1094227531}
   - component: {fileID: 1094227530}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: rpgpp_lt_terrain_path_01b (78)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35242,7 +35276,7 @@ GameObject:
   - component: {fileID: 1126793571}
   - component: {fileID: 1126793573}
   - component: {fileID: 1126793572}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: rpgpp_lt_terrain_grass_01 (14)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35323,7 +35357,7 @@ GameObject:
   - component: {fileID: 1127270439}
   - component: {fileID: 1127270441}
   - component: {fileID: 1127270440}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: rpgpp_lt_terrain_path_01b (61)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35488,7 +35522,7 @@ GameObject:
   - component: {fileID: 1132234583}
   - component: {fileID: 1132234585}
   - component: {fileID: 1132234584}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: rpgpp_lt_terrain_path_01b (37)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35763,7 +35797,7 @@ GameObject:
   - component: {fileID: 1134463932}
   - component: {fileID: 1134463934}
   - component: {fileID: 1134463933}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: rpgpp_lt_terrain_path_01b (90)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36323,7 +36357,7 @@ GameObject:
   - component: {fileID: 1159551430}
   - component: {fileID: 1159551432}
   - component: {fileID: 1159551431}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: rpgpp_lt_terrain_path_01b (25)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36483,7 +36517,7 @@ GameObject:
   - component: {fileID: 1160424433}
   - component: {fileID: 1160424435}
   - component: {fileID: 1160424434}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: rpgpp_lt_terrain_path_01b
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37002,7 +37036,7 @@ GameObject:
   - component: {fileID: 1171945057}
   - component: {fileID: 1171945059}
   - component: {fileID: 1171945058}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: rpgpp_lt_terrain_path_01b (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37164,7 +37198,7 @@ GameObject:
   - component: {fileID: 1178472608}
   - component: {fileID: 1178472610}
   - component: {fileID: 1178472609}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: rpgpp_lt_mountain_01 (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37612,7 +37646,7 @@ GameObject:
   - component: {fileID: 1216257103}
   - component: {fileID: 1216257105}
   - component: {fileID: 1216257104}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: rpgpp_lt_terrain_grass_01 (45)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37723,7 +37757,7 @@ GameObject:
   - component: {fileID: 1220096187}
   - component: {fileID: 1220096189}
   - component: {fileID: 1220096188}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: rpgpp_lt_terrain_path_01b (67)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38255,7 +38289,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1245186663}
   m_Layer: 0
-  m_Name: points
+  m_Name: Points
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -38276,7 +38310,7 @@ Transform:
   - {fileID: 750327215}
   - {fileID: 1524525831}
   m_Father: {fileID: 0}
-  m_RootOrder: 18
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1252985397
 GameObject:
@@ -38516,7 +38550,7 @@ GameObject:
   - component: {fileID: 1267130469}
   - component: {fileID: 1267130471}
   - component: {fileID: 1267130470}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: rpgpp_lt_terrain_path_01b (42)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38803,7 +38837,7 @@ GameObject:
   - component: {fileID: 1274307973}
   - component: {fileID: 1274307975}
   - component: {fileID: 1274307974}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: rpgpp_lt_terrain_sand_01 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39188,7 +39222,7 @@ GameObject:
   - component: {fileID: 1286019667}
   - component: {fileID: 1286019669}
   - component: {fileID: 1286019668}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: rpgpp_lt_wood_path_01a (13)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39269,7 +39303,7 @@ GameObject:
   - component: {fileID: 1288807460}
   - component: {fileID: 1288807462}
   - component: {fileID: 1288807461}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: rpgpp_lt_terrain_grass_01 (13)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39463,7 +39497,7 @@ GameObject:
   - component: {fileID: 1292731323}
   - component: {fileID: 1292731325}
   - component: {fileID: 1292731324}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: rpgpp_lt_terrain_path_01b (81)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39937,7 +39971,7 @@ GameObject:
   - component: {fileID: 1312178410}
   - component: {fileID: 1312178412}
   - component: {fileID: 1312178411}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: rpgpp_lt_terrain_path_01b (22)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40497,7 +40531,7 @@ GameObject:
   - component: {fileID: 1325541173}
   - component: {fileID: 1325541175}
   - component: {fileID: 1325541174}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: rpgpp_lt_hill_small_01 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40721,7 +40755,7 @@ GameObject:
   - component: {fileID: 1333985010}
   - component: {fileID: 1333985012}
   - component: {fileID: 1333985011}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: rpgpp_lt_hill_small_01 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41033,7 +41067,7 @@ GameObject:
   - component: {fileID: 1349130439}
   - component: {fileID: 1349130441}
   - component: {fileID: 1349130440}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: rpgpp_lt_hill_small_01 (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41230,7 +41264,7 @@ GameObject:
   - component: {fileID: 1356576745}
   - component: {fileID: 1356576747}
   - component: {fileID: 1356576746}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: rpgpp_lt_terrain_path_01b (15)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41824,7 +41858,7 @@ GameObject:
   - component: {fileID: 1381445341}
   - component: {fileID: 1381445343}
   - component: {fileID: 1381445342}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: rpgpp_lt_hill_small_01 (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42048,7 +42082,7 @@ GameObject:
   - component: {fileID: 1391208082}
   - component: {fileID: 1391208084}
   - component: {fileID: 1391208083}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: rpgpp_lt_hill_small_02 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43201,7 +43235,7 @@ GameObject:
   - component: {fileID: 1415274514}
   - component: {fileID: 1415274516}
   - component: {fileID: 1415274515}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: rpgpp_lt_terrain_grass_01 (48)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43855,7 +43889,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1449306866}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Wood_path
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43907,7 +43941,7 @@ GameObject:
   - component: {fileID: 1449321678}
   - component: {fileID: 1449321680}
   - component: {fileID: 1449321679}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: rpgpp_lt_terrain_path_01b (92)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44266,7 +44300,7 @@ GameObject:
   - component: {fileID: 1452805149}
   - component: {fileID: 1452805151}
   - component: {fileID: 1452805150}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: rpgpp_lt_hill_small_01 (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44660,7 +44694,7 @@ GameObject:
   - component: {fileID: 1462312943}
   - component: {fileID: 1462312945}
   - component: {fileID: 1462312944}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: rpgpp_lt_terrain_grass_01 (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44772,7 +44806,7 @@ GameObject:
   - component: {fileID: 1465998163}
   - component: {fileID: 1465998165}
   - component: {fileID: 1465998164}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: rpgpp_lt_terrain_path_01b (88)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44950,7 +44984,7 @@ GameObject:
   - component: {fileID: 1470824287}
   - component: {fileID: 1470824289}
   - component: {fileID: 1470824288}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: rpgpp_lt_terrain_path_01b (72)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45222,7 +45256,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1477503253}
   m_Layer: 0
-  m_Name: home
+  m_Name: E_home
   m_TagString: Untagged
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -45239,8 +45273,8 @@ Transform:
   m_LocalPosition: {x: 226.51, y: 0, z: 225.92}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 21
+  m_Father: {fileID: 850490767}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 110.574, z: 0}
 --- !u!1 &1479982346
 GameObject:
@@ -45510,7 +45544,7 @@ GameObject:
   - component: {fileID: 1486132319}
   - component: {fileID: 1486132321}
   - component: {fileID: 1486132320}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: rpgpp_lt_wood_path_01b (19)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45770,7 +45804,7 @@ GameObject:
   - component: {fileID: 1487322985}
   - component: {fileID: 1487322987}
   - component: {fileID: 1487322986}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: rpgpp_lt_terrain_grass_01 (43)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46964,7 +46998,7 @@ GameObject:
   - component: {fileID: 1533859172}
   - component: {fileID: 1533859174}
   - component: {fileID: 1533859173}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: rpgpp_lt_wood_path_01b (15)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47444,7 +47478,7 @@ GameObject:
   - component: {fileID: 1544908670}
   - component: {fileID: 1544908672}
   - component: {fileID: 1544908671}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: rpgpp_lt_wood_path_01b (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47525,7 +47559,7 @@ GameObject:
   - component: {fileID: 1546512381}
   - component: {fileID: 1546512383}
   - component: {fileID: 1546512382}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: rpgpp_lt_terrain_path_01b (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47829,7 +47863,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1551866045}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Path
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47844,13 +47878,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1551866044}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -113.82966, y: -131.01219, z: 137.06479}
+  m_LocalPosition: {x: 48.233482, y: -21.13852, z: 109.914856}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1006422663}
   - {fileID: 1449306866}
-  m_Father: {fileID: 399966536}
-  m_RootOrder: 2
+  m_Father: {fileID: 1695819066}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1552030294
 GameObject:
@@ -48111,7 +48145,7 @@ GameObject:
   - component: {fileID: 1559157620}
   - component: {fileID: 1559157622}
   - component: {fileID: 1559157621}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: rpgpp_lt_wood_path_01b (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48511,7 +48545,7 @@ GameObject:
   - component: {fileID: 1563541868}
   - component: {fileID: 1563541870}
   - component: {fileID: 1563541869}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: rpgpp_lt_terrain_path_01b (40)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48673,7 +48707,7 @@ GameObject:
   - component: {fileID: 1567061330}
   - component: {fileID: 1567061332}
   - component: {fileID: 1567061331}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: rpgpp_lt_terrain_path_01b (36)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -49463,7 +49497,7 @@ GameObject:
   - component: {fileID: 1583165726}
   - component: {fileID: 1583165728}
   - component: {fileID: 1583165727}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: rpgpp_lt_terrain_sand_01 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -49544,7 +49578,7 @@ GameObject:
   - component: {fileID: 1585251659}
   - component: {fileID: 1585251661}
   - component: {fileID: 1585251660}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: rpgpp_lt_terrain_path_01b (20)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -49768,7 +49802,7 @@ GameObject:
   - component: {fileID: 1592765424}
   - component: {fileID: 1592765426}
   - component: {fileID: 1592765425}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: rpgpp_lt_terrain_path_01b (64)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -50555,7 +50589,7 @@ GameObject:
   - component: {fileID: 1622613086}
   - component: {fileID: 1622613088}
   - component: {fileID: 1622613087}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: rpgpp_lt_terrain_grass_01 (46)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -50636,7 +50670,7 @@ GameObject:
   - component: {fileID: 1624360297}
   - component: {fileID: 1624360299}
   - component: {fileID: 1624360298}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: rpgpp_lt_mountain_01 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -50829,7 +50863,7 @@ GameObject:
   - component: {fileID: 1631351033}
   - component: {fileID: 1631351035}
   - component: {fileID: 1631351034}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: rpgpp_lt_terrain_path_01b (26)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -51514,7 +51548,7 @@ GameObject:
   - component: {fileID: 1656602401}
   - component: {fileID: 1656602403}
   - component: {fileID: 1656602402}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: rpgpp_lt_terrain_path_01b (52)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -51676,7 +51710,7 @@ GameObject:
   - component: {fileID: 1659904030}
   - component: {fileID: 1659904032}
   - component: {fileID: 1659904031}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: rpgpp_lt_terrain_grass_01 (44)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -51997,7 +52031,7 @@ GameObject:
   - component: {fileID: 1668069905}
   - component: {fileID: 1668069907}
   - component: {fileID: 1668069906}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: rpgpp_lt_terrain_path_01b (19)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -52159,7 +52193,7 @@ GameObject:
   - component: {fileID: 1668423809}
   - component: {fileID: 1668423811}
   - component: {fileID: 1668423810}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: rpgpp_lt_terrain_path_01b (75)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -52753,7 +52787,7 @@ GameObject:
   - component: {fileID: 1687307363}
   - component: {fileID: 1687307365}
   - component: {fileID: 1687307364}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: rpgpp_lt_terrain_path_01b (49)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -53038,7 +53072,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1691826874
 RectTransform:
   m_ObjectHideFlags: 0
@@ -53055,8 +53089,8 @@ RectTransform:
   - {fileID: 1201814144}
   - {fileID: 316068733}
   - {fileID: 1858954436}
-  m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_Father: {fileID: 329956370}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -53266,6 +53300,42 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1694153201}
   m_Mesh: {fileID: 4300000, guid: 60f048e3ccfd7d0498e095661396963b, type: 3}
+--- !u!1 &1695819065
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1695819066}
+  m_Layer: 0
+  m_Name: Map
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1695819066
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1695819065}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 634091325}
+  - {fileID: 2116008477}
+  - {fileID: 369246268}
+  - {fileID: 1551866045}
+  - {fileID: 399966536}
+  - {fileID: 2126997298}
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1695842358
 GameObject:
   m_ObjectHideFlags: 0
@@ -53835,7 +53905,7 @@ GameObject:
   - component: {fileID: 1712499684}
   - component: {fileID: 1712499686}
   - component: {fileID: 1712499685}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: rpgpp_lt_hill_small_01 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -54237,7 +54307,7 @@ GameObject:
   - component: {fileID: 1719099698}
   - component: {fileID: 1719099700}
   - component: {fileID: 1719099699}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: rpgpp_lt_mountain_01 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -54582,7 +54652,7 @@ Transform:
   - {fileID: 1832439045}
   - {fileID: 1160980000}
   m_Father: {fileID: 399966536}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1731135795
 GameObject:
@@ -54595,7 +54665,7 @@ GameObject:
   - component: {fileID: 1731135796}
   - component: {fileID: 1731135798}
   - component: {fileID: 1731135797}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: rpgpp_lt_terrain_path_01b (91)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -55096,7 +55166,7 @@ GameObject:
   - component: {fileID: 1743166551}
   - component: {fileID: 1743166553}
   - component: {fileID: 1743166552}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: rpgpp_lt_mountain_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -56172,7 +56242,7 @@ GameObject:
   - component: {fileID: 1779270352}
   - component: {fileID: 1779270354}
   - component: {fileID: 1779270353}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: rpgpp_lt_terrain_path_01b (77)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -56893,7 +56963,7 @@ GameObject:
   - component: {fileID: 1798138781}
   - component: {fileID: 1798138783}
   - component: {fileID: 1798138782}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: rpgpp_lt_terrain_path_01b (66)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -57134,7 +57204,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1803284244}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: rpgpp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -57533,7 +57603,7 @@ GameObject:
   - component: {fileID: 1817164072}
   - component: {fileID: 1817164074}
   - component: {fileID: 1817164073}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: rpgpp_lt_hill_small_01 (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -57614,7 +57684,7 @@ GameObject:
   - component: {fileID: 1818801663}
   - component: {fileID: 1818801665}
   - component: {fileID: 1818801664}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: rpgpp_lt_wood_path_01b (18)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -58307,7 +58377,7 @@ GameObject:
   - component: {fileID: 1839827404}
   - component: {fileID: 1839827406}
   - component: {fileID: 1839827405}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: rpgpp_lt_terrain_grass_01 (42)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -58656,7 +58726,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 579545878}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
@@ -59010,7 +59080,7 @@ GameObject:
   - component: {fileID: 1874012371}
   - component: {fileID: 1874012373}
   - component: {fileID: 1874012372}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: rpgpp_lt_wood_path_01a (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -59334,7 +59404,7 @@ GameObject:
   - component: {fileID: 1883338929}
   - component: {fileID: 1883338931}
   - component: {fileID: 1883338930}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: rpgpp_lt_hill_small_01 (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -59786,7 +59856,7 @@ GameObject:
   - component: {fileID: 1898444075}
   - component: {fileID: 1898444077}
   - component: {fileID: 1898444076}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: rpgpp_lt_terrain_sand_01 (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -60572,7 +60642,7 @@ GameObject:
   - component: {fileID: 1934072066}
   - component: {fileID: 1934072068}
   - component: {fileID: 1934072067}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: rpgpp_lt_terrain_path_01b (14)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -61530,7 +61600,7 @@ GameObject:
   - component: {fileID: 1970431435}
   - component: {fileID: 1970431437}
   - component: {fileID: 1970431436}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: rpgpp_lt_wood_path_01b (16)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -61611,7 +61681,7 @@ GameObject:
   - component: {fileID: 1972128313}
   - component: {fileID: 1972128315}
   - component: {fileID: 1972128314}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: rpgpp_lt_terrain_path_01b (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -61722,7 +61792,7 @@ GameObject:
   - component: {fileID: 1974417135}
   - component: {fileID: 1974417137}
   - component: {fileID: 1974417136}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: rpgpp_lt_terrain_grass_01 (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -61943,8 +62013,8 @@ RectTransform:
   - {fileID: 512557279}
   - {fileID: 1407041148}
   - {fileID: 1990481014}
-  m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_Father: {fileID: 329956370}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -62411,7 +62481,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1691826873}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
@@ -62603,7 +62673,7 @@ GameObject:
   - component: {fileID: 2008464671}
   - component: {fileID: 2008464673}
   - component: {fileID: 2008464672}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: rpgpp_lt_terrain_path_01b (83)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -63662,7 +63732,7 @@ GameObject:
   - component: {fileID: 2044597875}
   - component: {fileID: 2044597877}
   - component: {fileID: 2044597876}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: rpgpp_lt_terrain_path_01b (98)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -63894,8 +63964,8 @@ RectTransform:
   - {fileID: 821407937}
   - {fileID: 442173040}
   - {fileID: 770805693}
-  m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_Father: {fileID: 329956370}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -64010,7 +64080,7 @@ GameObject:
   - component: {fileID: 2056142448}
   - component: {fileID: 2056142450}
   - component: {fileID: 2056142449}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: rpgpp_lt_terrain_grass_01 (15)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -64599,7 +64669,7 @@ GameObject:
   - component: {fileID: 2074041275}
   - component: {fileID: 2074041277}
   - component: {fileID: 2074041276}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: rpgpp_lt_terrain_sand_01 (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -64817,7 +64887,7 @@ GameObject:
   - component: {fileID: 2077842389}
   - component: {fileID: 2077842391}
   - component: {fileID: 2077842390}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: rpgpp_lt_mountain_01 (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -65169,7 +65239,7 @@ GameObject:
   - component: {fileID: 2080780178}
   - component: {fileID: 2080780180}
   - component: {fileID: 2080780179}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: rpgpp_lt_terrain_path_01b (28)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -66118,7 +66188,7 @@ GameObject:
   - component: {fileID: 2102182627}
   - component: {fileID: 2102182629}
   - component: {fileID: 2102182628}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: rpgpp_lt_hill_small_02 (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -66343,7 +66413,7 @@ GameObject:
   - component: {fileID: 2106153190}
   - component: {fileID: 2106153192}
   - component: {fileID: 2106153191}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: rpgpp_lt_terrain_path_01b (85)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -66456,7 +66526,7 @@ GameObject:
   - component: {fileID: 2109589328}
   - component: {fileID: 2109589330}
   - component: {fileID: 2109589329}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: rpgpp_lt_terrain_path_01b (27)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -66641,8 +66711,8 @@ Transform:
   - {fileID: 1737053628}
   - {fileID: 528507282}
   - {fileID: 161693176}
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_Father: {fileID: 1695819066}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: 150, z: 0}
 --- !u!1 &2116112164
 GameObject:
@@ -67299,7 +67369,7 @@ GameObject:
   - component: {fileID: 2126997298}
   - component: {fileID: 2126997297}
   - component: {fileID: 2126997296}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Terrain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -67357,7 +67427,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2126997295}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -67376,8 +67446,8 @@ Transform:
   - {fileID: 2056142448}
   - {fileID: 1415274514}
   - {fileID: 934185990}
-  m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_Father: {fileID: 1695819066}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2135125623
 GameObject:
@@ -67506,7 +67576,7 @@ GameObject:
   - component: {fileID: 2135272803}
   - component: {fileID: 2135272805}
   - component: {fileID: 2135272804}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: rpgpp_lt_wood_path_01b (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -67617,7 +67687,7 @@ GameObject:
   - component: {fileID: 2144796322}
   - component: {fileID: 2144796324}
   - component: {fileID: 2144796323}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: rpgpp_lt_terrain_path_01b (96)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
