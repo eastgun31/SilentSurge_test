@@ -36,7 +36,7 @@ public class move : MonoBehaviour
             Debug.Log("切縦持失");
 
             units.Add(transform.GetChild(i).gameObject);
-            GameManager_KDG.Instance.e_population++;
+            GameManager.instance.e_population++;
         }
     }
 
@@ -44,7 +44,7 @@ public class move : MonoBehaviour
     void Update()
     {
         time += Time.deltaTime;
-        unitCount = GameManager_KDG.Instance.e_population;
+        unitCount = GameManager.instance.e_population;
 
         switch(enemies)
         {
@@ -104,20 +104,20 @@ public class move : MonoBehaviour
 
     void E_Move()
     {
-        if(GameManager_KDG.Instance.attacking == true)
+        if(GameManager.instance.attacking == true)
         {
             gameObject.transform.position =
-            Vector3.MoveTowards(transform.position, new Vector3(points[GameManager_KDG.Instance.attackPoint].transform.position.x, gameObject.transform.position.y, points[GameManager_KDG.Instance.attackPoint].transform.position.z), Time.deltaTime * speed);
+            Vector3.MoveTowards(transform.position, new Vector3(points[GameManager.instance.attackPoint].transform.position.x, gameObject.transform.position.y, points[GameManager.instance.attackPoint].transform.position.z), Time.deltaTime * speed);
 
-            if (gameObject.transform.position.x == points[GameManager_KDG.Instance.attackPoint].transform.position.x && gameObject.transform.position.z == points[GameManager_KDG.Instance.attackPoint].transform.position.z)
+            if (gameObject.transform.position.x == points[GameManager.instance.attackPoint].transform.position.x && gameObject.transform.position.z == points[GameManager.instance.attackPoint].transform.position.z)
             {
-                GameManager_KDG.Instance.attacking = false;
+                GameManager.instance.attacking = false;
                 //random = Random.Range(0, 3);
                 enemies = EnemyState.Idle;
                 time = 0;
             }
         }
-        else if(GameManager_KDG.Instance.check[0] == 0 || GameManager_KDG.Instance.check[0] == 2)
+        else if(GameManager.instance.check[0] == 0 || GameManager.instance.check[0] == 2)
         {
             gameObject.transform.position =
             Vector3.MoveTowards(transform.position, new Vector3(points[0].transform.position.x, gameObject.transform.position.y, points[0].transform.position.z), Time.deltaTime * speed);
@@ -129,7 +129,7 @@ public class move : MonoBehaviour
                 time = 0;
             }
         }
-        else if(GameManager_KDG.Instance.check[1] == 0 || GameManager_KDG.Instance.check[1] == 2)
+        else if(GameManager.instance.check[1] == 0 || GameManager.instance.check[1] == 2)
         {
             gameObject.transform.position =
             Vector3.MoveTowards(transform.position, new Vector3(points[1].transform.position.x, gameObject.transform.position.y, points[1].transform.position.z), Time.deltaTime * speed);
@@ -141,7 +141,7 @@ public class move : MonoBehaviour
                 time = 0;
             }
         }
-        else if(GameManager_KDG.Instance.check[2] == 0 || GameManager_KDG.Instance.check[2] == 2)
+        else if(GameManager.instance.check[2] == 0 || GameManager.instance.check[2] == 2)
         {
             gameObject.transform.position =
             Vector3.MoveTowards(transform.position, new Vector3(points[2].transform.position.x, gameObject.transform.position.y, points[2].transform.position.z), Time.deltaTime * speed);
@@ -193,12 +193,12 @@ public class move : MonoBehaviour
         //    Debug.Log("切縦持失");
 
         //    units.Add(transform.GetChild(i).gameObject);
-        //    GameManager_KDG.Instance.e_population++;
+        //    GameManager.instance.e_population++;
         //}
         int i = 0;
 
         units.Add(transform.GetChild(i).gameObject);
-        GameManager_KDG.Instance.e_population++;
+        GameManager.instance.e_population++;
 
 
         if (units.Count >= 5 || unitCount >= 5)
@@ -229,7 +229,7 @@ public class move : MonoBehaviour
     //        //int unitIndex = unit.unitNum;
     //        //units[unitIndex] = other.gameObject;
     //        units.Add(other.gameObject);
-    //        GameManager_KDG.Instance.e_population++;
+    //        GameManager.instance.e_population++;
     //    }
     //    if (other.tag == "Player")
     //    {
@@ -246,7 +246,7 @@ public class move : MonoBehaviour
             //int unitIndex = unit.unitNum;
             //units[unitIndex] = null;
             units.Remove(other.gameObject);
-            GameManager_KDG.Instance.e_population--;
+            GameManager.instance.e_population--;
         }
         if (other.tag == "Player")
         {

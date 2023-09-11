@@ -39,13 +39,13 @@ public class Points : MonoBehaviour
                 switch(value)
                 {
                     case 0:
-                        GameManager_KDG.Instance.check[0] = pointcheck;
+                        GameManager.instance.check[0] = pointcheck;
                         break;
                     case 1:
-                        GameManager_KDG.Instance.check[1] = pointcheck;
+                        GameManager.instance.check[1] = pointcheck;
                         break;
                     case 2:
-                        GameManager_KDG.Instance.check[2] = pointcheck;
+                        GameManager.instance.check[2] = pointcheck;
                         break;
                 }
             }
@@ -55,22 +55,22 @@ public class Points : MonoBehaviour
         {
             time += Time.deltaTime;
 
-            //GameManager_KDG.Instance.attacking = true;
+            //GameManager.instance.attacking = true;
 
             if (pointcheck == 1)
             {
-                GameManager_KDG.Instance.attacking = true;
+                GameManager.instance.attacking = true;
 
                 switch (value)
                 {
                     case 0:
-                        GameManager_KDG.Instance.attackPoint = 0;
+                        GameManager.instance.attackPoint = 0;
                         break;
                     case 1:
-                        GameManager_KDG.Instance.attackPoint = 1;
+                        GameManager.instance.attackPoint = 1;
                         break;
                     case 2:
-                        GameManager_KDG.Instance.attackPoint = 2;
+                        GameManager.instance.attackPoint = 2;
                         break;
                 }
             }
@@ -83,13 +83,13 @@ public class Points : MonoBehaviour
                 switch (value)
                 {
                     case 0:
-                        GameManager_KDG.Instance.check[0] = pointcheck;
+                        GameManager.instance.check[0] = pointcheck;
                         break;
                     case 1:
-                        GameManager_KDG.Instance.check[1] = pointcheck;
+                        GameManager.instance.check[1] = pointcheck;
                         break;
                     case 2:
-                        GameManager_KDG.Instance.check[2] = pointcheck;
+                        GameManager.instance.check[2] = pointcheck;
                         break;
                 }
             }
@@ -106,7 +106,7 @@ public class Points : MonoBehaviour
         if(other.tag == "Player")
         {
             time = 0;
-            GameManager_KDG.Instance.attacking = false;
+            GameManager.instance.attacking = false;
         }
     }
 }

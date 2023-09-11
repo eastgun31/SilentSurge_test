@@ -26,7 +26,7 @@ public class EnemySpawn : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        population = GameManager_KDG.Instance.e_population;
+        population = GameManager.instance.e_population;
 
         if(unitController.transform.position.x == gameObject.transform.position.x && unitController.transform.position.z == gameObject.transform.position.z)
         {
@@ -68,7 +68,7 @@ public class EnemySpawn : MonoBehaviour
         Debug.Log("spawn");
         GameObject enemy = Instantiate(e_unit[i], this.transform.position, Quaternion.identity);
         enemy.transform.parent = unitController.transform;
-        GameManager_KDG.Instance.e_population++;
+        GameManager.instance.e_population++;
     }
 
 }

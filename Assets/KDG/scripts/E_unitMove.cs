@@ -36,7 +36,7 @@ public class E_unitMove : MonoBehaviour
 
         if (health <= 0)
         {
-            GameManager_KDG.Instance.e_population--;
+            GameManager.instance.e_population--;
             Die();
         }
     }

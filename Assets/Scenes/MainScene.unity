@@ -323,7 +323,7 @@ PrefabInstance:
     - target: {fileID: 1019576294999820705, guid: b089433846711634aba31bd96d785c63, type: 3}
       propertyPath: home
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1477503252}
     - target: {fileID: 1019576294999820705, guid: b089433846711634aba31bd96d785c63, type: 3}
       propertyPath: points.Array.data[0]
       value: 
@@ -15593,6 +15593,10 @@ MonoBehaviour:
   attackPower: 10
   defense: 3
   moveSpeed: 7
+  check: 000000000000000000000000
+  attacking: 0
+  attackPoint: 0
+  e_population: 0
 --- !u!4 &492310980
 Transform:
   m_ObjectHideFlags: 0
