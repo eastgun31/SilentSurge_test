@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028328, g: 0.22571322, b: 0.30692163, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -365,58 +365,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 448691826}
   m_CullTransparentMesh: 1
---- !u!1 &544620081
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 544620083}
-  - component: {fileID: 544620082}
-  m_Layer: 0
-  m_Name: 2Lv
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &544620082
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 544620081}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a3d49a42374fc1a4ba17b56c73a0a9bb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  button_warrio_2Lr: {fileID: 1584183058}
-  Warrior_2L_Obj: {fileID: 0}
-  button_shield_2Lr: {fileID: 1028484906}
-  Shield_2L_Obj: {fileID: 0}
-  button_archer_2L: {fileID: 1533135986}
-  Archer_2L_Obj: {fileID: 0}
-  button_horseMan_2L: {fileID: 1451069448}
-  HorseMan_2L_Obj: {fileID: 0}
-  UpButton3L: {fileID: 1368330733}
---- !u!4 &544620083
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 544620081}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &598934004
 GameObject:
   m_ObjectHideFlags: 0
@@ -696,6 +644,75 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 673939076}
   m_CullTransparentMesh: 1
+--- !u!1 &681359599
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 681359601}
+  - component: {fileID: 681359600}
+  m_Layer: 0
+  m_Name: All_Lv
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &681359600
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 681359599}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fb8b3e2fee474442b8cc341bdcc787d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button_warrio_1Lr: {fileID: 5860714194165973458}
+  Warrior_1L_Obj: {fileID: 6308763049200563315, guid: f152cdd881504e040ac75125eb9c5234, type: 3}
+  button_shield_1Lr: {fileID: 5860714193786054663}
+  Shield_1L_Obj: {fileID: 6988547608146348804, guid: 09d38cfc2545cce47976027d6eb527a2, type: 3}
+  button_archer_1L: {fileID: 5860714195297174698}
+  Archer_1L_Obj: {fileID: 3777342728722985941, guid: bf763f39f55f5e641a3489f3686c4d06, type: 3}
+  button_horseMan_1L: {fileID: 5860714194870466832}
+  HorseMan_1L_Obj: {fileID: 6192744237874549701, guid: 8d8060435b27ac14eb708c8b49181a81, type: 3}
+  button_warrio_2Lr: {fileID: 1584183058}
+  Warrior_2L_Obj: {fileID: 1992562823711792450, guid: 25fc7204b8d9b1747a617357155888e2, type: 3}
+  button_shield_2Lr: {fileID: 1028484906}
+  Shield_2L_Obj: {fileID: 3441057918839838919, guid: e61ceb15fc8628e4bbbf2437dfc581c5, type: 3}
+  button_archer_2L: {fileID: 1533135986}
+  Archer_2L_Obj: {fileID: 7671279179571124555, guid: cdb4685029d880b459145b29b4910ded, type: 3}
+  button_horseMan_2L: {fileID: 1451069448}
+  HorseMan_2L_Obj: {fileID: 2217839459893457949, guid: 6f09b3aa799d7cd4dba57443372b8e16, type: 3}
+  button_warrio_3Lr: {fileID: 1802487518}
+  Warrior_3L_Obj: {fileID: 6334673973389527632, guid: b5d48efd859b9d143a8f1a079374899f, type: 3}
+  button_shield_3Lr: {fileID: 448691828}
+  Shield_3L_Obj: {fileID: 7504602490975632222, guid: 1eb2956761b61044182b7be1acc9ceda, type: 3}
+  button_archer_3L: {fileID: 673939078}
+  Archer_3L_Obj: {fileID: 87993198744401184, guid: 309de765b06fefd43885df40f9ac37c7, type: 3}
+  button_horseMan_3L: {fileID: 245025255}
+  HorseMan_3L_Obj: {fileID: 5879868655809889740, guid: 1bb44923676ce5a459a114818ffd18d1, type: 3}
+  UpButton2L: {fileID: 5860714193759032264}
+  UpButton3L: {fileID: 1368330733}
+--- !u!4 &681359601
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 681359599}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 960, y: 540, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -1977,57 +1994,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1584183056}
   m_CullTransparentMesh: 1
---- !u!1 &1719839038
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1719839040}
-  - component: {fileID: 1719839039}
-  m_Layer: 0
-  m_Name: 3Lv
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1719839039
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1719839038}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 718dc18b602dc274eaa9a8f96551843a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  button_warrio_3Lr: {fileID: 1802487518}
-  Warrior_3L_Obj: {fileID: 0}
-  button_shield_3Lr: {fileID: 448691828}
-  Shield_3L_Obj: {fileID: 0}
-  button_archer_3L: {fileID: 673939078}
-  Archer_3L_Obj: {fileID: 0}
-  button_horseMan_3L: {fileID: 245025255}
-  HorseMan_3L_Obj: {fileID: 0}
---- !u!4 &1719839040
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1719839038}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1802487516
 GameObject:
   m_ObjectHideFlags: 0
@@ -2245,7 +2211,7 @@ RectTransform:
   - {fileID: 673939077}
   - {fileID: 245025254}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -2349,7 +2315,7 @@ RectTransform:
   - {fileID: 1451069447}
   - {fileID: 1368330732}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -2549,7 +2515,7 @@ RectTransform:
   - {fileID: 1560588824977214899}
   - {fileID: 1560588826677603227}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -2721,7 +2687,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5129724223657238370
 GameObject:
@@ -3358,7 +3324,7 @@ RectTransform:
   - {fileID: 5860714194870466833}
   - {fileID: 5860714193759032265}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -3941,55 +3907,3 @@ MonoBehaviour:
   attackPower: 10
   defense: 3
   moveSpeed: 7
---- !u!1 &7692592248444971362
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 7692592248444971372}
-  - component: {fileID: 7692592248444971363}
-  m_Layer: 0
-  m_Name: 1Lv
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &7692592248444971363
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7692592248444971362}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 94af4eb3ee5651647976f6bf23dd5008, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  button_warrio_1Lr: {fileID: 5860714194165973458}
-  Warrior_1L_Obj: {fileID: 6308763049200563315, guid: f152cdd881504e040ac75125eb9c5234, type: 3}
-  button_shield_1Lr: {fileID: 5860714193786054663}
-  Shield_1L_Obj: {fileID: 6988547608146348804, guid: 09d38cfc2545cce47976027d6eb527a2, type: 3}
-  button_archer_1L: {fileID: 5860714195297174698}
-  Archer_1L_Obj: {fileID: 3777342728722985941, guid: bf763f39f55f5e641a3489f3686c4d06, type: 3}
-  button_horseMan_1L: {fileID: 5860714194870466832}
-  HorseMan_1L_Obj: {fileID: 6192744237874549701, guid: 8d8060435b27ac14eb708c8b49181a81, type: 3}
-  UpButton2L: {fileID: 5860714193759032264}
---- !u!4 &7692592248444971372
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7692592248444971362}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
