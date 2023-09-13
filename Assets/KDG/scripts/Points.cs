@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Points : MonoBehaviour
 {
-    public int value;
-    public int pointcheck;
+    public int value;   //점령지 넘버링 ABCDE 차례대로 01234
+    public int pointcheck; //중립상태 0 ,적점령시 1, 플레이어가 점령시 2
     public float time;
 
     // Start is called before the first frame update
@@ -63,7 +63,7 @@ public class Points : MonoBehaviour
 
             //GameManager.instance.attacking = true;
 
-            if (pointcheck == 1)
+            if (pointcheck == 1) //적이 점령시
             {
                 GameManager.instance.attacking = true;
 
@@ -87,7 +87,7 @@ public class Points : MonoBehaviour
                 }
             }
 
-            if (time > 3f)
+            if (time > 3f) //플레이어가 점령시
             {
                 time = 0;
                 pointcheck = 2;

@@ -77,6 +77,8 @@ public class ArcherStat : MonoBehaviour
             isBuffActive = true;
             buffEndTime = Time.time + buffDuration;
 
+            
+
             float buffDamage = originalDamage * 2;
 
             UpdateUnitDamage(buffDamage);
