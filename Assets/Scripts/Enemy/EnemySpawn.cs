@@ -4,24 +4,24 @@ using UnityEngine;
 
 public class EnemySpawn : MonoBehaviour
 {
-    public float gold;
+    public float gold = 50;
     public int population;
     int random;
     float spawnCool = 0;
 
     public GameObject[] unitController;
 
-    public GameObject e_Swordman;
-    public GameObject e_Shieldman;
-    public GameObject e_Archer;
-    public GameObject e_Horseman;
-
     public GameObject[] e_unit;
+
+    public int upgradeLV = 0;
+    string upgradecheck = "UpgradeCheck";
 
     // Start is called before the first frame update
     void Start()
     {
         InvokeRepeating("Upgold", 1.0f, 1.0f); //1초 후에 1초마다
+
+        StartCoroutine(upgradecheck);
     }
 
     // Update is called once per frame
@@ -41,11 +41,12 @@ public class EnemySpawn : MonoBehaviour
         {
             RandomSpawn(2);
         }
+
     }
 
     private void Upgold()
     {
-        gold += 2; //재화 2씩 증가
+        gold += 10; //재화 2씩 증가
     }
 
     void RandomSpawn(int i)
@@ -54,7 +55,7 @@ public class EnemySpawn : MonoBehaviour
 
         if (spawnCool > 1f)
         {
-            if (population <= 30)
+            if (population <= 30 && upgradeLV == 0)
             {
                 random = Random.Range(0, 4);
 
@@ -79,6 +80,61 @@ public class EnemySpawn : MonoBehaviour
                     SpawnUnit(random, i);
                 }
             }
+
+            if (population <= 30 && upgradeLV == 1)
+            {
+                random = Random.Range(4, 8);
+
+                if (random == 4 && gold >= 5)
+                {
+                    gold -= 5;
+                    SpawnUnit(random, i);
+                }
+                if (random == 5 && gold >= 5)
+                {
+                    gold -= 5;
+                    SpawnUnit(random, i);
+                }
+                if (random == 6 && gold >= 8)
+                {
+                    gold -= 8;
+                    SpawnUnit(random, i);
+                }
+                if (random == 7 && gold >= 15)
+                {
+                    gold -= 15;
+                    SpawnUnit(random, i);
+                }
+            }
+
+            if (population <= 30 && upgradeLV == 2)
+            {
+                random = Random.Range(8, 12);
+
+                if (random == 8 && gold >= 5)
+                {
+                    gold -= 5;
+                    SpawnUnit(random, i);
+                }
+                if (random == 9 && gold >= 5)
+                {
+                    gold -= 5;
+                    SpawnUnit(random, i);
+                }
+                if (random == 10 && gold >= 8)
+                {
+                    gold -= 8;
+                    SpawnUnit(random, i);
+                }
+                if (random == 11 && gold >= 15)
+                {
+                    gold -= 15;
+                    SpawnUnit(random, i);
+                }
+            }
+
+
+
             spawnCool = 0;
         }
     }
@@ -89,5 +145,34 @@ public class EnemySpawn : MonoBehaviour
         GameObject enemy = Instantiate(e_unit[i], this.transform.position, Quaternion.identity);
         enemy.transform.parent = unitController[j].transform;
         GameManager.instance.e_population++;
+    }
+
+    IEnumerator UpgradeCheck()
+    {
+        if (upgradeLV == 2)
+        {
+            StopCoroutine(upgradecheck);
+        }
+
+        if (gold >= 35 && upgradeLV == 0)
+        {
+            gold -= 35;
+            E_Upgrade();
+        }
+
+        if (gold >= 60 && upgradeLV == 1)
+        {
+            gold -= 60;
+            E_Upgrade();
+        }
+
+        yield return new WaitForSeconds(1f);
+
+        StartCoroutine(upgradecheck);
+    }
+
+    void E_Upgrade()
+    {
+        upgradeLV++;
     }
 }
