@@ -3,36 +3,36 @@ using UnityEngine.AI;
 
 public class UnitController : MonoBehaviour
 {
-	[SerializeField]
-	private	GameObject		unitMarker;
-	private	NavMeshAgent	navMeshAgent;
+    [SerializeField]
+    private GameObject unitMarker;
+    private NavMeshAgent navMeshAgent;
 
-	public int unitnumber = 0;
+    public int unitnumber = 0;
 
-	public int uhealth;
-	public int uattackPower;
-	public int udefense;
-	public float umoveSpeed;
+    public int uhealth;
+    public int uattackPower;
+    public int udefense;
+    public float umoveSpeed;
 
-	private void Awake()
-	{
-		navMeshAgent = GetComponent<NavMeshAgent>();
-	}
+    private void Awake()
+    {
+        navMeshAgent = GetComponent<NavMeshAgent>();
+    }
 
-	public void SelectUnit()
-	{
-		unitMarker.SetActive(true);
-	}
+    public void SelectUnit()
+    {
+        unitMarker.SetActive(true);
+    }
 
-	public void DeselectUnit()
-	{
-		unitMarker.SetActive(false);
-	}
+    public void DeselectUnit()
+    {
+        unitMarker.SetActive(false);
+    }
 
-	public void MoveTo(Vector3 end)
-	{
-		navMeshAgent.SetDestination(end);
-	}
+    public void MoveTo(Vector3 end)
+    {
+        navMeshAgent.SetDestination(end);
+    }
 
     private void OnEnable()
     {
@@ -122,6 +122,37 @@ public class UnitController : MonoBehaviour
             uattackPower = GameManager.instance.attackPower + 15;
             udefense = GameManager.instance.defense + 15;
             umoveSpeed = GameManager.instance.moveSpeed + 3;
+        }
+
+        //검사 패시브가 켜지면
+        if (Skill.instance.SelectAres == true)
+        {
+            if (unitnumber == 0 || unitnumber == 4 || unitnumber == 8)
+            {
+                uhealth += 30;
+                uattackPower += 3;
+                udefense += 3;
+            }
+        }
+        //방패병
+        if (Skill.instance.SelectHephaestus == true)
+        {
+            if (unitnumber == 1 || unitnumber == 5 || unitnumber == 9)
+            {
+                uhealth += 30;
+                uattackPower += 3;
+                udefense += 3;
+            }
+        }
+        //궁수
+        if (Skill.instance.SelectArtemis == true)
+        {
+            if (unitnumber == 2 || unitnumber == 6 || unitnumber == 10)
+            {
+                uhealth += 30;
+                uattackPower += 3;
+                udefense += 3;
+            }
         }
     }
 }

@@ -25,8 +25,6 @@ public class Skill : MonoBehaviour
 {
     public static Skill instance;
 
-    public ArcherStat unitStat;
-
     float originalDamage; // 능력치 변경 이전의 데미지
     float buffDuration = 5f; // 스킬 지속 시간
     bool isBuffActive = false; // 스킬 활성화 여부
@@ -57,15 +55,21 @@ public class Skill : MonoBehaviour
 
     public GameObject skillNum_10; //디오니소스 공버프 소모
 
+    public bool SelectDemeter = true;
+
     public bool SelectHephaestus = false;
     public bool SelectArtemis = false;
     public bool SelectAres = true;
 
     public GameObject skills { get; set; }
 
+    void Awake()
+    {
+        instance = this;
+    }
+
     void Start()
     {
-        originalDamage = unitStat.power;
     }
 
     void Update()
@@ -137,50 +141,10 @@ public class Skill : MonoBehaviour
                     ShowSkillRange();
                 }
             }
-
-        }
-
-        if (isBuffActive && Time.time >= buffEndTime)
-        {
-            EndBuffSkill();
         }
     }
 
-    void UseBuffSkill()
-    {
-        if (!isBuffActive)
-        {
-            // 스킬을 활성화하고 능력치를 증가
-            isBuffActive = true;
-            buffEndTime = Time.time + buffDuration;
 
-            float buffDamage = originalDamage * 2;
-
-            UpdateUnitDamage(buffDamage);
-
-            Debug.Log("스텟 상승");
-        }
-    }
-
-    void EndBuffSkill()
-    {
-        if (isBuffActive)
-        {
-            // 스킬을 비활성화하고 원래 능력치로 되돌림
-            isBuffActive = false;
-
-            // 실제 유닛의 데미지를 원래대로 돌려놓습니다.
-            UpdateUnitDamage(originalDamage);
-
-            Debug.Log("스텟 복구");
-        }
-    }
-
-    void UpdateUnitDamage(float newDamage)
-    {
-        unitStat.power = newDamage;
-        Debug.Log("스텟 변동");
-    }
 
 
 
