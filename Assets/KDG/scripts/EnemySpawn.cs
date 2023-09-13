@@ -33,11 +33,11 @@ public class EnemySpawn : MonoBehaviour
         {
             RandomSpawn(0);
         }
-        else if (unitController[1].transform.position == gameObject.transform.position && unitController[0].transform.childCount <= 10)
+        else if (unitController[1].transform.position == gameObject.transform.position && unitController[1].transform.childCount <= 10)
         {
             RandomSpawn(1);
         }
-        else if (unitController[2].transform.position == gameObject.transform.position && unitController[0].transform.childCount <= 10)
+        else if (unitController[2].transform.position == gameObject.transform.position && unitController[2].transform.childCount <= 10)
         {
             RandomSpawn(2);
         }

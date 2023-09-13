@@ -26,7 +26,7 @@ public class E_unitMove : MonoBehaviour
         time += Time.deltaTime;
 
         gameObject.transform.position =
-        Vector3.MoveTowards(transform.position, new Vector3(follower.transform.position.x, gameObject.transform.position.y, follower.transform.position.z), Time.deltaTime * speed);
+        Vector3.MoveTowards(transform.position, follower.transform.position, Time.deltaTime * speed);
 
         if (time > timer)
         {

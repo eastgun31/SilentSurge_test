@@ -4858,6 +4858,9 @@ MonoBehaviour:
   skillNum_1: {fileID: 5882814825712509882, guid: 3b137983b63d4a649f04205ef84161a2, type: 3}
   skillNum_5: {fileID: 0}
   skillNum_10: {fileID: 0}
+  SelectHephaestus: 0
+  SelectArtemis: 0
+  SelectAres: 1
 --- !u!4 &125738262
 Transform:
   m_ObjectHideFlags: 0
@@ -15513,7 +15516,7 @@ MonoBehaviour:
   attackPower: 10
   defense: 3
   moveSpeed: 7
-  check: 000000000000000000000000
+  check: 0000000000000000000000000000000000000000
   attacking: 0
   attackPoint: 0
   e_population: 4
@@ -19671,7 +19674,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47da01a2b39bc2f489a1684871626296, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  value: 0
+  value: 3
   pointcheck: 0
   time: 0
 --- !u!65 &645044362
@@ -26958,7 +26961,6 @@ GameObject:
   m_Component:
   - component: {fileID: 861856507}
   - component: {fileID: 861856506}
-  - component: {fileID: 861856505}
   m_Layer: 0
   m_Name: PlayerHome
   m_TagString: Apoint
@@ -26966,21 +26968,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &861856505
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 861856504}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 47da01a2b39bc2f489a1684871626296, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  value: 0
-  pointcheck: 0
-  time: 0
 --- !u!65 &861856506
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -30860,7 +30847,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: 0.38268343, y: 0, z: 0, w: 0.92387956}
-  m_LocalPosition: {x: 0, y: 15, z: 0}
+  m_LocalPosition: {x: 22.5, y: 19.6, z: 7.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -36269,7 +36256,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47da01a2b39bc2f489a1684871626296, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  value: 0
+  value: 4
   pointcheck: 0
   time: 0
 --- !u!65 &1141676771

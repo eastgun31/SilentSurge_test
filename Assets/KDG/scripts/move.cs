@@ -34,9 +34,9 @@ public class move : MonoBehaviour
     void Update()
     {
         time += Time.deltaTime;
-        unitCount = GameManager.instance.e_population;
+        unitCount = transform.childCount;
 
-        switch(enemies)
+        switch (enemies)
         {
             case EnemyState.firstMove:
                 E_firstMove();
@@ -62,7 +62,7 @@ public class move : MonoBehaviour
         //Debug.Log("d");
         random = Random.Range(0, 5);
 
-        if (units.Count == 0 || unitCount <= 0)
+        if (transform.childCount ==0)
         {
             units.Clear();
             enemies = EnemyState.back;

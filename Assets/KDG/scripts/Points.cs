@@ -79,10 +79,10 @@ public class Points : MonoBehaviour
                         GameManager.instance.attackPoint = 2;
                         break;
                     case 3:
-                        GameManager.instance.check[3] = pointcheck;
+                        GameManager.instance.attackPoint = 3;
                         break;
                     case 4:
-                        GameManager.instance.check[4] = pointcheck;
+                        GameManager.instance.attackPoint = 4;
                         break;
                 }
             }
