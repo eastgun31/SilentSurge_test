@@ -9,6 +9,7 @@ public class In_Game_UI : MonoBehaviour
     public Animator Tab;
     public GameObject On;
     public GameObject ESC_image;
+    public GameObject Option_window;
 
     public bool ESC_bool = true;
     public bool ESC_ON = true;
@@ -43,13 +44,31 @@ public class In_Game_UI : MonoBehaviour
             ESC_image.SetActive(true);
             ESC_bool = false;
             _OK_ = false;
+            Time.timeScale = 0; //ESC를 누르면 시간이 멈춘다
         }
-        else if (Input.GetKeyDown(KeyCode.Escape) && (On.activeSelf == true) && (ESC_bool == false))
+        else if (Input.GetKeyDown(KeyCode.Escape) && (On.activeSelf == true) && (ESC_bool == false) && (Option_window.activeSelf == false))
         {
             ESC_image.SetActive(false);
+
             ESC_bool = true;
             _OK_ = true;
+            Time.timeScale = 1; //ESC를 다시 누르면 시간이 흐른다.
+        }
+        else
+        {
+
         }
 
+    }
+    public void ESC_OFF()
+    {
+        if ((On.activeSelf == true) && (ESC_bool == false) && (Option_window.activeSelf == false))
+        {
+            ESC_image.SetActive(false);
+
+            ESC_bool = true;
+            _OK_ = true;
+            Time.timeScale = 1; //ESC를 다시 누르면 시간이 흐른다.
+        }
     }
 }

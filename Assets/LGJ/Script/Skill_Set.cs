@@ -98,7 +98,7 @@ public class Skill_Set : MonoBehaviour
         {
 
         }
-
+        //-------------------------------액티브--------------------------------------------//
         if ((ZEUS_S == true) && (_1_1 == false) && (start.activeSelf == true)) //start가 활성화 되었을때
         {
             ZEUS_i.SetActive(true);
@@ -114,6 +114,7 @@ public class Skill_Set : MonoBehaviour
             Hades_i.SetActive(true);
             _1_3 = true;
         }
+        //---------------------------------패시브-------------------------------------------//
         else if ((Hephaestus_S == true) && (_2_1 == false) && (start.activeSelf == true))
         {
             Hephaestus_i.SetActive(true);
@@ -129,6 +130,7 @@ public class Skill_Set : MonoBehaviour
             Ares_i.SetActive(true);
             _2_3 = true;
         }
+        //---------------------------------버프---------------------------------------------//
         else if ((Hera_S == true) && (_3_1 == false) && (start.activeSelf == true))
         {
             Hera_i.SetActive(true);
@@ -149,6 +151,7 @@ public class Skill_Set : MonoBehaviour
             Aphrodite_i.SetActive(true);
             _3_4 = true;
         }
+        //--------------------------------소모품--------------------------------------------//
         else if ((Hermes_S == true) && (_4_1 == false) && (start.activeSelf == true))
         {
             Hermes_i.SetActive(true);
@@ -169,6 +172,108 @@ public class Skill_Set : MonoBehaviour
             Demetere_i.SetActive(true);
             _4_4 = true;
         }
+        else
+        {
 
+        }
+        //----------------------------------------------------------------------------------//
+        //-------------------------------액티브--------------------------------------------//
+        if (ZEUS_S == true) //start가 활성화 되었을때
+        {
+            if (Input.GetKeyDown(KeyCode.Alpha1))
+            {
+              
+            }
+        }
+        else if (Poseidon_S == true)
+        {
+            if (Input.GetKeyDown(KeyCode.Alpha1))
+            {
+              
+            }
+        }
+        else if (Hades_S == true)
+        {
+            if (Input.GetKeyDown(KeyCode.Alpha1))
+            {
+              
+            }
+        }
+        //---------------------------------패시브-------------------------------------------//
+        //else if (Hephaestus_S == true)
+        //{
+         
+        //}
+        //else if (ARTMS_S == true)
+        //{
+         
+        //}
+        //else if (Ares_S == true)
+        //{
+         
+        //}
+        //---------------------------------버프---------------------------------------------//
+        else if (Hera_S == true)
+        {
+            if (Input.GetKeyDown(KeyCode.Alpha2))
+            {
+
+            }
+        }
+        else if (Apollo_S == true)
+        {
+            if (Input.GetKeyDown(KeyCode.Alpha2))
+            {
+
+            }
+        }
+        else if (Athena_S == true)
+        {
+            if (Input.GetKeyDown(KeyCode.Alpha2))
+            {
+
+            }
+        }
+        else if (Aphrodite_S == true)
+        {
+            if (Input.GetKeyDown(KeyCode.Alpha2))
+            {
+
+            }
+        }
+        //--------------------------------소모품--------------------------------------------//
+        else if (Hermes_S == true)
+        {
+            if (Input.GetKeyDown(KeyCode.Alpha3))
+            {
+
+            }
+        }
+        else if (Hestia_S == true)
+        {
+            if (Input.GetKeyDown(KeyCode.Alpha3))
+            {
+
+            }
+        }
+        else if (Dionysus_S == true)
+        {
+            if (Input.GetKeyDown(KeyCode.Alpha3))
+            {
+
+            }
+        }
+        else if (Demetere_S == true)
+        {
+            if (Input.GetKeyDown(KeyCode.Alpha3))
+            {
+
+            }
+        }
+        else
+        {
+
+        }
+        //----------------------------------------------------------------------------------//
     }
 }
