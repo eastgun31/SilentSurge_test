@@ -31,12 +31,11 @@ public class E_unitMove : MonoBehaviour
         if (time > timer)
         {
             time = 0;
-            health -= 10;
+            health -= 4;
         }
 
         if (health <= 0)
         {
-            GameManager.instance.e_population--;
             Die();
         }
     }
@@ -48,6 +47,7 @@ public class E_unitMove : MonoBehaviour
 
     void Die()
     {
+        GameManager.instance.e_population--;
         Destroy(gameObject);
     }
 

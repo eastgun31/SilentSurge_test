@@ -34,11 +34,11 @@ public class GameManager : MonoBehaviour
     public float moveSpeed = 7;
     //
 
-    public int[] check = { 0, 0, 0 };   //거점
+    public int[] check = { 0, 0, 0,0,0 };   //거점
 
     public bool attacking = false;  //적이 공격받는상태
     public int attackPoint = 0;     //적이 공격받는 거점
-    public int e_population = 0;    //적유닛수
+    public int e_population = 4;    //적유닛수
 
 
     private void Start()
