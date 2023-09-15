@@ -6,22 +6,34 @@ using UnityEngine.UI;
 public class MouseEvent : MonoBehaviour
 {
     public GameObject image_Change;
-    //메인화면에서 이용되는 온마우스 함수들임 절대 건들지 말것
+    public bool im_check = true;
+
 
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame
     void Update()
     {
+
+
+        if ((FindAnyObjectByType<HT_OP_Window>().HTP_ON.activeSelf == true) ||
+            (FindAnyObjectByType<HT_OP_Window>().OP_ON.activeSelf == true))
+        {
+            im_check = false;
+        }
+        else
+        {
+            im_check = true;
+        }
         
     }
 
     private void OnMouseEnter()
     {
-        if (true)
+        if (im_check = true)
         {
             image_Change.SetActive(true);
         }
@@ -32,7 +44,7 @@ public class MouseEvent : MonoBehaviour
 
     private void OnMouseExit()
     {
-        if (true)
+        if (im_check = true)
         {
             image_Change.SetActive(false);
         }
