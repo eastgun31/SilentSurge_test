@@ -3418,7 +3418,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &108625212
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32007,10 +32007,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 930402845}
-  - component: {fileID: 930402844}
   - component: {fileID: 930402843}
   - component: {fileID: 930402842}
   - component: {fileID: 930402841}
+  - component: {fileID: 930402844}
   m_Layer: 0
   m_Name: PlayerController
   m_TagString: Untagged
@@ -32031,6 +32031,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dragRectangle: {fileID: 770805693}
+  mainCamera: {fileID: 963194227}
 --- !u!114 &930402842
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32061,7 +32062,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea8eff9af2dbd3f4993562cf40f0e8e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unitSpawner: {fileID: 930402844}
+  all_Lv_LCL: {fileID: 930402844}
+  selectedUnitList: []
+  UnitList: []
 --- !u!114 &930402844
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32071,11 +32074,39 @@ MonoBehaviour:
   m_GameObject: {fileID: 930402840}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c85379875a6446643aa9f017bfd55feb, type: 3}
+  m_Script: {fileID: 11500000, guid: 9fb8b3e2fee474442b8cc341bdcc787d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unitPrefab: {fileID: 179124, guid: 814cec2dc5c497c44aa68bce0a1d5b70, type: 3}
-  maxUnitCount: 10
+  warrio_spawnPosition: {x: 0, y: 0, z: 0}
+  shield_spawnPosition: {x: 0, y: 0, z: 0}
+  Archer_spawnPosition: {x: 0, y: 0, z: 0}
+  HorseMan_spawnPosition: {x: 0, y: 0, z: 0}
+  button_warrio_1Lr: {fileID: 2015794782}
+  Warrior_1L_Obj: {fileID: 182410, guid: de54a0af05ae97c4bb5d0d0397831f40, type: 3}
+  button_shield_1Lr: {fileID: 108389525}
+  Shield_1L_Obj: {fileID: 150198, guid: 5b1da2bc159d3094cbff282a2cdd46a5, type: 3}
+  button_archer_1L: {fileID: 512557282}
+  Archer_1L_Obj: {fileID: 179124, guid: 814cec2dc5c497c44aa68bce0a1d5b70, type: 3}
+  button_horseMan_1L: {fileID: 1407041151}
+  HorseMan_1L_Obj: {fileID: 158504, guid: e351eb9db7ad83f4fa1fd5bf111ca44f, type: 3}
+  button_warrio_2Lr: {fileID: 1520265885}
+  Warrior_2L_Obj: {fileID: 182410, guid: 229fd1d34fc6b0c46af61ac8876dda36, type: 3}
+  button_shield_2Lr: {fileID: 1003722792}
+  Shield_2L_Obj: {fileID: 150198, guid: 6e83b2a92467ca940bf8eb8e00359f74, type: 3}
+  button_archer_2L: {fileID: 1201814147}
+  Archer_2L_Obj: {fileID: 179124, guid: ad581838e7cbc2a4bb640aa670a3c5b9, type: 3}
+  button_horseMan_2L: {fileID: 316068736}
+  HorseMan_2L_Obj: {fileID: 158504, guid: 8ed72d2772e8cfe46914d71517919699, type: 3}
+  button_warrio_3Lr: {fileID: 294847225}
+  Warrior_3L_Obj: {fileID: 182410, guid: ff26a266a4eec664890d60fb69ccc3b7, type: 3}
+  button_shield_3Lr: {fileID: 1824253980}
+  Shield_3L_Obj: {fileID: 150198, guid: 31e4f24204bc43b4787e0ddadcf4840d, type: 3}
+  button_archer_3L: {fileID: 61985528}
+  Archer_3L_Obj: {fileID: 179124, guid: ef245657bcee746458b5fc79ab7e5f45, type: 3}
+  button_horseMan_3L: {fileID: 1786390117}
+  HorseMan_3L_Obj: {fileID: 158504, guid: 60350ed9f9b064842b9b32d3ae3dca22, type: 3}
+  UpButton2L: {fileID: 1990481011}
+  UpButton3L: {fileID: 1858954433}
 --- !u!4 &930402845
 Transform:
   m_ObjectHideFlags: 0
@@ -40099,7 +40130,7 @@ GameObject:
   - component: {fileID: 1198333753}
   - component: {fileID: 1198333752}
   - component: {fileID: 1198333751}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
