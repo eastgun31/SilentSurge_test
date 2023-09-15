@@ -69,11 +69,10 @@ public class All_Lv_LCL : MonoBehaviour
     {
         Gold = GameManager.instance.gold;
         U = GameManager.instance.All_Obj;
-        warrio_spawnPosition = new Vector3(25, 0, 35);
-        warrio_spawnPosition = new Vector3(30, 0, 36); //위치 지정
-        shield_spawnPosition = new Vector3(32, 0, 34);
-        Archer_spawnPosition = new Vector3(34, 0, 32);
-        HorseMan_spawnPosition = new Vector3(36, 0, 30);
+        warrio_spawnPosition = new Vector3(20, 0, 28); //위치 지정
+        shield_spawnPosition = new Vector3(23, 0, 27);
+        Archer_spawnPosition = new Vector3(25, 0, 25);
+        HorseMan_spawnPosition = new Vector3(26, 0, 22);
 
         button_warrio_1Lr.interactable = (Gold >= 5); //검사 1레벨 5코인이 없을 시 버튼 비활성화
         button_shield_1Lr.interactable = (Gold >= 5); //방패병 1레벨 5코인이 없을 시 버튼 비활성화

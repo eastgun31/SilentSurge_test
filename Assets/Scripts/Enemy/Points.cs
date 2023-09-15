@@ -8,6 +8,8 @@ public class Points : MonoBehaviour
     public int pointcheck; //중립상태 0 ,적점령시 1, 플레이어가 점령시 2
     public float time;
 
+    private int ppoint = 0;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -17,7 +19,31 @@ public class Points : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (pointcheck == 2) //pointcheck가 0이었다가 2가 되면 재화 획득
+        {
+            if (ppoint == 0)
+            {
+                GameManager.instance.gold += 200;
+            }
+        }
+
+        if (pointcheck == 2) //pointcheck가 1이었다가 2가 되면 재화 획득
+        {
+            if (ppoint == 1)
+            {
+                GameManager.instance.gold += 100;
+            }
+        }
+
+        //if (pointcheck == 3) //pointcheck가 1이었다가 2가 되면 재화 획득
+        //{
+        //    if (ppoint == 1)
+        //    {
+        //        GameManager.instance.gold += 100;
+        //    }
+        //}
+
+        ppoint = pointcheck;
     }
 
     private void OnTriggerStay(Collider other)
