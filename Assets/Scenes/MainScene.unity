@@ -6985,8 +6985,6 @@ MonoBehaviour:
   population: 0
   unitController:
   - {fileID: 1019576294996544492}
-  - {fileID: 681252146}
-  - {fileID: 800344200}
   e_unit:
   - {fileID: 2564687942621342655, guid: 312b49af41fb3e4408c1aadba9ae6416, type: 3}
   - {fileID: 6352217610087777472, guid: cb68e858baa27054992c912eaa4cc093, type: 3}
@@ -17271,6 +17269,8 @@ MonoBehaviour:
   attacking: 0
   attackPoint: 0
   e_population: 4
+  pointBattle: 0
+  battle: 0
 --- !u!4 &492310980
 Transform:
   m_ObjectHideFlags: 0
@@ -21703,6 +21703,16 @@ MonoBehaviour:
   value: 3
   pointcheck: 0
   time: 0
+  playerhome: {fileID: 861856504}
+  e_unit: []
+  points:
+  - {fileID: 1524525830}
+  - {fileID: 750327214}
+  - {fileID: 933587122}
+  - {fileID: 645044359}
+  - {fileID: 1141676768}
+  p_distance: 0
+  e_distance: 0
 --- !u!65 &645044362
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -21714,7 +21724,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2, y: 2, z: 2}
+  m_Size: {x: 10, y: 5, z: 10}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &651043283
 GameObject:
@@ -23199,59 +23209,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 674364069}
   m_Mesh: {fileID: 4300000, guid: 1ce369e1e72a5264596b04f7e99dfeab, type: 3}
---- !u!1 &681252146
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 681252148}
-  - component: {fileID: 681252147}
-  m_Layer: 0
-  m_Name: EnemyController (1)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &681252147
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 681252146}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f83b11017391e0645b3edae24378400a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  points:
-  - {fileID: 1524525830}
-  - {fileID: 750327214}
-  - {fileID: 933587122}
-  - {fileID: 645044359}
-  - {fileID: 1141676768}
-  units: []
-  home: {fileID: 232280069}
-  playerhome: {fileID: 861856504}
-  unitCount: 0
---- !u!4 &681252148
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 681252146}
-  m_LocalRotation: {x: 0, y: 0.9396927, z: -0, w: -0.3420201}
-  m_LocalPosition: {x: 220, y: 0, z: 220}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 850490767}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 220, z: 0}
 --- !u!1 &681323007
 GameObject:
   m_ObjectHideFlags: 0
@@ -25488,6 +25445,16 @@ MonoBehaviour:
   value: 1
   pointcheck: 0
   time: 0
+  playerhome: {fileID: 861856504}
+  e_unit: []
+  points:
+  - {fileID: 1524525830}
+  - {fileID: 750327214}
+  - {fileID: 933587122}
+  - {fileID: 645044359}
+  - {fileID: 1141676768}
+  p_distance: 0
+  e_distance: 0
 --- !u!65 &750327217
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -25499,7 +25466,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2, y: 2, z: 2}
+  m_Size: {x: 10, y: 5, z: 10}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &750639608
 GameObject:
@@ -27653,59 +27620,6 @@ Transform:
   m_Father: {fileID: 395436638}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &800344200
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 800344201}
-  - component: {fileID: 800344202}
-  m_Layer: 0
-  m_Name: EnemyController (2)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &800344201
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 800344200}
-  m_LocalRotation: {x: 0, y: 0.9396927, z: -0, w: -0.3420201}
-  m_LocalPosition: {x: 220, y: 0, z: 220}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 850490767}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 220, z: 0}
---- !u!114 &800344202
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 800344200}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f83b11017391e0645b3edae24378400a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  points:
-  - {fileID: 1524525830}
-  - {fileID: 750327214}
-  - {fileID: 933587122}
-  - {fileID: 645044359}
-  - {fileID: 1141676768}
-  units: []
-  home: {fileID: 232280069}
-  playerhome: {fileID: 861856504}
-  unitCount: 0
 --- !u!1 &804955788
 GameObject:
   m_ObjectHideFlags: 0
@@ -29277,8 +29191,6 @@ Transform:
   m_Children:
   - {fileID: 232280071}
   - {fileID: 1019576294996544489}
-  - {fileID: 681252148}
-  - {fileID: 800344201}
   - {fileID: 1477503253}
   m_Father: {fileID: 0}
   m_RootOrder: 9
@@ -32147,7 +32059,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 933587122}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -95.5, y: 1, z: -14.8}
+  m_LocalPosition: {x: -95.5, y: 1, z: -10.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1245186663}
@@ -32168,6 +32080,16 @@ MonoBehaviour:
   value: 2
   pointcheck: 0
   time: 0
+  playerhome: {fileID: 861856504}
+  e_unit: []
+  points:
+  - {fileID: 1524525830}
+  - {fileID: 750327214}
+  - {fileID: 933587122}
+  - {fileID: 645044359}
+  - {fileID: 1141676768}
+  p_distance: 0
+  e_distance: 0
 --- !u!65 &933587125
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -32179,7 +32101,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2, y: 2, z: 2}
+  m_Size: {x: 10, y: 5, z: 10}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &934176008
 GameObject:
@@ -38380,6 +38302,16 @@ MonoBehaviour:
   value: 4
   pointcheck: 0
   time: 0
+  playerhome: {fileID: 861856504}
+  e_unit: []
+  points:
+  - {fileID: 1524525830}
+  - {fileID: 750327214}
+  - {fileID: 933587122}
+  - {fileID: 645044359}
+  - {fileID: 1141676768}
+  p_distance: 0
+  e_distance: 0
 --- !u!65 &1141676771
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -38391,7 +38323,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2, y: 2, z: 2}
+  m_Size: {x: 10, y: 5, z: 10}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1141831885
 GameObject:
@@ -40135,7 +40067,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1198333750
 Transform:
@@ -49008,7 +48940,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 850490767}
-  m_RootOrder: 4
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 110.574, z: 0}
 --- !u!1 &1481255673
 GameObject:
@@ -50771,6 +50703,16 @@ MonoBehaviour:
   value: 0
   pointcheck: 0
   time: 0
+  playerhome: {fileID: 861856504}
+  e_unit: []
+  points:
+  - {fileID: 1524525830}
+  - {fileID: 750327214}
+  - {fileID: 933587122}
+  - {fileID: 645044359}
+  - {fileID: 1141676768}
+  p_distance: 0
+  e_distance: 0
 --- !u!65 &1524525833
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -50782,7 +50724,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2, y: 2, z: 2}
+  m_Size: {x: 10, y: 5, z: 10}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1531468426
 GameObject:
@@ -70807,4 +70749,15 @@ MonoBehaviour:
   units: []
   home: {fileID: 232280069}
   playerhome: {fileID: 861856504}
+  e_unit:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   unitCount: 0

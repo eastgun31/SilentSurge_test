@@ -8,12 +8,13 @@ public class move : MonoBehaviour
     public List<GameObject> units = new List<GameObject>();
     public GameObject home;
     public GameObject playerhome;
+    public E_unitMove[] e_unit;
 
     public int unitCount;
     int random;
     float time;
     float starttimer = 1.5f;
-    float speed = 7f;
+    float speed = 5f;
 
     enum EnemyState
     {
@@ -54,25 +55,21 @@ public class move : MonoBehaviour
                 E_Back();
                 break;
         }
-
     }
 
     void E_Idle()
     {
-        //Debug.Log("d");
         random = Random.Range(0, 5);
 
-        if (transform.childCount ==0)
+        if (transform.childCount == 0)
         {
             units.Clear();
-            enemies = EnemyState.back;
-            //Debug.Log("empty");
+            enemies = EnemyState.spawn;
         }
 
-        if (time>starttimer)
+        if (time > starttimer)
         {
             time = 0;
-            //Debug.Log("f");
             enemies = EnemyState.move;
         }
     }
@@ -86,7 +83,6 @@ public class move : MonoBehaviour
 
             if (gameObject.transform.position == points[random].transform.position)
             {
-                //random = Random.Range(0, 3);
                 enemies = EnemyState.Idle;
                 time = 0;
             }
@@ -97,34 +93,33 @@ public class move : MonoBehaviour
     {
         if (GameManager.instance.attacking == true)
         {
-            gameObject.transform.position =
-            Vector3.MoveTowards(transform.position, points[GameManager.instance.attackPoint].transform.position, Time.deltaTime * speed);
-
+            for (int i = 0; i < transform.childCount; i++)
+            {
+                e_unit[i] = transform.GetChild(i).gameObject.GetComponent<E_unitMove>();
+                e_unit[i].MovePoint(points[GameManager.instance.attackPoint].transform.position);
+            }
             if (gameObject.transform.position == points[GameManager.instance.attackPoint].transform.position)
             {
                 GameManager.instance.attacking = false;
-                //random = Random.Range(0, 3);
                 enemies = EnemyState.Idle;
                 time = 0;
             }
         }
         else if (GameManager.instance.check[random] == 0 || GameManager.instance.check[random] == 2)
         {
-            gameObject.transform.position =
-            Vector3.MoveTowards(transform.position, points[random].transform.position, Time.deltaTime * speed);
-
-            if (gameObject.transform.position == points[random].transform.position)
+            for (int i = 0; i < transform.childCount; i++)
             {
-                //random = Random.Range(0, 3);
-                enemies = EnemyState.Idle;
-                time = 0;
+                e_unit[i] = transform.GetChild(i).gameObject.GetComponent<E_unitMove>();
+                e_unit[i].MovePoint(points[random].transform.position);
             }
         }
         else if (GameManager.instance.check[0] == 1 && GameManager.instance.check[1] == 1 && GameManager.instance.check[2] == 1 && GameManager.instance.check[3] == 1 && GameManager.instance.check[4] == 1)
         {
-            gameObject.transform.position =
-            Vector3.MoveTowards(transform.position, playerhome.transform.position, Time.deltaTime * speed);
-
+            for (int i = 0; i < transform.childCount; i++)
+            {
+                e_unit[i] = transform.GetChild(i).gameObject.GetComponent<E_unitMove>();
+                e_unit[i].MovePoint(playerhome.transform.position);
+            }
         }
         else
         {
@@ -134,11 +129,8 @@ public class move : MonoBehaviour
         if (transform.childCount == 0)
         {
             units.Clear();
-            enemies = EnemyState.back;
-            //Debug.Log("empty");
+            enemies = EnemyState.spawn;
         }
-
-
     }
 
     void E_Spawn()
@@ -150,7 +142,6 @@ public class move : MonoBehaviour
 
         if (transform.childCount >= 10)
         {
-            //Debug.Log("spawning");
             enemies = EnemyState.Idle;
         }
     }

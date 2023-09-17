@@ -1306,9 +1306,10 @@ GameObject:
   - component: {fileID: 181063848292244231}
   - component: {fileID: 6355709914458659397}
   - component: {fileID: -6535857802268959198}
+  - component: {fileID: 7673135376936176638}
   m_Layer: 6
   m_Name: Horseman_L3
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1446,6 +1447,22 @@ MonoBehaviour:
   uattackPower: 0
   udefense: 0
   umoveSpeed: 0
+--- !u!54 &7673135376936176638
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 158504}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 84
+  m_CollisionDetection: 0
 --- !u!1 &161972
 GameObject:
   m_ObjectHideFlags: 0

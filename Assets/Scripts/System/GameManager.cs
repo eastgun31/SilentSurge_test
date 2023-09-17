@@ -40,6 +40,8 @@ public class GameManager : MonoBehaviour
     public int attackPoint = 0;     //적이 공격받는 거점
     public int e_population = 4;    //적유닛수
 
+    public bool pointBattle = false; //전투상태
+    public bool battle = false;      //전투상태
 
     private void Start()
     {
