@@ -16,9 +16,6 @@ public class In_Game_UI : MonoBehaviour
     public bool ESC_ON = true;
     public bool _OK_ = true;
 
-    public Text test_text; //테스트 용도입니다
-    float time; //테스트 용도입니다
-
     void Start()
     {
             
@@ -27,11 +24,6 @@ public class In_Game_UI : MonoBehaviour
     
     void Update()
     {
-        if (On.activeSelf == true)
-        {
-            time += Time.deltaTime; //테스트 용도입니다
-            test_text.text = time.ToString(); //테스트 용도입니다
-        }
         
 
         if (Input.GetKeyDown(KeyCode.Tab) && ( On.activeSelf == true) && (_OK_ == true))
