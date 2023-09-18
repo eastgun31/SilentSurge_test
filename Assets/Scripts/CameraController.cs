@@ -16,6 +16,7 @@ public class CameraController : MonoBehaviour
     float minZ = 0;
     float maxZ = 230;
 
+
     // Start is called before the first frame update
     void Start()
     {
