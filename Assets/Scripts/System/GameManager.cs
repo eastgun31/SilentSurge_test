@@ -34,7 +34,7 @@ public class GameManager : MonoBehaviour
     public float moveSpeed = 7;
     //
 
-    public int[] check = { 0, 0, 0,0,0 };   //거점
+    public int[] check = { 0, 0, 0,0,0 };   //거점, 0 중립, 1 적이점령, 2플레이어, 3거점에서 전투
 
     public bool attacking = false;  //적이 공격받는상태
     public int attackPoint = 0;     //적이 공격받는 거점
