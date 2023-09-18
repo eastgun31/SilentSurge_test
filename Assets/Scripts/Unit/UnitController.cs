@@ -9,9 +9,9 @@ public class UnitController : MonoBehaviour
 
     public int unitnumber = 0;
 
-    public int uhealth;
-    public int uattackPower;
-    public int udefense;
+    public float uhealth;
+    public float uattackPower;
+    public float udefense;
     public float umoveSpeed;
 
     private void Awake()
