@@ -38,9 +38,9 @@ public class Skill : MonoBehaviour
     private bool isSkillReady = true; // 스킬 사용 가능한지 여부
     private bool isShowSkillRange = false; //범위 표시여부 
 
-    bool isSkillReady_1 = true;
-    bool isSkillReady_2 = true;
-    bool isSkillReady_3 = true;
+    bool isSkillReady_1 = false;
+    bool isSkillReady_2 = false;
+    bool isSkillReady_3 = false;
 
     float skillCooldown_1 = 5.0f; //쿨타임
     float skillCooldown_2 = 10.0f; //쿨타임
@@ -51,7 +51,7 @@ public class Skill : MonoBehaviour
 
     public GameObject skillNum_1; //제우스 액티브
 
-    public GameObject skillNum_5; //아폴론 액티브
+    public GameObject skillNum_5; //아폴론 액티브  
 
     public GameObject skillNum_10; //디오니소스 공버프 소모
 
@@ -74,17 +74,7 @@ public class Skill : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0) && skillRangeInstance != null)
-        {
-            //if (isSkillReady_1 && skillRangeInstance != null && isShowSkillRange)
-            //    UseZeusSkill();
-
-            //if (isSkillReady_2 && skillRangeInstance != null && isShowSkillRange)
-            //    UseApolloSkill();
-
-            if (isSkillReady_3 && skillRangeInstance != null && isShowSkillRange)
-                UseDionysusSkill();
-        }
+        SkillCoolDown_1();
 
         // 마우스 위치에 스킬 범위를 따라다니도록 업데이트
         if (skillRangeInstance != null)
@@ -92,22 +82,32 @@ public class Skill : MonoBehaviour
             UpdateSkillRangePosition();
         }
 
-        // 1번 키를 누를 때 스킬 범위를 표시
-        if (Input.GetKeyDown(KeyCode.Alpha1))
+        if (Input.GetMouseButtonDown(0) && skillRangeInstance != null)
         {
-            if (isSkillReady_1)
+            if (isSkillReady_1 && skillRangeInstance != null && isShowSkillRange)
+                UseZeusSkill();
+
+            if (isSkillReady_2 && skillRangeInstance != null && isShowSkillRange)
+                UseApolloSkill();
+        }
+
+        // 1번 키를 누를 때 스킬 범위를 표시
+        if (Input.GetKeyDown(KeyCode.Alpha1) && currentCooldown_1 <= 0f)
+        {
+            if (isShowSkillRange)
             {
-                if (isShowSkillRange)
-                {
-                    CancelSkill();
-                }
-                else
-                {
-                    isSkillReady_1 = true;
-                    ShowSkillRange();
-                }
+                isSkillReady_1 = false;
+                CancelSkill();
+            }
+            else
+            {
+                isSkillReady_1 = true;
+                isSkillReady_2 = false;
+                ShowSkillRange();
             }
         }
+
+
 
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
@@ -128,25 +128,11 @@ public class Skill : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Alpha3))
         {
-            //UseBuffSkill();
-            if (isSkillReady_3)
-            {
-                if (isShowSkillRange)
-                {
-                    CancelSkill();
-                }
-                else
-                {
-                    isSkillReady_3 = true;
-                    ShowSkillRange();
-                }
-            }
+            UseDionysusSkill();
         }
+
     }
-
-
-
-
+    //------------------------------------------------------------------
 
     //스킬 범위 표시
     void ShowSkillRange()
@@ -155,6 +141,13 @@ public class Skill : MonoBehaviour
 
         // 스킬 범위 표시용 프리팹을 인스턴스화
         skillRangeInstance = Instantiate(skillRangePrefab);
+    }
+
+    //스킬 취소
+    void CancelSkill()
+    {
+        isShowSkillRange = false;
+        Destroy(skillRangeInstance);
     }
 
     //스킬사용 위치
@@ -173,25 +166,12 @@ public class Skill : MonoBehaviour
         }
     }
 
-    //스킬 취소
-    void CancelSkill()
-    {
-        isShowSkillRange = false;
-        Destroy(skillRangeInstance);
-    }
-
     //스킬 쿨다운
     void SkillCoolDown_1()
     {
-        if (!isSkillReady_1)
+        if (currentCooldown_1 >= 0.0f)
         {
             currentCooldown_1 -= Time.deltaTime;
-
-            // 쿨다운이 끝나면 스킬을 다시 사용할 수 있게 설정
-            if (currentCooldown_1 <= 0.0f)
-            {
-                isSkillReady_1 = true;
-            }
         }
     }
 
@@ -265,17 +245,17 @@ public class Skill : MonoBehaviour
         Destroy(skillRangeInstance);
     }
 
+    //공격력 버프 소모 형식
     void UseDionysusSkill()
     {
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        RaycastHit hit;
-
-        if (Physics.Raycast(ray, out hit, Mathf.Infinity, LayerMask.GetMask("Ground")))
+        foreach (UnitController unit in RTSUnitController.instance.UnitList)
         {
-            Vector3 spawnPosition = hit.point;
-            spawnPosition.y += skillRangeHeight; // Y 좌표 조정
-
-            Instantiate(skillNum_10, spawnPosition, Quaternion.identity);
+            // 유닛의 월드 좌표를 화면 좌표로 변환해 드래그 범위 내에 있는지 검사
+            if (IsUnitInList(unit))
+            {
+                Debug.Log("리스트 안에 있는 유닛: " + unit.name);
+                RTSUnitController.instance.DragSelectUnit(unit);
+            }
         }
 
         currentCooldown_3 = skillCooldown_3; //쿨타임 적용
@@ -285,8 +265,12 @@ public class Skill : MonoBehaviour
         Destroy(skillRangeInstance);
     }
 
-
-
+    private bool IsUnitInList(UnitController unit)
+    {
+        // 유닛이 RTSUnitController.instance.UnitList 안에 있는지 확인하는 코드
+        // 만약 리스트 안에 있다면 true를 반환, 그렇지 않으면 false를 반환
+        return RTSUnitController.instance.UnitList.Contains(unit);
+    }
 
 
     // 다른 이벤트 또는 조건에서 스킬을 사용 가능하게 하려면 isSkillReady를 true로 설정하십시오.

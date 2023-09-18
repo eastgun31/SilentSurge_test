@@ -3402,79 +3402,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!1 &108625211
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 108625213}
-  - component: {fileID: 108625212}
-  m_Layer: 0
-  m_Name: All_Lv
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!114 &108625212
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 108625211}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9fb8b3e2fee474442b8cc341bdcc787d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  warrio_spawnPosition: {x: 0, y: 0, z: 0}
-  shield_spawnPosition: {x: 0, y: 0, z: 0}
-  Archer_spawnPosition: {x: 0, y: 0, z: 0}
-  HorseMan_spawnPosition: {x: 0, y: 0, z: 0}
-  button_warrio_1Lr: {fileID: 2015794782}
-  Warrior_1L_Obj: {fileID: 182410, guid: de54a0af05ae97c4bb5d0d0397831f40, type: 3}
-  button_shield_1Lr: {fileID: 108389525}
-  Shield_1L_Obj: {fileID: 150198, guid: 5b1da2bc159d3094cbff282a2cdd46a5, type: 3}
-  button_archer_1L: {fileID: 512557282}
-  Archer_1L_Obj: {fileID: 179124, guid: 814cec2dc5c497c44aa68bce0a1d5b70, type: 3}
-  button_horseMan_1L: {fileID: 1407041151}
-  HorseMan_1L_Obj: {fileID: 158504, guid: e351eb9db7ad83f4fa1fd5bf111ca44f, type: 3}
-  button_warrio_2Lr: {fileID: 1520265885}
-  Warrior_2L_Obj: {fileID: 182410, guid: 229fd1d34fc6b0c46af61ac8876dda36, type: 3}
-  button_shield_2Lr: {fileID: 1003722792}
-  Shield_2L_Obj: {fileID: 150198, guid: 6e83b2a92467ca940bf8eb8e00359f74, type: 3}
-  button_archer_2L: {fileID: 1201814147}
-  Archer_2L_Obj: {fileID: 179124, guid: ad581838e7cbc2a4bb640aa670a3c5b9, type: 3}
-  button_horseMan_2L: {fileID: 316068736}
-  HorseMan_2L_Obj: {fileID: 158504, guid: 8ed72d2772e8cfe46914d71517919699, type: 3}
-  button_warrio_3Lr: {fileID: 294847225}
-  Warrior_3L_Obj: {fileID: 182410, guid: ff26a266a4eec664890d60fb69ccc3b7, type: 3}
-  button_shield_3Lr: {fileID: 1824253980}
-  Shield_3L_Obj: {fileID: 150198, guid: 31e4f24204bc43b4787e0ddadcf4840d, type: 3}
-  button_archer_3L: {fileID: 61985528}
-  Archer_3L_Obj: {fileID: 179124, guid: ef245657bcee746458b5fc79ab7e5f45, type: 3}
-  button_horseMan_3L: {fileID: 1786390117}
-  HorseMan_3L_Obj: {fileID: 158504, guid: 60350ed9f9b064842b9b32d3ae3dca22, type: 3}
-  UpButton2L: {fileID: 1990481011}
-  UpButton3L: {fileID: 1858954433}
---- !u!4 &108625213
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 108625211}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 960, y: 540, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &109924903
 GameObject:
   m_ObjectHideFlags: 0
@@ -4106,7 +4033,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &136453453
 GameObject:
@@ -21915,7 +21842,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &652312456
 GameObject:
@@ -29193,7 +29120,7 @@ Transform:
   - {fileID: 1019576294996544489}
   - {fileID: 1477503253}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &852778308
 GameObject:
@@ -32031,7 +31958,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &933587122
 GameObject:
@@ -42252,7 +42179,7 @@ Transform:
   - {fileID: 1141676769}
   - {fileID: 861856507}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1254642506
 GameObject:
@@ -63940,7 +63867,7 @@ Transform:
   - {fileID: 653159588}
   - {fileID: 343771503}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1944616932
 GameObject:
@@ -66711,7 +66638,7 @@ RectTransform:
   - {fileID: 1691826874}
   - {fileID: 579545879}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}

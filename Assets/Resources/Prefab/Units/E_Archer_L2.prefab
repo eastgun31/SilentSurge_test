@@ -1480,7 +1480,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8598310041697409414}
   - component: {fileID: 4521702794297666041}
-  - component: {fileID: 5508819919330497036}
   m_Layer: 0
   m_Name: Marker
   m_TagString: Untagged
@@ -1553,24 +1552,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &5508819919330497036
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7563148331230947495}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67f131830f341f34d8e84d2f067645b3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  unitMarker: {fileID: 7563148331230947495}
-  unitnumber: 0
-  uhealth: 0
-  uattackPower: 0
-  udefense: 0
-  umoveSpeed: 0
 --- !u!1 &7712473611141151347
 GameObject:
   m_ObjectHideFlags: 0

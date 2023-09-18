@@ -34,6 +34,11 @@ public class UnitController : MonoBehaviour
         navMeshAgent.SetDestination(end);
     }
 
+    void Update()
+    {
+        navMeshAgent.speed = umoveSpeed;
+    }
+
     private void OnEnable()
     {
         if (unitnumber == 0)
