@@ -3492,13 +3492,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: E_Swordman_L1 (2)
       objectReference: {fileID: 0}
-    - target: {fileID: 8519588137125117876, guid: 312b49af41fb3e4408c1aadba9ae6416, type: 3}
-      propertyPath: m_AnchorMax.x
+    - target: {fileID: 2564687942621342655, guid: 312b49af41fb3e4408c1aadba9ae6416, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8519588137125117876, guid: 312b49af41fb3e4408c1aadba9ae6416, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.84
+      objectReference: {fileID: 0}
+    - target: {fileID: 8519588137125117876, guid: 312b49af41fb3e4408c1aadba9ae6416, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 312b49af41fb3e4408c1aadba9ae6416, type: 3}
@@ -14807,7 +14811,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &369737857
 Transform:
   m_ObjectHideFlags: 0
@@ -15947,13 +15951,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: E_Swordman_L1 (3)
       objectReference: {fileID: 0}
-    - target: {fileID: 8519588137125117876, guid: 312b49af41fb3e4408c1aadba9ae6416, type: 3}
-      propertyPath: m_AnchorMax.x
+    - target: {fileID: 2564687942621342655, guid: 312b49af41fb3e4408c1aadba9ae6416, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8519588137125117876, guid: 312b49af41fb3e4408c1aadba9ae6416, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.84
+      objectReference: {fileID: 0}
+    - target: {fileID: 8519588137125117876, guid: 312b49af41fb3e4408c1aadba9ae6416, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 312b49af41fb3e4408c1aadba9ae6416, type: 3}
@@ -26076,7 +26084,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &653159588
 Transform:
   m_ObjectHideFlags: 0
@@ -26867,13 +26875,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: E_Swordman_L1
       objectReference: {fileID: 0}
-    - target: {fileID: 8519588137125117876, guid: 312b49af41fb3e4408c1aadba9ae6416, type: 3}
-      propertyPath: m_AnchorMax.x
+    - target: {fileID: 2564687942621342655, guid: 312b49af41fb3e4408c1aadba9ae6416, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8519588137125117876, guid: 312b49af41fb3e4408c1aadba9ae6416, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.84
+      objectReference: {fileID: 0}
+    - target: {fileID: 8519588137125117876, guid: 312b49af41fb3e4408c1aadba9ae6416, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 312b49af41fb3e4408c1aadba9ae6416, type: 3}
@@ -35410,13 +35422,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: E_Swordman_L1 (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 8519588137125117876, guid: 312b49af41fb3e4408c1aadba9ae6416, type: 3}
-      propertyPath: m_AnchorMax.x
+    - target: {fileID: 2564687942621342655, guid: 312b49af41fb3e4408c1aadba9ae6416, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8519588137125117876, guid: 312b49af41fb3e4408c1aadba9ae6416, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.84
+      objectReference: {fileID: 0}
+    - target: {fileID: 8519588137125117876, guid: 312b49af41fb3e4408c1aadba9ae6416, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 312b49af41fb3e4408c1aadba9ae6416, type: 3}

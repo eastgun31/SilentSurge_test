@@ -15,6 +15,8 @@ public class Points : MonoBehaviour
     public float p_distance; //범위내 플레이어유닛
     public float e_distance; //범위내 적유닛
 
+    int random;
+
     private int ppoint = 0;
 
     // Start is called before the first frame update
@@ -61,6 +63,7 @@ public class Points : MonoBehaviour
             e_unit.Add(other.gameObject.GetComponent<E_unitMove>());
 
             StartCoroutine("eUnitNewPoint", other.gameObject);
+            random = Random.Range(0, 5);
         }
     }
 
@@ -215,7 +218,7 @@ public class Points : MonoBehaviour
 
     IEnumerator eUnitNewPoint(GameObject other)
     {
-        int random = Random.Range(0, 5);
+        //int random = Random.Range(0, 5);
         if (pointcheck == 1)
         {
 

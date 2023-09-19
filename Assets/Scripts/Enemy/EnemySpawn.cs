@@ -29,24 +29,24 @@ public class EnemySpawn : MonoBehaviour
     {
         population = GameManager.instance.e_population;
 
-        if (unitController[0].transform.position == gameObject.transform.position && unitController[0].transform.childCount <= 10)
+        if (unitController[0].transform.childCount <= 10)
         {
             RandomSpawn(0);
         }
-        else if (unitController[1].transform.position == gameObject.transform.position && unitController[1].transform.childCount <= 10)
-        {
-            RandomSpawn(1);
-        }
-        else if (unitController[2].transform.position == gameObject.transform.position && unitController[2].transform.childCount <= 10)
-        {
-            RandomSpawn(2);
-        }
+        //else if (unitController[1].transform.position == gameObject.transform.position && unitController[1].transform.childCount <= 10)
+        //{
+        //    RandomSpawn(1);
+        //}
+        //else if (unitController[2].transform.position == gameObject.transform.position && unitController[2].transform.childCount <= 10)
+        //{
+        //    RandomSpawn(2);
+        //}
 
     }
 
     private void Upgold()
     {
-        gold += 10; //재화 2씩 증가
+        gold += 2; //재화 2씩 증가
     }
 
     void RandomSpawn(int i)
