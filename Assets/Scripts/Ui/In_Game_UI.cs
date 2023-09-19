@@ -113,7 +113,7 @@ public class In_Game_UI : MonoBehaviour
 
     public void Quit()
     {
-        SceneManager.LoadScene("Main_Scene");
+        SceneManager.LoadScene("Loby_Scene");
         Time.timeScale = 1;
     }
 }
