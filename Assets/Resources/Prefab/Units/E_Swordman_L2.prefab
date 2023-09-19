@@ -270,7 +270,7 @@ GameObject:
   - component: {fileID: 2119466332644519723}
   - component: {fileID: -7699055581925675727}
   - component: {fileID: -8718789240357662747}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: E_Swordman_L2
   m_TagString: Enemy
   m_Icon: {fileID: 0}

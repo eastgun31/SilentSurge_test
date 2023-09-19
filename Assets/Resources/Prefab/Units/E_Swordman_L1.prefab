@@ -77,7 +77,7 @@ GameObject:
   - component: {fileID: 5813964562422709697}
   - component: {fileID: 6496446978528400507}
   - component: {fileID: -1220235585335806259}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: E_Swordman_L1
   m_TagString: Enemy
   m_Icon: {fileID: 0}

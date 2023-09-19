@@ -1256,7 +1256,7 @@ GameObject:
   - component: {fileID: 8970419128772584292}
   - component: {fileID: 1738897721094518247}
   - component: {fileID: -3805663562633365114}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: E_Horseman_L1
   m_TagString: Enemy
   m_Icon: {fileID: 0}

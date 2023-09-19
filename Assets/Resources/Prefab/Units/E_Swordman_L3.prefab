@@ -131,6 +131,7 @@ MonoBehaviour:
   uattackPower: 0
   udefense: 0
   umoveSpeed: 0
+  skill_Set: {fileID: 0}
 --- !u!1 &7155225296760008246
 GameObject:
   m_ObjectHideFlags: 0
@@ -645,7 +646,7 @@ GameObject:
   - component: {fileID: 3662856426140688151}
   - component: {fileID: 4479080096216054893}
   - component: {fileID: -3734854421349084595}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: E_Swordman_L3
   m_TagString: Enemy
   m_Icon: {fileID: 0}

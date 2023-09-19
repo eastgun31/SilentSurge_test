@@ -1102,7 +1102,7 @@ GameObject:
   - component: {fileID: 4118862047396203752}
   - component: {fileID: -6310697469073143420}
   - component: {fileID: -4185921495291933058}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: E_Horseman_L2
   m_TagString: Enemy
   m_Icon: {fileID: 0}

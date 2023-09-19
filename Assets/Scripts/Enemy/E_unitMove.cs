@@ -61,4 +61,9 @@ public class E_unitMove : MonoBehaviour
         GameManager.instance.e_population--;
         Destroy(gameObject);
     }
+
+    public void ZuesDamage(float damage)
+    {
+        health -= damage;
+    }
 }

@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class Skill_Set : MonoBehaviour
 {
-    public bool ZEUS_S;  //스킬의 true, false값을 판단한다
+    public bool Zeus_S;  //스킬의 true, false값을 판단한다
     public bool Poseidon_S;
     public bool Hades_S;
 
     public bool Hephaestus_S;
-    public bool ARTMS_S;
+    public bool Artemis_S;
     public bool Ares_S;
 
     public bool Hera_S;
@@ -20,19 +20,19 @@ public class Skill_Set : MonoBehaviour
     public bool Hermes_S;
     public bool Hestia_S;
     public bool Dionysus_S;
-    public bool Demetere_S;
+    public bool Demeter_S;
 
     public GameObject page_00; //스킬선책창 페이지를 확인한다
     public GameObject page_01;
     public GameObject page_02;
     public GameObject page_03;
 
-    public GameObject ZEUS_i; //게임바에서 상단에 게임스킬 표시를 보여준다
+    public GameObject Zeus_i; //게임바에서 상단에 게임스킬 표시를 보여준다
     public GameObject Poseidon_i;
     public GameObject Hades_i;
            
     public GameObject Hephaestus_i;
-    public GameObject ARTMS_i;
+    public GameObject Artemis_i;
     public GameObject Ares_i;
            
     public GameObject Hera_i;
@@ -43,7 +43,7 @@ public class Skill_Set : MonoBehaviour
     public GameObject Hermes_i;
     public GameObject Hestia_i;
     public GameObject Dionysus_i;
-    public GameObject Demetere_i;
+    public GameObject Demeter_i;
 
     bool _1_1 = false; // true, false 값을 변경해주며  업데이트문에 지속적으로 안뜨게 해준다
     bool _1_2 = false;
@@ -76,12 +76,12 @@ public class Skill_Set : MonoBehaviour
         if (page_00.activeSelf || page_01.activeSelf ||  //페이지가 활성화 상태일때만 bool값들을 받아온다
             page_02.activeSelf || page_03.activeSelf == true)
         {
-            ZEUS_S = FindAnyObjectByType<Skill_Select>().ZEUS_Select;
+            Zeus_S = FindAnyObjectByType<Skill_Select>().Zeus_Select;
             Poseidon_S = FindAnyObjectByType<Skill_Select>().Poseidon_Select;
             Hades_S = FindAnyObjectByType<Skill_Select>().Hades_Select;
 
             Hephaestus_S = FindAnyObjectByType<Skill_Select>().Hephaestus_Select;
-            ARTMS_S = FindAnyObjectByType<Skill_Select>().ARTMS_Select;
+            Artemis_S = FindAnyObjectByType<Skill_Select>().Artemis_Select;
             Ares_S = FindAnyObjectByType<Skill_Select>().Ares_Select;
 
             Hera_S = FindAnyObjectByType<Skill_Select>().Hera_Select;
@@ -92,16 +92,16 @@ public class Skill_Set : MonoBehaviour
             Hermes_S = FindAnyObjectByType<Skill_Select>().Hermes_Select;
             Hestia_S = FindAnyObjectByType<Skill_Select>().Hestia_Select;
             Dionysus_S = FindAnyObjectByType<Skill_Select>().Dionysus_Select;
-            Demetere_S = FindAnyObjectByType<Skill_Select>().Demetere_Select;
+            Demeter_S = FindAnyObjectByType<Skill_Select>().Demeter_Select;
         }
         else
         {
 
         }
         //-------------------------------액티브--------------------------------------------//
-        if ((ZEUS_S == true) && (_1_1 == false) && (start.activeSelf == true)) //start가 활성화 되었을때
+        if ((Zeus_S == true) && (_1_1 == false) && (start.activeSelf == true)) //start가 활성화 되었을때
         {
-            ZEUS_i.SetActive(true);
+            Zeus_i.SetActive(true);
             _1_1 = true;
         }
         else if ((Poseidon_S == true) && (_1_2 == false) && (start.activeSelf == true))
@@ -120,9 +120,9 @@ public class Skill_Set : MonoBehaviour
             Hephaestus_i.SetActive(true);
             _2_1 = true;
         }
-        else if ((ARTMS_S == true) && (_2_2 == false) && (start.activeSelf == true))
+        else if ((Artemis_S == true) && (_2_2 == false) && (start.activeSelf == true))
         {
-            ARTMS_i.SetActive(true);
+            Artemis_i.SetActive(true);
             _2_2 = true;
         }
         else if ((Ares_S == true) && (_2_3 == false) && (start.activeSelf == true))
@@ -167,9 +167,9 @@ public class Skill_Set : MonoBehaviour
             Dionysus_i.SetActive(true);
             _4_3 = true;
         }
-        else if ((Demetere_S == true) && (_4_4 == false) && (start.activeSelf == true))
+        else if ((Demeter_S == true) && (_4_4 == false) && (start.activeSelf == true))
         {
-            Demetere_i.SetActive(true);
+            Demeter_i.SetActive(true);
             _4_4 = true;
         }
         else
@@ -178,7 +178,7 @@ public class Skill_Set : MonoBehaviour
         }
         //----------------------------------------------------------------------------------//
         //-------------------------------액티브--------------------------------------------//
-        if (ZEUS_S == true) //start가 활성화 되었을때
+        if (Zeus_S == true) //start가 활성화 되었을때
         {
             if (Input.GetKeyDown(KeyCode.Alpha1))
             {
@@ -204,7 +204,7 @@ public class Skill_Set : MonoBehaviour
         //{
          
         //}
-        //else if (ARTMS_S == true)
+        //else if (Artemis_S == true)
         //{
          
         //}
@@ -263,7 +263,7 @@ public class Skill_Set : MonoBehaviour
 
             }
         }
-        else if (Demetere_S == true)
+        else if (Demeter_S == true)
         {
             if (Input.GetKeyDown(KeyCode.Alpha3))
             {

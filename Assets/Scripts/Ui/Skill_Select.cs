@@ -6,22 +6,22 @@ public class Skill_Select : MonoBehaviour
 {
     //---------------------------------엑티브------------------------------------//
     #region
-    public GameObject ZEUS_ON;
+    public GameObject Zeus_ON;
     public GameObject Poseidon_ON;
     public GameObject Hades_ON;
 
-    public bool ZEUS_Select;
+    public bool Zeus_Select;
     public bool Poseidon_Select;
     public bool Hades_Select;
     #endregion
     //----------------------------------패시브-----------------------------------//
     #region
     public GameObject Hephaestus_ON;
-    public GameObject ARTMS_ON;
+    public GameObject Artemis_ON;
     public GameObject Ares_ON;
 
     public bool Hephaestus_Select;
-    public bool ARTMS_Select;
+    public bool Artemis_Select;
     public bool Ares_Select;
     #endregion
     //---------------------------------군중제어 및 디버프------------------------//
@@ -46,27 +46,27 @@ public class Skill_Select : MonoBehaviour
     public bool Hermes_Select;
     public bool Hestia_Select;
     public bool Dionysus_Select;
-    public bool Demetere_Select;
+    public bool Demeter_Select;
     #endregion
     //---------------------------------------------------------------------------//
     public void Update()
     {
         //-------------------------------엑티브----------------------------------//
-        if (ZEUS_ON.activeSelf == true)
+        if (Zeus_ON.activeSelf == true)
         {
-            ZEUS_Select = true;
+            Zeus_Select = true;
             Poseidon_Select = false;
             Hades_Select = false;
         }
         else if (Poseidon_ON.activeSelf == true)
         {
-            ZEUS_Select = false;
+            Zeus_Select = false;
             Poseidon_Select = true;
             Hades_Select = false;
         }
         else if (Hades_ON.activeSelf == true)
         {
-            ZEUS_Select = false;
+            Zeus_Select = false;
             Poseidon_Select = false;
             Hades_Select = true;
         }
@@ -74,19 +74,19 @@ public class Skill_Select : MonoBehaviour
         if (Hephaestus_ON.activeSelf == true)
         {
             Hephaestus_Select = true;
-            ARTMS_Select = false;
+            Artemis_Select = false;
             Ares_Select = false;
         }
-        else if (ARTMS_ON.activeSelf == true)
+        else if (Artemis_ON.activeSelf == true)
         {
             Hephaestus_Select = false;
-            ARTMS_Select = true;
+            Artemis_Select = true;
             Ares_Select = false;
         }
         else if (Ares_ON.activeSelf == true)
         {
             Hephaestus_Select = false;
-            ARTMS_Select = false;
+            Artemis_Select = false;
             Ares_Select = true;
         }
         //---------------------------------군중제어 및 디버프--------------------//
@@ -124,47 +124,47 @@ public class Skill_Select : MonoBehaviour
             Hermes_Select = true;
             Hestia_Select = false;
             Dionysus_Select = false;
-            Demetere_Select = false;
+            Demeter_Select = false;
         }
         else if (Hestia_ON.activeSelf == true)
         {
             Hermes_Select = false;
             Hestia_Select = true;
             Dionysus_Select = false;
-            Demetere_Select = false;
+            Demeter_Select = false;
         }
         else if (Dionysus_ON.activeSelf == true)
         {
             Hermes_Select = false;
             Hestia_Select = false;
             Dionysus_Select = true;
-            Demetere_Select = false;
+            Demeter_Select = false;
         }
         else if (Demeter_ON.activeSelf == true)
         {
             Hermes_Select = false;
             Hestia_Select = false;
             Dionysus_Select = false;
-            Demetere_Select = true;
+            Demeter_Select = true;
         }
         //-------------------------------------------------------------------------------//
     }
     //-----------------------------------엑티브 버튼----------------------------------//
-    public void ZEUS_ON_Select_Button()
+    public void Zeus_ON_Select_Button()
     {
-        ZEUS_ON.SetActive(true);
+        Zeus_ON.SetActive(true);
         Poseidon_ON.SetActive(false);
         Hades_ON.SetActive(false);
     }
     public void Poseidon_ON_Select_Button()
     {
-        ZEUS_ON.SetActive(false);
+        Zeus_ON.SetActive(false);
         Poseidon_ON.SetActive(true);
         Hades_ON.SetActive(false);
     }
     public void Hades_ON_Select_Button()
     {
-        ZEUS_ON.SetActive(false);
+        Zeus_ON.SetActive(false);
         Poseidon_ON.SetActive(false);
         Hades_ON.SetActive(true);
     }
@@ -172,19 +172,19 @@ public class Skill_Select : MonoBehaviour
     public void Hephaestus_ON_Select_Button()
     {
         Hephaestus_ON.SetActive(true);
-        ARTMS_ON.SetActive(false);
+        Artemis_ON.SetActive(false);
         Ares_ON.SetActive(false);
     }
-    public void ARTMS_ON_Select_Button()
+    public void Artemis_ON_Select_Button()
     {
         Hephaestus_ON.SetActive(false);
-        ARTMS_ON.SetActive(true);
+        Artemis_ON.SetActive(true);
         Ares_ON.SetActive(false);
     }
     public void Ares_ON_Select_Button()
     {
         Hephaestus_ON.SetActive(false);
-        ARTMS_ON.SetActive(false);
+        Artemis_ON.SetActive(false);
         Ares_ON.SetActive(true);
     }
     //---------------------------------군중제어 및 디버프 버튼---------------------------------//

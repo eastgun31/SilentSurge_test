@@ -14,9 +14,12 @@ public class UnitController : MonoBehaviour
     public float udefense;
     public float umoveSpeed;
 
+    public Skill_Set skill_Set;
+
     private void Awake()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
+        skill_Set = GetComponent<Skill_Set>();
     }
 
     public void SelectUnit()
@@ -37,6 +40,11 @@ public class UnitController : MonoBehaviour
     void Update()
     {
         navMeshAgent.speed = umoveSpeed;
+    }
+
+    public void ApolloHeal(float heal)
+    {
+        uhealth += heal;
     }
 
     private void OnEnable()
@@ -129,36 +137,36 @@ public class UnitController : MonoBehaviour
             umoveSpeed = GameManager.instance.moveSpeed + 3;
         }
 
-        //검사 패시브가 켜지면
-        if (Skill.instance.SelectAres == true)
-        {
-            if (unitnumber == 0 || unitnumber == 4 || unitnumber == 8)
-            {
-                uhealth += 30;
-                uattackPower += 3;
-                udefense += 3;
-            }
-        }
-        //방패병
-        if (Skill.instance.SelectHephaestus == true)
-        {
-            if (unitnumber == 1 || unitnumber == 5 || unitnumber == 9)
-            {
-                uhealth += 30;
-                uattackPower += 3;
-                udefense += 3;
-            }
-        }
-        //궁수
-        if (Skill.instance.SelectArtemis == true)
-        {
-            if (unitnumber == 2 || unitnumber == 6 || unitnumber == 10)
-            {
-                uhealth += 30;
-                uattackPower += 3;
-                udefense += 3;
-            }
-        }
+        ////검사 패시브가 켜지면
+        //if (skill_Set.Ares_S)
+        //{
+        //    if (unitnumber == 0 || unitnumber == 4 || unitnumber == 8)
+        //    {
+        //        uhealth += 30;
+        //        uattackPower += 3;
+        //        udefense += 3;
+        //    }
+        //}
+        ////방패병
+        //if (skill_Set.Hephaestus_S)
+        //{
+        //    if (unitnumber == 1 || unitnumber == 5 || unitnumber == 9)
+        //    {
+        //        uhealth += 30;
+        //        uattackPower += 3;
+        //        udefense += 3;
+        //    }
+        //}
+        ////궁수
+        //if (skill_Set.Artemis_S)
+        //{
+        //    if (unitnumber == 2 || unitnumber == 6 || unitnumber == 10)
+        //    {
+        //        uhealth += 30;
+        //        uattackPower += 3;
+        //        udefense += 3;
+        //    }
+        //}
     }
 }
 

@@ -894,7 +894,7 @@ GameObject:
   - component: {fileID: 8060452395138753801}
   - component: {fileID: 3968802995802013043}
   - component: {fileID: 726247689062802376}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: E_Shieldman_L2
   m_TagString: Enemy
   m_Icon: {fileID: 0}

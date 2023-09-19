@@ -239,7 +239,7 @@ GameObject:
   - component: {fileID: 2356915701897070253}
   - component: {fileID: 9049892826139882048}
   - component: {fileID: 1642894523169809746}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: E_Horseman_L3
   m_TagString: Enemy
   m_Icon: {fileID: 0}

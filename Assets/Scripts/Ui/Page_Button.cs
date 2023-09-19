@@ -28,7 +28,7 @@ public class Page_Button : MonoBehaviour //건들지 말것
 
     public void Page00_NEXT_Page01_button()
     {
-        if (FindAnyObjectByType<Skill_Select>().ZEUS_ON.activeSelf || FindAnyObjectByType<Skill_Select>().Poseidon_ON.activeSelf ||
+        if (FindAnyObjectByType<Skill_Select>().Zeus_ON.activeSelf || FindAnyObjectByType<Skill_Select>().Poseidon_ON.activeSelf ||
             FindAnyObjectByType<Skill_Select>().Hades_ON.activeSelf == true)
         {
             Page_On.SetActive(true);
@@ -41,7 +41,7 @@ public class Page_Button : MonoBehaviour //건들지 말것
     }
     public void Page01_NEXT_Page02_button()
     {
-        if (FindAnyObjectByType<Skill_Select>().Hephaestus_ON.activeSelf || FindAnyObjectByType<Skill_Select>().ARTMS_ON.activeSelf ||
+        if (FindAnyObjectByType<Skill_Select>().Hephaestus_ON.activeSelf || FindAnyObjectByType<Skill_Select>().Artemis_ON.activeSelf ||
             FindAnyObjectByType<Skill_Select>().Ares_ON.activeSelf == true)
         {
             Page_On.SetActive(true);
