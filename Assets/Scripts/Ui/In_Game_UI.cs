@@ -15,6 +15,7 @@ public class In_Game_UI : MonoBehaviour
     public bool ESC_bool = true;
     public bool ESC_ON = true;
     public bool _OK_ = true;
+    public bool Game_Start = true;
 
     void Start()
     {
@@ -24,7 +25,19 @@ public class In_Game_UI : MonoBehaviour
     
     void Update()
     {
-        
+        if ((On.activeSelf == true) && (Game_Start == true))
+        {
+            Time.timeScale = 1;
+            Game_Start = false;
+        }
+        else if ((On.activeSelf == false) && (Game_Start == true))
+        {
+            Time.timeScale = 0;
+        }
+        else
+        {
+
+        }
 
         if (Input.GetKeyDown(KeyCode.Tab) && ( On.activeSelf == true) && (_OK_ == true))
         {
