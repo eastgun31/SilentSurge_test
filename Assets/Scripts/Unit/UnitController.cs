@@ -40,6 +40,17 @@ public class UnitController : MonoBehaviour
     void Update()
     {
         navMeshAgent.speed = umoveSpeed;
+
+        if (uhealth <= 0)
+            RemoveList();
+    }
+
+    void RemoveList()
+    {
+        RTSUnitController.instance.UnitList.Remove(this);
+        RTSUnitController.instance.selectedUnitList.Remove(this);
+
+        Destroy(gameObject);
     }
 
     public void ApolloHeal(float heal)
