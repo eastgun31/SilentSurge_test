@@ -147,22 +147,32 @@ public class Points : MonoBehaviour
                 time = 0;
                 pointcheck = 2;
 
-                switch (value)
+                   switch (value)
                 {
                     case 0:
                         GameManager.instance.check[0] = pointcheck;
+                        GameManager.instance.gold += 100;
+                        GameManager.instance.pointCan = true;
                         break;
                     case 1:
                         GameManager.instance.check[1] = pointcheck;
+                        GameManager.instance.gold += 100;
+                        GameManager.instance.pointCan = true;
                         break;
                     case 2:
                         GameManager.instance.check[2] = pointcheck;
+                        GameManager.instance.gold += 100;
+                        GameManager.instance.pointCan = true;
                         break;
                     case 3:
                         GameManager.instance.check[3] = pointcheck;
+                        GameManager.instance.gold += 100;
+                        GameManager.instance.pointCan = true;
                         break;
                     case 4:
                         GameManager.instance.check[4] = pointcheck;
+                        GameManager.instance.gold += 100;
+                        GameManager.instance.pointCan = true;
                         break;
                 }
             }

@@ -24,7 +24,7 @@ public class UnitController : MonoBehaviour
 
     private void Start()
     {
-
+        //StartCoroutine(Pcheck());
     }
 
     public void SelectUnit()
@@ -92,6 +92,8 @@ public class UnitController : MonoBehaviour
     {
         GameManager.instance.All_Obj--;
         Destroy(gameObject, 4f);
+        Destroy(gameObject);
+        EnemySpawn.instance.gold += 2; //¾Æ±º À¯´Ö Á×¿´À» ¶§ Àû ÀçÈ­ È¹µæ
     }
 
     public void ApolloHeal(float heal)
@@ -221,5 +223,20 @@ public class UnitController : MonoBehaviour
             }
         }   
     }
+
+    //IEnumerator Pcheck()
+    //{
+    //    if (uhealth <= 0)
+    //    {
+
+    //        GameManager.instance.All_Obj--;
+    //        GameManager.instance.Aobj();
+    //        Destroy(gameObject, 4f);
+    //        StopCoroutine(Pcheck());
+    //    }
+
+    //    yield return new WaitForSeconds(1f);
+    //    StartCoroutine(Pcheck());
+    //}
 }
 

@@ -43,6 +43,8 @@ public class GameManager : MonoBehaviour
     public bool pointBattle = false; //전투상태
     public bool battle = false;      //전투상태
 
+    public bool pointCan = false;
+
     private void Start()
     {
         InvokeRepeating("Upgold", 1.0f, 1.0f); //1초 후에 1초마다
