@@ -306,6 +306,7 @@ public class Skill : MonoBehaviour
                 DionysusSkill.transform.parent = unitChild;
 
                 StartCoroutine(RevertVariableAfterDelay(unit, originalDamage, 5.0f));
+                Destroy(DionysusSkill, 5f);
             }
         }
 
@@ -313,7 +314,6 @@ public class Skill : MonoBehaviour
         isBuffActive = true;
         isShowSkillRange = false;
         Destroy(skillRangeInstance);
-        Destroy(DionysusSkill, 5f);
     }
 
     void UseDemeterSkill()
