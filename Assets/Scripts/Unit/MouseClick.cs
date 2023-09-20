@@ -8,6 +8,9 @@ public class MouseClick : MonoBehaviour
     [SerializeField]
     private LayerMask layerGround;
 
+    public GameObject ClickPointer;
+    private GameObject ClickPointer_instance;
+
     private Camera mainCamera;
     private RTSUnitController rtsUnitController;
 
@@ -75,6 +78,11 @@ public class MouseClick : MonoBehaviour
                 Vector3 center = hit.point; // 원의 중심점
                 float radius = 3.0f; // 원의 반지름
                 int numUnits = rtsUnitController.GetSelectedUnits().Count; // 선택된 유닛 수
+
+                //클릭 이펙트
+                ClickPointer_instance = Instantiate(ClickPointer);
+                ClickPointer_instance.transform.position = hit.point;
+                Destroy(ClickPointer_instance, 0.7f);
 
                 // 각 유닛을 원형으로 정렬
                 List<UnitController> selectedUnits = rtsUnitController.GetSelectedUnits();

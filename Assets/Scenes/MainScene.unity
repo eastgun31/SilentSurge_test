@@ -39182,6 +39182,7 @@ MonoBehaviour:
   layerGround:
     serializedVersion: 2
     m_Bits: 8
+  ClickPointer: {fileID: 1215210573372408, guid: e39e963e996a8834ca9a243f1a7a522a, type: 3}
 --- !u!114 &930402843
 MonoBehaviour:
   m_ObjectHideFlags: 0
