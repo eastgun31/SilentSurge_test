@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Skill_Set : MonoBehaviour
 {
+    public static Skill_Set instance;
+
     public bool Zeus_S;  //스킬의 true, false값을 판단한다
     public bool Poseidon_S;
     public bool Hades_S;
@@ -67,7 +69,7 @@ public class Skill_Set : MonoBehaviour
     public GameObject start; // 이 게임 오브젝트가없으면 모든게 true 값이며 계속 업데이트문에 뜨게될것이다
     void Start()
     {
-        
+        instance = this;
     }
 
     // Update is called once per frame

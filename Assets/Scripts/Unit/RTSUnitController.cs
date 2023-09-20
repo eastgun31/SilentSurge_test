@@ -55,13 +55,19 @@ public class RTSUnitController : MonoBehaviour
         }
     }
 
-    // 선택된 모든 유닛을 이동할 때 호출
-    public void MoveSelectedUnits(Vector3 end)
+    //// 선택된 모든 유닛을 이동할 때 호출
+    //public void MoveSelectedUnits(Vector3 end)
+    //{
+    //    for (int i = 0; i < selectedUnitList.Count; ++i)
+    //    {
+    //        selectedUnitList[i].MoveTo(end);
+    //    }
+    //}
+
+    //선택된 유닛 수 반환
+    public List<UnitController> GetSelectedUnits()
     {
-        for (int i = 0; i < selectedUnitList.Count; ++i)
-        {
-            selectedUnitList[i].MoveTo(end);
-        }
+        return selectedUnitList;
     }
 
     // 모든 유닛의 선택을 해제할 때 호출
