@@ -40,6 +40,8 @@ public class capture : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        check = FindAnyObjectByType<GameManager>().check;
+
         #region A
         if (check[0] == 0)
         {
