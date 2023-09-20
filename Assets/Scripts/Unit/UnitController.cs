@@ -14,6 +14,9 @@ public class UnitController : MonoBehaviour
     public float udefense;
     public float umoveSpeed;
 
+    float time = 3f;    //공격 쿨타임
+    public E_unitMove targetUnit;   //공격할 유닛
+
     public Skill_Set skill_Set;
 
     private void Awake()
@@ -42,7 +45,11 @@ public class UnitController : MonoBehaviour
         navMeshAgent.speed = umoveSpeed;
 
         if (uhealth <= 0)
+        {
             RemoveList();
+            P_Die();
+        }
+            
     }
 
     void RemoveList()
@@ -50,7 +57,39 @@ public class UnitController : MonoBehaviour
         RTSUnitController.instance.UnitList.Remove(this);
         RTSUnitController.instance.selectedUnitList.Remove(this);
 
-        Destroy(gameObject);
+        //Destroy(gameObject);
+    }
+
+    public void Attack(Vector3 dir, E_unitMove e_unit)  //플레이어유닛 공격
+    {
+        time += Time.deltaTime;
+
+        targetUnit = e_unit;
+        navMeshAgent.SetDestination(dir);
+        navMeshAgent.stoppingDistance = 2f;
+
+
+        if (unitnumber == 2 || unitnumber == 6 || unitnumber == 10)
+        {
+            navMeshAgent.stoppingDistance = 4f;
+        }
+
+        if (time > 1f && e_unit.ehealth > 0)
+        {
+            Debug.Log("적공격");
+            e_unit.ehealth -= uattackPower;
+            time = 0;
+        }
+        else if (e_unit.ehealth <= 0)
+        {
+            targetUnit = null;
+        }
+    }
+
+    void P_Die()    //플레이어 유닛 죽음
+    {
+        GameManager.instance.All_Obj--;
+        Destroy(gameObject, 4f);
     }
 
     public void ApolloHeal(float heal)
