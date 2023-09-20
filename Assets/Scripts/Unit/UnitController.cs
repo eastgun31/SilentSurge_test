@@ -1,4 +1,6 @@
+using System;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.AI;
 
 public class UnitController : MonoBehaviour
@@ -17,6 +19,10 @@ public class UnitController : MonoBehaviour
     float time = 3f;    //°ø°Ý ÄðÅ¸ÀÓ
     public E_unitMove targetUnit;   //°ø°ÝÇÒ À¯´Ö
 
+
+    public Slider Uslider;
+    public float maxhp;
+
     private void Awake()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
@@ -25,6 +31,7 @@ public class UnitController : MonoBehaviour
     private void Start()
     {
         //StartCoroutine(Pcheck());
+        maxhp = uhealth;
     }
 
     public void SelectUnit()
@@ -51,7 +58,7 @@ public class UnitController : MonoBehaviour
             RemoveList();
             P_Die();
         }
-            
+        Uslider.value = uhealth / maxhp;
     }
 
     void RemoveList()

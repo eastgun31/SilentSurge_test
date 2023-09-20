@@ -88,7 +88,7 @@ GameObject:
   - component: {fileID: 5480315532809886086}
   - component: {fileID: 5480315532809886085}
   m_Layer: 0
-  m_Name: Canvas
+  m_Name: Hp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -185,7 +185,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1855436763907629175}
   - component: {fileID: 6775477993984434184}
-  - component: {fileID: 2035947386138695817}
+  - component: {fileID: 3390396644894732210}
   m_Layer: 5
   m_Name: Slider
   m_TagString: Slider
@@ -212,7 +212,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 2}
-  m_SizeDelta: {x: 4, y: 1}
+  m_SizeDelta: {x: 2, y: 0.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &6775477993984434184
 MonoBehaviour:
@@ -265,7 +265,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &2035947386138695817
+--- !u!114 &3390396644894732210
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -274,7 +274,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5687567264983739785}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc3301af714dbc94db0151789bf9329e, type: 3}
+  m_Script: {fileID: 11500000, guid: 8a3441c74ce002243b7997d1e6737eac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   hpCamera: {fileID: 0}
@@ -344,10 +344,10 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_Sprite: {fileID: 21300000, guid: 11a22bd3f4c3a4749b51f7411d14dd04, type: 3}
-  m_Type: 0
+  m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
-  m_FillMethod: 4
+  m_FillMethod: 0
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
