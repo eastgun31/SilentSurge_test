@@ -74,12 +74,12 @@ public class Skill_Set : MonoBehaviour
         instance = this;
     }
 
-    IEnumerator CoolTime(float time)
-    {
-        activeCool = true;
-        yield return new WaitForSeconds(time);
-        activeCool = false;
-    }
+    //IEnumerator CoolTime(float time)
+    //{
+    //    activeCool = true;
+    //    yield return new WaitForSeconds(time);
+    //    activeCool = false;
+    //}
 
     // Update is called once per frame
     void Update()
@@ -193,27 +193,27 @@ public class Skill_Set : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Alpha1) && !activeCool)
             {
-                Debug.Log("Zeus_S");
+                //Debug.Log("Zeus_S");
                 //FindAnyObjectByType<Skill>().UseZeusSkill();
-                StartCoroutine(CoolTime(7));
+                //StartCoroutine(CoolTime(7));
             }
         }
         else if (Poseidon_S == true)
         {
             if (Input.GetKeyDown(KeyCode.Alpha1) && !activeCool)
             {
-                Debug.Log("Poseidon_S");
+                //Debug.Log("Poseidon_S");
                 //FindAnyObjectByType<Skill>().UsePoseidonSkill();
-                StartCoroutine(CoolTime(7));
+                //StartCoroutine(CoolTime(7));
             }
         }
         else if (Hades_S == true)
         {
             if (Input.GetKeyDown(KeyCode.Alpha1) && !activeCool)
             {
-                Debug.Log("Hades_S");
+                //Debug.Log("Hades_S");
                 //FindAnyObjectByType<Skill>().UseHadesSkill();
-                StartCoroutine(CoolTime(7));
+                //StartCoroutine(CoolTime(7));
             }
         }
         //---------------------------------ÆÐ½Ãºê-------------------------------------------//

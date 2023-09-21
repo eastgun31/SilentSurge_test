@@ -12,10 +12,10 @@ public enum Skills
     Apollo,     //아폴론        5 B
     Athena,     //아테나        6 B
     Aphrodite,  //아프로디테    7 B
-    Hermes,     //헤르메스      8 E
-    Hestia,     //헤스티아      9 E
-    Dionysus,   //디오니소스    10 E
-    Demeter,     //데메테르     11 E
+    Hermes,     //헤르메스      8 I
+    Hestia,     //헤스티아      9 I
+    Dionysus,   //디오니소스    10 I
+    Demeter,     //데메테르     11 I
     Hephaestus, //헤파이토스    12 P
     Artemis,    //아르테미스    13 P
     Ares       //아레스         14 P
@@ -23,29 +23,27 @@ public enum Skills
 
 public class Skill : MonoBehaviour
 {
-    //public static Skill instance;
+    public static Skill instance;
 
     float originalDamage; // 능력치 변경 이전의 데미지
     float buffDuration = 5f; // 스킬 지속 시간
     bool isBuffActive = false; // 스킬 활성화 여부
-    int buffLimit = 3; // 스킬 횟수 제한
+    public int itemLimit = 3; // 스킬 횟수 제한
 
     public GameObject skillRangePrefab; // 범위 표시용 프리팹
     private GameObject skillRangeInstance; // 범위 표시용 인스턴스
 
     private float skillRangeHeight = 0.1f; // 스킬 범위 높이
-
-    private bool isSkillReady = true; // 스킬 사용 가능한지 여부
     private bool isShowSkillRange = false; //범위 표시여부 
 
     bool isSkillReady_1 = false;
     bool isSkillReady_2 = false;
     bool isSkillReady_3 = false;
 
-    float skillCooldown_1 = 5.0f; //쿨타임
-    float skillCooldown_2 = 10.0f; //쿨타임
-    float currentCooldown_1 = 0.0f; //현재 쿨타임
-    float currentCooldown_2 = 0.0f; //현재 쿨타임
+    float skillCooldown_1 = 20.0f; //쿨타임
+    float skillCooldown_2 = 30.0f; //쿨타임
+    public float currentCooldown_1 = 0.0f; //현재 쿨타임
+    public float currentCooldown_2 = 0.0f; //현재 쿨타임
 
     public GameObject skillNum_1; //제우스 액티브
     private GameObject ZeusSkill;
@@ -60,7 +58,7 @@ public class Skill : MonoBehaviour
 
     void Awake()
     {
-        //instance = this;
+        instance = this;
     }
 
     void Start()
@@ -80,6 +78,7 @@ public class Skill : MonoBehaviour
         if (Input.GetMouseButtonDown(0) && skillRangeInstance != null)
         {
             if (isSkillReady_1 && skillRangeInstance != null && isShowSkillRange)
+            {
                 if (Skill_Set.instance.Zeus_S)
                     UseZeusSkill();
                 else if (Skill_Set.instance.Poseidon_S)
@@ -87,7 +86,10 @@ public class Skill : MonoBehaviour
                 else if (Skill_Set.instance.Hades_S)
                     UseHadesSkill();
                 else { }
+            }
+
             if (isSkillReady_2 && skillRangeInstance != null && isShowSkillRange)
+            {
                 if (Skill_Set.instance.Hera_S)
                     UseHeraSkill();
                 else if (Skill_Set.instance.Apollo_S)
@@ -97,6 +99,7 @@ public class Skill : MonoBehaviour
                 else if (Skill_Set.instance.Aphrodite_S)
                     UseAphroditeSkill();
                 else { }
+            }
         }
 
         // 1번 키를 누를 때 스킬 범위를 표시
@@ -117,7 +120,6 @@ public class Skill : MonoBehaviour
         // 2번 키를 누를 때 스킬 범위를 표시
         if (Input.GetKeyDown(KeyCode.Alpha2) && currentCooldown_2 <= 0f)
         {
-
             if (isShowSkillRange)
             {
                 isSkillReady_2 = false;
@@ -131,7 +133,7 @@ public class Skill : MonoBehaviour
             }
         }
         // 3번 키를 누르면 3번 스킬 사용
-        if (Input.GetKeyDown(KeyCode.Alpha3) && !isBuffActive && buffLimit > 0)
+        if (Input.GetKeyDown(KeyCode.Alpha3) && !isBuffActive && itemLimit > 0)
         {
             if (Skill_Set.instance.Hermes_S)
                 UseHermesSkill();
@@ -309,7 +311,7 @@ public class Skill : MonoBehaviour
             }
         }
 
-        buffLimit--;
+        itemLimit--;
         isBuffActive = true;
         isShowSkillRange = false;
         Destroy(skillRangeInstance);
