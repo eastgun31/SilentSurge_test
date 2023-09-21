@@ -4848,7 +4848,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4d9b29f9079c994a953ad8c20d55ceb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skill_Set: {fileID: 125738263}
   skillRangePrefab: {fileID: 3387236121303360585, guid: 496987854942ff049b639500415f8502, type: 3}
   skillNum_1: {fileID: 5882814825712509882, guid: 3b137983b63d4a649f04205ef84161a2, type: 3}
   skillNum_5: {fileID: 3750629692748755974, guid: 6545dfcafa624a34a511dbe92f2159ce, type: 3}
@@ -4912,6 +4911,7 @@ MonoBehaviour:
   Dionysus_i: {fileID: 1379955743}
   Demeter_i: {fileID: 1954302130}
   start: {fileID: 781844869}
+  activeCool: 0
 --- !u!1 &136453453
 GameObject:
   m_ObjectHideFlags: 0
@@ -70218,7 +70218,7 @@ GameObject:
   - component: {fileID: 1710076204}
   - component: {fileID: 1710076203}
   m_Layer: 5
-  m_Name: ' Skill Window_Canvas'
+  m_Name: Skill Window_Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

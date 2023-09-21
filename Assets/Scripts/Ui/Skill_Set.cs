@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Skill_Set : MonoBehaviour
 {
+    public static Skill_Set instance;
+
     public bool Zeus_S;  //스킬의 true, false값을 판단한다
     public bool Poseidon_S;
     public bool Hades_S;
@@ -65,18 +67,18 @@ public class Skill_Set : MonoBehaviour
 
     public GameObject start; // 이 게임 오브젝트가없으면 모든게 true 값이며 계속 업데이트문에 뜨게될것이다
 
-    public bool activeColl = false;
+    public bool activeCool = false;
 
     void Start()
     {
-        
+        instance = this;
     }
 
     IEnumerator CoolTime(float time)
     {
-        activeColl = true;
+        activeCool = true;
         yield return new WaitForSeconds(time);
-        activeColl = false;
+        activeCool = false;
     }
 
     // Update is called once per frame
@@ -173,7 +175,7 @@ public class Skill_Set : MonoBehaviour
         }
         else if ((Dionysus_S == true) && (_4_3 == false) && (start.activeSelf == true))
         {
-            Dionysus_i.SetActive(true);
+            Dionysus_i.SetActive(true); 
             _4_3 = true;
         }
         else if ((Demeter_S == true) && (_4_4 == false) && (start.activeSelf == true))
@@ -189,7 +191,7 @@ public class Skill_Set : MonoBehaviour
         //-------------------------------액티브--------------------------------------------//
         if (Zeus_S == true) //start가 활성화 되었을때
         {
-            if (Input.GetKeyDown(KeyCode.Alpha1) && !activeColl)
+            if (Input.GetKeyDown(KeyCode.Alpha1) && !activeCool)
             {
                 Debug.Log("Zeus_S");
                 //FindAnyObjectByType<Skill>().UseZeusSkill();
@@ -198,7 +200,7 @@ public class Skill_Set : MonoBehaviour
         }
         else if (Poseidon_S == true)
         {
-            if (Input.GetKeyDown(KeyCode.Alpha1) && !activeColl)
+            if (Input.GetKeyDown(KeyCode.Alpha1) && !activeCool)
             {
                 Debug.Log("Poseidon_S");
                 //FindAnyObjectByType<Skill>().UsePoseidonSkill();
@@ -207,7 +209,7 @@ public class Skill_Set : MonoBehaviour
         }
         else if (Hades_S == true)
         {
-            if (Input.GetKeyDown(KeyCode.Alpha1) && !activeColl)
+            if (Input.GetKeyDown(KeyCode.Alpha1) && !activeCool)
             {
                 Debug.Log("Hades_S");
                 //FindAnyObjectByType<Skill>().UseHadesSkill();

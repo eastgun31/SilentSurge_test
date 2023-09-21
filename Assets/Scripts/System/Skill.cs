@@ -24,7 +24,6 @@ public enum Skills
 public class Skill : MonoBehaviour
 {
     //public static Skill instance;
-    public Skill_Set skill_Set;
 
     float originalDamage; // 능력치 변경 이전의 데미지
     float buffDuration = 5f; // 스킬 지속 시간
@@ -81,21 +80,21 @@ public class Skill : MonoBehaviour
         if (Input.GetMouseButtonDown(0) && skillRangeInstance != null)
         {
             if (isSkillReady_1 && skillRangeInstance != null && isShowSkillRange)
-                if (skill_Set.Zeus_S)
+                if (Skill_Set.instance.Zeus_S)
                     UseZeusSkill();
-                else if (skill_Set.Poseidon_S)
+                else if (Skill_Set.instance.Poseidon_S)
                     UsePoseidonSkill();
-                else if (skill_Set.Hades_S)
+                else if (Skill_Set.instance.Hades_S)
                     UseHadesSkill();
                 else { }
             if (isSkillReady_2 && skillRangeInstance != null && isShowSkillRange)
-                if (skill_Set.Hera_S)
+                if (Skill_Set.instance.Hera_S)
                     UseHeraSkill();
-                else if (skill_Set.Apollo_S)
+                else if (Skill_Set.instance.Apollo_S)
                     UseApolloSkill();
-                else if (skill_Set.Athena_S)
+                else if (Skill_Set.instance.Athena_S)
                     UseAthenaSkill();
-                else if (skill_Set.Aphrodite_S)
+                else if (Skill_Set.instance.Aphrodite_S)
                     UseAphroditeSkill();
                 else { }
         }
@@ -134,13 +133,13 @@ public class Skill : MonoBehaviour
         // 3번 키를 누르면 3번 스킬 사용
         if (Input.GetKeyDown(KeyCode.Alpha3) && !isBuffActive && buffLimit > 0)
         {
-            if (skill_Set.Hermes_S)
+            if (Skill_Set.instance.Hermes_S)
                 UseHermesSkill();
-            else if (skill_Set.Hestia_S)
+            else if (Skill_Set.instance.Hestia_S)
                 UseHestiaSkill();
-            else if (skill_Set.Dionysus_S)
+            else if (Skill_Set.instance.Dionysus_S)
                 UseDionysusSkill();
-            else if (skill_Set.Demeter_S)
+            else if (Skill_Set.instance.Demeter_S)
                 UseDemeterSkill();
             else { }
         }
