@@ -41173,7 +41173,7 @@ GameObject:
   - component: {fileID: 978055766}
   - component: {fileID: 978055765}
   - component: {fileID: 978055764}
-  m_Layer: 6
+  m_Layer: 10
   m_Name: Mini_Position
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -69761,7 +69761,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: horseMan
+  m_Text: sword
 --- !u!222 &1701824897
 CanvasRenderer:
   m_ObjectHideFlags: 0
