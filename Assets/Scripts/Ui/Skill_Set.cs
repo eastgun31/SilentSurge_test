@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class Skill_Set : MonoBehaviour
 {
-    public static Skill_Set instance;
-
     public bool Zeus_S;  //스킬의 true, false값을 판단한다
     public bool Poseidon_S;
     public bool Hades_S;
@@ -65,11 +63,20 @@ public class Skill_Set : MonoBehaviour
     bool _4_3 = false;
     bool _4_4 = false;
 
-
     public GameObject start; // 이 게임 오브젝트가없으면 모든게 true 값이며 계속 업데이트문에 뜨게될것이다
+
+    public bool activeColl = false;
+
     void Start()
     {
-        instance = this;
+        
+    }
+
+    IEnumerator CoolTime(float time)
+    {
+        activeColl = true;
+        yield return new WaitForSeconds(time);
+        activeColl = false;
     }
 
     // Update is called once per frame
@@ -182,38 +189,44 @@ public class Skill_Set : MonoBehaviour
         //-------------------------------액티브--------------------------------------------//
         if (Zeus_S == true) //start가 활성화 되었을때
         {
-            if (Input.GetKeyDown(KeyCode.Alpha1))
+            if (Input.GetKeyDown(KeyCode.Alpha1) && !activeColl)
             {
-              
+                Debug.Log("Zeus_S");
+                //FindAnyObjectByType<Skill>().UseZeusSkill();
+                StartCoroutine(CoolTime(7));
             }
         }
         else if (Poseidon_S == true)
         {
-            if (Input.GetKeyDown(KeyCode.Alpha1))
+            if (Input.GetKeyDown(KeyCode.Alpha1) && !activeColl)
             {
-              
+                Debug.Log("Poseidon_S");
+                //FindAnyObjectByType<Skill>().UsePoseidonSkill();
+                StartCoroutine(CoolTime(7));
             }
         }
         else if (Hades_S == true)
         {
-            if (Input.GetKeyDown(KeyCode.Alpha1))
+            if (Input.GetKeyDown(KeyCode.Alpha1) && !activeColl)
             {
-              
+                Debug.Log("Hades_S");
+                //FindAnyObjectByType<Skill>().UseHadesSkill();
+                StartCoroutine(CoolTime(7));
             }
         }
         //---------------------------------패시브-------------------------------------------//
-        //else if (Hephaestus_S == true)
-        //{
-         
-        //}
-        //else if (Artemis_S == true)
-        //{
-         
-        //}
-        //else if (Ares_S == true)
-        //{
-         
-        //}
+        else if (Hephaestus_S == true)
+        {
+
+        }
+        else if (Artemis_S == true)
+        {
+
+        }
+        else if (Ares_S == true)
+        {
+
+        }
         //---------------------------------버프---------------------------------------------//
         else if (Hera_S == true)
         {
