@@ -37532,7 +37532,7 @@ MonoBehaviour:
   button_archer_1L: {fileID: 8795017649817351261}
   Archer_1L_Obj: {fileID: 179124, guid: 814cec2dc5c497c44aa68bce0a1d5b70, type: 3}
   button_horseMan_1L: {fileID: 8795017648698542784}
-  HorseMan_1L_Obj: {fileID: 158504, guid: e351eb9db7ad83f4fa1fd5bf111ca44f, type: 3}
+  HorseMan_1L_Obj: {fileID: 158504, guid: 67a46c9e5df970d4d86dbb48894bf80e, type: 3}
   button_warrio_2Lr: {fileID: 8795017648811744802}
   Warrior_2L_Obj: {fileID: 182410, guid: 229fd1d34fc6b0c46af61ac8876dda36, type: 3}
   button_shield_2Lr: {fileID: 8795017650443512983}
