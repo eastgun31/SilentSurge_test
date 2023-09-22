@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.AI;
 
 public class E_unitMove : MonoBehaviour
@@ -22,12 +23,16 @@ public class E_unitMove : MonoBehaviour
     public float edefense;
     public float emoveSpeed;
 
+    public Slider Eslider;
+    public float maxhp;
+
     // Start is called before the first frame update
     void Start()
     {
         rigid = GetComponent<Rigidbody>();
         moving = GetComponent<NavMeshAgent>();
 
+        maxhp = ehealth;
     }
 
     private void FixedUpdate()
@@ -37,6 +42,7 @@ public class E_unitMove : MonoBehaviour
             Invoke("E_Die", 4f);
         }
 
+        Eslider.value = ehealth / maxhp;
     }
 
     // Update is called once per frame
@@ -90,6 +96,7 @@ public class E_unitMove : MonoBehaviour
     {
         GameManager.instance.e_population--;
         Destroy(gameObject);
+        GameManager.instance.gold += 2;
     }
 
     private void OnEnable()
