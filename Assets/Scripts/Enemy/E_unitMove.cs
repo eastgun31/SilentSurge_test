@@ -25,6 +25,7 @@ public class E_unitMove : MonoBehaviour
 
     public Slider Eslider;
     public float maxhp;
+    public Points point;
 
     // Start is called before the first frame update
     void Start()
@@ -95,8 +96,14 @@ public class E_unitMove : MonoBehaviour
     void E_Die()
     {
         GameManager.instance.e_population--;
-        Destroy(gameObject);
         GameManager.instance.gold += 2;
+
+        if (point)
+        {
+            point.e_distance = 100f;
+        }
+
+        Destroy(gameObject);
     }
 
     private void OnEnable()
@@ -187,6 +194,14 @@ public class E_unitMove : MonoBehaviour
             eattackPower = GameManager.instance.attackPower + 15;
             edefense = GameManager.instance.defense + 15;
             emoveSpeed = GameManager.instance.moveSpeed + 3;
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Point"))
+        {
+            point = other.GetComponent<Points>();
         }
     }
 

@@ -4848,6 +4848,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4d9b29f9079c994a953ad8c20d55ceb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemLimit: 3
   skillRangePrefab: {fileID: 3387236121303360585, guid: 496987854942ff049b639500415f8502, type: 3}
   currentCooldown_1: 0
   currentCooldown_2: 0
@@ -26217,7 +26218,7 @@ GameObject:
   - component: {fileID: 645044361}
   m_Layer: 0
   m_Name: Dpoint
-  m_TagString: Apoint
+  m_TagString: Point
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -30675,7 +30676,7 @@ GameObject:
   - component: {fileID: 750327216}
   m_Layer: 0
   m_Name: Bpoint
-  m_TagString: Bpoint
+  m_TagString: Point
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -39595,7 +39596,7 @@ GameObject:
   - component: {fileID: 933587124}
   m_Layer: 0
   m_Name: Cpoint
-  m_TagString: Cpoint
+  m_TagString: Point
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -47826,7 +47827,7 @@ GameObject:
   - component: {fileID: 1141676770}
   m_Layer: 0
   m_Name: Epoint
-  m_TagString: Apoint
+  m_TagString: Point
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -63133,7 +63134,7 @@ GameObject:
   - component: {fileID: 1524525832}
   m_Layer: 0
   m_Name: Apoint
-  m_TagString: Apoint
+  m_TagString: Point
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

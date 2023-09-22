@@ -18,7 +18,7 @@ public class UnitController : MonoBehaviour
 
     float time = 3f;    //공격 쿨타임
     public E_unitMove targetUnit;   //공격할 유닛
-
+    public Points point; // 점령중인 거점
 
     public Slider Uslider;
     public float maxhp;
@@ -110,12 +110,13 @@ public class UnitController : MonoBehaviour
         GameManager.instance.All_Obj--;
         GameManager.instance.Aobj();
         EnemySpawn.instance.gold += 2; //아군 유닛 죽였을 때 적 재화 획득
-        Destroy(gameObject);
-    }
 
-    public void ApolloHeal(float heal)
-    {
-        uhealth += heal;
+        if (point)
+        {
+            point.p_distance = 100f;
+        }
+
+        Destroy(gameObject);
     }
 
     private void OnEnable()
@@ -255,5 +256,18 @@ public class UnitController : MonoBehaviour
     //    yield return new WaitForSeconds(1f);
     //    StartCoroutine(Pcheck());
     //}
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Point"))
+        {
+            point = other.GetComponent<Points>();
+        }
+    }
+
+    public void ApolloHeal(float heal)
+    {
+        uhealth += heal;
+    }
 }
 
