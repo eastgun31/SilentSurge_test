@@ -27,21 +27,25 @@ public class E_unitMove : MonoBehaviour
     public float maxhp;
     public Points point;
 
+    private Animator enemyAnim;
+
     // Start is called before the first frame update
     void Start()
     {
         rigid = GetComponent<Rigidbody>();
         moving = GetComponent<NavMeshAgent>();
+        enemyAnim = GetComponent<Animator>();
 
         maxhp = ehealth;
+        StartCoroutine(Pcheck());
     }
 
     private void FixedUpdate()
     {
-        if (ehealth <= 0)
-        {
-            Invoke("E_Die", 4f);
-        }
+        //if (ehealth <= 0)
+        //{
+        //    Invoke("E_Die", 4f);
+        //}
 
         Eslider.value = ehealth / maxhp;
     }
@@ -57,6 +61,8 @@ public class E_unitMove : MonoBehaviour
         lastDesti = i;
         moving.speed = emoveSpeed;
         moving.SetDestination(i);
+
+        enemyAnim.SetFloat("run", moving.remainingDistance);
 
         transform.SetParent(null);
     }
@@ -78,6 +84,10 @@ public class E_unitMove : MonoBehaviour
         if (time > 1f && p_unit.uhealth > 0)
         {
             Debug.Log("АјАн");
+
+            moving.isStopped = true;
+            moving.velocity = Vector3.zero;
+            enemyAnim.SetTrigger("attack");
             p_unit.uhealth -= eattackPower;
             time = 0;
         }
@@ -88,6 +98,7 @@ public class E_unitMove : MonoBehaviour
 
         if (targetUnit == null)
         {
+            moving.isStopped = false;
             moving.SetDestination(lastDesti);
         }
     }
@@ -196,6 +207,28 @@ public class E_unitMove : MonoBehaviour
             emoveSpeed = GameManager.instance.moveSpeed + 3;
         }
     }
+
+    IEnumerator Pcheck()
+    {
+        if (ehealth <= 0)
+        {
+            GameManager.instance.e_population--;
+            if (point)
+            {
+                point.e_distance = 100f;
+            }
+
+            enemyAnim.SetTrigger("death");
+
+            yield return new WaitForSeconds(4f);
+
+            Destroy(gameObject);
+        }
+
+        yield return new WaitForSeconds(1f);
+        StartCoroutine(Pcheck());
+    }
+
 
     private void OnTriggerEnter(Collider other)
     {

@@ -2,12 +2,14 @@ using System;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.AI;
+using System.Collections;
 
 public class UnitController : MonoBehaviour
 {
     [SerializeField]
     private GameObject unitMarker;
     private NavMeshAgent navMeshAgent;
+    private Animator playerAnim;
 
     public int unitnumber = 0;
 
@@ -30,7 +32,8 @@ public class UnitController : MonoBehaviour
 
     private void Start()
     {
-        //StartCoroutine(Pcheck());
+        StartCoroutine(Pcheck());
+        playerAnim = GetComponent<Animator>();
         maxhp = uhealth;
     }
 
@@ -40,10 +43,10 @@ public class UnitController : MonoBehaviour
 
         Uslider.value = uhealth / maxhp;
 
-        if (uhealth <= 0)
-        {
-            Invoke("P_Die", 4f);
-        }
+        //if (uhealth <= 0)
+        //{
+        //    Invoke("P_Die", 4f);
+        //}
 
     }
 
@@ -60,6 +63,7 @@ public class UnitController : MonoBehaviour
 
     public void MoveTo(Vector3 end)
     {
+        playerAnim.SetFloat("run", navMeshAgent.velocity.magnitude);
         navMeshAgent.SetDestination(end);
     }
 
@@ -93,6 +97,7 @@ public class UnitController : MonoBehaviour
         if (time > 1f && e_unit.ehealth > 0)
         {
             Debug.Log("Àû°ø°Ý");
+            playerAnim.SetTrigger("attack");
             e_unit.ehealth -= uattackPower;
             time = 0;
         }
@@ -264,6 +269,32 @@ public class UnitController : MonoBehaviour
             point = other.GetComponent<Points>();
         }
     }
+
+    IEnumerator Pcheck()
+    {
+        if (uhealth <= 0)
+        {
+            RTSUnitController.instance.UnitList.Remove(this);
+            RTSUnitController.instance.selectedUnitList.Remove(this);
+
+            GameManager.instance.All_Obj--;
+            GameManager.instance.Aobj();
+            EnemySpawn.instance.gold += 2; //¾Æ±º À¯´Ö Á×¿´À» ¶§ Àû ÀçÈ­ È¹µæ
+
+            if (point)
+            {
+                point.p_distance = 100f;
+            }
+
+            playerAnim.SetTrigger("death");
+            yield return new WaitForSeconds(4f);
+            Destroy(gameObject);
+        }
+
+        yield return new WaitForSeconds(1f);
+        StartCoroutine(Pcheck());
+    }
+
 
     public void ApolloHeal(float heal)
     {

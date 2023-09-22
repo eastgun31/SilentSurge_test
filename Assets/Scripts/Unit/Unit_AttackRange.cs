@@ -38,8 +38,11 @@ public class Unit_AttackRange : MonoBehaviour
 
     private void OnTriggerExit(Collider col)
     {
-        target = null;
-        //p_unit = null;
+        if (col.CompareTag("Player"))
+        {
+            e_unit = null;
+            target = null;
+        }
         Debug.Log("Box Enemy : Target lost");
     }
 
