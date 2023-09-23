@@ -37,7 +37,7 @@ public class E_unitMove : MonoBehaviour
         enemyAnim = GetComponent<Animator>();
 
         maxhp = ehealth;
-       // StartCoroutine(Pcheck());
+       StartCoroutine(Pcheck());
     }
 
     private void FixedUpdate()
@@ -75,7 +75,6 @@ public class E_unitMove : MonoBehaviour
         moving.SetDestination(dir);
         moving.stoppingDistance = 1f;
 
-
         if (unitNum == 2 || unitNum == 6 || unitNum == 10)
         {
             moving.stoppingDistance = 4f;
@@ -97,11 +96,11 @@ public class E_unitMove : MonoBehaviour
             targetUnit = null;
         }
 
-        //if (targetUnit == null)
-        //{
-        //    moving.isStopped = false;
-        //    moving.SetDestination(lastDesti);
-        //}
+        if ( targetUnit == null)
+        {
+            moving.isStopped = false;
+            moving.SetDestination(lastDesti);
+        }
     }
 
 
@@ -118,7 +117,7 @@ public class E_unitMove : MonoBehaviour
             point.e_distance = 100f;
         }
 
-        enemyAnim.SetTrigger("death");
+        //enemyAnim.SetTrigger("death");
 
         Destroy(gameObject);
     }
@@ -217,17 +216,23 @@ public class E_unitMove : MonoBehaviour
     {
         if (ehealth <= 0)
         {
-            GameManager.instance.e_population--;
-            if (point)
-            {
-                point.e_distance = 100f;
-            }
-
             enemyAnim.SetTrigger("death");
 
-            yield return new WaitForSeconds(4f);
+            yield return new WaitForSeconds(1.5f);
 
-            Destroy(gameObject);
+            StopCoroutine(Pcheck());
+
+            //GameManager.instance.e_population--;
+            //if (point)
+            //{
+            //    point.e_distance = 100f;
+            //}
+
+            //enemyAnim.SetTrigger("death");
+
+            //yield return new WaitForSeconds(4f);
+
+            //Destroy(gameObject);
         }
 
         yield return new WaitForSeconds(1f);

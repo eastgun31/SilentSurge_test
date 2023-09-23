@@ -32,7 +32,7 @@ public class UnitController : MonoBehaviour
 
     private void Start()
     {
-        //StartCoroutine(Pcheck());
+        StartCoroutine(Pcheck());
         playerAnim = GetComponent<Animator>();
         maxhp = uhealth;
     }
@@ -252,43 +252,43 @@ public class UnitController : MonoBehaviour
     //    if (uhealth <= 0)
     //    {
 
-    //        GameManager.instance.All_Obj--;
-    //        GameManager.instance.Aobj();
-    //        Destroy(gameObject, 4f);
-    //        StopCoroutine(Pcheck());
+    //        //GameManager.instance.All_Obj--;
+    //        //GameManager.instance.Aobj();
+    //        //Destroy(gameObject, 4f);
+    //        //StopCoroutine(Pcheck());
     //    }
 
     //    yield return new WaitForSeconds(1f);
     //    StartCoroutine(Pcheck());
     //}
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Point"))
-        {
-            point = other.GetComponent<Points>();
-        }
-    }
+    //private void OnTriggerEnter(Collider other)
+    //{
+    //    if (other.CompareTag("Point"))
+    //    {
+    //        point = other.GetComponent<Points>();
+    //    }
+    //}
 
     IEnumerator Pcheck()
     {
         if (uhealth <= 0)
         {
-            RTSUnitController.instance.UnitList.Remove(this);
-            RTSUnitController.instance.selectedUnitList.Remove(this);
+            //RTSUnitController.instance.UnitList.Remove(this);
+            //RTSUnitController.instance.selectedUnitList.Remove(this);
 
-            GameManager.instance.All_Obj--;
-            GameManager.instance.Aobj();
-            EnemySpawn.instance.gold += 2; //¾Æ±º À¯´Ö Á×¿´À» ¶§ Àû ÀçÈ­ È¹µæ
+            //GameManager.instance.All_Obj--;
+            //GameManager.instance.Aobj();
+            //EnemySpawn.instance.gold += 2; //¾Æ±º À¯´Ö Á×¿´À» ¶§ Àû ÀçÈ­ È¹µæ
 
-            if (point)
-            {
-                point.p_distance = 100f;
-            }
+            //if (point)
+            //{
+            //    point.p_distance = 100f;
+            //}
 
             playerAnim.SetTrigger("death");
-            yield return new WaitForSeconds(4f);
-            Destroy(gameObject);
+            yield return new WaitForSeconds(1.5f);
+            StopCoroutine(Pcheck());
         }
 
         yield return new WaitForSeconds(1f);
