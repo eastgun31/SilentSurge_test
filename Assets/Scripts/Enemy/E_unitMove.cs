@@ -73,7 +73,7 @@ public class E_unitMove : MonoBehaviour
 
         targetUnit = p_unit;
         moving.SetDestination(dir);
-        moving.stoppingDistance = 2f;
+        moving.stoppingDistance = 1f;
 
 
         if (unitNum == 2 || unitNum == 6 || unitNum == 10)
@@ -81,12 +81,13 @@ public class E_unitMove : MonoBehaviour
             moving.stoppingDistance = 4f;
         }
 
-        if (time > 1f && p_unit.uhealth > 0)
+        if ( time > 1f && p_unit.uhealth > 0)
         {
             Debug.Log("АјАн");
 
             moving.isStopped = true;
             moving.velocity = Vector3.zero;
+
             enemyAnim.SetTrigger("attack");
             p_unit.uhealth -= eattackPower;
             time = 0;
@@ -96,11 +97,11 @@ public class E_unitMove : MonoBehaviour
             targetUnit = null;
         }
 
-        if (targetUnit == null)
-        {
-            moving.isStopped = false;
-            moving.SetDestination(lastDesti);
-        }
+        //if (targetUnit == null)
+        //{
+        //    moving.isStopped = false;
+        //    moving.SetDestination(lastDesti);
+        //}
     }
 
 
@@ -116,6 +117,8 @@ public class E_unitMove : MonoBehaviour
         {
             point.e_distance = 100f;
         }
+
+        enemyAnim.SetTrigger("death");
 
         Destroy(gameObject);
     }
@@ -179,7 +182,6 @@ public class E_unitMove : MonoBehaviour
             edefense = GameManager.instance.defense + 10;
             emoveSpeed = GameManager.instance.moveSpeed + 3;
         }
-
 
         if (unitNum == 8)
         {

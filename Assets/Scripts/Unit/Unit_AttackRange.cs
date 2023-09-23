@@ -38,7 +38,7 @@ public class Unit_AttackRange : MonoBehaviour
 
     private void OnTriggerExit(Collider col)
     {
-        if (col.CompareTag("Player"))
+        if (col.CompareTag("Enemy"))
         {
             e_unit = null;
             target = null;
