@@ -166,21 +166,25 @@ public class Skill_Set : MonoBehaviour
         else if ((Hermes_S == true) && (_4_1 == false) && (start.activeSelf == true))
         {
             Hermes_i.SetActive(true);
+            GameManager.instance.item_Skill.gameObject.SetActive(true);
             _4_1 = true;
         }
         else if ((Hestia_S == true) && (_4_2 == false) && (start.activeSelf == true))
         {
             Hestia_i.SetActive(true);
+            GameManager.instance.item_Skill.gameObject.SetActive(true);
             _4_2 = true;
         }
         else if ((Dionysus_S == true) && (_4_3 == false) && (start.activeSelf == true))
         {
-            Dionysus_i.SetActive(true); 
+            Dionysus_i.SetActive(true);
+            GameManager.instance.item_Skill.gameObject.SetActive(true);
             _4_3 = true;
         }
         else if ((Demeter_S == true) && (_4_4 == false) && (start.activeSelf == true))
         {
             Demeter_i.SetActive(true);
+            GameManager.instance.item_Skill.gameObject.SetActive(true);
             _4_4 = true;
         }
         else

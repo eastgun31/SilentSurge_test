@@ -28396,7 +28396,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &738276623
 RectTransform:
   m_ObjectHideFlags: 0
@@ -88897,7 +88897,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "\uC720\uB2DB \uC218"
+  m_Text: 0 / 30
 --- !u!224 &8795017649880920783
 RectTransform:
   m_ObjectHideFlags: 0

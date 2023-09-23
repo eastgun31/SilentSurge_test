@@ -128,7 +128,7 @@ public class GameManager : MonoBehaviour
 
     public void Aobj()
     {
-        All_ObjText.text = " " + All_Obj.ToString(); //ÇöÀç À¯´Ö
+        All_ObjText.text = All_Obj.ToString() + " / 30"; //ÇöÀç À¯´Ö
     }
 
     public void SkillCool_UI()
