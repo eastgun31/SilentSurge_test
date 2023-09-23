@@ -106,6 +106,9 @@ public class E_unitMove : MonoBehaviour
 
     void E_Die()
     {
+        moving.isStopped = false;
+        moving.SetDestination(lastDesti);
+
         GameManager.instance.e_population--;
         GameManager.instance.gold += 2;
 
