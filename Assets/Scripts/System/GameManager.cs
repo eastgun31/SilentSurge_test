@@ -47,15 +47,12 @@ public class GameManager : MonoBehaviour
 
     public void Awake()
     {
-        if (null == instance)
-        {
-            instance = this;
-            DontDestroyOnLoad(this.gameObject);
-        }
+        //DontDestroyOnLoad(this.gameObject);
+
+        if (instance != null)
+            Destroy(gameObject);
         else
-        {
-            Destroy(this.gameObject);
-        }
+            instance = this;
     }
 
     private void Start()
@@ -69,6 +66,15 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
+        //시연용 시간정지 코드 추후 지울것
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            if (Time.timeScale == 0)
+                Time.timeScale = 1;
+            else
+                Time.timeScale = 0;
+        }
+
         Allgold_text.text = " " + gold; //현재 재화
 
         currentTime -= Time.deltaTime;
@@ -80,25 +86,25 @@ public class GameManager : MonoBehaviour
             // 타이머가 끝났을 때 게임종료 추후에 여기 추가
             int a = 0;
             int b = 0;
-            for(int i = 0; i<5; i++)
+            for (int i = 0; i < 5; i++)
             {
                 if (check[i] == 1)
                     a++;
                 if (check[i] == 2)
                     b++;
             }
-            
-            if(a>b)
+
+            if (a > b)
             {
                 Debug.Log("패배");
                 lose.SetActive(true);
             }
-            else if(a<b)
+            else if (a < b)
             {
                 Debug.Log("승리");
                 win.SetActive(true);
             }
-            else if(a == b)
+            else if (a == b)
             {
                 Debug.Log("무승부");
                 draw.SetActive(true);
