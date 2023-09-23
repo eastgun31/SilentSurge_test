@@ -37,7 +37,7 @@ public class GameManager : MonoBehaviour
     //게임 시간
     public Text timerText;
     private float startTime;
-    private float currentTime = 61.0f;
+    private float currentTime = 181.0f;
 
     //스킬 쿨타임
     public Text active_Skill;
