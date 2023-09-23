@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.45845038, g: 0.50884765, b: 0.58782226, a: 1}
+  m_IndirectSpecularColor: {r: 0.17757857, g: 0.222322, b: 0.30451757, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -35704,6 +35704,7 @@ MonoBehaviour:
   Dionysus_i: {fileID: 1632392266}
   Demeter_i: {fileID: 1619999016}
   start: {fileID: 728339213}
+  activeCool: 0
 --- !u!1 &1076861476
 GameObject:
   m_ObjectHideFlags: 0
