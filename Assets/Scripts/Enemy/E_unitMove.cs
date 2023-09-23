@@ -37,15 +37,15 @@ public class E_unitMove : MonoBehaviour
         enemyAnim = GetComponent<Animator>();
 
         maxhp = ehealth;
-        StartCoroutine(Pcheck());
+       // StartCoroutine(Pcheck());
     }
 
     private void FixedUpdate()
     {
-        //if (ehealth <= 0)
-        //{
-        //    Invoke("E_Die", 4f);
-        //}
+        if (ehealth <= 0)
+        {
+            Invoke("E_Die", 4f);
+        }
 
         Eslider.value = ehealth / maxhp;
     }
