@@ -10,6 +10,7 @@ public class Points : MonoBehaviour
 
     public GameObject playerhome;
     public List<E_unitMove> e_unit = new List<E_unitMove>();
+    public List<UnitController> p_unit = new List<UnitController>();
     public GameObject[] points;
 
     public float p_distance; //범위내 플레이어유닛
@@ -64,6 +65,11 @@ public class Points : MonoBehaviour
 
             StartCoroutine("eUnitNewPoint", other.gameObject);
             random = Random.Range(0, 5);
+        }
+
+        if (other.tag == "Enemy")
+        {
+            p_unit.Add(other.gameObject.GetComponent<UnitController>());
         }
     }
 

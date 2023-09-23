@@ -10,6 +10,7 @@ TagManager:
   - Cpoint
   - Enemy
   - Point
+  - Playhome
   layers:
   - Default
   - TransparentFX

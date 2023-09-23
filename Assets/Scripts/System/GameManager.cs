@@ -7,6 +7,10 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
 
+    public GameObject win;  //승리화면
+    public GameObject lose; //패배화면
+    public GameObject draw; //무승부화면
+
     //유닛스탯
     public int health = 100;
     public int attackPower = 10;
@@ -69,10 +73,37 @@ public class GameManager : MonoBehaviour
 
         currentTime -= Time.deltaTime;
 
-        if (currentTime <= 0)
+        if (currentTime <= 180)
         {
+            Time.timeScale = 0;
             currentTime = 0;
             // 타이머가 끝났을 때 게임종료 추후에 여기 추가
+            int a = 0;
+            int b = 0;
+            for(int i = 0; i<5; i++)
+            {
+                if (check[i] == 1)
+                    a++;
+                if (check[i] == 2)
+                    b++;
+            }
+            
+            if(a>b)
+            {
+                Debug.Log("패배");
+                lose.SetActive(true);
+            }
+            else if(a<b)
+            {
+                Debug.Log("승리");
+                win.SetActive(true);
+            }
+            else if(a == b)
+            {
+                Debug.Log("무승부");
+                draw.SetActive(true);
+            }
+
         }
 
         // 시간을 분:초 형식으로 표시
