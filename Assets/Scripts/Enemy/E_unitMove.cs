@@ -44,7 +44,7 @@ public class E_unitMove : MonoBehaviour
     {
         if (ehealth <= 0)
         {
-            Invoke("E_Die", 4f);
+            Invoke("E_Die", 3f);
         }
 
         Eslider.value = ehealth / maxhp;
@@ -62,31 +62,40 @@ public class E_unitMove : MonoBehaviour
         moving.speed = emoveSpeed;
         moving.SetDestination(i);
 
-        enemyAnim.SetFloat("run", moving.remainingDistance);
+        enemyAnim.SetFloat("run", Vector3.Distance(transform.position,i));
 
         transform.SetParent(null);
     }
 
     public void Attakc(Vector3 dir, UnitController p_unit)
     {
+        if (ehealth <= 0)
+            return;
+
+        moving.isStopped = true;
+        moving.velocity = Vector3.zero;
+
         time += Time.deltaTime;
 
         targetUnit = p_unit;
-        moving.SetDestination(dir);
-        moving.stoppingDistance = 1f;
 
-        if (unitNum == 2 || unitNum == 6 || unitNum == 10)
+        //moving.SetDestination(dir);
+        //moving.stoppingDistance = 1f;
+
+        //if (unitNum == 2 || unitNum == 6 || unitNum == 10)
+        //{
+        //    moving.stoppingDistance = 4f;
+        //}
+
+        if(Vector3.Distance(transform.position, dir) > 2f)
         {
-            moving.stoppingDistance = 4f;
+            enemyAnim.SetFloat("run", emoveSpeed);
+            transform.position = Vector3.MoveTowards(transform.position, dir, emoveSpeed * Time.deltaTime);
         }
-
-        if ( time > 1f && p_unit.uhealth > 0)
+        else if (Vector3.Distance(transform.position, dir) <= 2f && time > 1f && p_unit.uhealth > 0)
         {
             Debug.Log("АјАн");
-
-            moving.isStopped = true;
-            moving.velocity = Vector3.zero;
-
+            transform.LookAt(dir);
             enemyAnim.SetTrigger("attack");
             p_unit.uhealth -= eattackPower;
             time = 0;
@@ -99,6 +108,7 @@ public class E_unitMove : MonoBehaviour
         if ( targetUnit == null)
         {
             moving.isStopped = false;
+            enemyAnim.SetFloat("run", Vector3.Distance(transform.position, lastDesti));
             moving.SetDestination(lastDesti);
         }
     }
@@ -106,8 +116,8 @@ public class E_unitMove : MonoBehaviour
 
     void E_Die()
     {
-        moving.isStopped = false;
-        moving.SetDestination(lastDesti);
+        moving.isStopped = true;
+        moving.velocity = Vector3.zero;
 
         GameManager.instance.e_population--;
         GameManager.instance.gold += 2;

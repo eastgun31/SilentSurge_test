@@ -45,7 +45,7 @@ public class UnitController : MonoBehaviour
 
         if (uhealth <= 0)
         {
-            Invoke("P_Die", 4f);
+            Invoke("P_Die", 3f);
         }
 
     }
@@ -82,20 +82,28 @@ public class UnitController : MonoBehaviour
 
     public void Attack(Vector3 dir, E_unitMove e_unit)  //플레이어유닛 공격
     {
+        if (uhealth <= 0)
+            return;
+
         time += Time.deltaTime;
 
-        targetUnit = e_unit;
-        navMeshAgent.SetDestination(dir);
-        navMeshAgent.stoppingDistance = 2f;
+        //targetUnit = e_unit;
+        //navMeshAgent.SetDestination(dir);
+        //navMeshAgent.stoppingDistance = 2f;
 
+        //if (unitnumber == 2 || unitnumber == 6 || unitnumber == 10)
+        //{
+        //    navMeshAgent.stoppingDistance = 4f;
+        //}
 
-        if (unitnumber == 2 || unitnumber == 6 || unitnumber == 10)
+        if (Vector3.Distance(transform.position, dir) > 2f)
         {
-            navMeshAgent.stoppingDistance = 4f;
+            transform.position = Vector3.MoveTowards(transform.position, dir, umoveSpeed * Time.deltaTime);
+            playerAnim.SetFloat("run", umoveSpeed);
         }
-
-        if (time > 1f && e_unit.ehealth > 0)
+        else if (time > 1f && e_unit.ehealth > 0)
         {
+            transform.LookAt(dir);
             Debug.Log("적공격");
             playerAnim.SetTrigger("attack");
             e_unit.ehealth -= uattackPower;
