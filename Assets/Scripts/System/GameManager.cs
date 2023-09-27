@@ -7,6 +7,10 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
 
+    public GameObject win;  //승리화면
+    public GameObject lose; //패배화면
+    public GameObject draw; //무승부화면
+
     //유닛스탯
     public int health = 100;
     public int attackPower = 10;
@@ -33,7 +37,7 @@ public class GameManager : MonoBehaviour
     //게임 시간
     public Text timerText;
     private float startTime;
-    private float currentTime = 901.0f;
+    private float currentTime = 181.0f;
 
     //스킬 쿨타임
     public Text active_Skill;
@@ -43,15 +47,12 @@ public class GameManager : MonoBehaviour
 
     public void Awake()
     {
-        if (null == instance)
-        {
-            instance = this;
-            DontDestroyOnLoad(this.gameObject);
-        }
+        //DontDestroyOnLoad(this.gameObject);
+
+        if (instance != null)
+            Destroy(gameObject);
         else
-        {
-            Destroy(this.gameObject);
-        }
+            instance = this;
     }
 
     private void Start()
@@ -65,14 +66,50 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
+        //시연용 시간정지 코드 추후 지울것
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            if (Time.timeScale == 0)
+                Time.timeScale = 1;
+            else
+                Time.timeScale = 0;
+        }
+
         Allgold_text.text = " " + gold; //현재 재화
 
         currentTime -= Time.deltaTime;
 
         if (currentTime <= 0)
         {
+            Time.timeScale = 0;
             currentTime = 0;
             // 타이머가 끝났을 때 게임종료 추후에 여기 추가
+            int a = 0;
+            int b = 0;
+            for (int i = 0; i < 5; i++)
+            {
+                if (check[i] == 1)
+                    a++;
+                if (check[i] == 2)
+                    b++;
+            }
+
+            if (a > b)
+            {
+                Debug.Log("패배");
+                lose.SetActive(true);
+            }
+            else if (a < b)
+            {
+                Debug.Log("승리");
+                win.SetActive(true);
+            }
+            else if (a == b)
+            {
+                Debug.Log("무승부");
+                draw.SetActive(true);
+            }
+
         }
 
         // 시간을 분:초 형식으로 표시
@@ -91,7 +128,7 @@ public class GameManager : MonoBehaviour
 
     public void Aobj()
     {
-        All_ObjText.text = " " + All_Obj.ToString(); //현재 유닛
+        All_ObjText.text = All_Obj.ToString() + " / 30"; //현재 유닛
     }
 
     public void SkillCool_UI()

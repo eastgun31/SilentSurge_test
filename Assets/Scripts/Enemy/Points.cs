@@ -10,6 +10,7 @@ public class Points : MonoBehaviour
 
     public GameObject playerhome;
     public List<E_unitMove> e_unit = new List<E_unitMove>();
+    public List<UnitController> p_unit = new List<UnitController>();
     public GameObject[] points;
 
     public float p_distance; //범위내 플레이어유닛
@@ -64,6 +65,11 @@ public class Points : MonoBehaviour
 
             StartCoroutine("eUnitNewPoint", other.gameObject);
             random = Random.Range(0, 5);
+        }
+
+        if (other.tag == "Enemy")
+        {
+            p_unit.Add(other.gameObject.GetComponent<UnitController>());
         }
     }
 
@@ -231,8 +237,6 @@ public class Points : MonoBehaviour
         //int random = Random.Range(0, 5);
         if (pointcheck == 1)
         {
-
-
             if (GameManager.instance.attacking == true)
             {
                 for (int i = 0; i < e_unit.Count; i++)
@@ -248,7 +252,6 @@ public class Points : MonoBehaviour
                     e_unit[i].MovePoint(points[random].transform.position);
                     e_unit.Remove(e_unit[i]);
                 }
-
             }
             else if (GameManager.instance.check[0] == 1 && GameManager.instance.check[1] == 1 && GameManager.instance.check[2] == 1 && GameManager.instance.check[3] == 1 && GameManager.instance.check[4] == 1)
             {
@@ -257,9 +260,7 @@ public class Points : MonoBehaviour
                     e_unit[i].MovePoint(playerhome.transform.position);
                     e_unit.Remove(e_unit[i]);
                 }
-
             }
-
         }
 
         yield return new WaitForSeconds(1f);

@@ -25,21 +25,26 @@ public class E_unitMove : MonoBehaviour
 
     public Slider Eslider;
     public float maxhp;
+    public Points point;
+
+    private Animator enemyAnim;
 
     // Start is called before the first frame update
     void Start()
     {
         rigid = GetComponent<Rigidbody>();
         moving = GetComponent<NavMeshAgent>();
+        enemyAnim = GetComponent<Animator>();
 
         maxhp = ehealth;
+       StartCoroutine(Pcheck());
     }
 
     private void FixedUpdate()
     {
         if (ehealth <= 0)
         {
-            Invoke("E_Die", 4f);
+            Invoke("E_Die", 3f);
         }
 
         Eslider.value = ehealth / maxhp;
@@ -57,26 +62,41 @@ public class E_unitMove : MonoBehaviour
         moving.speed = emoveSpeed;
         moving.SetDestination(i);
 
+        enemyAnim.SetFloat("run", Vector3.Distance(transform.position,i));
+
         transform.SetParent(null);
     }
 
     public void Attakc(Vector3 dir, UnitController p_unit)
     {
+        if (ehealth <= 0)
+            return;
+
+        moving.isStopped = true;
+        moving.velocity = Vector3.zero;
+
         time += Time.deltaTime;
 
         targetUnit = p_unit;
-        moving.SetDestination(dir);
-        moving.stoppingDistance = 2f;
 
+        //moving.SetDestination(dir);
+        //moving.stoppingDistance = 1f;
 
-        if (unitNum == 2 || unitNum == 6 || unitNum == 10)
+        //if (unitNum == 2 || unitNum == 6 || unitNum == 10)
+        //{
+        //    moving.stoppingDistance = 4f;
+        //}
+
+        if(Vector3.Distance(transform.position, dir) > 2f)
         {
-            moving.stoppingDistance = 4f;
+            enemyAnim.SetFloat("run", emoveSpeed);
+            transform.position = Vector3.MoveTowards(transform.position, dir, emoveSpeed * Time.deltaTime);
         }
-
-        if (time > 1f && p_unit.uhealth > 0)
+        else if (Vector3.Distance(transform.position, dir) <= 2f && time > 1f && p_unit.uhealth > 0)
         {
             Debug.Log("АјАн");
+            transform.LookAt(dir);
+            enemyAnim.SetTrigger("attack");
             p_unit.uhealth -= eattackPower;
             time = 0;
         }
@@ -85,8 +105,10 @@ public class E_unitMove : MonoBehaviour
             targetUnit = null;
         }
 
-        if (targetUnit == null)
+        if ( targetUnit == null)
         {
+            moving.isStopped = false;
+            enemyAnim.SetFloat("run", Vector3.Distance(transform.position, lastDesti));
             moving.SetDestination(lastDesti);
         }
     }
@@ -94,9 +116,20 @@ public class E_unitMove : MonoBehaviour
 
     void E_Die()
     {
+        moving.isStopped = true;
+        moving.velocity = Vector3.zero;
+
         GameManager.instance.e_population--;
-        Destroy(gameObject);
         GameManager.instance.gold += 2;
+
+        if (point)
+        {
+            point.e_distance = 100f;
+        }
+
+        //enemyAnim.SetTrigger("death");
+
+        Destroy(gameObject);
     }
 
     private void OnEnable()
@@ -159,7 +192,6 @@ public class E_unitMove : MonoBehaviour
             emoveSpeed = GameManager.instance.moveSpeed + 3;
         }
 
-
         if (unitNum == 8)
         {
             ehealth = GameManager.instance.health + 100;
@@ -187,6 +219,42 @@ public class E_unitMove : MonoBehaviour
             eattackPower = GameManager.instance.attackPower + 15;
             edefense = GameManager.instance.defense + 15;
             emoveSpeed = GameManager.instance.moveSpeed + 3;
+        }
+    }
+
+    IEnumerator Pcheck()
+    {
+        if (ehealth <= 0)
+        {
+            enemyAnim.SetTrigger("death");
+
+            yield return new WaitForSeconds(1.5f);
+
+            StopCoroutine(Pcheck());
+
+            //GameManager.instance.e_population--;
+            //if (point)
+            //{
+            //    point.e_distance = 100f;
+            //}
+
+            //enemyAnim.SetTrigger("death");
+
+            //yield return new WaitForSeconds(4f);
+
+            //Destroy(gameObject);
+        }
+
+        yield return new WaitForSeconds(1f);
+        StartCoroutine(Pcheck());
+    }
+
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Point"))
+        {
+            point = other.GetComponent<Points>();
         }
     }
 

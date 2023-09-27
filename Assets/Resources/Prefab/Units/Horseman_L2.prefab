@@ -1344,7 +1344,7 @@ Animator:
   m_GameObject: {fileID: 158504}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 02ded044b8e0963439276550f50be6f9, type: 3}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 62a903dae90f21a43a17313ceef30d9d, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
@@ -1450,6 +1450,7 @@ MonoBehaviour:
   udefense: 0
   umoveSpeed: 0
   targetUnit: {fileID: 0}
+  point: {fileID: 0}
   Uslider: {fileID: 8718280596304407403}
   maxhp: 0
 --- !u!54 &-2756207479940588663

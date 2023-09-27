@@ -2,12 +2,14 @@ using System;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.AI;
+using System.Collections;
 
 public class UnitController : MonoBehaviour
 {
     [SerializeField]
     private GameObject unitMarker;
     private NavMeshAgent navMeshAgent;
+    private Animator playerAnim;
 
     public int unitnumber = 0;
 
@@ -18,7 +20,7 @@ public class UnitController : MonoBehaviour
 
     float time = 3f;    //°ø°Ý ÄðÅ¸ÀÓ
     public E_unitMove targetUnit;   //°ø°ÝÇÒ À¯´Ö
-
+    public Points point; // Á¡·ÉÁßÀÎ °ÅÁ¡
 
     public Slider Uslider;
     public float maxhp;
@@ -30,7 +32,8 @@ public class UnitController : MonoBehaviour
 
     private void Start()
     {
-        //StartCoroutine(Pcheck());
+        StartCoroutine(Pcheck());
+        playerAnim = GetComponent<Animator>();
         maxhp = uhealth;
     }
 
@@ -42,7 +45,7 @@ public class UnitController : MonoBehaviour
 
         if (uhealth <= 0)
         {
-            Invoke("P_Die", 4f);
+            Invoke("P_Die", 3f);
         }
 
     }
@@ -60,6 +63,7 @@ public class UnitController : MonoBehaviour
 
     public void MoveTo(Vector3 end)
     {
+        playerAnim.SetFloat("run", navMeshAgent.velocity.magnitude);
         navMeshAgent.SetDestination(end);
     }
 
@@ -78,21 +82,30 @@ public class UnitController : MonoBehaviour
 
     public void Attack(Vector3 dir, E_unitMove e_unit)  //ÇÃ·¹ÀÌ¾îÀ¯´Ö °ø°Ý
     {
+        if (uhealth <= 0)
+            return;
+
         time += Time.deltaTime;
 
-        targetUnit = e_unit;
-        navMeshAgent.SetDestination(dir);
-        navMeshAgent.stoppingDistance = 2f;
+        //targetUnit = e_unit;
+        //navMeshAgent.SetDestination(dir);
+        //navMeshAgent.stoppingDistance = 2f;
 
+        //if (unitnumber == 2 || unitnumber == 6 || unitnumber == 10)
+        //{
+        //    navMeshAgent.stoppingDistance = 4f;
+        //}
 
-        if (unitnumber == 2 || unitnumber == 6 || unitnumber == 10)
+        if (Vector3.Distance(transform.position, dir) > 2f)
         {
-            navMeshAgent.stoppingDistance = 4f;
+            transform.position = Vector3.MoveTowards(transform.position, dir, umoveSpeed * Time.deltaTime);
+            playerAnim.SetFloat("run", umoveSpeed);
         }
-
-        if (time > 1f && e_unit.ehealth > 0)
+        else if (time > 1f && e_unit.ehealth > 0)
         {
+            transform.LookAt(dir);
             Debug.Log("Àû°ø°Ý");
+            playerAnim.SetTrigger("attack");
             e_unit.ehealth -= uattackPower;
             time = 0;
         }
@@ -110,12 +123,13 @@ public class UnitController : MonoBehaviour
         GameManager.instance.All_Obj--;
         GameManager.instance.Aobj();
         EnemySpawn.instance.gold += 2; //¾Æ±º À¯´Ö Á×¿´À» ¶§ Àû ÀçÈ­ È¹µæ
-        Destroy(gameObject);
-    }
 
-    public void ApolloHeal(float heal)
-    {
-        uhealth += heal;
+        if (point)
+        {
+            point.p_distance = 100f;
+        }
+
+        Destroy(gameObject);
     }
 
     private void OnEnable()
@@ -246,14 +260,53 @@ public class UnitController : MonoBehaviour
     //    if (uhealth <= 0)
     //    {
 
-    //        GameManager.instance.All_Obj--;
-    //        GameManager.instance.Aobj();
-    //        Destroy(gameObject, 4f);
-    //        StopCoroutine(Pcheck());
+    //        //GameManager.instance.All_Obj--;
+    //        //GameManager.instance.Aobj();
+    //        //Destroy(gameObject, 4f);
+    //        //StopCoroutine(Pcheck());
     //    }
 
     //    yield return new WaitForSeconds(1f);
     //    StartCoroutine(Pcheck());
     //}
+
+    //private void OnTriggerEnter(Collider other)
+    //{
+    //    if (other.CompareTag("Point"))
+    //    {
+    //        point = other.GetComponent<Points>();
+    //    }
+    //}
+
+    IEnumerator Pcheck()
+    {
+        if (uhealth <= 0)
+        {
+            //RTSUnitController.instance.UnitList.Remove(this);
+            //RTSUnitController.instance.selectedUnitList.Remove(this);
+
+            //GameManager.instance.All_Obj--;
+            //GameManager.instance.Aobj();
+            //EnemySpawn.instance.gold += 2; //¾Æ±º À¯´Ö Á×¿´À» ¶§ Àû ÀçÈ­ È¹µæ
+
+            //if (point)
+            //{
+            //    point.p_distance = 100f;
+            //}
+
+            playerAnim.SetTrigger("death");
+            yield return new WaitForSeconds(1.5f);
+            StopCoroutine(Pcheck());
+        }
+
+        yield return new WaitForSeconds(1f);
+        StartCoroutine(Pcheck());
+    }
+
+
+    public void ApolloHeal(float heal)
+    {
+        uhealth += heal;
+    }
 }
 
