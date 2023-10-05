@@ -25,6 +25,13 @@ public class UnitController : MonoBehaviour
     public Slider Uslider;
     public float maxhp;
 
+    public enum unitState //유닛상태머신
+    {
+        Battle, Idle, goPoint
+    }
+
+    public unitState u_State;
+
     private void Awake()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
@@ -32,7 +39,7 @@ public class UnitController : MonoBehaviour
 
     private void Start()
     {
-        StartCoroutine(Pcheck());
+        StartCoroutine(Pcheck());   //유닛 hp체크후 죽는 코루틴함수
         playerAnim = GetComponent<Animator>();
         maxhp = uhealth;
     }
@@ -43,10 +50,10 @@ public class UnitController : MonoBehaviour
 
         Uslider.value = uhealth / maxhp;
 
-        if (uhealth <= 0)
-        {
-            Invoke("P_Die", 3f);
-        }
+        //if (uhealth <= 0)             //현재 미사용인데 혹시몰라 일단 놔둠
+        //{
+        //    Invoke("P_Die", 3f);
+        //}
 
     }
 
@@ -63,12 +70,25 @@ public class UnitController : MonoBehaviour
 
     public void MoveTo(Vector3 end)
     {
-        playerAnim.SetFloat("run", navMeshAgent.velocity.magnitude);
+        //playerAnim.SetFloat("run", navMeshAgent.velocity.magnitude);
         navMeshAgent.SetDestination(end);
     }
 
     void Update()
     {
+        time += Time.deltaTime;
+
+        switch (u_State)
+        {
+            case unitState.Idle:
+                U_Idle();
+                break;
+            case unitState.goPoint:
+                U_GoPoint();
+                break;
+        }
+
+        playerAnim.SetFloat("run", navMeshAgent.velocity.magnitude);
 
     }
 
@@ -80,40 +100,88 @@ public class UnitController : MonoBehaviour
         //Destroy(gameObject);
     }
 
-    public void Attack(Vector3 dir, E_unitMove e_unit)  //플레이어유닛 공격
+    void U_Idle()   //유닛상태함수 가만히있을때
+    {
+        time = 0;
+
+        targetUnit = null;
+        navMeshAgent.isStopped = false;
+
+        if (time > 2)
+        {
+            time = 0;
+            StopAllCoroutines();
+        }
+    }
+
+    void U_GoPoint()    //유닛상태함수
+    {
+
+    }
+
+
+    public void Attack(Vector3 dir, E_unitMove e_unit)  //적 유닛 인식
     {
         if (uhealth <= 0)
             return;
 
-        time += Time.deltaTime;
-
-        //targetUnit = e_unit;
-        //navMeshAgent.SetDestination(dir);
-        //navMeshAgent.stoppingDistance = 2f;
-
-        //if (unitnumber == 2 || unitnumber == 6 || unitnumber == 10)
-        //{
-        //    navMeshAgent.stoppingDistance = 4f;
-        //}
-
-        if (Vector3.Distance(transform.position, dir) > 2f)
+        if (e_unit.ehealth > 0)
         {
-            transform.position = Vector3.MoveTowards(transform.position, dir, umoveSpeed * Time.deltaTime);
-            playerAnim.SetFloat("run", umoveSpeed);
+            targetUnit = e_unit;
+            Find_Target(dir, e_unit);
         }
-        else if (time > 1f && e_unit.ehealth > 0)
-        {
-            transform.LookAt(dir);
-            Debug.Log("적공격");
-            playerAnim.SetTrigger("attack");
-            e_unit.ehealth -= uattackPower;
-            time = 0;
-        }
-        else if (e_unit.ehealth <= 0)
+    }
+
+    void Find_Target(Vector3 dir, E_unitMove e_unit)    //공격할 유닛 지정
+    {
+        navMeshAgent.SetDestination(dir);
+        navMeshAgent.stoppingDistance = 2f;
+
+        if (e_unit.ehealth <= 0)
         {
             targetUnit = null;
         }
+
+        if (Vector3.Distance(transform.position, dir) <= 3f && e_unit.ehealth > 0)
+        {
+            navMeshAgent.isStopped = true;
+            navMeshAgent.velocity = Vector3.zero;
+
+            StartCoroutine(Damage(dir, e_unit));
+        }
+        else if (Vector3.Distance(transform.position, dir) > 3f)
+        {
+            navMeshAgent.isStopped = false;
+            navMeshAgent.SetDestination(dir);
+            navMeshAgent.stoppingDistance = 2f;
+        }
     }
+
+    IEnumerator Damage(Vector3 dir, E_unitMove e_unit)  //적 공격
+    {
+        if (e_unit.ehealth > 0 && time > 2f && u_State == unitState.Battle)
+        {
+            time = 0;
+            transform.LookAt(dir);
+            playerAnim.SetTrigger("attack");
+            e_unit.ehealth -= 10f;
+            Debug.Log("적 공격");
+
+            yield return new WaitForSeconds(1f);
+
+            StartCoroutine(Damage(dir, e_unit));
+        }
+
+        if (e_unit.ehealth <= 0 && uhealth > 0)
+        {
+            u_State = unitState.Idle;
+            targetUnit = null;
+            Debug.Log("적들 죽음");
+            navMeshAgent.isStopped = false;
+            StopCoroutine("Damage");
+        }
+    }
+
 
     void P_Die()    //플레이어 유닛 죽음
     {
@@ -255,47 +323,46 @@ public class UnitController : MonoBehaviour
         }   
     }
 
-    //IEnumerator Pcheck()
-    //{
-    //    if (uhealth <= 0)
-    //    {
+    private void OnTriggerEnter(Collider other) //점령지확인
+    {
+        if (other.CompareTag("Point"))
+        {
+            point = other.GetComponent<Points>();
+        }
+    }
+    private void OnTriggerExit(Collider other)  //점령지 초기화
+    {
+        if (other.CompareTag("Point"))
+        {
+            point.p_distance = 100f;
+        }
+    }
 
-    //        //GameManager.instance.All_Obj--;
-    //        //GameManager.instance.Aobj();
-    //        //Destroy(gameObject, 4f);
-    //        //StopCoroutine(Pcheck());
-    //    }
 
-    //    yield return new WaitForSeconds(1f);
-    //    StartCoroutine(Pcheck());
-    //}
-
-    //private void OnTriggerEnter(Collider other)
-    //{
-    //    if (other.CompareTag("Point"))
-    //    {
-    //        point = other.GetComponent<Points>();
-    //    }
-    //}
-
-    IEnumerator Pcheck()
+    IEnumerator Pcheck()    //유닛 죽는 코루틴 함수
     {
         if (uhealth <= 0)
         {
-            //RTSUnitController.instance.UnitList.Remove(this);
-            //RTSUnitController.instance.selectedUnitList.Remove(this);
+            navMeshAgent.isStopped = true;
+            navMeshAgent.velocity = Vector3.zero;
 
-            //GameManager.instance.All_Obj--;
-            //GameManager.instance.Aobj();
-            //EnemySpawn.instance.gold += 2; //아군 유닛 죽였을 때 적 재화 획득
+            RTSUnitController.instance.UnitList.Remove(this);
+            RTSUnitController.instance.selectedUnitList.Remove(this);
 
-            //if (point)
-            //{
-            //    point.p_distance = 100f;
-            //}
+            GameManager.instance.All_Obj--;
+            GameManager.instance.Aobj();
+            EnemySpawn.instance.gold += 2; //아군 유닛 죽였을 때 적 재화 획득
+
 
             playerAnim.SetTrigger("death");
-            yield return new WaitForSeconds(1.5f);
+            yield return new WaitForSeconds(3f);
+
+            if (point)
+            {
+                point.p_distance = 100f;
+            }
+
+            Destroy(gameObject);
             StopCoroutine(Pcheck());
         }
 

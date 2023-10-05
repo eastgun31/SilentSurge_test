@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class AttackRange : MonoBehaviour
 {
-    Transform target;
-    UnitController p_unit;
+    public Vector3 target;
+    public List<GameObject> targets = new List<GameObject>();
+
+    public UnitController p_unit;
     public E_unitMove parent;
 
     // Start is called before the first frame update
@@ -17,35 +19,33 @@ public class AttackRange : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (target != null)
+        if (targets != null)
         {
-            Debug.Log("Å¸°ÙÃßÀû");
-            Vector3 dir = target.position;
-            parent.Attakc(dir, p_unit);
+            for (int i = 0; i < targets.Count; i++)
+            {
+                target = targets[i].transform.position;
+                p_unit = targets[i].GetComponent<UnitController>();
+                if (p_unit.uhealth > 0 && parent.ehealth > 0)
+                {
+                    parent.Attakc(target, p_unit);
+                    parent.e_State = E_unitMove.E_UnitState.Battle;
+                }
+                if (p_unit.uhealth <= 0)
+                {
+                    p_unit = null;
+                    targets.Remove(targets[i]);
+                    parent.e_State = E_unitMove.E_UnitState.Idle;
+                }
+            }
         }
 
     }
-
-    //private void OnTriggerEnter(Collider col)
-    //{
-    //    if (col.tag == "player")
-    //    {
-    //        //if(parent.targetUnit == null)
-    //        //{
-    //        //    target = null;
-    //        //    p_unit = null;
-    //        //}
-    //    }
-    //}
 
     private void OnTriggerStay(Collider col)
     {
         if (col.CompareTag("Player"))
         {
-            target = col.gameObject.transform;
-            Debug.Log("Box Enemy : Target found");
-
-            p_unit = col.gameObject.GetComponent<UnitController>();
+            targets.Add(col.gameObject);
         }
     }
 
@@ -53,10 +53,9 @@ public class AttackRange : MonoBehaviour
     {
         if (col.CompareTag("Player"))
         {
-            target = null;
+            targets.Remove(col.gameObject);
             p_unit = null;
         }
-        Debug.Log("Box Enemy : Target lost");
     }
 
 }

@@ -11,7 +11,7 @@ public class E_unitMove : MonoBehaviour
 
     float speed = 7f;
     public float health;
-    float time = 3f;
+    float time = 0;
     Rigidbody rigid;
 
     NavMeshAgent moving;
@@ -29,23 +29,31 @@ public class E_unitMove : MonoBehaviour
 
     private Animator enemyAnim;
 
+    public enum E_UnitState //적 상태머신
+    {
+        Battle, Idle, goPoint, noBattle
+    }
+
+    public E_UnitState e_State;
+
     // Start is called before the first frame update
     void Start()
     {
+        e_State = E_UnitState.noBattle;
         rigid = GetComponent<Rigidbody>();
         moving = GetComponent<NavMeshAgent>();
         enemyAnim = GetComponent<Animator>();
 
         maxhp = ehealth;
-       StartCoroutine(Pcheck());
+       StartCoroutine(Pcheck()); //유닛 hp체크후 죽음
     }
 
     private void FixedUpdate()
     {
-        if (ehealth <= 0)
-        {
-            Invoke("E_Die", 3f);
-        }
+        //if (ehealth <= 0)         //현재 미사용인데 혹시몰라 일단 놔둠
+        //{
+        //    Invoke("E_Die", 3f);
+        //}
 
         Eslider.value = ehealth / maxhp;
     }
@@ -53,7 +61,32 @@ public class E_unitMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        time += Time.deltaTime;
 
+        switch (e_State)
+        {
+            case E_UnitState.Idle:
+                E_Idle();
+                break;
+            case E_UnitState.goPoint:
+                E_GoPoint();
+                break;
+        }
+
+        enemyAnim.SetFloat("run", moving.desiredVelocity.magnitude);
+    }
+
+    void E_Idle()
+    {
+        time = 0;
+        moving.isStopped = false;
+        e_State = E_UnitState.goPoint;
+    }
+
+    void E_GoPoint()
+    {
+        MovePoint(lastDesti);
+        e_State = E_UnitState.noBattle;
     }
 
     public void MovePoint(Vector3 i)
@@ -62,7 +95,7 @@ public class E_unitMove : MonoBehaviour
         moving.speed = emoveSpeed;
         moving.SetDestination(i);
 
-        enemyAnim.SetFloat("run", Vector3.Distance(transform.position,i));
+        //enemyAnim.SetFloat("run", Vector3.Distance(transform.position,i));
 
         transform.SetParent(null);
     }
@@ -72,47 +105,71 @@ public class E_unitMove : MonoBehaviour
         if (ehealth <= 0)
             return;
 
-        moving.isStopped = true;
-        moving.velocity = Vector3.zero;
-
-        time += Time.deltaTime;
-
-        targetUnit = p_unit;
-
-        //moving.SetDestination(dir);
-        //moving.stoppingDistance = 1f;
-
-        //if (unitNum == 2 || unitNum == 6 || unitNum == 10)
-        //{
-        //    moving.stoppingDistance = 4f;
-        //}
-
-        if(Vector3.Distance(transform.position, dir) > 2f)
+        if (p_unit.uhealth > 0)
         {
-            enemyAnim.SetFloat("run", emoveSpeed);
-            transform.position = Vector3.MoveTowards(transform.position, dir, emoveSpeed * Time.deltaTime);
+            targetUnit = p_unit;
+            Find_Target(dir, p_unit);
         }
-        else if (Vector3.Distance(transform.position, dir) <= 2f && time > 1f && p_unit.uhealth > 0)
-        {
-            Debug.Log("공격");
-            transform.LookAt(dir);
-            enemyAnim.SetTrigger("attack");
-            p_unit.uhealth -= eattackPower;
-            time = 0;
-        }
-        else if (p_unit.uhealth <= 0)
+    }
+
+    void Find_Target(Vector3 dir, UnitController p_unit)
+    {
+        moving.SetDestination(dir);
+        moving.stoppingDistance = 2f;
+
+        if (p_unit.uhealth <= 0)
         {
             targetUnit = null;
         }
 
-        if ( targetUnit == null)
+        if (Vector3.Distance(transform.position, dir) <= 3f && p_unit.uhealth > 0)
+        {
+            moving.isStopped = true;
+            moving.velocity = Vector3.zero;
+
+            StartCoroutine(Damage(dir, p_unit));
+        }
+        else if (Vector3.Distance(transform.position, dir) > 3f)
         {
             moving.isStopped = false;
-            enemyAnim.SetFloat("run", Vector3.Distance(transform.position, lastDesti));
-            moving.SetDestination(lastDesti);
+            moving.SetDestination(dir);
+            moving.stoppingDistance = 2f;
+            //enemyAnim.SetFloat("run", attackspeed);
         }
     }
 
+    IEnumerator Damage(Vector3 dir, UnitController p_unit)
+    {
+        if (p_unit.uhealth > 0 && time > 2f && e_State == E_UnitState.Battle)
+        {
+            time = 0;
+            transform.LookAt(dir);
+            enemyAnim.SetTrigger("attack");
+            p_unit.uhealth -= 10f;
+            Debug.Log("공격");
+
+            yield return new WaitForSeconds(1f);
+
+            StartCoroutine(Damage(dir, p_unit));
+        }
+
+        if (p_unit.uhealth <= 0 && ehealth > 0)
+        {
+            e_State = E_UnitState.Idle;
+            targetUnit = null;
+            Debug.Log("적 죽음");
+
+            if (targetUnit == null && ehealth > 0)
+            {
+                Debug.Log("다시 출발");
+                moving.isStopped = false;
+                //enemyAnim.SetFloat("run", Vector3.Distance(transform.position, lastDesti));
+                moving.SetDestination(lastDesti);
+            }
+
+            StopCoroutine("Damage");
+        }
+    }
 
     void E_Die()
     {
@@ -226,23 +283,24 @@ public class E_unitMove : MonoBehaviour
     {
         if (ehealth <= 0)
         {
+            moving.isStopped = true;
+            moving.velocity = Vector3.zero;
+
+            GameManager.instance.e_population--;
+            GameManager.instance.gold += 2;
+
             enemyAnim.SetTrigger("death");
 
-            yield return new WaitForSeconds(1.5f);
+            yield return new WaitForSeconds(3f);
+
+            if (point)
+            {
+                point.e_distance = 100f;
+            }
+
+            Destroy(gameObject);
 
             StopCoroutine(Pcheck());
-
-            //GameManager.instance.e_population--;
-            //if (point)
-            //{
-            //    point.e_distance = 100f;
-            //}
-
-            //enemyAnim.SetTrigger("death");
-
-            //yield return new WaitForSeconds(4f);
-
-            //Destroy(gameObject);
         }
 
         yield return new WaitForSeconds(1f);

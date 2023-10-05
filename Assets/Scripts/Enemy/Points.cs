@@ -80,11 +80,20 @@ public class Points : MonoBehaviour
         //    pointcheck = 0;
         //}
 
-        if (other.tag == "Enemy")
+        if (other.tag == "Enemy") //적군 점령지에 있는지 체크
         {
             e_distance = Vector3.Distance(other.transform.position, transform.position);
+
+            for (int i = 0; i < e_unit.Count; i++)
+            {
+                if (e_unit[i].ehealth <= 0)
+                {
+                    e_unit.Remove(e_unit[i]);
+                }
+            }
+
         }
-        if (other.tag == "Player")
+        if (other.tag == "Player") //아군 점령지에 있는지 체크
         {
             p_distance = Vector3.Distance(other.transform.position, transform.position);
         }
@@ -232,9 +241,8 @@ public class Points : MonoBehaviour
         }
     }
 
-    IEnumerator eUnitNewPoint(GameObject other)
+    IEnumerator eUnitNewPoint(GameObject other) //적군 새로운 목표지정
     {
-        //int random = Random.Range(0, 5);
         if (pointcheck == 1)
         {
             if (GameManager.instance.attacking == true)
