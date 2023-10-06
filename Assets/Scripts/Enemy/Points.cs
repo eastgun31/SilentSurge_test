@@ -20,6 +20,9 @@ public class Points : MonoBehaviour
 
     private int ppoint = 0;
 
+    string enemy = "Enemy";
+    string player = "Player";
+
     // Start is called before the first frame update
     void Start()
     {
@@ -59,7 +62,7 @@ public class Points : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Enemy")
+        if (other.CompareTag(enemy))
         {
             e_unit.Add(other.gameObject.GetComponent<E_unitMove>());
 
@@ -67,7 +70,7 @@ public class Points : MonoBehaviour
             random = Random.Range(0, 5);
         }
 
-        if (other.tag == "Enemy")
+        if (other.CompareTag(enemy))
         {
             p_unit.Add(other.gameObject.GetComponent<UnitController>());
         }
@@ -80,7 +83,7 @@ public class Points : MonoBehaviour
         //    pointcheck = 0;
         //}
 
-        if (other.tag == "Enemy") //적군 점령지에 있는지 체크
+        if (other.CompareTag(enemy)) //적군 점령지에 있는지 체크
         {
             e_distance = Vector3.Distance(other.transform.position, transform.position);
 
@@ -93,7 +96,7 @@ public class Points : MonoBehaviour
             }
 
         }
-        if (other.tag == "Player") //아군 점령지에 있는지 체크
+        if (other.CompareTag(player)) //아군 점령지에 있는지 체크
         {
             p_distance = Vector3.Distance(other.transform.position, transform.position);
         }
@@ -227,13 +230,13 @@ public class Points : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.tag == "Enemy")
+        if (other.CompareTag(enemy))
         {
             time = 0;
             e_distance = 100f;
         }
 
-        if (other.tag == "Player")
+        if (other.CompareTag(player))
         {
             time = 0;
             GameManager.instance.attacking = false;
@@ -243,6 +246,8 @@ public class Points : MonoBehaviour
 
     IEnumerator eUnitNewPoint(GameObject other) //적군 새로운 목표지정
     {
+        WaitForSeconds wait = new WaitForSeconds(1f);
+
         if (pointcheck == 1)
         {
             if (GameManager.instance.attacking == true)
@@ -271,7 +276,7 @@ public class Points : MonoBehaviour
             }
         }
 
-        yield return new WaitForSeconds(1f);
+        yield return wait;
 
         StartCoroutine("eUnitNewPoint", other.gameObject);
     }
