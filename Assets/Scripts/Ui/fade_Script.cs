@@ -75,7 +75,7 @@ public class fade_Script : MonoBehaviour
 
         if (fadeCount > 0.8f)
         {
-            SceneManager.LoadScene("Loby_Scene");
+            SceneManager.LoadScene("MainScene");
         }
         else
         {
@@ -92,7 +92,7 @@ public class fade_Script : MonoBehaviour
 
     public void Quit()
     {
-        SceneManager.LoadScene("Loby_Scene");
+        SceneManager.LoadScene("MainScene");
     }
 
     public void next()

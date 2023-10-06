@@ -49,6 +49,15 @@ public class Skill_Select : MonoBehaviour
     public bool Demeter_Select;
     #endregion
     //---------------------------------------------------------------------------//
+
+    Audio_Manager Audio_Manager;
+
+    public void Start()
+    {
+        Audio_Manager = FindAnyObjectByType<Audio_Manager>();
+    }
+
+
     public void Update()
     {
         //-------------------------------엑티브----------------------------------//
@@ -152,18 +161,21 @@ public class Skill_Select : MonoBehaviour
     //-----------------------------------엑티브 버튼----------------------------------//
     public void Zeus_ON_Select_Button()
     {
+        Audio_Manager.PlaySFX(Audio_Manager.AudioButton);
         Zeus_ON.SetActive(true);
         Poseidon_ON.SetActive(false);
         Hades_ON.SetActive(false);
     }
     public void Poseidon_ON_Select_Button()
     {
+        Audio_Manager.PlaySFX(Audio_Manager.AudioButton);
         Zeus_ON.SetActive(false);
         Poseidon_ON.SetActive(true);
         Hades_ON.SetActive(false);
     }
     public void Hades_ON_Select_Button()
     {
+        Audio_Manager.PlaySFX(Audio_Manager.AudioButton);
         Zeus_ON.SetActive(false);
         Poseidon_ON.SetActive(false);
         Hades_ON.SetActive(true);
@@ -171,18 +183,21 @@ public class Skill_Select : MonoBehaviour
     //-----------------------------------패시브 버튼---------------------------------//
     public void Hephaestus_ON_Select_Button()
     {
+        Audio_Manager.PlaySFX(Audio_Manager.AudioButton);
         Hephaestus_ON.SetActive(true);
         Artemis_ON.SetActive(false);
         Ares_ON.SetActive(false);
     }
     public void Artemis_ON_Select_Button()
     {
+        Audio_Manager.PlaySFX(Audio_Manager.AudioButton);
         Hephaestus_ON.SetActive(false);
         Artemis_ON.SetActive(true);
         Ares_ON.SetActive(false);
     }
     public void Ares_ON_Select_Button()
     {
+        Audio_Manager.PlaySFX(Audio_Manager.AudioButton);
         Hephaestus_ON.SetActive(false);
         Artemis_ON.SetActive(false);
         Ares_ON.SetActive(true);
@@ -190,6 +205,7 @@ public class Skill_Select : MonoBehaviour
     //---------------------------------군중제어 및 디버프 버튼---------------------------------//
     public void Hera_ON_Select_Button()
     {
+        Audio_Manager.PlaySFX(Audio_Manager.AudioButton);
         Hera_ON.SetActive(true);
         Apollo_ON.SetActive(false);
         Athena_ON.SetActive(false);
@@ -197,6 +213,7 @@ public class Skill_Select : MonoBehaviour
     }
     public void Apollo_ON_Select_Button()
     {
+        Audio_Manager.PlaySFX(Audio_Manager.AudioButton);
         Hera_ON.SetActive(false);
         Apollo_ON.SetActive(true);
         Athena_ON.SetActive(false);
@@ -204,6 +221,7 @@ public class Skill_Select : MonoBehaviour
     }
     public void Athena_ON_Select_Button()
     {
+        Audio_Manager.PlaySFX(Audio_Manager.AudioButton);
         Hera_ON.SetActive(false);
         Apollo_ON.SetActive(false);
         Athena_ON.SetActive(true);
@@ -211,6 +229,7 @@ public class Skill_Select : MonoBehaviour
     }
     public void Aphrodite_ON_Select_Button()
     {
+        Audio_Manager.PlaySFX(Audio_Manager.AudioButton);
         Hera_ON.SetActive(false);
         Apollo_ON.SetActive(false);
         Athena_ON.SetActive(false);
@@ -219,6 +238,7 @@ public class Skill_Select : MonoBehaviour
     //---------------------------------------소모품 버튼--------------------------------------//
     public void Hermes_ON_Select_Button()
     {
+        Audio_Manager.PlaySFX(Audio_Manager.AudioButton);
         Hermes_ON.SetActive(true);
         Hestia_ON.SetActive(false);
         Dionysus_ON.SetActive(false);
@@ -226,6 +246,7 @@ public class Skill_Select : MonoBehaviour
     }
     public void Hestia_ON_Select_Button()
     {
+        Audio_Manager.PlaySFX(Audio_Manager.AudioButton);
         Hermes_ON.SetActive(false);
         Hestia_ON.SetActive(true);
         Dionysus_ON.SetActive(false);
@@ -233,6 +254,7 @@ public class Skill_Select : MonoBehaviour
     }
     public void Dionysus_ON_Select_Button()
     {
+        Audio_Manager.PlaySFX(Audio_Manager.AudioButton);
         Hermes_ON.SetActive(false);
         Hestia_ON.SetActive(false);
         Dionysus_ON.SetActive(true);
@@ -240,6 +262,7 @@ public class Skill_Select : MonoBehaviour
     }
     public void Demeter_ON_Select_Button()
     {
+        Audio_Manager.PlaySFX(Audio_Manager.AudioButton);
         Hermes_ON.SetActive(false);
         Hestia_ON.SetActive(false);
         Dionysus_ON.SetActive(false);

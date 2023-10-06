@@ -27,6 +27,8 @@ public class Audio_Manager : MonoBehaviour
     [Header("---------- 오디오 클립 ----------")]
     public AudioClip Loby_background;
     public AudioClip Main_background;
+    public AudioClip Story_background;
+    public AudioClip AudioButton;
 
     public void Loby_Music()
     {
@@ -37,6 +39,11 @@ public class Audio_Manager : MonoBehaviour
     public void Main_Music()
     {
         MusicSource.clip = Main_background;
+        MusicSource.Play();
+    }
+    public void Story_Music()
+    {
+        MusicSource.clip = Story_background;
         MusicSource.Play();
     }
 

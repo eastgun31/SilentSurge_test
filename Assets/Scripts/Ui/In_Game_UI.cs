@@ -17,9 +17,11 @@ public class In_Game_UI : MonoBehaviour
     public bool _OK_ = true;
     public bool Game_Start = true;
 
+    Audio_Manager Audio_Manager;
+
     void Start()
     {
-            
+        Audio_Manager = FindAnyObjectByType<Audio_Manager>();
     }
 
     
@@ -41,6 +43,7 @@ public class In_Game_UI : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Tab) && ( On.activeSelf == true) && (_OK_ == true))
         {
+            Audio_Manager.PlaySFX(Audio_Manager.AudioButton);
             Tab.SetTrigger("On");
             ESC_ON = false;
 
@@ -57,6 +60,7 @@ public class In_Game_UI : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Escape) && (On.activeSelf == true) && (ESC_bool == true) && (ESC_ON == true))
         {
+            Audio_Manager.PlaySFX(Audio_Manager.AudioButton);
             ESC_image.SetActive(true);
             ESC_bool = false;
             _OK_ = false;
@@ -64,8 +68,8 @@ public class In_Game_UI : MonoBehaviour
         }
         else if (Input.GetKeyDown(KeyCode.Escape) && (On.activeSelf == true) && (ESC_bool == false) && (Option_window.activeSelf == false))
         {
+            Audio_Manager.PlaySFX(Audio_Manager.AudioButton);
             ESC_image.SetActive(false);
-
             ESC_bool = true;
             _OK_ = true;
             Time.timeScale = 1; //ESC를 다시 누르면 시간이 흐른다.
@@ -80,8 +84,8 @@ public class In_Game_UI : MonoBehaviour
     {
         if ((On.activeSelf == true) && (ESC_bool == false) && (Option_window.activeSelf == false))
         {
+            Audio_Manager.PlaySFX(Audio_Manager.AudioButton);
             ESC_image.SetActive(false);
-
             ESC_bool = true;
             _OK_ = true;
             Time.timeScale = 1; //ESC를 다시 누르면 시간이 흐른다.
@@ -92,6 +96,7 @@ public class In_Game_UI : MonoBehaviour
     {
         if ((On.activeSelf == true) && (ESC_bool == true) && (ESC_ON == true))
         {
+            Audio_Manager.PlaySFX(Audio_Manager.AudioButton);
             ESC_image.SetActive(true);
             ESC_bool = false;
             _OK_ = false;
@@ -99,8 +104,8 @@ public class In_Game_UI : MonoBehaviour
         }
         else if ((On.activeSelf == true) && (ESC_bool == false) && (Option_window.activeSelf == false))
         {
+            Audio_Manager.PlaySFX(Audio_Manager.AudioButton);
             ESC_image.SetActive(false);
-
             ESC_bool = true;
             _OK_ = true;
             Time.timeScale = 1;
@@ -114,6 +119,7 @@ public class In_Game_UI : MonoBehaviour
 
     public void Quit()
     {
+        Audio_Manager.PlaySFX(Audio_Manager.AudioButton);
         SceneManager.LoadScene("Loby_Scene");
         Time.timeScale = 1;
     }

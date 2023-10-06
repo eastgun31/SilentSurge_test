@@ -10,10 +10,11 @@ public class Page_Button : MonoBehaviour //건들지 말것
 
     public GameObject opacity_image;
     public GameObject bar_image;
+    Audio_Manager Audio_Manager;
 
     void Start()
     {
-        //Time 매니저를 하나 만들어두고 NEXT버튼이 활성화 상태에서는 0 비활성화 상태에서는 1로 계속 시간이 흐르게 만든다
+        Audio_Manager = FindAnyObjectByType<Audio_Manager>();
     }
     void Update()
     {
@@ -22,12 +23,14 @@ public class Page_Button : MonoBehaviour //건들지 말것
 
     public void Page_button()
     {
+        Audio_Manager.PlaySFX(Audio_Manager.AudioButton);
         Page_On.SetActive(true);
         Page_Off.SetActive(false);
     }
 
     public void Page00_NEXT_Page01_button()
     {
+        Audio_Manager.PlaySFX(Audio_Manager.AudioButton);
         if (FindAnyObjectByType<Skill_Select>().Zeus_ON.activeSelf || FindAnyObjectByType<Skill_Select>().Poseidon_ON.activeSelf ||
             FindAnyObjectByType<Skill_Select>().Hades_ON.activeSelf == true)
         {
@@ -41,6 +44,7 @@ public class Page_Button : MonoBehaviour //건들지 말것
     }
     public void Page01_NEXT_Page02_button()
     {
+        Audio_Manager.PlaySFX(Audio_Manager.AudioButton);
         if (FindAnyObjectByType<Skill_Select>().Hephaestus_ON.activeSelf || FindAnyObjectByType<Skill_Select>().Artemis_ON.activeSelf ||
             FindAnyObjectByType<Skill_Select>().Ares_ON.activeSelf == true)
         {
@@ -55,6 +59,7 @@ public class Page_Button : MonoBehaviour //건들지 말것
 
     public void Page02_NEXT_Page03_button()
     {
+        Audio_Manager.PlaySFX(Audio_Manager.AudioButton);
         if (FindAnyObjectByType<Skill_Select>().Hera_ON.activeSelf || FindAnyObjectByType<Skill_Select>().Apollo_ON.activeSelf ||
             FindAnyObjectByType<Skill_Select>().Athena_ON.activeSelf || FindAnyObjectByType<Skill_Select>().Aphrodite_ON.activeSelf == true)
         {
@@ -69,6 +74,7 @@ public class Page_Button : MonoBehaviour //건들지 말것
 
     public void NEXT_button()
     {
+        Audio_Manager.PlaySFX(Audio_Manager.AudioButton);
         if (FindAnyObjectByType<Skill_Select>().Hermes_ON.activeSelf || FindAnyObjectByType<Skill_Select>().Hestia_ON.activeSelf ||
             FindAnyObjectByType<Skill_Select>().Dionysus_ON.activeSelf || FindAnyObjectByType<Skill_Select>().Demeter_ON.activeSelf == true)
         {
