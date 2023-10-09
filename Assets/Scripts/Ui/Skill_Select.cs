@@ -165,6 +165,14 @@ public class Skill_Select : MonoBehaviour
         Zeus_ON.SetActive(true);
         Poseidon_ON.SetActive(false);
         Hades_ON.SetActive(false);
+
+        int random = Random.Range(0, 2);
+
+        if (random == 0)
+            EnemySkillManager.instance.e_Poseidon_S = true;
+        else
+            EnemySkillManager.instance.e_Hades_S = true;
+
     }
     public void Poseidon_ON_Select_Button()
     {
@@ -172,6 +180,14 @@ public class Skill_Select : MonoBehaviour
         Zeus_ON.SetActive(false);
         Poseidon_ON.SetActive(true);
         Hades_ON.SetActive(false);
+
+        int random = Random.Range(0, 2);
+
+        if (random == 0)
+            EnemySkillManager.instance.e_Zeus_S = true;
+        else
+            EnemySkillManager.instance.e_Hades_S = true;
+
     }
     public void Hades_ON_Select_Button()
     {
@@ -179,6 +195,15 @@ public class Skill_Select : MonoBehaviour
         Zeus_ON.SetActive(false);
         Poseidon_ON.SetActive(false);
         Hades_ON.SetActive(true);
+
+        int random = Random.Range(0, 2);
+
+        if (random == 0)
+            EnemySkillManager.instance.e_Zeus_S = true;
+        else
+            EnemySkillManager.instance.e_Poseidon_S = true;
+
+
     }
     //-----------------------------------패시브 버튼---------------------------------//
     public void Hephaestus_ON_Select_Button()
@@ -187,6 +212,13 @@ public class Skill_Select : MonoBehaviour
         Hephaestus_ON.SetActive(true);
         Artemis_ON.SetActive(false);
         Ares_ON.SetActive(false);
+
+        int random = Random.Range(0, 2);
+
+        if (random == 0)
+            EnemySkillManager.instance.e_Artemis_S = true;
+        else
+            EnemySkillManager.instance.e_Ares_S = true;
     }
     public void Artemis_ON_Select_Button()
     {
@@ -194,6 +226,13 @@ public class Skill_Select : MonoBehaviour
         Hephaestus_ON.SetActive(false);
         Artemis_ON.SetActive(true);
         Ares_ON.SetActive(false);
+
+        int random = Random.Range(0, 2);
+
+        if (random == 0)
+            EnemySkillManager.instance.e_Hephaestus_S = true;
+        else
+            EnemySkillManager.instance.e_Ares_S = true;
     }
     public void Ares_ON_Select_Button()
     {
@@ -201,6 +240,13 @@ public class Skill_Select : MonoBehaviour
         Hephaestus_ON.SetActive(false);
         Artemis_ON.SetActive(false);
         Ares_ON.SetActive(true);
+
+        int random = Random.Range(0, 2);
+
+        if (random == 0)
+            EnemySkillManager.instance.e_Hephaestus_S = true;
+        else
+            EnemySkillManager.instance.e_Artemis_S = true;
     }
     //---------------------------------군중제어 및 디버프 버튼---------------------------------//
     public void Hera_ON_Select_Button()
@@ -210,6 +256,15 @@ public class Skill_Select : MonoBehaviour
         Apollo_ON.SetActive(false);
         Athena_ON.SetActive(false);
         Aphrodite_ON.SetActive(false);
+
+        int random = Random.Range(0, 3);
+
+        if (random == 0)
+            EnemySkillManager.instance.e_Apollo_S = true;
+        else if (random == 1)
+            EnemySkillManager.instance.e_Athena_S = true;
+        else
+            EnemySkillManager.instance.e_Aphrodite_S = true;
     }
     public void Apollo_ON_Select_Button()
     {
@@ -218,6 +273,15 @@ public class Skill_Select : MonoBehaviour
         Apollo_ON.SetActive(true);
         Athena_ON.SetActive(false);
         Aphrodite_ON.SetActive(false);
+
+        int random = Random.Range(0, 3);
+
+        if (random == 0)
+            EnemySkillManager.instance.e_Hera_S = true;
+        else if (random == 1)
+            EnemySkillManager.instance.e_Athena_S = true;
+        else
+            EnemySkillManager.instance.e_Aphrodite_S = true;
     }
     public void Athena_ON_Select_Button()
     {
@@ -226,6 +290,15 @@ public class Skill_Select : MonoBehaviour
         Apollo_ON.SetActive(false);
         Athena_ON.SetActive(true);
         Aphrodite_ON.SetActive(false);
+
+        int random = Random.Range(0, 3);
+
+        if (random == 0)
+            EnemySkillManager.instance.e_Hera_S = true;
+        else if (random == 1)
+            EnemySkillManager.instance.e_Apollo_S = true;
+        else
+            EnemySkillManager.instance.e_Aphrodite_S = true;
     }
     public void Aphrodite_ON_Select_Button()
     {
@@ -234,6 +307,15 @@ public class Skill_Select : MonoBehaviour
         Apollo_ON.SetActive(false);
         Athena_ON.SetActive(false);
         Aphrodite_ON.SetActive(true);
+
+        int random = Random.Range(0, 3);
+
+        if (random == 0)
+            EnemySkillManager.instance.e_Hera_S = true;
+        else if (random == 1)
+            EnemySkillManager.instance.e_Apollo_S = true;
+        else
+            EnemySkillManager.instance.e_Athena_S = true;
     }
     //---------------------------------------소모품 버튼--------------------------------------//
     public void Hermes_ON_Select_Button()
@@ -243,6 +325,15 @@ public class Skill_Select : MonoBehaviour
         Hestia_ON.SetActive(false);
         Dionysus_ON.SetActive(false);
         Demeter_ON.SetActive(false);
+
+        int random = Random.Range(0, 3);
+
+        if (random == 0)
+            EnemySkillManager.instance.e_Hestia_S = true;
+        else if (random == 1)
+            EnemySkillManager.instance.e_Dionysus_S = true;
+        else
+            EnemySkillManager.instance.e_Demeter_S = true;
     }
     public void Hestia_ON_Select_Button()
     {
@@ -251,6 +342,15 @@ public class Skill_Select : MonoBehaviour
         Hestia_ON.SetActive(true);
         Dionysus_ON.SetActive(false);
         Demeter_ON.SetActive(false);
+
+        int random = Random.Range(0, 3);
+
+        if (random == 0)
+            EnemySkillManager.instance.e_Hermes_S = true;
+        else if (random == 1)
+            EnemySkillManager.instance.e_Dionysus_S = true;
+        else
+            EnemySkillManager.instance.e_Demeter_S = true;
     }
     public void Dionysus_ON_Select_Button()
     {
@@ -259,6 +359,15 @@ public class Skill_Select : MonoBehaviour
         Hestia_ON.SetActive(false);
         Dionysus_ON.SetActive(true);
         Demeter_ON.SetActive(false);
+
+        int random = Random.Range(0, 3);
+
+        if (random == 0)
+            EnemySkillManager.instance.e_Hermes_S = true;
+        else if (random == 1)
+            EnemySkillManager.instance.e_Hestia_S = true;
+        else
+            EnemySkillManager.instance.e_Demeter_S = true;
     }
     public void Demeter_ON_Select_Button()
     {
@@ -267,6 +376,15 @@ public class Skill_Select : MonoBehaviour
         Hestia_ON.SetActive(false);
         Dionysus_ON.SetActive(false);
         Demeter_ON.SetActive(true);
+
+        int random = Random.Range(0, 3);
+
+        if (random == 0)
+            EnemySkillManager.instance.e_Hermes_S = true;
+        else if (random == 1)
+            EnemySkillManager.instance.e_Hestia_S = true;
+        else
+            EnemySkillManager.instance.e_Dionysus_S = true;
     }
     //----------------------------------------------------------------------------------//
 }

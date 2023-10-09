@@ -23,6 +23,8 @@ public class E_unitMove : MonoBehaviour
     public float edefense;
     public float emoveSpeed;
 
+    public int unitType;
+
     public Slider Eslider;
     public float maxhp;
     public Points point;
@@ -128,7 +130,14 @@ public class E_unitMove : MonoBehaviour
             targetUnit = null;
         }
 
-        if (Vector3.Distance(transform.position, dir) <= 3f && p_unit.uhealth > 0)
+        if (unitType == 1 && Vector3.Distance(transform.position, dir) <= 10f && p_unit.uhealth > 0)
+        {
+            moving.isStopped = true;
+            moving.velocity = Vector3.zero;
+
+            StartCoroutine(Damage(dir, p_unit));
+        }
+        else if (Vector3.Distance(transform.position, dir) <= 3f && p_unit.uhealth > 0)
         {
             moving.isStopped = true;
             moving.velocity = Vector3.zero;
@@ -201,6 +210,7 @@ public class E_unitMove : MonoBehaviour
     {
         if (unitNum == 0)
         {
+            unitType = 0;
             ehealth = GameManager.instance.health;
             eattackPower = GameManager.instance.attackPower;
             edefense = GameManager.instance.defense;
@@ -208,6 +218,7 @@ public class E_unitMove : MonoBehaviour
         }
         if (unitNum == 1)
         {
+            unitType = 0;
             ehealth = GameManager.instance.health + 50;
             eattackPower = GameManager.instance.attackPower - 2;
             edefense = GameManager.instance.defense + 2;
@@ -215,6 +226,7 @@ public class E_unitMove : MonoBehaviour
         }
         if (unitNum == 2)
         {
+            unitType = 1;
             ehealth = GameManager.instance.health - 20;
             eattackPower = GameManager.instance.attackPower + 3;
             edefense = GameManager.instance.defense - 1;
@@ -222,6 +234,7 @@ public class E_unitMove : MonoBehaviour
         }
         if (unitNum == 3)
         {
+            unitType = 0;
             ehealth = GameManager.instance.health + 100;
             eattackPower = GameManager.instance.attackPower + 5;
             edefense = GameManager.instance.defense + 5;
@@ -230,6 +243,7 @@ public class E_unitMove : MonoBehaviour
 
         if (unitNum == 4)
         {
+            unitType = 0;
             ehealth = GameManager.instance.health + 50;
             eattackPower = GameManager.instance.attackPower + 5;
             edefense = GameManager.instance.defense + 5;
@@ -237,6 +251,7 @@ public class E_unitMove : MonoBehaviour
         }
         if (unitNum == 5)
         {
+            unitType = 0;
             ehealth = GameManager.instance.health + 100;
             eattackPower = GameManager.instance.attackPower + 3;
             edefense = GameManager.instance.defense + 7;
@@ -244,6 +259,7 @@ public class E_unitMove : MonoBehaviour
         }
         if (unitNum == 6)
         {
+            unitType = 1;
             ehealth = GameManager.instance.health + 30;
             eattackPower = GameManager.instance.attackPower + 8;
             edefense = GameManager.instance.defense + 4;
@@ -251,6 +267,7 @@ public class E_unitMove : MonoBehaviour
         }
         if (unitNum == 7)
         {
+            unitType = 0;
             ehealth = GameManager.instance.health + 150;
             eattackPower = GameManager.instance.attackPower + 10;
             edefense = GameManager.instance.defense + 10;
@@ -259,6 +276,7 @@ public class E_unitMove : MonoBehaviour
 
         if (unitNum == 8)
         {
+            unitType = 0;
             ehealth = GameManager.instance.health + 100;
             eattackPower = GameManager.instance.attackPower + 10;
             edefense = GameManager.instance.defense + 10;
@@ -266,6 +284,7 @@ public class E_unitMove : MonoBehaviour
         }
         if (unitNum == 9)
         {
+            unitType = 0;
             ehealth = GameManager.instance.health + 150;
             eattackPower = GameManager.instance.attackPower + 8;
             edefense = GameManager.instance.defense + 12;
@@ -273,6 +292,7 @@ public class E_unitMove : MonoBehaviour
         }
         if (unitNum == 10)
         {
+            unitType = 1;
             ehealth = GameManager.instance.health + 80;
             eattackPower = GameManager.instance.attackPower + 13;
             edefense = GameManager.instance.defense + 9;
@@ -280,6 +300,7 @@ public class E_unitMove : MonoBehaviour
         }
         if (unitNum == 11)
         {
+            unitType = 0;
             ehealth = GameManager.instance.health + 200;
             eattackPower = GameManager.instance.attackPower + 15;
             edefense = GameManager.instance.defense + 15;

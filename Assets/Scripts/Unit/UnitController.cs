@@ -22,6 +22,8 @@ public class UnitController : MonoBehaviour
     public E_unitMove targetUnit;   //공격할 유닛
     public Points point; // 점령중인 거점
 
+    public int unitType; //유닛병종
+
     public Slider Uslider;
     public float maxhp;
 
@@ -147,7 +149,14 @@ public class UnitController : MonoBehaviour
             targetUnit = null;
         }
 
-        if (Vector3.Distance(transform.position, dir) <= 3f && e_unit.ehealth > 0)
+        if (unitType == 1 && Vector3.Distance(transform.position, dir) <= 10f && e_unit.ehealth > 0)
+        {
+            navMeshAgent.isStopped = true;
+            navMeshAgent.velocity = Vector3.zero;
+
+            StartCoroutine(Damage(dir, e_unit));
+        }
+        else if (Vector3.Distance(transform.position, dir) <= 3f && e_unit.ehealth > 0)
         {
             navMeshAgent.isStopped = true;
             navMeshAgent.velocity = Vector3.zero;
@@ -211,6 +220,7 @@ public class UnitController : MonoBehaviour
     {
         if (unitnumber == 0)
         {
+            unitType = 0;
             uhealth = GameManager.instance.health;
             uattackPower = GameManager.instance.attackPower;
             udefense = GameManager.instance.defense;
@@ -218,6 +228,7 @@ public class UnitController : MonoBehaviour
         }
         if (unitnumber == 1)
         {
+            unitType = 0;
             uhealth = GameManager.instance.health + 50;
             uattackPower = GameManager.instance.attackPower - 2;
             udefense = GameManager.instance.defense + 2;
@@ -225,6 +236,7 @@ public class UnitController : MonoBehaviour
         }
         if (unitnumber == 2)
         {
+            unitType = 1;
             uhealth = GameManager.instance.health - 20;
             uattackPower = GameManager.instance.attackPower + 3;
             udefense = GameManager.instance.defense - 1;
@@ -232,6 +244,7 @@ public class UnitController : MonoBehaviour
         }
         if (unitnumber == 3)
         {
+            unitType = 0;
             uhealth = GameManager.instance.health + 100;
             uattackPower = GameManager.instance.attackPower + 5;
             udefense = GameManager.instance.defense + 5;
@@ -240,6 +253,7 @@ public class UnitController : MonoBehaviour
 
         if (unitnumber == 4)
         {
+            unitType = 0;
             uhealth = GameManager.instance.health + 50;
             uattackPower = GameManager.instance.attackPower + 5;
             udefense = GameManager.instance.defense + 5;
@@ -247,6 +261,7 @@ public class UnitController : MonoBehaviour
         }
         if (unitnumber == 5)
         {
+            unitType = 0;
             uhealth = GameManager.instance.health + 100;
             uattackPower = GameManager.instance.attackPower + 3;
             udefense = GameManager.instance.defense + 7;
@@ -254,6 +269,7 @@ public class UnitController : MonoBehaviour
         }
         if (unitnumber == 6)
         {
+            unitType = 1;
             uhealth = GameManager.instance.health + 30;
             uattackPower = GameManager.instance.attackPower + 8;
             udefense = GameManager.instance.defense + 4;
@@ -261,6 +277,7 @@ public class UnitController : MonoBehaviour
         }
         if (unitnumber == 7)
         {
+            unitType = 0;
             uhealth = GameManager.instance.health + 150;
             uattackPower = GameManager.instance.attackPower + 10;
             udefense = GameManager.instance.defense + 10;
@@ -270,6 +287,7 @@ public class UnitController : MonoBehaviour
 
         if (unitnumber == 8)
         {
+            unitType = 0;
             uhealth = GameManager.instance.health + 100;
             uattackPower = GameManager.instance.attackPower + 10;
             udefense = GameManager.instance.defense + 10;
@@ -277,6 +295,7 @@ public class UnitController : MonoBehaviour
         }
         if (unitnumber == 9)
         {
+            unitType = 0;
             uhealth = GameManager.instance.health + 150;
             uattackPower = GameManager.instance.attackPower + 8;
             udefense = GameManager.instance.defense + 12;
@@ -284,6 +303,7 @@ public class UnitController : MonoBehaviour
         }
         if (unitnumber == 10)
         {
+            unitType = 1;
             uhealth = GameManager.instance.health + 80;
             uattackPower = GameManager.instance.attackPower + 13;
             udefense = GameManager.instance.defense + 9;
@@ -291,6 +311,7 @@ public class UnitController : MonoBehaviour
         }
         if (unitnumber == 11)
         {
+            unitType = 0;
             uhealth = GameManager.instance.health + 200;
             uattackPower = GameManager.instance.attackPower + 15;
             udefense = GameManager.instance.defense + 15;
