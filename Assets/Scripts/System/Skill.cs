@@ -47,10 +47,7 @@ public class Skill : MonoBehaviour
 
     public GameObject ZeusSkill; //제우스 액티브
 
-    public GameObject ApolloSkill; //아폴론 액티브  
-
-    public GameObject skillNum_10; //디오니소스 공버프 소모
-    private GameObject DionysusSkill;
+    public GameObject ApolloSkill; //아폴론 액티브
 
     void Awake()
     {
