@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Reflection;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public enum Skills
@@ -44,11 +45,9 @@ public class Skill : MonoBehaviour
     public float currentCooldown_1 = 0.0f; //현재 쿨타임
     public float currentCooldown_2 = 0.0f; //현재 쿨타임
 
-    public GameObject skillNum_1; //제우스 액티브
-    private GameObject ZeusSkill;
+    public GameObject ZeusSkill; //제우스 액티브
 
-    public GameObject skillNum_5; //아폴론 액티브  
-    private GameObject ApolloSkill;
+    public GameObject ApolloSkill; //아폴론 액티브  
 
     public GameObject skillNum_10; //디오니소스 공버프 소모
     private GameObject DionysusSkill;
@@ -61,15 +60,15 @@ public class Skill : MonoBehaviour
     void Update()
     {
         // 마우스 위치에 스킬 범위를 따라다니도록 업데이트
-        if (skillRangeInstance != null)
+        if (isShowSkillRange)
         {
             UpdateSkillRangePosition();
         }
 
         //마우스 클릭
-        if (Input.GetMouseButtonDown(0) && skillRangeInstance != null)
+        if (Input.GetMouseButtonDown(0))
         {
-            if (isSkillReady_1 && skillRangeInstance != null && isShowSkillRange)
+            if (isSkillReady_1 && isShowSkillRange)
             {
                 if (Skill_Set.instance.Zeus_S)
                     UseZeusSkill();
@@ -80,7 +79,7 @@ public class Skill : MonoBehaviour
                 else { }
             }
 
-            if (isSkillReady_2 && skillRangeInstance != null && isShowSkillRange)
+            if (isSkillReady_2 && isShowSkillRange)
             {
                 if (Skill_Set.instance.Hera_S)
                     UseHeraSkill();
@@ -147,14 +146,16 @@ public class Skill : MonoBehaviour
         isShowSkillRange = true;
 
         // 스킬 범위 표시용 프리팹을 인스턴스화
-        skillRangeInstance = Instantiate(skillRangePrefab);
+        //skillRangeInstance = Instantiate(skillRangePrefab);
+        skillRangePrefab.SetActive(true);
     }
 
     //스킬 취소, 스킬을 사용해서 표시되는 범위를 삭제할때도 사용
     void CancelSkill()
     {
         isShowSkillRange = false;
-        Destroy(skillRangeInstance);
+        //Destroy(skillRangeInstance);
+        skillRangePrefab.SetActive(false);
     }
 
     //스킬사용 위치
@@ -169,7 +170,8 @@ public class Skill : MonoBehaviour
         {
             Vector3 newPosition = hit.point;
             newPosition.y += skillRangeHeight; // Y 좌표 조절
-            skillRangeInstance.transform.position = newPosition;
+            //skillRangeInstance.transform.position = newPosition;
+            skillRangePrefab.transform.position = newPosition;
         }
     }
 
@@ -202,6 +204,12 @@ public class Skill : MonoBehaviour
         Debug.Log(cooldown + " 스킬 쿨타임 종료!");
     }
 
+    IEnumerator DeactiveSkill(GameObject skill)
+    {
+        yield return new WaitForSeconds(3f); // 비활성화까지의 대기 시간(3초)
+        skill.SetActive(false);
+    }
+
     //1번 액티브 스킬-------------------------------------------------------------------------------------------
     //제우스 스킬
     void UseZeusSkill()
@@ -214,7 +222,9 @@ public class Skill : MonoBehaviour
             Vector3 spawnPosition = hit.point;
             spawnPosition.y += skillRangeHeight; // Y 좌표 조정
 
-            ZeusSkill = Instantiate(skillNum_1, spawnPosition, Quaternion.identity);
+            ZeusSkill.SetActive(true);
+            ZeusSkill.transform.position = spawnPosition;
+            //ZeusSkill = Instantiate(skillNum_1, spawnPosition, Quaternion.identity);
 
             Collider[] colliders = Physics.OverlapSphere(spawnPosition, 4.5f, LayerMask.GetMask("E_Unit"));
             foreach (Collider collider in colliders)
@@ -227,13 +237,11 @@ public class Skill : MonoBehaviour
                 }
             }
         }
-
-        StartCoroutine(Num1_Skill_Cooldown(5f));
-
         isSkillReady_1 = false;
 
         CancelSkill();
-        Destroy(ZeusSkill, 7f);
+        StartCoroutine(Num1_Skill_Cooldown(5f));
+        StartCoroutine(DeactiveSkill(ZeusSkill));
     }
     void UsePoseidonSkill()
     {
@@ -259,7 +267,9 @@ public class Skill : MonoBehaviour
             Vector3 spawnPosition = hit.point;
             spawnPosition.y += skillRangeHeight; // Y 좌표 조정
 
-            ApolloSkill = Instantiate(skillNum_5, spawnPosition, Quaternion.identity);
+            ApolloSkill.SetActive(true);
+            ApolloSkill.transform.position = spawnPosition;
+            //ApolloSkill = Instantiate(skillNum_5, spawnPosition, Quaternion.identity);
 
             Collider[] colliders = Physics.OverlapSphere(spawnPosition, 4.5f, LayerMask.GetMask("Unit"));
             foreach (Collider collider in colliders)
@@ -272,13 +282,11 @@ public class Skill : MonoBehaviour
                 }
             }
         }
-
-        StartCoroutine(Num2_Skill_Cooldown(3f)); //쿨타임 적용
-
         isSkillReady_2 = false;
 
         CancelSkill();
-        Destroy(ApolloSkill, 1.8f);
+        StartCoroutine(Num2_Skill_Cooldown(3f)); //쿨타임 적용
+        StartCoroutine(DeactiveSkill(ApolloSkill));
     }
     void UseAthenaSkill()
     {
@@ -314,52 +322,45 @@ public class Skill : MonoBehaviour
 
     void UseHestiaSkill() //회복
     {
-        //foreach (UnitController unit in RTSUnitController.instance.UnitList)
-        //{
-        //    //리스트안에 있는 유닛 전부에게 적용
-        //    if (IsUnitInList(unit))
-        //    {
-        //        originalDamage = unit.uattackPower;
-        //        unit.uattackPower += 5;
+        foreach (UnitController unit in RTSUnitController.instance.UnitList)
+        {
+            //리스트안에 있는 유닛 전부에게 적용
+            if (IsUnitInList(unit))
+            {
+                unit.uhealth += 20;
 
-        //        Vector3 unitPosition = unit.transform.position;
-        //        Transform unitChild = unit.transform.GetChild(0);
-        //        Vector3 spawnPosition = unitChild.position;
-        //        DionysusSkill = Instantiate(skillNum_10, spawnPosition, Quaternion.identity);
-        //        DionysusSkill.transform.parent = unitChild;
+                Transform hestiaSkill = unit.transform.GetChild(1);
 
-        //        StartCoroutine(BuffDelay(unit, originalDamage, 5.0f, HermesSkill));
-        //        Destroy(DionysusSkill, 5f);
-        //    }
-        //}
+                hestiaSkill.gameObject.SetActive(true);
 
-        //itemLimit--;
-        //isBuffActive = true;
+                StartCoroutine(BuffDelay(unit, 0, 2.0f, hestiaSkill.gameObject));
+            }
+        }
+
+        itemLimit--;
+        isBuffActive = true;
     }
 
     void UseDionysusSkill() //공격력
     {
-        //foreach (UnitController unit in RTSUnitController.instance.UnitList)
-        //{
-        //    //리스트안에 있는 유닛 전부에게 적용
-        //    if (IsUnitInList(unit))
-        //    {
-        //        originalDamage = unit.uattackPower;
-        //        unit.uattackPower += 5;
+        foreach (UnitController unit in RTSUnitController.instance.UnitList)
+        {
+            //리스트안에 있는 유닛 전부에게 적용
+            if (IsUnitInList(unit))
+            {
+                originalDamage = unit.uattackPower;
+                unit.uattackPower += 5;
 
-        //        Vector3 unitPosition = unit.transform.position;
-        //        Transform unitChild = unit.transform.GetChild(0);
-        //        Vector3 spawnPosition = unitChild.position;
-        //        DionysusSkill = Instantiate(skillNum_10, spawnPosition, Quaternion.identity);
-        //        DionysusSkill.transform.parent = unitChild;
+                Transform dionysusSkill = unit.transform.GetChild(2);
 
-        //        StartCoroutine(BuffDelay(unit, originalDamage, 5.0f, HermesSkill));
-        //        Destroy(DionysusSkill, 5f);
-        //    }
-        //}
+                dionysusSkill.gameObject.SetActive(true);
 
-        //itemLimit--;
-        //isBuffActive = true;
+                StartCoroutine(BuffDelay(unit, originalDamage, 5.0f, dionysusSkill.gameObject));
+            }
+        }
+
+        itemLimit--;
+        isBuffActive = true;
     }
 
     void UseDemeterSkill() //재화
@@ -374,13 +375,13 @@ public class Skill : MonoBehaviour
         yield return new WaitForSeconds(delayInSeconds);
 
         // 원래 값으로 되돌립니다.
-        if (unit.umoveSpeed != originalSpeed)
+        if (Skill_Set.instance.Hermes_S)
         {
             unit.umoveSpeed = originalValue;
             isBuffActive = false;
         }
 
-        if (unit.uattackPower != originalDamage)
+        if (Skill_Set.instance.Ares_S)
         {
             unit.uattackPower = originalValue;
             isBuffActive = false;
