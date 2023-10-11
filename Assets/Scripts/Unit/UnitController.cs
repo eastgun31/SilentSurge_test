@@ -18,6 +18,9 @@ public class UnitController : MonoBehaviour
     public float udefense;
     public float umoveSpeed;
 
+    float original_ushieldValue;
+    public float ushieldValue; //보호막 변수
+
     float time = 3f;    //공격 쿨타임
     public E_unitMove targetUnit;   //공격할 유닛
     public Points point; // 점령중인 거점
@@ -49,6 +52,8 @@ public class UnitController : MonoBehaviour
         StartCoroutine(Pcheck());   //유닛 hp체크후 죽는 코루틴함수
         playerAnim = GetComponent<Animator>();
         maxhp = uhealth;
+
+        StartCoroutine(Shieldcheck()); //보호막 체크
     }
 
     private void FixedUpdate()
@@ -180,7 +185,21 @@ public class UnitController : MonoBehaviour
             time = 0;
             transform.LookAt(dir);
             playerAnim.SetTrigger(attack);
-            e_unit.ehealth -= 10f;
+
+            if (e_unit.eshieldValue > 0)
+            {
+                e_unit.eshieldValue -= uattackPower;
+            }
+            else if (e_unit.eshieldValue < 0)
+            {
+                e_unit.ehealth += e_unit.eshieldValue;
+
+                e_unit.eshieldValue = 0;
+            }
+            else
+                e_unit.ehealth -= uattackPower;
+
+
             Debug.Log("적 공격");
 
             yield return wait;
@@ -348,7 +367,7 @@ public class UnitController : MonoBehaviour
                 uattackPower += 3;
                 udefense += 3;
             }
-        }   
+        }
     }
 
     private void OnTriggerEnter(Collider other) //점령지확인
@@ -404,6 +423,40 @@ public class UnitController : MonoBehaviour
     public void ApolloHeal(float heal)
     {
         uhealth += heal;
+    }
+
+    public void PoseidonShield(int shield)
+    {
+        ushieldValue += shield;
+
+        StartCoroutine(Delay(original_ushieldValue, 10f));
+    }
+
+    IEnumerator Shieldcheck()
+    {
+        WaitForSeconds wait = new WaitForSeconds(0.1f);
+
+        if (ushieldValue <= 0)
+        {
+            Transform poseidonSkill = transform.GetChild(3);
+            poseidonSkill.gameObject.SetActive(false);
+        }
+
+        yield return wait;
+        StartCoroutine(Shieldcheck());
+    }
+
+    private IEnumerator Delay(float originalValue, float delayInSeconds)
+    {
+        yield return new WaitForSeconds(delayInSeconds);
+
+        ushieldValue = originalValue;
+
+        if (Skill_Set.instance.Poseidon_S)
+        {
+            Transform poseidonSkill = transform.GetChild(3);
+            poseidonSkill.gameObject.SetActive(false);
+        }
     }
 }
 

@@ -23,6 +23,9 @@ public class E_unitMove : MonoBehaviour
     public float edefense;
     public float emoveSpeed;
 
+    float original_eshieldValue;
+    public float eshieldValue; //보호막 변수
+
     public int unitType;
 
     public Slider Eslider;
@@ -355,7 +358,7 @@ public class E_unitMove : MonoBehaviour
         }
     }
 
-    public void ZuesDamage(float damage)
+    public void ZeusDamage(float damage)
     {
         ehealth -= damage;
     }

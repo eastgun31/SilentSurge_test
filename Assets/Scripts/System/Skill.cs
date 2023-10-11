@@ -3,18 +3,19 @@ using System.Collections.Generic;
 using System.Reflection;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
+using static UnityEngine.UI.CanvasScaler;
 
 public enum Skills
 {
     Zeus,       //제우스        1 A  o
-    Poseidon,   //포세이돈      2 A
-    Hades,      //하데스        3 A
-    Hera,       //헤라          4 B
+    Poseidon,   //포세이돈      2 A  o
+    Hades,      //하데스        3 A  
+    Hera,       //헤라          4 B  
     Apollo,     //아폴론        5 B  o
-    Athena,     //아테나        6 B
-    Aphrodite,  //아프로디테    7 B
-    Hermes,     //헤르메스      8 I
-    Hestia,     //헤스티아      9 I
+    Athena,     //아테나        6 B  v
+    Aphrodite,  //아프로디테    7 B  
+    Hermes,     //헤르메스      8 I  o
+    Hestia,     //헤스티아      9 I  o
     Dionysus,   //디오니소스    10 I  o
     Demeter,     //데메테르     11 I  o
     Hephaestus, //헤파이토스    12 P  o
@@ -46,7 +47,9 @@ public class Skill : MonoBehaviour
     public float currentCooldown_2 = 0.0f; //현재 쿨타임
 
     public GameObject ZeusSkill; //제우스 액티브
+    public GameObject PoseidonSkill; //포세이돈 액티브
 
+    public GameObject HeraSkill; //헤라 액티브
     public GameObject ApolloSkill; //아폴론 액티브
 
     void Awake()
@@ -201,9 +204,9 @@ public class Skill : MonoBehaviour
         Debug.Log(cooldown + " 스킬 쿨타임 종료!");
     }
 
-    IEnumerator DeactiveSkill(GameObject skill)
+    IEnumerator DeactiveSkill(GameObject skill, float time)
     {
-        yield return new WaitForSeconds(3f); // 비활성화까지의 대기 시간(3초)
+        yield return new WaitForSeconds(time); // 비활성화까지의 대기 시간(3초)
         skill.SetActive(false);
     }
 
@@ -230,7 +233,7 @@ public class Skill : MonoBehaviour
                 if (E_unit != null)
                 {
                     // 스킬로 인한 데미지 적용
-                    E_unit.ZuesDamage(20);
+                    E_unit.ZeusDamage(20);
                 }
             }
         }
@@ -238,11 +241,40 @@ public class Skill : MonoBehaviour
 
         CancelSkill();
         StartCoroutine(Num1_Skill_Cooldown(5f));
-        StartCoroutine(DeactiveSkill(ZeusSkill));
+        StartCoroutine(DeactiveSkill(ZeusSkill, 3f));
     }
     void UsePoseidonSkill()
     {
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;
 
+        if (Physics.Raycast(ray, out hit, Mathf.Infinity, LayerMask.GetMask("Ground")))
+        {
+            Vector3 spawnPosition = hit.point;
+            spawnPosition.y += skillRangeHeight; // Y 좌표 조정
+
+            PoseidonSkill.SetActive(true);
+            PoseidonSkill.transform.position = spawnPosition;
+
+            Collider[] colliders = Physics.OverlapSphere(spawnPosition, 4.5f, LayerMask.GetMask("Unit"));
+            foreach (Collider collider in colliders)
+            {
+                UnitController unit = collider.GetComponent<UnitController>();
+                if (unit != null)
+                {
+                    Transform poseidonSkill = unit.transform.GetChild(3);
+                    poseidonSkill.gameObject.SetActive(true);
+
+                    //보호막 조정
+                    unit.PoseidonShield(50);
+                }
+            }
+        }
+        isSkillReady_1 = false;
+
+        CancelSkill();
+        StartCoroutine(Num1_Skill_Cooldown(3f)); //쿨타임 적용
+        StartCoroutine(DeactiveSkill(PoseidonSkill, 4f));
     }
     void UseHadesSkill()
     {
@@ -251,7 +283,32 @@ public class Skill : MonoBehaviour
     //2번 액티브 스킬-------------------------------------------------------------------------------------------
     void UseHeraSkill()
     {
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;
 
+        if (Physics.Raycast(ray, out hit, Mathf.Infinity, LayerMask.GetMask("Ground")))
+        {
+            Vector3 spawnPosition = hit.point;
+            spawnPosition.y += skillRangeHeight; // Y 좌표 조정
+
+            HeraSkill.SetActive(true);
+            HeraSkill.transform.position = spawnPosition;
+
+            Collider[] colliders = Physics.OverlapSphere(spawnPosition, 4.5f, LayerMask.GetMask("Unit"));
+            foreach (Collider collider in colliders)
+            {
+                UnitController unit = collider.GetComponent<UnitController>();
+                if (unit != null)
+                {
+                    //속박 코드
+                }
+            }
+        }
+        isSkillReady_2 = false;
+
+        CancelSkill();
+        StartCoroutine(Num2_Skill_Cooldown(3f)); //쿨타임 적용
+        StartCoroutine(DeactiveSkill(HeraSkill, 3f));
     }
     //아폴론 스킬
     void UseApolloSkill()
@@ -283,7 +340,7 @@ public class Skill : MonoBehaviour
 
         CancelSkill();
         StartCoroutine(Num2_Skill_Cooldown(3f)); //쿨타임 적용
-        StartCoroutine(DeactiveSkill(ApolloSkill));
+        StartCoroutine(DeactiveSkill(ApolloSkill, 3f));
     }
     void UseAthenaSkill()
     {
@@ -306,7 +363,6 @@ public class Skill : MonoBehaviour
                 unit.umoveSpeed += 3;
 
                 Transform hermesSkill = unit.transform.GetChild(0);
-
                 hermesSkill.gameObject.SetActive(true);
 
                 StartCoroutine(BuffDelay(unit, originalSpeed, 5.0f, hermesSkill.gameObject));
@@ -327,7 +383,6 @@ public class Skill : MonoBehaviour
                 unit.uhealth += 20;
 
                 Transform hestiaSkill = unit.transform.GetChild(1);
-
                 hestiaSkill.gameObject.SetActive(true);
 
                 StartCoroutine(BuffDelay(unit, 0, 2.0f, hestiaSkill.gameObject));
@@ -349,7 +404,6 @@ public class Skill : MonoBehaviour
                 unit.uattackPower += 5;
 
                 Transform dionysusSkill = unit.transform.GetChild(2);
-
                 dionysusSkill.gameObject.SetActive(true);
 
                 StartCoroutine(BuffDelay(unit, originalDamage, 5.0f, dionysusSkill.gameObject));
