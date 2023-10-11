@@ -310,7 +310,7 @@ public class Skill : MonoBehaviour
 
         CancelSkill();
         StartCoroutine(Num2_Skill_Cooldown(3f)); //쿨타임 적용
-        StartCoroutine(DeactiveSkill(HeraSkill, 3f));
+        StartCoroutine(DeactiveSkill(HeraSkill, 1f));
     }
     //아폴론 스킬
     void UseApolloSkill()
