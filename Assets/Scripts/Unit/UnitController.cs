@@ -426,6 +426,10 @@ public class UnitController : MonoBehaviour
         StartCoroutine(Pcheck());
     }
 
+    public void ZuesDamage(float damage)
+    {
+        uhealth -= damage;
+    }
 
     public void ApolloHeal(float heal)
     {
@@ -465,5 +469,22 @@ public class UnitController : MonoBehaviour
             poseidonSkill.gameObject.SetActive(false);
         }
     }
+
+    public IEnumerator HeraStun(float sec)
+    {
+        Transform heraStun = transform.GetChild(5);
+        Transform E_attackRange = transform.GetChild(0); //번호 나중에 바꾸기
+
+        navMeshAgent.isStopped = true;
+        E_attackRange.gameObject.SetActive(false);
+        heraStun.gameObject.SetActive(true);
+
+        yield return new WaitForSeconds(sec);
+
+        navMeshAgent.isStopped = false;
+        E_attackRange.gameObject.SetActive(true);
+        heraStun.gameObject.SetActive(false);
+    }
+
 }
 

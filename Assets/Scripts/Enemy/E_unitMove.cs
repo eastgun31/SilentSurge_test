@@ -58,7 +58,8 @@ public class E_unitMove : MonoBehaviour
         enemyAnim = GetComponent<Animator>();
 
         maxhp = ehealth;
-       StartCoroutine(Pcheck()); //À¯´Ö hpÃ¼Å©ÈÄ Á×À½
+        StartCoroutine(Pcheck()); //À¯´Ö hpÃ¼Å©ÈÄ Á×À½
+        StartCoroutine(usingItem());
     }
 
     private void FixedUpdate()
@@ -161,6 +162,12 @@ public class E_unitMove : MonoBehaviour
     IEnumerator Damage(Vector3 dir, UnitController p_unit)
     {
         WaitForSeconds wait = new WaitForSeconds(1f);
+
+        if (EnemySkillManager.instance.useSkill)
+        {
+            EnemySkillManager.instance.E_UseSkill(dir, gameObject.transform.position);
+            //EnemySkillManager.instance.useSkill = false;
+        }
 
         if (p_unit.uhealth > 0 && time > 2f && e_State == E_UnitState.Battle)
         {
@@ -328,7 +335,7 @@ public class E_unitMove : MonoBehaviour
 
     IEnumerator Pcheck()
     {
-        WaitForSeconds wait = new WaitForSeconds(1f);
+        WaitForSeconds wait = new WaitForSeconds(0.5f);
 
         if (ehealth <= 0)
         {
@@ -378,6 +385,11 @@ public class E_unitMove : MonoBehaviour
         ehealth -= damage;
     }
 
+    public void ApolloHeal(float heal)
+    {
+        ehealth += heal;
+    }
+
     public IEnumerator HeraStun(float sec)
     {
         e_State = E_UnitState.Stun;
@@ -400,5 +412,69 @@ public class E_unitMove : MonoBehaviour
         moving.isStopped = false;
         E_attackRange.gameObject.SetActive(true);
         heraStun.gameObject.SetActive(false);
+    }
+
+    IEnumerator usingItem()
+    {
+        WaitForSeconds wait = new WaitForSeconds(1f);
+
+        if (EnemySkillManager.instance.usingItem)
+        {
+            Transform skillEffect;
+
+            if (EnemySkillManager.instance.e_item_skillnum == 1)
+            {
+                skillEffect = transform.GetChild(1);
+                skillEffect.gameObject.SetActive(true);
+                //EnemySkillManager.instance.usingItem = false;
+
+                float originalSpeed = emoveSpeed;
+                emoveSpeed += 3;
+
+                yield return new WaitForSeconds(5f);
+
+                skillEffect.gameObject.SetActive(false);
+                emoveSpeed = originalSpeed;
+            }
+
+            if (EnemySkillManager.instance.e_item_skillnum == 2)
+            {
+                skillEffect = transform.GetChild(2);
+                skillEffect.gameObject.SetActive(true);
+                //EnemySkillManager.instance.usingItem = false;
+
+                ehealth += 20;
+
+                yield return new WaitForSeconds(2f);
+
+                skillEffect.gameObject.SetActive(false);
+            }
+
+            if (EnemySkillManager.instance.e_item_skillnum == 3)
+            {
+                skillEffect = transform.GetChild(3);
+                skillEffect.gameObject.SetActive(true);
+                //EnemySkillManager.instance.usingItem = false;
+
+                float originalDamage = eattackPower;
+                eattackPower += 5;
+
+                yield return new WaitForSeconds(5f);
+
+                skillEffect.gameObject.SetActive(false);
+                eattackPower = originalDamage;
+            }
+
+            EnemySkillManager.instance.usingItem = false;
+        }
+
+        yield return wait;
+
+        if (EnemySkillManager.instance.itemLimit == 0)
+        {
+            StopCoroutine("usingItem");
+        }
+
+        StartCoroutine(usingItem());
     }
 }

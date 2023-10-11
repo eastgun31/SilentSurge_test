@@ -32,57 +32,97 @@ public class EnemySkill : MonoBehaviour
         bool[] items = { EnemySkillManager.instance.e_Hermes_S, EnemySkillManager.instance.e_Hestia_S, 
                            EnemySkillManager.instance.e_Dionysus_S, EnemySkillManager.instance.e_Demeter_S  };
 
-        for(int i = 0; i<3; i++)
+        for (int i = 0; i < 3; i++)
         {
-            if(actives[i] == true)
+            if (actives[i] == true)
             {
                 if (i == 0)
+                {
                     e_active_s = "제우스";
+                    EnemySkillManager.instance.e_active_skillnum = 1;
+                }
                 else if (i == 1)
+                {
                     e_active_s = "포세이돈";
+                    EnemySkillManager.instance.e_active_skillnum = 2;
+                }
                 else
+                {
                     e_active_s = "하데스";
+                    EnemySkillManager.instance.e_active_skillnum = 3;
+                }
             }
 
-            if(passives[i] == true)
+            if (passives[i] == true)
             {
                 if (i == 0)
+                {
                     e_passive_s = "헤파이토스";
+                    EnemySkillManager.instance.e_passiveNow = 1;
+                }
                 else if (i == 1)
+                {
                     e_passive_s = "아르테미스";
+                    EnemySkillManager.instance.e_passiveNow = 2;
+                }
                 else
+                {
                     e_passive_s = "아레스";
+                    EnemySkillManager.instance.e_passiveNow = 3;
+                }
             }
         }
 
-        for(int i = 0; i<4; i++)
+        for (int i = 0; i < 4; i++)
         {
-            if(buffes[i] == true)
+            if (buffes[i] == true)
             {
                 if (i == 0)
+                {
                     e_buff_s = "헤라";
+                    EnemySkillManager.instance.e_buff_skillnum = 1;
+                }
                 else if (i == 1)
+                {
                     e_buff_s = "아폴로";
+                    EnemySkillManager.instance.e_buff_skillnum = 2;
+                }
                 else if (i == 2)
+                {
                     e_buff_s = "아테나";
+                    EnemySkillManager.instance.e_buff_skillnum = 3;
+                }
                 else
+                {
                     e_buff_s = "아프로디테";
+                    EnemySkillManager.instance.e_buff_skillnum = 4;
+                }
             }
 
-            if(items[i] == true)
+            if (items[i] == true)
             {
                 if (i == 0)
+                {
                     e_item_s = "헤르메스";
+                    EnemySkillManager.instance.e_item_skillnum = 1;
+                }
                 else if (i == 1)
+                {
                     e_item_s = "헤스티아";
+                    EnemySkillManager.instance.e_item_skillnum = 2;
+                }
                 else if (i == 2)
+                {
                     e_item_s = "디오니소스";
+                    EnemySkillManager.instance.e_item_skillnum = 3;
+                }
                 else
+                {
                     e_item_s = "데메테르";
+                    EnemySkillManager.instance.e_item_skillnum = 4;
+                }
             }
-
         }
-
 
     }
 }
