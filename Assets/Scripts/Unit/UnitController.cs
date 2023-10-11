@@ -31,6 +31,7 @@ public class UnitController : MonoBehaviour
     public float maxhp;
     public Slider Sslider; //
     public float maxS; //
+    
 
     //최적화 변수들
     string run = "run";
@@ -66,6 +67,7 @@ public class UnitController : MonoBehaviour
 
         Uslider.value = uhealth / maxhp;
         Sslider.value = ushieldValue / maxS; //
+
 
         //if (uhealth <= 0)             //현재 미사용인데 혹시몰라 일단 놔둠
         //{
