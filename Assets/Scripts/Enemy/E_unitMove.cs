@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.AI;
+using static E_unitMove;
+using static UnityEngine.UI.CanvasScaler;
 
 public class E_unitMove : MonoBehaviour
 {
@@ -42,7 +44,7 @@ public class E_unitMove : MonoBehaviour
 
     public enum E_UnitState //적 상태머신
     {
-        Battle, Idle, goPoint, noBattle
+        Battle, Idle, goPoint, noBattle, Stun
     }
 
     public E_UnitState e_State;
@@ -374,5 +376,29 @@ public class E_unitMove : MonoBehaviour
     public void ZeusDamage(float damage)
     {
         ehealth -= damage;
+    }
+
+    public IEnumerator HeraStun(float sec)
+    {
+        e_State = E_UnitState.Stun;
+
+        Transform heraStun = transform.GetChild(5);
+        Transform E_attackRange = transform.GetChild(0); //번호 나중에 바꾸기
+
+        if (e_State == E_UnitState.Stun)
+        {
+            moving.isStopped = true;
+            moving.velocity = Vector3.zero;
+        }
+
+        E_attackRange.gameObject.SetActive(false);
+        heraStun.gameObject.SetActive(true);
+
+        yield return new WaitForSeconds(sec);
+
+        e_State = E_UnitState.Idle;
+        moving.isStopped = false;
+        E_attackRange.gameObject.SetActive(true);
+        heraStun.gameObject.SetActive(false);
     }
 }

@@ -425,7 +425,7 @@ Transform:
   - {fileID: 481386}
   - {fileID: 441650}
   m_Father: {fileID: 419716}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &133136
 GameObject:
@@ -486,7 +486,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 419716}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!137 &13781770
 SkinnedMeshRenderer:
@@ -1131,10 +1131,10 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 3720238277172273079}
   - {fileID: 421946}
   - {fileID: 483382}
   - {fileID: 7792385382761133969}
-  - {fileID: 3720238277172273079}
   - {fileID: 8632009921871653730}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -1254,10 +1254,15 @@ MonoBehaviour:
   uattackPower: 0
   udefense: 0
   umoveSpeed: 0
+  ushieldValue: 0
   targetUnit: {fileID: 0}
   point: {fileID: 0}
+  unitType: 0
   Uslider: {fileID: 7332326303243555566}
   maxhp: 0
+  Sslider: {fileID: 0}
+  maxS: 0
+  u_State: 0
 --- !u!54 &-8665827689992489085
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1502,7 +1507,7 @@ Transform:
   m_LocalScale: {x: 1.5, y: 1.5000001, z: 1.5000001}
   m_Children: []
   m_Father: {fileID: 419716}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 270, y: 0, z: 0}
 --- !u!212 &4792630717055738380
 SpriteRenderer:
@@ -1908,7 +1913,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4153491837208340244, guid: bd623b4f59e91d049bdfade64e909c1c, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4153491837208340244, guid: bd623b4f59e91d049bdfade64e909c1c, type: 3}
       propertyPath: m_LocalPosition.x

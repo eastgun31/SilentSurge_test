@@ -135,7 +135,7 @@ Transform:
   m_LocalScale: {x: 1.5, y: 1.5000001, z: 1.5000001}
   m_Children: []
   m_Father: {fileID: 8696842543044430175}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 270, y: 0, z: 0}
 --- !u!212 &8190942450020694921
 SpriteRenderer:
@@ -1105,10 +1105,10 @@ Transform:
   m_LocalPosition: {x: 125.57, y: 0, z: 58.87}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 872605127239917031}
   - {fileID: 8696842543044413921}
   - {fileID: 8696842543044377321}
   - {fileID: 4052983562698886134}
-  - {fileID: 872605127239917031}
   - {fileID: 7013636734306416415}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -1209,9 +1209,12 @@ MonoBehaviour:
   eattackPower: 0
   edefense: 0
   emoveSpeed: 0
+  eshieldValue: 0
+  unitType: 0
   Eslider: {fileID: 8313602949140811411}
   maxhp: 0
   point: {fileID: 0}
+  e_State: 0
 --- !u!54 &4102931741404572797
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1403,7 +1406,7 @@ Transform:
   - {fileID: 8696842543044422535}
   - {fileID: 8696842543044432975}
   m_Father: {fileID: 8696842543044430175}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8696842543044654705
 GameObject:
@@ -1681,7 +1684,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8696842543044430175}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!137 &8696842543041523527
 SkinnedMeshRenderer:
@@ -1992,7 +1995,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4303753374581333581, guid: 7d77a17b4436723468a4bd55dec9c1b4, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4303753374581333581, guid: 7d77a17b4436723468a4bd55dec9c1b4, type: 3}
       propertyPath: m_LocalPosition.x
