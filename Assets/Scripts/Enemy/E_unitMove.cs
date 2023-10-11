@@ -165,7 +165,20 @@ public class E_unitMove : MonoBehaviour
             time = 0;
             transform.LookAt(dir);
             enemyAnim.SetTrigger(attack);
-            p_unit.uhealth -= 10f;
+
+            if (p_unit.ushieldValue > 0)
+            {
+                p_unit.ushieldValue -= eattackPower;
+            }
+            else if (p_unit.ushieldValue < 0)
+            {
+                p_unit.uhealth += p_unit.ushieldValue;
+
+                p_unit.ushieldValue = 0;
+            }
+            else
+                p_unit.uhealth -= eattackPower;
+
             Debug.Log("АјАн");
 
             yield return wait;

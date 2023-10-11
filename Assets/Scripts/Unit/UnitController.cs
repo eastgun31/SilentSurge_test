@@ -29,6 +29,8 @@ public class UnitController : MonoBehaviour
 
     public Slider Uslider;
     public float maxhp;
+    public Slider Sslider;
+    public float maxS;
 
     //최적화 변수들
     string run = "run";
@@ -52,6 +54,7 @@ public class UnitController : MonoBehaviour
         StartCoroutine(Pcheck());   //유닛 hp체크후 죽는 코루틴함수
         playerAnim = GetComponent<Animator>();
         maxhp = uhealth;
+        maxS = ushieldValue;
 
         StartCoroutine(Shieldcheck()); //보호막 체크
     }
@@ -61,6 +64,7 @@ public class UnitController : MonoBehaviour
         navMeshAgent.speed = umoveSpeed;
 
         Uslider.value = uhealth / maxhp;
+        Sslider.value = ushieldValue / maxS;
 
         //if (uhealth <= 0)             //현재 미사용인데 혹시몰라 일단 놔둠
         //{
