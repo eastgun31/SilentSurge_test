@@ -48,7 +48,7 @@ public class EnemySkillManager : MonoBehaviour
     public int random;
 
     public GameObject ZeusSkill; //제우스 액티브
-
+    public GameObject PoseidonSkill;
     public GameObject HeraSkill;
     public GameObject ApolloSkill; //아폴론 액티브
 
@@ -56,7 +56,7 @@ public class EnemySkillManager : MonoBehaviour
     void Start()
     {
         useSkill = true;
-        itemLimit = 10;
+        itemLimit = 3;
     }
 
     // Update is called once per frame
@@ -82,7 +82,7 @@ public class EnemySkillManager : MonoBehaviour
                     UseZeusSkill(dir);
                     break;
                 case 2:
-                    UsePoseidonSkill();
+                    UsePoseidonSkill(dir2);
                     break;
                 case 3:
                     UseHadesSkill();
@@ -202,13 +202,31 @@ public class EnemySkillManager : MonoBehaviour
 
         useSkill = false;
 
-        StartCoroutine(Num1_Skill_Cooldown(5f));
+        StartCoroutine(Num1_Skill_Cooldown(10f));
         StartCoroutine(DeactiveSkill(ZeusSkill, 3f));
     }
-    void UsePoseidonSkill()
+    void UsePoseidonSkill(Vector3 dir)
     {
+        PoseidonSkill.SetActive(true);
+        PoseidonSkill.transform.position = dir;
+
+        Collider[] colliders = Physics.OverlapSphere(dir, 4.5f, LayerMask.GetMask("E_Unit"));
+        foreach (Collider collider in colliders)
+        {
+            E_unitMove e_unit = collider.GetComponent<E_unitMove>();
+            if (e_unit != null)
+            {
+                Transform poseidonSkill = e_unit.transform.GetChild(4);
+                poseidonSkill.gameObject.SetActive(true);
+
+                //보호막 조정
+                e_unit.PoseidonShield(50);
+            }
+        }
+
         useSkill = false;
-        StartCoroutine(Num1_Skill_Cooldown(5f));
+        StartCoroutine(Num1_Skill_Cooldown(10f));
+        StartCoroutine(DeactiveSkill(PoseidonSkill, 4f));
     }
     void UseHadesSkill()
     {
@@ -221,7 +239,7 @@ public class EnemySkillManager : MonoBehaviour
         HeraSkill.SetActive(true);
         HeraSkill.transform.position = dir;
 
-        Collider[] colliders = Physics.OverlapSphere(dir, 4.5f, LayerMask.GetMask("E_Unit"));
+        Collider[] colliders = Physics.OverlapSphere(dir, 4.5f, LayerMask.GetMask("Unit"));
         foreach (Collider collider in colliders)
         {
             UnitController unit = collider.GetComponent<UnitController>();
@@ -233,7 +251,7 @@ public class EnemySkillManager : MonoBehaviour
         }
 
         useSkill = false;
-        StartCoroutine(Num2_Skill_Cooldown(3f));
+        StartCoroutine(Num2_Skill_Cooldown(10f));
         StartCoroutine(DeactiveSkill(HeraSkill, 1f));
     }
 
@@ -255,7 +273,7 @@ public class EnemySkillManager : MonoBehaviour
         }
 
         useSkill = false;
-        StartCoroutine(Num2_Skill_Cooldown(3f));
+        StartCoroutine(Num2_Skill_Cooldown(10f));
         StartCoroutine(DeactiveSkill(ApolloSkill,3f));
     }
     void UseAthenaSkill()
@@ -274,7 +292,7 @@ public class EnemySkillManager : MonoBehaviour
     {
         useSkill = false;
         usingItem = true;
-        StartCoroutine(Num3_Skill_Cooldown(7f));
+        StartCoroutine(Num3_Skill_Cooldown(15f));
         itemLimit--;
     }
 
@@ -282,7 +300,7 @@ public class EnemySkillManager : MonoBehaviour
     {
         useSkill = false;
         usingItem = true;
-        StartCoroutine(Num3_Skill_Cooldown(7f));
+        StartCoroutine(Num3_Skill_Cooldown(15f));
         itemLimit--;
     }
 
@@ -290,7 +308,7 @@ public class EnemySkillManager : MonoBehaviour
     {
         useSkill = false;
         usingItem = true;
-        StartCoroutine(Num3_Skill_Cooldown(7f));
+        StartCoroutine(Num3_Skill_Cooldown(15f));
         itemLimit--;
     }
 
@@ -300,7 +318,7 @@ public class EnemySkillManager : MonoBehaviour
 
         EnemySpawn.instance.gold += 100;
 
-        StartCoroutine(Num3_Skill_Cooldown(5f));
+        StartCoroutine(Num3_Skill_Cooldown(15f));
         itemLimit--;
     }
 

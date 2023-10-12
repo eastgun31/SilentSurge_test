@@ -64,6 +64,7 @@ public class E_unitMove : MonoBehaviour
         maxS = eshieldValue; //
         maxS = maxhp; //
         StartCoroutine(Pcheck()); //À¯´Ö hpÃ¼Å©ÈÄ Á×À½
+        StartCoroutine(Shieldcheck());
         StartCoroutine(usingItem());
     }
 
@@ -98,9 +99,12 @@ public class E_unitMove : MonoBehaviour
 
     void E_Idle()
     {
-        time = 0;
-        moving.isStopped = false;
-        e_State = E_UnitState.goPoint;
+        if(ehealth>0)
+        {
+            time = 0;
+            moving.isStopped = false;
+            e_State = E_UnitState.goPoint;
+        }
     }
 
     void E_GoPoint()
@@ -389,6 +393,37 @@ public class E_unitMove : MonoBehaviour
     public void ZeusDamage(float damage)
     {
         ehealth -= damage;
+    }
+
+    public void PoseidonShield(int shield)
+    {
+        eshieldValue += shield;
+
+        StartCoroutine(Delay(original_eshieldValue, 5f));
+    }
+
+    IEnumerator Shieldcheck()
+    {
+        WaitForSeconds wait = new WaitForSeconds(0.1f);
+
+        if (eshieldValue <= 0)
+        {
+            Transform poseidonSkill = transform.GetChild(4);
+            poseidonSkill.gameObject.SetActive(false);
+        }
+
+        yield return wait;
+        StartCoroutine(Shieldcheck());
+    }
+
+    private IEnumerator Delay(float originalValue, float delayInSeconds)
+    {
+        yield return new WaitForSeconds(delayInSeconds);
+
+        eshieldValue = originalValue;
+
+        Transform poseidonSkill = transform.GetChild(4);
+        poseidonSkill.gameObject.SetActive(false);
     }
 
     public void ApolloHeal(float heal)

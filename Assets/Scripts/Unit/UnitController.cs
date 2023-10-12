@@ -473,16 +473,18 @@ public class UnitController : MonoBehaviour
     public IEnumerator HeraStun(float sec)
     {
         Transform heraStun = transform.GetChild(5);
-        Transform E_attackRange = transform.GetChild(0); //번호 나중에 바꾸기
+        Transform attackRange = transform.GetChild(0); 
 
         navMeshAgent.isStopped = true;
-        E_attackRange.gameObject.SetActive(false);
+        navMeshAgent.velocity = Vector3.zero;
+
+        attackRange.gameObject.SetActive(false);
         heraStun.gameObject.SetActive(true);
 
         yield return new WaitForSeconds(sec);
 
         navMeshAgent.isStopped = false;
-        E_attackRange.gameObject.SetActive(true);
+        attackRange.gameObject.SetActive(true);
         heraStun.gameObject.SetActive(false);
     }
 
