@@ -34,6 +34,9 @@ public class E_unitMove : MonoBehaviour
     public float maxhp;
     public Points point;
 
+    public Slider ESslider; //
+    public float maxS; //
+
     private Animator enemyAnim;
 
     //최적화 변수들
@@ -58,6 +61,8 @@ public class E_unitMove : MonoBehaviour
         enemyAnim = GetComponent<Animator>();
 
         maxhp = ehealth;
+        maxS = eshieldValue; //
+        maxS = maxhp; //
         StartCoroutine(Pcheck()); //유닛 hp체크후 죽음
         StartCoroutine(usingItem());
     }
@@ -69,7 +74,8 @@ public class E_unitMove : MonoBehaviour
         //    Invoke("E_Die", 3f);
         //}
 
-        Eslider.value = ehealth / maxhp;
+        Eslider.value = ehealth / maxhp; 
+        ESslider.value = eshieldValue / maxS; //
     }
 
     // Update is called once per frame

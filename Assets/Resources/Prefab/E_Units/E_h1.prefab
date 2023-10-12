@@ -8800,6 +8800,8 @@ MonoBehaviour:
   Eslider: {fileID: 3391657665669964808}
   maxhp: 0
   point: {fileID: 0}
+  ESslider: {fileID: 0}
+  maxS: 0
   e_State: 0
 --- !u!1 &158858
 GameObject:
