@@ -449,7 +449,7 @@ public class UnitController : MonoBehaviour
 
         if (ushieldValue <= 0)
         {
-            Transform poseidonSkill = transform.GetChild(3);
+            Transform poseidonSkill = transform.GetChild(4);
             poseidonSkill.gameObject.SetActive(false);
         }
 
@@ -465,7 +465,7 @@ public class UnitController : MonoBehaviour
 
         if (Skill_Set.instance.Poseidon_S)
         {
-            Transform poseidonSkill = transform.GetChild(3);
+            Transform poseidonSkill = transform.GetChild(4);
             poseidonSkill.gameObject.SetActive(false);
         }
     }
