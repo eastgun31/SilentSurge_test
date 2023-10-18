@@ -496,4 +496,12 @@ public class UnitController : MonoBehaviour
         P_attackRange.SetActive(true);
         Hera.SetActive(false);
     }
+
+    public IEnumerator HadesDuration(float duration)
+    {
+        yield return new WaitForSeconds(duration);
+
+        if (isHades)
+            isHades = false;
+    }
 }

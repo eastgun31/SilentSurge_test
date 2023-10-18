@@ -301,6 +301,7 @@ public class Skill : MonoBehaviour
                     //unit.Hades.SetActive(true); //유닛 내부 하데스 이펙트
 
                     unit.isHades = true; //부활 온
+                    StartCoroutine(unit.HadesDuration(15f));
                 }
             }
         }
@@ -392,11 +393,12 @@ public class Skill : MonoBehaviour
             Collider collider = hit.collider;
             E_unitMove e_unit = collider.GetComponent<E_unitMove>();
             e_unit.AphroditeChange(spawnPosition);
+
+            StartCoroutine(Num2_Skill_Cooldown(3f));
         }
         isSkillReady_2 = false;
 
         CancelSkill();
-        StartCoroutine(Num2_Skill_Cooldown(3f));
     }
 
     //소모스킬-------------------------------------------------------------------------------------------

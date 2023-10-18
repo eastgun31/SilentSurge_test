@@ -493,8 +493,6 @@ public class E_unitMove : MonoBehaviour
 
         if (EnemySkillManager.instance.usingItem)
         {
-            Transform skillEffect;
-
             if (EnemySkillManager.instance.e_item_skillnum == 1)
             {
                 Hermes.SetActive(true);
