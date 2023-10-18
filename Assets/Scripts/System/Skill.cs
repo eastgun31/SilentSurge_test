@@ -266,9 +266,7 @@ public class Skill : MonoBehaviour
                 UnitController unit = collider.GetComponent<UnitController>();
                 if (unit != null)
                 {
-                    Transform poseidonSkill = unit.transform.GetChild(4);
-                    poseidonSkill.gameObject.SetActive(true);
-
+                    unit.Poseidon.SetActive(true);
                     //보호막 조정
                     unit.PoseidonShield(50);
                 }
@@ -300,8 +298,7 @@ public class Skill : MonoBehaviour
                 UnitController unit = collider.GetComponent<UnitController>();
                 if (unit != null)
                 {
-                    Transform hadesSkill = unit.transform.GetChild(4);
-                    hadesSkill.gameObject.SetActive(true);
+                    //unit.Hades.SetActive(true); //유닛 내부 하데스 이펙트
 
                     unit.isHades = true; //부활 온
                 }
@@ -311,7 +308,7 @@ public class Skill : MonoBehaviour
 
         CancelSkill();
         StartCoroutine(Num1_Skill_Cooldown(3f)); //쿨타임 적용
-        StartCoroutine(DeactiveSkill(PoseidonSkill, 4f));
+        StartCoroutine(DeactiveSkill(HadesSkill, 4f));
     }
     //2번 액티브 스킬-------------------------------------------------------------------------------------------
     //헤라 스킬
@@ -413,7 +410,6 @@ public class Skill : MonoBehaviour
                 originalSpeed = unit.umoveSpeed;
                 unit.umoveSpeed += 3;
 
-                //Transform hermesSkill = unit.transform.GetChild(1);
                 unit.Hermes.SetActive(true);
 
                 StartCoroutine(BuffDelay(unit, originalSpeed, 5.0f, unit.Hermes));
@@ -432,10 +428,9 @@ public class Skill : MonoBehaviour
             {
                 unit.uhealth += 20;
 
-                Transform hestiaSkill = unit.transform.GetChild(2);
-                hestiaSkill.gameObject.SetActive(true);
+                unit.Hestia.SetActive(true);
 
-                StartCoroutine(BuffDelay(unit, 0, 2.0f, hestiaSkill.gameObject));
+                StartCoroutine(BuffDelay(unit, 0, 2.0f, unit.Hestia));
             }
         }
 
@@ -452,10 +447,9 @@ public class Skill : MonoBehaviour
                 originalDamage = unit.uattackPower;
                 unit.uattackPower += 5;
 
-                Transform dionysusSkill = unit.transform.GetChild(3);
-                dionysusSkill.gameObject.SetActive(true);
+                unit.Dionysus.SetActive(true);
 
-                StartCoroutine(BuffDelay(unit, originalDamage, 5.0f, dionysusSkill.gameObject));
+                StartCoroutine(BuffDelay(unit, originalDamage, 5.0f, unit.Dionysus));
             }
         }
 

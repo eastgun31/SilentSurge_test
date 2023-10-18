@@ -416,8 +416,7 @@ public class E_unitMove : MonoBehaviour
 
         if (eshieldValue <= 0)
         {
-            Transform poseidonSkill = transform.GetChild(4);
-            poseidonSkill.gameObject.SetActive(false);
+            Poseidon.SetActive(false);
         }
 
         yield return wait;

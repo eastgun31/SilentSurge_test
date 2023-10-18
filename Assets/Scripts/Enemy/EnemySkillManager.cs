@@ -216,8 +216,7 @@ public class EnemySkillManager : MonoBehaviour
             E_unitMove e_unit = collider.GetComponent<E_unitMove>();
             if (e_unit != null)
             {
-                Transform poseidonSkill = e_unit.transform.GetChild(4);
-                poseidonSkill.gameObject.SetActive(true);
+                e_unit.Poseidon.SetActive(true);
 
                 //보호막 조정
                 e_unit.PoseidonShield(50);
