@@ -353,7 +353,7 @@ public class E_unitMove : MonoBehaviour
 
     IEnumerator Pcheck()
     {
-        WaitForSeconds wait = new WaitForSeconds(0.5f);
+        WaitForSeconds wait = new WaitForSeconds(0.1f);
 
         if (ehealth <= 0)
         {
@@ -461,6 +461,11 @@ public class E_unitMove : MonoBehaviour
 
     public void AphroditeChange(Vector3 spawnPoint)
     {
+        StartCoroutine(_AphroditeChange(spawnPoint));
+    }
+
+    public IEnumerator _AphroditeChange(Vector3 spawnPoint)
+    {
         if (unitNum == 0 || unitNum == 4 || unitNum == 8)
             All_Lv_LCL.instance.Aphrodite_Warrior(spawnPoint);
         else if (unitNum == 1 || unitNum == 5 || unitNum == 9)
@@ -469,6 +474,12 @@ public class E_unitMove : MonoBehaviour
             All_Lv_LCL.instance.Aphrodite_Archer(spawnPoint);
         else
             All_Lv_LCL.instance.Aphrodite_HorseMan(spawnPoint);
+
+        ehealth = 0;
+
+        yield return new WaitForSeconds(0.2f);
+
+        ehealth = 0;
 
         if (point)
         {

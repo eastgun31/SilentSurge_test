@@ -403,7 +403,7 @@ public class UnitController : MonoBehaviour
 
     IEnumerator Pcheck()    //À¯´Ö Á×´Â ÄÚ·çÆ¾ ÇÔ¼ö
     {
-        WaitForSeconds wait = new WaitForSeconds(1f);
+        WaitForSeconds wait = new WaitForSeconds(0.1f);
 
         if (uhealth <= 0 && isHades)
         {
