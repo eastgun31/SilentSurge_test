@@ -8,6 +8,14 @@ using static UnityEngine.UI.CanvasScaler;
 
 public class E_unitMove : MonoBehaviour
 {
+    //유닛 내부 이펙트
+    public GameObject E_attackRange;
+    public GameObject Hermes;
+    public GameObject Dionysus;
+    public GameObject Poseidon;
+    public GameObject Hera;
+    public GameObject Hestia;
+
     public GameObject[] points;
     public int unitNum;
 
@@ -422,8 +430,7 @@ public class E_unitMove : MonoBehaviour
 
         eshieldValue = originalValue;
 
-        Transform poseidonSkill = transform.GetChild(4);
-        poseidonSkill.gameObject.SetActive(false);
+        Poseidon.SetActive(false);
     }
 
     public void ApolloHeal(float heal)
@@ -435,24 +442,21 @@ public class E_unitMove : MonoBehaviour
     {
         e_State = E_UnitState.Stun;
 
-        Transform heraStun = transform.GetChild(5);
-        Transform E_attackRange = transform.GetChild(0); //번호 나중에 바꾸기
-
         if (e_State == E_UnitState.Stun)
         {
             moving.isStopped = true;
             moving.velocity = Vector3.zero;
         }
 
-        E_attackRange.gameObject.SetActive(false);
-        heraStun.gameObject.SetActive(true);
+        E_attackRange.SetActive(false);
+        Hera.SetActive(true);
 
         yield return new WaitForSeconds(sec);
 
         e_State = E_UnitState.Idle;
         moving.isStopped = false;
-        E_attackRange.gameObject.SetActive(true);
-        heraStun.gameObject.SetActive(false);
+        E_attackRange.SetActive(true);
+        Hera.SetActive(false);
     }
 
     public void AphroditeChange(Vector3 spawnPoint)
@@ -483,8 +487,7 @@ public class E_unitMove : MonoBehaviour
 
             if (EnemySkillManager.instance.e_item_skillnum == 1)
             {
-                skillEffect = transform.GetChild(1);
-                skillEffect.gameObject.SetActive(true);
+                Hermes.SetActive(true);
                 //EnemySkillManager.instance.usingItem = false;
 
                 float originalSpeed = emoveSpeed;
@@ -492,27 +495,25 @@ public class E_unitMove : MonoBehaviour
 
                 yield return new WaitForSeconds(5f);
 
-                skillEffect.gameObject.SetActive(false);
+                Hermes.SetActive(false);
                 emoveSpeed = originalSpeed;
             }
 
             if (EnemySkillManager.instance.e_item_skillnum == 2)
             {
-                skillEffect = transform.GetChild(2);
-                skillEffect.gameObject.SetActive(true);
+                Hestia.SetActive(true);
                 //EnemySkillManager.instance.usingItem = false;
 
                 ehealth += 20;
 
                 yield return new WaitForSeconds(2f);
 
-                skillEffect.gameObject.SetActive(false);
+                Hestia.SetActive(false);
             }
 
             if (EnemySkillManager.instance.e_item_skillnum == 3)
             {
-                skillEffect = transform.GetChild(3);
-                skillEffect.gameObject.SetActive(true);
+                Dionysus.SetActive(true);
                 //EnemySkillManager.instance.usingItem = false;
 
                 float originalDamage = eattackPower;
@@ -520,7 +521,7 @@ public class E_unitMove : MonoBehaviour
 
                 yield return new WaitForSeconds(5f);
 
-                skillEffect.gameObject.SetActive(false);
+                Dionysus.SetActive(false);
                 eattackPower = originalDamage;
             }
 

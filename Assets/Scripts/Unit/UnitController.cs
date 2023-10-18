@@ -11,6 +11,14 @@ public class UnitController : MonoBehaviour
     private NavMeshAgent navMeshAgent;
     private Animator playerAnim;
 
+    //À¯´Ö ³»ºÎ ÀÌÆåÆ®
+    public GameObject P_attackRange;
+    public GameObject Hermes;
+    public GameObject Dionysus;
+    public GameObject Poseidon;
+    public GameObject Hera;
+    public GameObject Hestia;
+
     public int unitnumber = 0;
 
     public float uhealth;
@@ -393,7 +401,6 @@ public class UnitController : MonoBehaviour
         }
     }
 
-
     IEnumerator Pcheck()    //À¯´Ö Á×´Â ÄÚ·çÆ¾ ÇÔ¼ö
     {
         WaitForSeconds wait = new WaitForSeconds(1f);
@@ -456,8 +463,7 @@ public class UnitController : MonoBehaviour
 
         if (ushieldValue <= 0)
         {
-            Transform poseidonSkill = transform.GetChild(4);
-            poseidonSkill.gameObject.SetActive(false);
+            Poseidon.SetActive(false);
         }
 
         yield return wait;
@@ -472,28 +478,22 @@ public class UnitController : MonoBehaviour
 
         if (Skill_Set.instance.Poseidon_S)
         {
-            Transform poseidonSkill = transform.GetChild(4);
-            poseidonSkill.gameObject.SetActive(false);
+            Poseidon.SetActive(false);
         }
     }
 
     public IEnumerator HeraStun(float sec)
     {
-        Transform heraStun = transform.GetChild(5);
-        Transform attackRange = transform.GetChild(0); 
-
         navMeshAgent.isStopped = true;
         navMeshAgent.velocity = Vector3.zero;
 
-        attackRange.gameObject.SetActive(false);
-        heraStun.gameObject.SetActive(true);
+        P_attackRange.SetActive(false);
+        Hera.SetActive(true);
 
         yield return new WaitForSeconds(sec);
 
         navMeshAgent.isStopped = false;
-        attackRange.gameObject.SetActive(true);
-        heraStun.gameObject.SetActive(false);
+        P_attackRange.SetActive(true);
+        Hera.SetActive(false);
     }
-
 }
-

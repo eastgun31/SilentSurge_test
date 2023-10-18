@@ -413,10 +413,10 @@ public class Skill : MonoBehaviour
                 originalSpeed = unit.umoveSpeed;
                 unit.umoveSpeed += 3;
 
-                Transform hermesSkill = unit.transform.GetChild(1);
-                hermesSkill.gameObject.SetActive(true);
+                //Transform hermesSkill = unit.transform.GetChild(1);
+                unit.Hermes.SetActive(true);
 
-                StartCoroutine(BuffDelay(unit, originalSpeed, 5.0f, hermesSkill.gameObject));
+                StartCoroutine(BuffDelay(unit, originalSpeed, 5.0f, unit.Hermes));
             }
         }
 
