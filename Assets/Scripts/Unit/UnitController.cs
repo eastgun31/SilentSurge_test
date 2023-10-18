@@ -18,6 +18,7 @@ public class UnitController : MonoBehaviour
     public GameObject Poseidon;
     public GameObject Hera;
     public GameObject Hestia;
+    public GameObject Hades;
 
     public int unitnumber = 0;
 
@@ -39,7 +40,7 @@ public class UnitController : MonoBehaviour
     public float maxhp;
     public Slider Sslider; //
     public float maxS; //
-    
+
 
     //최적화 변수들
     string run = "run";
@@ -407,6 +408,7 @@ public class UnitController : MonoBehaviour
 
         if (uhealth <= 0 && isHades)
         {
+            Hades.SetActive(false);
             uhealth = maxhp / 2;
             isHades = false;
         }
@@ -503,7 +505,10 @@ public class UnitController : MonoBehaviour
         yield return new WaitForSeconds(duration);
 
         if (isHades)
+        {
             isHades = false;
+            Hades.SetActive(false);
+        }
     }
 
     public void AphroditeChange(Vector3 spawnPoint, Vector3 pointPosition)

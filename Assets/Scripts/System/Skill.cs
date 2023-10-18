@@ -298,9 +298,9 @@ public class Skill : MonoBehaviour
                 UnitController unit = collider.GetComponent<UnitController>();
                 if (unit != null)
                 {
-                    //unit.Hades.SetActive(true); //유닛 내부 하데스 이펙트
-
                     unit.isHades = true; //부활 온
+                    unit.Hades.SetActive(true); //유닛 내부 하데스 이펙트
+
                     StartCoroutine(unit.HadesDuration(15f));
                 }
             }
