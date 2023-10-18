@@ -52,6 +52,7 @@ public class E_unitMove : MonoBehaviour
     string attack = "attack";
     string _point = "Point";
 
+    public bool isHades = false;
 
     public enum E_UnitState //적 상태머신
     {
@@ -183,7 +184,7 @@ public class E_unitMove : MonoBehaviour
 
         if (EnemySkillManager.instance.useSkill)
         {
-            EnemySkillManager.instance.E_UseSkill(dir, gameObject.transform.position);
+            EnemySkillManager.instance.E_UseSkill(dir, gameObject.transform.position, p_unit, lastDesti);
             //EnemySkillManager.instance.useSkill = false;
         }
 
@@ -349,23 +350,64 @@ public class E_unitMove : MonoBehaviour
             edefense = GameManager.instance.defense + 15;
             emoveSpeed = GameManager.instance.moveSpeed + 3;
         }
+
+        //패시브--------------------------------------------------------------------
+        //검사 패시브가 켜지면   
+        if (EnemySkillManager.instance.e_passiveNow == 3)
+        {
+            if (unitNum == 0 || unitNum == 4 || unitNum == 8)
+            {
+                ehealth += 30;
+                eattackPower += 3;
+                edefense += 3;
+            }
+        }
+        //방패병
+        if (EnemySkillManager.instance.e_passiveNow == 1)
+        {
+            if (unitNum == 1 || unitNum == 5 || unitNum == 9)
+            {
+                ehealth += 30;
+                eattackPower += 3;
+                edefense += 3;
+            }
+        }
+        //궁수
+        if (EnemySkillManager.instance.e_passiveNow == 2)
+        {
+            if (unitNum == 2 || unitNum == 6 || unitNum == 10)
+            {
+                ehealth += 30;
+                eattackPower += 3;
+                edefense += 3;
+            }
+        }
+
     }
 
     IEnumerator Pcheck()
     {
         WaitForSeconds wait = new WaitForSeconds(0.1f);
 
+        if (ehealth <= 0 && isHades)
+        {
+            ehealth = maxhp / 2;
+            isHades = false;
+        }
+
         if (ehealth <= 0)
         {
             moving.isStopped = true;
             moving.velocity = Vector3.zero;
 
-            GameManager.instance.e_population--;
+            
             GameManager.instance.gold += 2;
 
             enemyAnim.SetTrigger("death");
 
             yield return new WaitForSeconds(3f);
+
+            GameManager.instance.e_population--;
 
             if (point)
             {
@@ -458,6 +500,14 @@ public class E_unitMove : MonoBehaviour
         Hera.SetActive(false);
     }
 
+    public IEnumerator HadesDuration(float duration)
+    {
+        yield return new WaitForSeconds(duration);
+
+        if (isHades)
+            isHades = false;
+    }
+
     public void AphroditeChange(Vector3 spawnPoint)
     {
         StartCoroutine(_AphroditeChange(spawnPoint));
@@ -474,6 +524,9 @@ public class E_unitMove : MonoBehaviour
         else
             All_Lv_LCL.instance.Aphrodite_HorseMan(spawnPoint);
 
+        GameManager.instance.e_population--;
+        GameManager.instance.All_Obj++;
+
         ehealth = 0;
 
         yield return new WaitForSeconds(0.2f);
@@ -484,7 +537,7 @@ public class E_unitMove : MonoBehaviour
         {
             point.e_distance = 100f;
         }
-        GameManager.instance.e_population--;
+        
         Destroy(gameObject);
     }
     IEnumerator usingItem()

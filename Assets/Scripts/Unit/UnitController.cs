@@ -419,7 +419,6 @@ public class UnitController : MonoBehaviour
             RTSUnitController.instance.UnitList.Remove(this);
             RTSUnitController.instance.selectedUnitList.Remove(this);
 
-            GameManager.instance.All_Obj--;
             GameManager.instance.Aobj();
             EnemySpawn.instance.gold += 2; //¾Æ±º À¯´Ö Á×¿´À» ¶§ Àû ÀçÈ­ È¹µæ
 
@@ -431,6 +430,8 @@ public class UnitController : MonoBehaviour
             {
                 point.p_distance = 100f;
             }
+
+            GameManager.instance.All_Obj--;
 
             Destroy(gameObject);
             StopCoroutine(Pcheck());
@@ -503,5 +504,41 @@ public class UnitController : MonoBehaviour
 
         if (isHades)
             isHades = false;
+    }
+
+    public void AphroditeChange(Vector3 spawnPoint, Vector3 pointPosition)
+    {
+        StartCoroutine(_AphroditeChange(spawnPoint, pointPosition));
+    }
+
+    public IEnumerator _AphroditeChange(Vector3 spawnPoint, Vector3 pointPosition)
+    {
+        if (unitnumber == 0 || unitnumber == 4 || unitnumber == 8)
+            EnemySpawn.instance.Aphrodite_Warrior(spawnPoint, pointPosition);
+        else if (unitnumber == 1 || unitnumber == 5 || unitnumber == 9)
+            EnemySpawn.instance.Aphrodite_Shield(spawnPoint, pointPosition);
+        else if (unitnumber == 2 || unitnumber == 6 || unitnumber == 10)
+            EnemySpawn.instance.Aphrodite_Archer(spawnPoint, pointPosition);
+        else
+            EnemySpawn.instance.Aphrodite_HorseMan(spawnPoint, pointPosition);
+
+        uhealth = 0;
+
+        yield return new WaitForSeconds(0.2f);
+
+        GameManager.instance.All_Obj--;
+        GameManager.instance.e_population++;
+
+        uhealth = 0;
+
+        if (point)
+        {
+            point.p_distance = 100f;
+        }
+
+        RTSUnitController.instance.UnitList.Remove(this);
+        RTSUnitController.instance.selectedUnitList.Remove(this);
+
+        Destroy(gameObject);
     }
 }

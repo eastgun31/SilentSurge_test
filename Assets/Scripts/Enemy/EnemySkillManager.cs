@@ -49,6 +49,7 @@ public class EnemySkillManager : MonoBehaviour
 
     public GameObject ZeusSkill; //제우스 액티브
     public GameObject PoseidonSkill;
+    public GameObject HadesSkill;
     public GameObject HeraSkill;
     public GameObject ApolloSkill; //아폴론 액티브
 
@@ -65,7 +66,7 @@ public class EnemySkillManager : MonoBehaviour
         
     }
 
-    public void E_UseSkill(Vector3 dir, Vector3 dir2)
+    public void E_UseSkill(Vector3 dir, Vector3 dir2, UnitController unit, Vector3 pointPosition)
     {
         //int random;
 
@@ -85,7 +86,7 @@ public class EnemySkillManager : MonoBehaviour
                     UsePoseidonSkill(dir2);
                     break;
                 case 3:
-                    UseHadesSkill();
+                    UseHadesSkill(dir2);
                     break;
             }
         }
@@ -104,7 +105,7 @@ public class EnemySkillManager : MonoBehaviour
                     UseAthenaSkill();
                     break;
                 case 4:
-                    UseAphroditeSkill();
+                    UseAphroditeSkill(dir, unit, pointPosition);
                     break;
             }
         }
@@ -227,10 +228,22 @@ public class EnemySkillManager : MonoBehaviour
         StartCoroutine(Num1_Skill_Cooldown(10f));
         StartCoroutine(DeactiveSkill(PoseidonSkill, 4f));
     }
-    void UseHadesSkill()
+    void UseHadesSkill(Vector3 dir)
     {
+        Collider[] colliders = Physics.OverlapSphere(dir, 4.5f, LayerMask.GetMask("E_Unit"));
+        foreach (Collider collider in colliders)
+        {
+            E_unitMove e_unit = collider.GetComponent<E_unitMove>();
+            if (e_unit != null)
+            {
+                e_unit.isHades = true;
+                StartCoroutine(e_unit.HadesDuration(15f));
+            }
+        }
+
         useSkill = false;
         StartCoroutine(Num1_Skill_Cooldown(5f));
+        StartCoroutine(DeactiveSkill(HadesSkill, 4f));
     }
     //2번 액티브 스킬-------------------------------------------------------------------------------------------
     void UseHeraSkill(Vector3 dir)
@@ -280,8 +293,11 @@ public class EnemySkillManager : MonoBehaviour
         useSkill = false;
         StartCoroutine(Num2_Skill_Cooldown(3f));
     }
-    void UseAphroditeSkill()
+    void UseAphroditeSkill(Vector3 dir, UnitController unit, Vector3 pointPosition)
     {
+        UnitController p_unit = unit.GetComponent<UnitController>();
+        p_unit.AphroditeChange(dir, pointPosition);
+
         useSkill = false;
         StartCoroutine(Num2_Skill_Cooldown(3f));
     }
