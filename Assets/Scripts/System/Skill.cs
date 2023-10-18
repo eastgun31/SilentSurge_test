@@ -48,6 +48,7 @@ public class Skill : MonoBehaviour
 
     public GameObject ZeusSkill; //제우스 액티브
     public GameObject PoseidonSkill; //포세이돈 액티브
+    public GameObject HadesSkill; //하데스 액티브
 
     public GameObject HeraSkill; //헤라 액티브
     public GameObject ApolloSkill; //아폴론 액티브
@@ -279,9 +280,38 @@ public class Skill : MonoBehaviour
         StartCoroutine(Num1_Skill_Cooldown(3f)); //쿨타임 적용
         StartCoroutine(DeactiveSkill(PoseidonSkill, 4f));
     }
+    //하데스 스킬
     void UseHadesSkill()
     {
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;
 
+        if (Physics.Raycast(ray, out hit, Mathf.Infinity, LayerMask.GetMask("Ground")))
+        {
+            Vector3 spawnPosition = hit.point;
+            spawnPosition.y += skillRangeHeight; // Y 좌표 조정
+
+            HadesSkill.SetActive(true);
+            HadesSkill.transform.position = spawnPosition;
+
+            Collider[] colliders = Physics.OverlapSphere(spawnPosition, 4.5f, LayerMask.GetMask("Unit"));
+            foreach (Collider collider in colliders)
+            {
+                UnitController unit = collider.GetComponent<UnitController>();
+                if (unit != null)
+                {
+                    Transform hadesSkill = unit.transform.GetChild(4);
+                    hadesSkill.gameObject.SetActive(true);
+
+                    unit.isHades = true; //부활 온
+                }
+            }
+        }
+        isSkillReady_1 = false;
+
+        CancelSkill();
+        StartCoroutine(Num1_Skill_Cooldown(3f)); //쿨타임 적용
+        StartCoroutine(DeactiveSkill(PoseidonSkill, 4f));
     }
     //2번 액티브 스킬-------------------------------------------------------------------------------------------
     //헤라 스킬
@@ -393,7 +423,6 @@ public class Skill : MonoBehaviour
         itemLimit--;
         isBuffActive = true;
     }
-
     void UseHestiaSkill() //회복
     {
         foreach (UnitController unit in RTSUnitController.instance.UnitList)
@@ -413,7 +442,6 @@ public class Skill : MonoBehaviour
         itemLimit--;
         isBuffActive = true;
     }
-
     void UseDionysusSkill() //공격력
     {
         foreach (UnitController unit in RTSUnitController.instance.UnitList)

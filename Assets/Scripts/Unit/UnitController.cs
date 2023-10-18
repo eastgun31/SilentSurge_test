@@ -38,6 +38,9 @@ public class UnitController : MonoBehaviour
     string attack = "attack";
     string _point = "Point";
 
+    //하데스 변수
+    public bool isHades = false;
+
     public enum unitState //유닛상태머신
     {
         Battle, Idle, goPoint
@@ -395,7 +398,13 @@ public class UnitController : MonoBehaviour
     {
         WaitForSeconds wait = new WaitForSeconds(1f);
 
-        if (uhealth <= 0)
+        if (uhealth <= 0 && isHades)
+        {
+            uhealth = maxhp / 2;
+            isHades = false;
+        }
+
+        if (uhealth <= 0 && !isHades)
         {
             navMeshAgent.isStopped = true;
             navMeshAgent.velocity = Vector3.zero;
