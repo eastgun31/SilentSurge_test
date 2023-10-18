@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class All_Lv_LCL : MonoBehaviour
 {
+    public static All_Lv_LCL instance;
+
     private int Gold;
     private int U;
 
@@ -49,6 +51,14 @@ public class All_Lv_LCL : MonoBehaviour
     public GameObject ShieldPoaition;
     public GameObject ArcherPoaition;
     public GameObject HorseManPoaition;
+
+    void Awake()
+    {
+        if (instance != null)
+            Destroy(gameObject);
+        else
+            instance = this;
+    }
 
     void Start()
     {
@@ -323,4 +333,45 @@ public class All_Lv_LCL : MonoBehaviour
         }
     }
 
+    //아프로디테 스킬로 생성되는 유닛
+    public void Aphrodite_Warrior(Vector3 spawnPoint)
+    {
+        GameObject newObject = Instantiate(Warrior_1L_Obj, spawnPoint, Quaternion.identity);
+        GameManager.instance.All_Obj++;
+        GameManager.instance.Aobj();
+
+        //리스트에 추가
+        UnitController unit = newObject.GetComponent<UnitController>();
+        RTSUnitController.instance.UnitList.Add(unit);
+    }
+    public void Aphrodite_Shield(Vector3 spawnPoint)
+    {
+        GameObject newObject = Instantiate(Shield_1L_Obj, spawnPoint, Quaternion.identity);
+        GameManager.instance.All_Obj++;
+        GameManager.instance.Aobj();
+
+        //리스트에 추가
+        UnitController unit = newObject.GetComponent<UnitController>();
+        RTSUnitController.instance.UnitList.Add(unit);
+    }
+    public void Aphrodite_Archer(Vector3 spawnPoint)
+    {
+        GameObject newObject = Instantiate(Archer_1L_Obj, spawnPoint, Quaternion.identity);
+        GameManager.instance.All_Obj++;
+        GameManager.instance.Aobj();
+
+        //리스트에 추가
+        UnitController unit = newObject.GetComponent<UnitController>();
+        RTSUnitController.instance.UnitList.Add(unit);
+    }
+    public void Aphrodite_HorseMan(Vector3 spawnPoint)
+    {
+        GameObject newObject = Instantiate(HorseMan_1L_Obj, spawnPoint, Quaternion.identity);
+        GameManager.instance.All_Obj++;
+        GameManager.instance.Aobj();
+
+        //리스트에 추가
+        UnitController unit = newObject.GetComponent<UnitController>();
+        RTSUnitController.instance.UnitList.Add(unit);
+    }
 }

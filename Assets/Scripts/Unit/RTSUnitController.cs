@@ -3,22 +3,20 @@ using UnityEngine;
 
 public class RTSUnitController : MonoBehaviour
 {
-    //[SerializeField]
-    //private	UnitSpawner			 unitSpawner;
     [SerializeField]
     private All_Lv_LCL all_Lv_LCL;
 
-    public List<UnitController> selectedUnitList;              // 플레이어가 클릭 or 드래그로 선택한 유닛
+    public List<UnitController> selectedUnitList = new List<UnitController>(); // 플레이어가 클릭 or 드래그로 선택한 유닛
     public List<UnitController> UnitList = new List<UnitController>(); // 맵에 존재하는 모든 유닛
 
     public static RTSUnitController instance = null;
 
-    private void Awake()
+    void Awake()
     {
-        instance = this;
-
-        selectedUnitList = new List<UnitController>();
-        //UnitList		 = unitSpawner.SpawnUnits();
+        if (instance != null)
+            Destroy(gameObject);
+        else
+            instance = this;
     }
 
     // 마우스 클릭으로 유닛을 선택할 때 호출

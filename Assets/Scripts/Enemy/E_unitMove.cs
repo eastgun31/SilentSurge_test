@@ -455,6 +455,24 @@ public class E_unitMove : MonoBehaviour
         heraStun.gameObject.SetActive(false);
     }
 
+    public void AphroditeChange(Vector3 spawnPoint)
+    {
+        if (unitNum == 0 || unitNum == 4 || unitNum == 8)
+            All_Lv_LCL.instance.Aphrodite_Warrior(spawnPoint);
+        else if (unitNum == 1 || unitNum == 5 || unitNum == 9)
+            All_Lv_LCL.instance.Aphrodite_Shield(spawnPoint);
+        else if (unitNum == 2 || unitNum == 6 || unitNum == 10)
+            All_Lv_LCL.instance.Aphrodite_Archer(spawnPoint);
+        else
+            All_Lv_LCL.instance.Aphrodite_HorseMan(spawnPoint);
+
+        if (point)
+        {
+            point.e_distance = 100f;
+        }
+        GameManager.instance.e_population--;
+        Destroy(gameObject);
+    }
     IEnumerator usingItem()
     {
         WaitForSeconds wait = new WaitForSeconds(1f);

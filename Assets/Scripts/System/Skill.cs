@@ -10,10 +10,10 @@ public enum Skills
     Zeus,       //제우스        1 A  o
     Poseidon,   //포세이돈      2 A  o
     Hades,      //하데스        3 A  
-    Hera,       //헤라          4 B  
+    Hera,       //헤라          4 B  o
     Apollo,     //아폴론        5 B  o
     Athena,     //아테나        6 B  v
-    Aphrodite,  //아프로디테    7 B  
+    Aphrodite,  //아프로디테    7 B  o
     Hermes,     //헤르메스      8 I  o
     Hestia,     //헤스티아      9 I  o
     Dionysus,   //디오니소스    10 I  o
@@ -54,7 +54,10 @@ public class Skill : MonoBehaviour
 
     void Awake()
     {
-        instance = this;
+        if (instance != null)
+            Destroy(gameObject);
+        else
+            instance = this;
     }
 
     void Update()
@@ -344,13 +347,29 @@ public class Skill : MonoBehaviour
         StartCoroutine(Num2_Skill_Cooldown(3f)); //쿨타임 적용
         StartCoroutine(DeactiveSkill(ApolloSkill, 3f));
     }
+    //아테나 스킬
     void UseAthenaSkill()
     {
 
     }
+    //아프로디테 스킬
     void UseAphroditeSkill()
     {
+        RaycastHit hit;
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
+        if (Physics.Raycast(ray, out hit, Mathf.Infinity, LayerMask.GetMask("E_Unit")))
+        {
+            Vector3 spawnPosition = hit.point;
+
+            Collider collider = hit.collider;
+            E_unitMove e_unit = collider.GetComponent<E_unitMove>();
+            e_unit.AphroditeChange(spawnPosition);
+        }
+        isSkillReady_2 = false;
+
+        CancelSkill();
+        StartCoroutine(Num2_Skill_Cooldown(3f));
     }
 
     //소모스킬-------------------------------------------------------------------------------------------
