@@ -555,6 +555,7 @@ MonoBehaviour:
   point: {fileID: 0}
   ESslider: {fileID: 5221626378638391501}
   maxS: 0
+  isHades: 0
   e_State: 0
 --- !u!54 &-8701729715058445608
 Rigidbody:
@@ -1476,7 +1477,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4192101585724645945}
-  m_Layer: 5
+  m_Layer: 12
   m_Name: Fill Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1514,7 +1515,7 @@ GameObject:
   - component: {fileID: 1243567563147680743}
   - component: {fileID: 1955862695041286659}
   - component: {fileID: 3372139620774300547}
-  m_Layer: 5
+  m_Layer: 12
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1589,7 +1590,7 @@ GameObject:
   - component: {fileID: 4661979638055422726}
   - component: {fileID: 5221626378638391501}
   - component: {fileID: 9008787559547043283}
-  m_Layer: 5
+  m_Layer: 12
   m_Name: Sslider
   m_TagString: Slider
   m_Icon: {fileID: 0}
@@ -1692,7 +1693,7 @@ GameObject:
   - component: {fileID: 2725453468762166934}
   - component: {fileID: 1100956960781868414}
   - component: {fileID: 7174083740347454887}
-  m_Layer: 5
+  m_Layer: 12
   m_Name: Slider
   m_TagString: Slider
   m_Icon: {fileID: 0}
@@ -1854,7 +1855,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5618873518285502539}
-  m_Layer: 5
+  m_Layer: 12
   m_Name: Fill Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1892,7 +1893,7 @@ GameObject:
   - component: {fileID: 3813243896527608777}
   - component: {fileID: 4083130050330082646}
   - component: {fileID: 6001051250074236898}
-  m_Layer: 5
+  m_Layer: 12
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2064,7 +2065,7 @@ GameObject:
   - component: {fileID: 2266324748727622785}
   - component: {fileID: 12828270993784018}
   - component: {fileID: 1479534922723178792}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Hp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2164,7 +2165,7 @@ GameObject:
   - component: {fileID: 3004960764632147321}
   - component: {fileID: 8962251271114592410}
   - component: {fileID: 4435868402538048874}
-  m_Layer: 5
+  m_Layer: 12
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2239,7 +2240,7 @@ GameObject:
   - component: {fileID: 7436411222671209803}
   - component: {fileID: 3548248682426396453}
   - component: {fileID: 7966553616574161721}
-  m_Layer: 5
+  m_Layer: 12
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -39,7 +39,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1607095556258983690}
-  m_Layer: 5
+  m_Layer: 12
   m_Name: Fill Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -77,7 +77,7 @@ GameObject:
   - component: {fileID: 2026218885263490218}
   - component: {fileID: 1265481993896493632}
   - component: {fileID: 4843102738805209255}
-  m_Layer: 5
+  m_Layer: 12
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -152,7 +152,7 @@ GameObject:
   - component: {fileID: 8755910175110863212}
   - component: {fileID: 8613513573384759356}
   - component: {fileID: 690946934030186932}
-  m_Layer: 5
+  m_Layer: 12
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -225,7 +225,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6246309975716693743}
-  m_Layer: 5
+  m_Layer: 12
   m_Name: Fill Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -263,7 +263,7 @@ GameObject:
   - component: {fileID: 5951935604860376231}
   - component: {fileID: 6760411092419810104}
   - component: {fileID: 2117545156989608446}
-  m_Layer: 5
+  m_Layer: 12
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -338,7 +338,7 @@ GameObject:
   - component: {fileID: 6654589403747026408}
   - component: {fileID: 8942792507680093764}
   - component: {fileID: 3625076824342944590}
-  m_Layer: 5
+  m_Layer: 12
   m_Name: Sslider
   m_TagString: Slider
   m_Icon: {fileID: 0}
@@ -537,7 +537,7 @@ GameObject:
   - component: {fileID: 5824912596943675994}
   - component: {fileID: 2191106359017680760}
   - component: {fileID: 222658808094850379}
-  m_Layer: 5
+  m_Layer: 12
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1605,6 +1605,7 @@ MonoBehaviour:
   point: {fileID: 0}
   ESslider: {fileID: 8942792507680093764}
   maxS: 0
+  isHades: 0
   e_State: 0
 --- !u!54 &3968802995802013043
 Rigidbody:
@@ -2080,7 +2081,7 @@ GameObject:
   - component: {fileID: 9198538055849933202}
   - component: {fileID: 6002581288360966963}
   - component: {fileID: 3846684120768205188}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Hp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2211,7 +2212,7 @@ GameObject:
   - component: {fileID: 7364347461576302028}
   - component: {fileID: 828088946157536771}
   - component: {fileID: 3151458342321091180}
-  m_Layer: 5
+  m_Layer: 12
   m_Name: Slider
   m_TagString: Slider
   m_Icon: {fileID: 0}

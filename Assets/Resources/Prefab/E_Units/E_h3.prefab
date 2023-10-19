@@ -8809,6 +8809,7 @@ MonoBehaviour:
   point: {fileID: 0}
   ESslider: {fileID: 4175421674240817455}
   maxS: 0
+  isHades: 0
   e_State: 0
 --- !u!1 &158858
 GameObject:
@@ -14414,7 +14415,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8997919537376172899}
-  m_Layer: 5
+  m_Layer: 12
   m_Name: Fill Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14450,7 +14451,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1607907864498189835}
-  m_Layer: 5
+  m_Layer: 12
   m_Name: Fill Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14488,7 +14489,7 @@ GameObject:
   - component: {fileID: 7315172099528534036}
   - component: {fileID: 5954295437686823701}
   - component: {fileID: 287090896181269573}
-  m_Layer: 5
+  m_Layer: 12
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14563,7 +14564,7 @@ GameObject:
   - component: {fileID: 2954485652835669949}
   - component: {fileID: 8900547175450454940}
   - component: {fileID: 1258234838061557639}
-  m_Layer: 5
+  m_Layer: 12
   m_Name: Slider
   m_TagString: Slider
   m_Icon: {fileID: 0}
@@ -14666,7 +14667,7 @@ GameObject:
   - component: {fileID: 7294230229027571362}
   - component: {fileID: 8010556160472384671}
   - component: {fileID: 7581510214308858637}
-  m_Layer: 5
+  m_Layer: 12
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14837,7 +14838,7 @@ GameObject:
   - component: {fileID: 1806793041723826549}
   - component: {fileID: 8142548349258709757}
   - component: {fileID: 2717249867968221841}
-  m_Layer: 5
+  m_Layer: 12
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14913,7 +14914,7 @@ GameObject:
   - component: {fileID: 4279615859440003145}
   - component: {fileID: 3189777983160897171}
   - component: {fileID: 8371047196008996670}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Hp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15013,7 +15014,7 @@ GameObject:
   - component: {fileID: 6581134882267821500}
   - component: {fileID: 2719343005080240308}
   - component: {fileID: 5508636138829065158}
-  m_Layer: 5
+  m_Layer: 12
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15169,7 +15170,7 @@ GameObject:
   - component: {fileID: 961983245449960312}
   - component: {fileID: 4175421674240817455}
   - component: {fileID: 3475579763506304965}
-  m_Layer: 5
+  m_Layer: 12
   m_Name: Sslider
   m_TagString: Slider
   m_Icon: {fileID: 0}
