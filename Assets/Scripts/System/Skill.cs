@@ -53,6 +53,8 @@ public class Skill : MonoBehaviour
     public GameObject HeraSkill; //헤라 액티브
     public GameObject ApolloSkill; //아폴론 액티브
 
+    public GameObject vision; // 아테나 시야
+
     void Awake()
     {
         if (instance != null)
@@ -212,6 +214,12 @@ public class Skill : MonoBehaviour
     {
         yield return new WaitForSeconds(time); // 비활성화까지의 대기 시간(3초)
         skill.SetActive(false);
+    }
+
+    IEnumerator Novision(float time)    // 모든 시야 밝히는 지속시간 코루틴 함수
+    {
+        yield return new WaitForSeconds(time);
+        vision.SetActive(true);
     }
 
     //1번 액티브 스킬-------------------------------------------------------------------------------------------
@@ -378,7 +386,12 @@ public class Skill : MonoBehaviour
     //아테나 스킬
     void UseAthenaSkill()
     {
+        vision.SetActive(false);
+        StartCoroutine(Novision(3f));
 
+        isSkillReady_2 = false;
+        CancelSkill();
+        StartCoroutine(Num2_Skill_Cooldown(5f));
     }
     //아프로디테 스킬
     void UseAphroditeSkill()

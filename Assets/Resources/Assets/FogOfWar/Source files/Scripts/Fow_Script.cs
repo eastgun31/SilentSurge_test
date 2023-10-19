@@ -4,22 +4,17 @@ using UnityEngine;
 
 public class Fow_Script : MonoBehaviour {
 
-    ////////////////////////////////////////////////////////////////
-    // If you have any trouble with the asset, please email me at //
-    //                  lukebox@hailgames.net                     //
-    //               or on Discord Lukebox#8482                   //
-    ////////////////////////////////////////////////////////////////
 
-    public static List<FowUnit> fowUnits = new List<FowUnit>(); // list of all units with vision, whenever a FoWUnit is created, it adds itself to the list (See FowUnit.cs script)
+    public static List<FowUnit> fowUnits = new List<FowUnit>(); 
 
     public Vector3 fowPlaneScale;
     public Vector3 planeOffset;
-    public float planeRotation; // Y-rotation of the fog plane, use this if you have a tilted camera (e.g. typical RTS camera is rotated 45 degrees)
+    public float planeRotation; 
 
     public Color color_fog = Color.black;
     public GameObject prefab_fowPlane;
 
-    private GameObject fogPlane; // instantiated fog plane
+    private GameObject fogPlane; //시야 플랜
 
     private Camera fowCamera;
     private Camera mainCamera;
@@ -30,18 +25,19 @@ public class Fow_Script : MonoBehaviour {
     private Color[] fogPlaneColors;
 
 
-    public float updateFrequency; // how often the fog updates, in milliseconds, 1000 ms = 1 second. Set to 0 to update every frame
+    public float updateFrequency; 
     private float updateTimer;
 
     void Start() {
 
         mainCamera = transform.parent.GetComponent<Camera>();
         fowCamera = GetComponent<Camera>();
-        fowCamera.depth = mainCamera.depth+1; // make sure the FoW camera renders on top of the main camera
+        fowCamera.depth = mainCamera.depth+1; 
         fowCamera.farClipPlane = mainCamera.farClipPlane;
         fowCamera.nearClipPlane = mainCamera.nearClipPlane;
 
-        fogPlane = GameObject.Instantiate(prefab_fowPlane); // create the fog plane
+        fogPlane = GameObject.Instantiate(prefab_fowPlane); // 시야생성
+        Skill.instance.vision = fogPlane;
         if (fogPlane.layer==0) {
             Debug.LogError("Error: Fog plane is missing the FOW layer!");
         }
