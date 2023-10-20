@@ -37,6 +37,10 @@ public class MouseClick : MonoBehaviour
                 {
                     rtsUnitController.ShiftClickSelectUnit(hit.transform.GetComponent<UnitController>());
                 }
+                else if (Input.GetKey(KeyCode.LeftControl))
+                {
+                    rtsUnitController.CtrlClickSelelctUnit();
+                }
                 else
                 {
                     rtsUnitController.ClickSelectUnit(hit.transform.GetComponent<UnitController>());
@@ -51,19 +55,6 @@ public class MouseClick : MonoBehaviour
                 }
             }
         }
-
-        // 마우스 오른쪽 클릭으로 유닛 이동
-        //if (Input.GetMouseButtonDown(1))
-        //{
-        //    RaycastHit hit;
-        //    Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
-
-        //    // 유닛 오브젝트(layerUnit)를 클릭했을 때
-        //    if (Physics.Raycast(ray, out hit, Mathf.Infinity, layerGround))
-        //    {
-        //        rtsUnitController.MoveSelectedUnits(hit.point);
-        //    }
-        //}
 
         // 마우스 오른쪽 클릭으로 유닛 이동
         if (Input.GetMouseButtonDown(1))
@@ -97,7 +88,18 @@ public class MouseClick : MonoBehaviour
                 }
             }
         }
+
+        // 마우스 오른쪽 클릭으로 유닛 이동
+        //if (Input.GetMouseButtonDown(1))
+        //{
+        //    RaycastHit hit;
+        //    Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
+
+        //    // 유닛 오브젝트(layerUnit)를 클릭했을 때
+        //    if (Physics.Raycast(ray, out hit, Mathf.Infinity, layerGround))
+        //    {
+        //        rtsUnitController.MoveSelectedUnits(hit.point);
+        //    }
+        //}
     }
-
 }
-

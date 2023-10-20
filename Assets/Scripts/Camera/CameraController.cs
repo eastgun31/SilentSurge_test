@@ -5,7 +5,6 @@ using UnityEngine;
 public class CameraController : MonoBehaviour
 {
     public float camSpeed = 50f;
-
     public float scrollSpeed = 50f;
 
     public float minY = 15f;
@@ -16,15 +15,6 @@ public class CameraController : MonoBehaviour
     float minZ = 0;
     float maxZ = 230;
 
-
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-
-    // Update is called once per frame
     void Update()
     {
         FastCam();
@@ -53,13 +43,19 @@ public class CameraController : MonoBehaviour
 
         float scroll = Input.GetAxis("Mouse ScrollWheel");
         pos.y -= scroll * scrollSpeed * 100f * Time.deltaTime;
+        if (pos.y > minY && pos.y < maxY)
+            pos.z += scroll * scrollSpeed * 100f * Time.deltaTime;
 
         pos.y = Mathf.Clamp(pos.y, minY, maxY);
-
         pos.x = Mathf.Clamp(pos.x, minX, maxX);
         pos.z = Mathf.Clamp(pos.z, minZ, maxZ);
 
         transform.position = pos;
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            transform.position = new Vector3(22, pos.y, 8); ;
+        }
     }
 
     void FastCam()

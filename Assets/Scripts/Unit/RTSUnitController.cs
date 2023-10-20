@@ -42,7 +42,23 @@ public class RTSUnitController : MonoBehaviour
             SelectUnit(newUnit);
         }
     }
+    // Ctrl + 마우스 클릭으로 유닛 종류 한번에 선택
+    public void CtrlClickSelelctUnit()
+    {
+        DeselectAll();
 
+        foreach (UnitController unit in UnitList)
+        {
+            if (unit.unitnumber == 0 || unit.unitnumber == 4 || unit.unitnumber == 8)
+                SelectUnit(unit);
+            //if (unit.unitnumber == 1 || unit.unitnumber == 5 || unit.unitnumber == 9)
+            //    SelectUnit(unit);
+            //if (unit.unitnumber == 2 || unit.unitnumber == 6 || unit.unitnumber == 10)
+            //    SelectUnit(unit);
+            //if(unit.unitnumber == 3 || unit.unitnumber == 7 || unit.unitnumber == 11)
+            //    SelectUnit(unit);
+        }
+    }
     //마우스 드래그로 유닛을 선택할 때 호출
     public void DragSelectUnit(UnitController newUnit)
     {
