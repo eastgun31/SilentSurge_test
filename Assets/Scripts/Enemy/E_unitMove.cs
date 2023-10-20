@@ -402,7 +402,7 @@ public class E_unitMove : MonoBehaviour
 
             enemyAnim.SetTrigger("death");
 
-            yield return new WaitForSeconds(3f);
+            yield return new WaitForSeconds(2f);
 
             GameManager.instance.e_population--;
 
