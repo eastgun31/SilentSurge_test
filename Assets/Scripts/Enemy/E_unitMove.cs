@@ -207,7 +207,6 @@ public class E_unitMove : MonoBehaviour
             else
                 p_unit.uhealth -= eattackPower;
 
-            Debug.Log("공격");
 
             yield return wait;
 
@@ -218,11 +217,9 @@ public class E_unitMove : MonoBehaviour
         {
             e_State = E_UnitState.Idle;
             targetUnit = null;
-            Debug.Log("적 죽음");
 
             if (targetUnit == null && ehealth > 0)
             {
-                Debug.Log("다시 출발");
                 moving.isStopped = false;
                 //enemyAnim.SetFloat("run", Vector3.Distance(transform.position, lastDesti));
                 moving.SetDestination(lastDesti);

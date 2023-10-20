@@ -46,6 +46,7 @@ public class UnitController : MonoBehaviour
     string run = "run";
     string attack = "attack";
     string _point = "Point";
+    string reattack = "ReAttack";
 
     //하데스 변수
     public bool isHades = false;
@@ -97,10 +98,19 @@ public class UnitController : MonoBehaviour
         unitMarker.SetActive(false);
     }
 
+    void ReAttack()
+    {
+        P_attackRange.SetActive(true);
+    }
+
     public void MoveTo(Vector3 end)
     {
-        //playerAnim.SetFloat("run", navMeshAgent.velocity.magnitude);
-        navMeshAgent.SetDestination(end);
+        if(uhealth>0)
+        {
+            P_attackRange.SetActive(false);
+            navMeshAgent.SetDestination(end);
+            Invoke(reattack, 3f);
+        }
     }
 
     void Update()

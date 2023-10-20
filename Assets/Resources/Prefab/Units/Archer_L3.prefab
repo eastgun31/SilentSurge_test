@@ -928,6 +928,7 @@ GameObject:
   - component: {fileID: -7104129411304652449}
   - component: {fileID: 5070752149659594778}
   - component: {fileID: 2759588829746227407}
+  - component: {fileID: 8434698800566824222}
   m_Layer: 6
   m_Name: Archer_L3
   m_TagString: Player
@@ -999,6 +1000,7 @@ MonoBehaviour:
   Poseidon: {fileID: 7945464212350433446}
   Hera: {fileID: 4828509082256724136}
   Hestia: {fileID: 4620334474200653629}
+  Hades: {fileID: 0}
   unitnumber: 10
   uhealth: 0
   uattackPower: 0
@@ -1107,6 +1109,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 84
   m_CollisionDetection: 0
+--- !u!114 &8434698800566824222
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 179124}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33be6d8915785834eab16a8ff7a71c74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  radius: 20
+  edgeSharpness: 20
 --- !u!1 &179158
 GameObject:
   m_ObjectHideFlags: 0
@@ -2985,13 +3001,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 67778127291343b46a51606de0ab9935, type: 3}
---- !u!4 &4830966523623093816 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4234658926980550, guid: 67778127291343b46a51606de0ab9935, type: 3}
-  m_PrefabInstance: {fileID: 4828985883565612030}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &4828509082256724136 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1775157058538326, guid: 67778127291343b46a51606de0ab9935, type: 3}
+  m_PrefabInstance: {fileID: 4828985883565612030}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &4830966523623093816 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4234658926980550, guid: 67778127291343b46a51606de0ab9935, type: 3}
   m_PrefabInstance: {fileID: 4828985883565612030}
   m_PrefabAsset: {fileID: 0}

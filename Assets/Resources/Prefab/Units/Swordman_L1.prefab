@@ -1032,6 +1032,7 @@ GameObject:
   - component: {fileID: -76400495438816325}
   - component: {fileID: -77897761308459390}
   - component: {fileID: -4934703377712808215}
+  - component: {fileID: 421507287808905528}
   m_Layer: 6
   m_Name: Swordman_L1
   m_TagString: Player
@@ -1180,6 +1181,7 @@ MonoBehaviour:
   Poseidon: {fileID: 4009315792765431030}
   Hera: {fileID: 8122572700669186212}
   Hestia: {fileID: 3468278310806407131}
+  Hades: {fileID: 0}
   unitnumber: 0
   uhealth: 0
   uattackPower: 0
@@ -1211,6 +1213,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 84
   m_CollisionDetection: 0
+--- !u!114 &421507287808905528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 182410}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33be6d8915785834eab16a8ff7a71c74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  radius: 20
+  edgeSharpness: 20
 --- !u!1 &182750
 GameObject:
   m_ObjectHideFlags: 0
@@ -2559,14 +2575,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5145ba237da9d3c4a9dfca19b9feea0f, type: 3}
---- !u!4 &3473770738960228679 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4843259840985632, guid: 5145ba237da9d3c4a9dfca19b9feea0f, type: 3}
-  m_PrefabInstance: {fileID: 3469008656152828775}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &3468278310806407131 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1592372973558972, guid: 5145ba237da9d3c4a9dfca19b9feea0f, type: 3}
+  m_PrefabInstance: {fileID: 3469008656152828775}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &3473770738960228679 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4843259840985632, guid: 5145ba237da9d3c4a9dfca19b9feea0f, type: 3}
   m_PrefabInstance: {fileID: 3469008656152828775}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3516296173204217328
@@ -2820,14 +2836,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 67778127291343b46a51606de0ab9935, type: 3}
---- !u!4 &8120106464541898292 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4234658926980550, guid: 67778127291343b46a51606de0ab9935, type: 3}
-  m_PrefabInstance: {fileID: 8124320730525015026}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &8122572700669186212 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1775157058538326, guid: 67778127291343b46a51606de0ab9935, type: 3}
+  m_PrefabInstance: {fileID: 8124320730525015026}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &8120106464541898292 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4234658926980550, guid: 67778127291343b46a51606de0ab9935, type: 3}
   m_PrefabInstance: {fileID: 8124320730525015026}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8137153819336057488
