@@ -97,7 +97,7 @@ public class Points : MonoBehaviour
             random = Random.Range(0, 5);
         }
 
-        if (other.CompareTag(enemy))
+        if (other.CompareTag(player))
         {
             p_unit.Add(other.gameObject.GetComponent<UnitController>());
         }
@@ -126,6 +126,14 @@ public class Points : MonoBehaviour
         if (other.CompareTag(player)) //아군 점령지에 있는지 체크
         {
             p_distance = Vector3.Distance(other.transform.position, transform.position);
+
+            for (int i = 0; i < p_unit.Count; i++)
+            {
+                if (p_unit[i].uhealth <= 0)
+                {
+                    p_unit.Remove(p_unit[i]);
+                }
+            }
         }
 
         if (e_distance <= 10f && p_distance > 10f) //적 점령시

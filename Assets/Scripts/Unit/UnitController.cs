@@ -107,9 +107,15 @@ public class UnitController : MonoBehaviour
     {
         if(uhealth>0)
         {
+            Unit_AttackRange enemylist = P_attackRange.GetComponent<Unit_AttackRange>();
+            enemylist.targets.Clear();
             P_attackRange.SetActive(false);
             navMeshAgent.SetDestination(end);
             Invoke(reattack, 3f);
+            if (P_attackRange)
+            {
+                Invoke("ReAttack", 3f);
+            }
         }
     }
 
@@ -207,7 +213,7 @@ public class UnitController : MonoBehaviour
     {
         WaitForSeconds wait = new WaitForSeconds(1f);
 
-        if (e_unit.ehealth > 0 && time > 2f && u_State == unitState.Battle)
+        if (e_unit.ehealth > 0 && time > 1f && u_State == unitState.Battle)
         {
             time = 0;
             transform.LookAt(dir);

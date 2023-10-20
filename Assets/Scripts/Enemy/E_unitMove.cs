@@ -188,7 +188,7 @@ public class E_unitMove : MonoBehaviour
             //EnemySkillManager.instance.useSkill = false;
         }
 
-        if (p_unit.uhealth > 0 && time > 2f && e_State == E_UnitState.Battle)
+        if (p_unit.uhealth > 0 && time > 1f && e_State == E_UnitState.Battle)
         {
             time = 0;
             transform.LookAt(dir);
