@@ -14417,7 +14417,7 @@ GameObject:
   - component: {fileID: 261791765371978886}
   - component: {fileID: 5372767604456068502}
   - component: {fileID: 2266557455926751267}
-  m_Layer: 12
+  m_Layer: 8
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14492,7 +14492,7 @@ GameObject:
   - component: {fileID: 4720770667486630344}
   - component: {fileID: 7791144244073004932}
   - component: {fileID: 8704864442400078679}
-  m_Layer: 12
+  m_Layer: 8
   m_Name: Slider
   m_TagString: Slider
   m_Icon: {fileID: 0}
@@ -14595,7 +14595,7 @@ GameObject:
   - component: {fileID: 3534663471630056290}
   - component: {fileID: 4875426949332962184}
   - component: {fileID: 8045540465685476112}
-  m_Layer: 12
+  m_Layer: 8
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14670,7 +14670,7 @@ GameObject:
   - component: {fileID: 5695484496532427660}
   - component: {fileID: 3806528878710158552}
   - component: {fileID: 8554905099450654388}
-  m_Layer: 12
+  m_Layer: 8
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14743,7 +14743,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 673750045518463289}
-  m_Layer: 12
+  m_Layer: 8
   m_Name: Fill Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14781,7 +14781,7 @@ GameObject:
   - component: {fileID: 1437293185733940692}
   - component: {fileID: 5535842144386695649}
   - component: {fileID: 2731980678145961199}
-  m_Layer: 12
+  m_Layer: 8
   m_Name: Sslider
   m_TagString: Slider
   m_Icon: {fileID: 0}
@@ -14885,7 +14885,7 @@ GameObject:
   - component: {fileID: 8936961495956155659}
   - component: {fileID: 6897258189507645725}
   - component: {fileID: 8804827525005216387}
-  m_Layer: 12
+  m_Layer: 8
   m_Name: Hp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14932,7 +14932,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_TargetDisplay: 0
 --- !u!114 &6897258189507645725
 MonoBehaviour:
@@ -14983,7 +14983,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2679978590974371294}
-  m_Layer: 12
+  m_Layer: 8
   m_Name: Fill Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15117,7 +15117,7 @@ GameObject:
   - component: {fileID: 6095664212592869798}
   - component: {fileID: 7495071589721452798}
   - component: {fileID: 7081842286089832982}
-  m_Layer: 12
+  m_Layer: 8
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}

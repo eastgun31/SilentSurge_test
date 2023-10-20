@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7847723513897728791}
-  m_Layer: 12
+  m_Layer: 8
   m_Name: Fill Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47,7 +47,7 @@ GameObject:
   - component: {fileID: 1244942861495176926}
   - component: {fileID: 2845947484079457861}
   - component: {fileID: 2557661413954632654}
-  m_Layer: 12
+  m_Layer: 8
   m_Name: Slider
   m_TagString: Slider
   m_Icon: {fileID: 0}
@@ -148,7 +148,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7507057030493017545}
-  m_Layer: 12
+  m_Layer: 8
   m_Name: Fill Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -186,7 +186,7 @@ GameObject:
   - component: {fileID: 635376769219278417}
   - component: {fileID: 3126503676338591246}
   - component: {fileID: 6607007001169204165}
-  m_Layer: 12
+  m_Layer: 8
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -291,7 +291,7 @@ GameObject:
   - component: {fileID: 3510810508108657736}
   - component: {fileID: 1122593614033989140}
   - component: {fileID: 4678443958544839583}
-  m_Layer: 12
+  m_Layer: 8
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -366,7 +366,7 @@ GameObject:
   - component: {fileID: 5034292581272272833}
   - component: {fileID: 6735148779366909654}
   - component: {fileID: 5319580587680939152}
-  m_Layer: 12
+  m_Layer: 8
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -441,7 +441,7 @@ GameObject:
   - component: {fileID: 2760170281180210492}
   - component: {fileID: 2273259309032379902}
   - component: {fileID: 5431615505931131411}
-  m_Layer: 12
+  m_Layer: 8
   m_Name: Sslider
   m_TagString: Slider
   m_Icon: {fileID: 0}
@@ -545,7 +545,7 @@ GameObject:
   - component: {fileID: 5025215469065432613}
   - component: {fileID: 2349589428467438642}
   - component: {fileID: 6915250251093093099}
-  m_Layer: 12
+  m_Layer: 8
   m_Name: Hp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -592,7 +592,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_TargetDisplay: 0
 --- !u!114 &2349589428467438642
 MonoBehaviour:
@@ -741,7 +741,7 @@ GameObject:
   - component: {fileID: 1958519862662565121}
   - component: {fileID: 7768695890811922536}
   - component: {fileID: 8133327116942188148}
-  m_Layer: 12
+  m_Layer: 8
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}

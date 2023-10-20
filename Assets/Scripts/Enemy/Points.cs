@@ -23,41 +23,68 @@ public class Points : MonoBehaviour
     string enemy = "Enemy";
     string player = "Player";
 
+    public GameObject GobjWhite;
+    public GameObject GobjBlue;
+    public GameObject GobjRed;
+
     // Start is called before the first frame update
     void Start()
     {
         p_distance = 100f;
         e_distance = 100f;
+
+        SetGameObjectActive(GobjRed, false);
+        SetGameObjectActive(GobjWhite, true);
+        SetGameObjectActive(GobjBlue, false);
+
+        StartCoroutine(PointCheckCoroutine());
     }
 
     // Update is called once per frame
-    void Update()
+    private IEnumerator PointCheckCoroutine()
     {
-        //if (pointcheck == 2) //pointcheck가 0이었다가 2가 되면 재화 획득
-        //{
-        //    if (ppoint == 0)
-        //    {
-        //        GameManager.instance.gold += 200;
-        //    }
-        //}
+        while (true)
+        {
+            if (pointcheck != ppoint)
+            {
+                if (pointcheck == 1)
+                {
+                    SetGameObjectActive(GobjRed, true);
+                    SetGameObjectActive(GobjWhite, false);
+                    SetGameObjectActive(GobjBlue, false);
+                }
+                else if (pointcheck == 2) //pointcheck가 0이었다가 2가 되면 재화 획득
+                {
+                    if (ppoint == 0)
+                    {
+                        GameManager.instance.gold += 200;
+                    }
+                    else if (ppoint == 1)
+                    {
+                        GameManager.instance.gold += 100;
+                    }
+                    else if (ppoint == 3)
+                    {
+                        GameManager.instance.gold += 100;
+                    }
 
-        //if (pointcheck == 2) //pointcheck가 1이었다가 2가 되면 재화 획득
-        //{
-        //    if (ppoint == 1)
-        //    {
-        //        GameManager.instance.gold += 100;
-        //    }
-        //}
+                    SetGameObjectActive(GobjRed, false);
+                    SetGameObjectActive(GobjWhite, false);
+                    SetGameObjectActive(GobjBlue, true);
+                }
+            }
 
-        ////if (pointcheck == 3) //pointcheck가 1이었다가 2가 되면 재화 획득
-        ////{
-        ////    if (ppoint == 1)
-        ////    {
-        ////        GameManager.instance.gold += 100;
-        ////    }
-        ////}
+            ppoint = pointcheck;
+            yield return null; // 다음 프레임까지 대기
+        }
+    }
 
-        //ppoint = pointcheck;
+    void SetGameObjectActive(GameObject gameObject, bool isActive)
+    {
+        {
+            if (gameObject != null)
+                gameObject.SetActive(isActive);
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -169,28 +196,18 @@ public class Points : MonoBehaviour
                 {
                     case 0:
                         GameManager.instance.check[0] = pointcheck;
-                        GameManager.instance.gold += 100;
-                        GameManager.instance.pointCan = true;
                         break;
                     case 1:
                         GameManager.instance.check[1] = pointcheck;
-                        GameManager.instance.gold += 100;
-                        GameManager.instance.pointCan = true;
                         break;
                     case 2:
                         GameManager.instance.check[2] = pointcheck;
-                        GameManager.instance.gold += 100;
-                        GameManager.instance.pointCan = true;
                         break;
                     case 3:
                         GameManager.instance.check[3] = pointcheck;
-                        GameManager.instance.gold += 100;
-                        GameManager.instance.pointCan = true;
                         break;
                     case 4:
                         GameManager.instance.check[4] = pointcheck;
-                        GameManager.instance.gold += 100;
-                        GameManager.instance.pointCan = true;
                         break;
                 }
             }

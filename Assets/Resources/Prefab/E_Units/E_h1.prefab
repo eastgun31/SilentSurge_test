@@ -14417,7 +14417,7 @@ GameObject:
   - component: {fileID: 5097250457880544479}
   - component: {fileID: 466384442727972627}
   - component: {fileID: 6021556499106756394}
-  m_Layer: 12
+  m_Layer: 8
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14492,7 +14492,7 @@ GameObject:
   - component: {fileID: 6329442098980075077}
   - component: {fileID: 494942554724398830}
   - component: {fileID: 8410183046474061350}
-  m_Layer: 12
+  m_Layer: 8
   m_Name: Sslider
   m_TagString: Slider
   m_Icon: {fileID: 0}
@@ -14595,7 +14595,7 @@ GameObject:
   - component: {fileID: 6753372984667502584}
   - component: {fileID: 2772148743165012410}
   - component: {fileID: 4008748514867421747}
-  m_Layer: 12
+  m_Layer: 8
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14668,7 +14668,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3056103348653741833}
-  m_Layer: 12
+  m_Layer: 8
   m_Name: Fill Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14707,7 +14707,7 @@ GameObject:
   - component: {fileID: 197985379305570807}
   - component: {fileID: 2964021317446959073}
   - component: {fileID: 6687717627451722920}
-  m_Layer: 12
+  m_Layer: 8
   m_Name: Hp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14754,7 +14754,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_TargetDisplay: 0
 --- !u!114 &2964021317446959073
 MonoBehaviour:
@@ -14807,7 +14807,7 @@ GameObject:
   - component: {fileID: 842235649673900817}
   - component: {fileID: 5026838566070676719}
   - component: {fileID: 7718288880126495646}
-  m_Layer: 12
+  m_Layer: 8
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14882,7 +14882,7 @@ GameObject:
   - component: {fileID: 2524422841398746436}
   - component: {fileID: 6448687753673400382}
   - component: {fileID: 1052462679796739025}
-  m_Layer: 12
+  m_Layer: 8
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14955,7 +14955,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1786327675584082202}
-  m_Layer: 12
+  m_Layer: 8
   m_Name: Fill Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15200,7 +15200,7 @@ GameObject:
   - component: {fileID: 1973490867212039476}
   - component: {fileID: 331735715625830704}
   - component: {fileID: 3722867987914118369}
-  m_Layer: 12
+  m_Layer: 8
   m_Name: Slider
   m_TagString: Slider
   m_Icon: {fileID: 0}
