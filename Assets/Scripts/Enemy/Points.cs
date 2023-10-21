@@ -43,6 +43,8 @@ public class Points : MonoBehaviour
     // Update is called once per frame
     private IEnumerator PointCheckCoroutine()
     {
+        WaitForSeconds wait = new WaitForSeconds(1f);
+
         while (true)
         {
             if (pointcheck != ppoint)
@@ -75,7 +77,7 @@ public class Points : MonoBehaviour
             }
 
             ppoint = pointcheck;
-            yield return null; // 다음 프레임까지 대기
+            yield return wait; // 다음 프레임까지 대기 -> 1초로 바꿈
         }
     }
 

@@ -219,6 +219,8 @@ public class UnitController : MonoBehaviour
     {
         WaitForSeconds wait = new WaitForSeconds(1f);
 
+        yield return wait;
+
         if (e_unit.ehealth > 0 && time > 1f && u_State == unitState.Battle)
         {
             time = 0;
