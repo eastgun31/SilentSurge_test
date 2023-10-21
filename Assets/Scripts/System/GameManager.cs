@@ -67,7 +67,7 @@ public class GameManager : MonoBehaviour
     private void Update()
     {
         //시연용 시간정지 코드 추후 지울것
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.F))
         {
             if (Time.timeScale == 0)
                 Time.timeScale = 1;
