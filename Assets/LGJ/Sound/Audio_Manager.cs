@@ -30,6 +30,16 @@ public class Audio_Manager : MonoBehaviour
     public AudioClip Story_background;
     public AudioClip AudioButton;
 
+    public AudioClip Zeus;
+    public AudioClip Poseidon;
+    public AudioClip Hades;
+
+    public AudioClip Hera;
+    public AudioClip Apollo;
+    public AudioClip Athena;
+    public AudioClip Aphrodite;
+
+
     public void Loby_Music()
     {
         MusicSource.clip = Loby_background;
