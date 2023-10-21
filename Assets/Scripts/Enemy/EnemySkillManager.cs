@@ -54,8 +54,10 @@ public class EnemySkillManager : MonoBehaviour
     public GameObject ApolloSkill; //아폴론 액티브
 
     // Start is called before the first frame update
+    Audio_Manager audio_Manager;
     void Start()
     {
+        audio_Manager = FindAnyObjectByType<Audio_Manager>();
         useSkill = true;
         itemLimit = 3;
     }
@@ -81,12 +83,15 @@ public class EnemySkillManager : MonoBehaviour
             {
                 case 1:
                     UseZeusSkill(dir);
+                    audio_Manager.PlaySFX(audio_Manager.Zeus);
                     break;
                 case 2:
                     UsePoseidonSkill(dir2);
+                    audio_Manager.PlaySFX(audio_Manager.Poseidon);
                     break;
                 case 3:
                     UseHadesSkill(dir2);
+                    audio_Manager.PlaySFX(audio_Manager.Hades);
                     break;
             }
         }
@@ -97,15 +102,19 @@ public class EnemySkillManager : MonoBehaviour
             {
                 case 1:
                     UseHeraSkill(dir);
+                    audio_Manager.PlaySFX(audio_Manager.Hera);
                     break;
                 case 2:
                     UseApolloSkill(dir2);
+                    audio_Manager.PlaySFX(audio_Manager.Apollo);
                     break;
                 case 3:
                     UseAthenaSkill();
+                    audio_Manager.PlaySFX(audio_Manager.Athena);
                     break;
                 case 4:
                     UseAphroditeSkill(dir, unit, pointPosition);
+                    audio_Manager.PlaySFX(audio_Manager.Aphrodite);
                     break;
             }
         }

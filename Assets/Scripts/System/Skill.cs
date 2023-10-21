@@ -54,13 +54,17 @@ public class Skill : MonoBehaviour
     public GameObject ApolloSkill; //아폴론 액티브
 
     public GameObject vision; // 아테나 시야
-
+    Audio_Manager audio_Manager;
     void Awake()
     {
         if (instance != null)
             Destroy(gameObject);
         else
             instance = this;
+    }
+    private void Start()
+    {
+        audio_Manager = FindAnyObjectByType<Audio_Manager>();
     }
 
     void Update()
@@ -77,24 +81,45 @@ public class Skill : MonoBehaviour
             if (isSkillReady_1 && isShowSkillRange)
             {
                 if (Skill_Set.instance.Zeus_S)
+                {
                     UseZeusSkill();
+                    audio_Manager.PlaySFX(audio_Manager.Zeus);
+                }                  
                 else if (Skill_Set.instance.Poseidon_S)
+                {
                     UsePoseidonSkill();
+                    audio_Manager.PlaySFX(audio_Manager.Poseidon);
+                }               
                 else if (Skill_Set.instance.Hades_S)
+                {
                     UseHadesSkill();
+                    audio_Manager.PlaySFX(audio_Manager.Hades);
+                }            
                 else { }
             }
 
             if (isSkillReady_2 && isShowSkillRange)
             {
                 if (Skill_Set.instance.Hera_S)
+                {
                     UseHeraSkill();
+                    audio_Manager.PlaySFX(audio_Manager.Hera);
+                }             
                 else if (Skill_Set.instance.Apollo_S)
+                {
                     UseApolloSkill();
+                    audio_Manager.PlaySFX(audio_Manager.Apollo);
+                }             
                 else if (Skill_Set.instance.Athena_S)
+                {
                     UseAthenaSkill();
+                    audio_Manager.PlaySFX(audio_Manager.Athena);
+                } 
                 else if (Skill_Set.instance.Aphrodite_S)
+                {
                     UseAphroditeSkill();
+                    audio_Manager.PlaySFX(audio_Manager.Aphrodite);
+                }                 
                 else { }
             }
         }
