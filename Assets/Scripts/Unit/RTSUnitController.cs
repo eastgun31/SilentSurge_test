@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using static UnitController;
 
 public class RTSUnitController : MonoBehaviour
 {
@@ -43,22 +44,19 @@ public class RTSUnitController : MonoBehaviour
         }
     }
     // Ctrl + 마우스 클릭으로 유닛 종류 한번에 선택
-    public void CtrlClickSelelctUnit()
+    public void CtrlClickSelelctUnit(UnitController newUnit)
     {
-        DeselectAll();
+        DeselectAll(); // 모든 유닛 선택 해제
 
         foreach (UnitController unit in UnitList)
         {
-            if (unit.unitnumber == 0 || unit.unitnumber == 4 || unit.unitnumber == 8)
-                SelectUnit(unit);
-            //if (unit.unitnumber == 1 || unit.unitnumber == 5 || unit.unitnumber == 9)
-            //    SelectUnit(unit);
-            //if (unit.unitnumber == 2 || unit.unitnumber == 6 || unit.unitnumber == 10)
-            //    SelectUnit(unit);
-            //if(unit.unitnumber == 3 || unit.unitnumber == 7 || unit.unitnumber == 11)
-            //    SelectUnit(unit);
+            if (unit.t_State == newUnit.t_State)
+            {
+                SelectUnit(unit); // 원하는 유닛 타입만 선택
+            }
         }
     }
+
     //마우스 드래그로 유닛을 선택할 때 호출
     public void DragSelectUnit(UnitController newUnit)
     {

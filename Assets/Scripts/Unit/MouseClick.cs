@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using static UnitController;
 
 public class MouseClick : MonoBehaviour
 {
@@ -39,7 +40,7 @@ public class MouseClick : MonoBehaviour
                 }
                 else if (Input.GetKey(KeyCode.LeftControl))
                 {
-                    rtsUnitController.CtrlClickSelelctUnit();
+                    rtsUnitController.CtrlClickSelelctUnit(hit.transform.GetComponent<UnitController>());
                 }
                 else
                 {

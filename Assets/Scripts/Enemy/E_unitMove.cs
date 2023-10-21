@@ -15,6 +15,7 @@ public class E_unitMove : MonoBehaviour
     public GameObject Poseidon;
     public GameObject Hera;
     public GameObject Hestia;
+    public GameObject Hades;
 
     public GameObject[] points;
     public int unitNum;
