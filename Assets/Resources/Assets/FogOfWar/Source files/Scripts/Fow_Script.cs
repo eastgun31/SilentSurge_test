@@ -37,7 +37,6 @@ public class Fow_Script : MonoBehaviour {
         fowCamera.nearClipPlane = mainCamera.nearClipPlane;
 
         fogPlane = GameObject.Instantiate(prefab_fowPlane); // 시야생성
-        Skill.instance.vision = fogPlane;
         if (fogPlane.layer==0) {
             Debug.LogError("Error: Fog plane is missing the FOW layer!");
         }

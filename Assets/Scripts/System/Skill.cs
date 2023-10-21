@@ -53,7 +53,7 @@ public class Skill : MonoBehaviour
     public GameObject HeraSkill; //헤라 액티브
     public GameObject ApolloSkill; //아폴론 액티브
 
-    public GameObject vision; // 아테나 시야
+    public GameObject AthenaSkill; // 아테나 시야
     Audio_Manager audio_Manager;
     void Awake()
     {
@@ -244,7 +244,7 @@ public class Skill : MonoBehaviour
     IEnumerator Novision(float time)    // 모든 시야 밝히는 지속시간 코루틴 함수
     {
         yield return new WaitForSeconds(time);
-        vision.SetActive(true);
+        AthenaSkill.SetActive(false);
     }
 
     //1번 액티브 스킬-------------------------------------------------------------------------------------------
@@ -411,8 +411,19 @@ public class Skill : MonoBehaviour
     //아테나 스킬
     void UseAthenaSkill()
     {
-        vision.SetActive(false);
-        StartCoroutine(Novision(3f));
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;
+
+        if (Physics.Raycast(ray, out hit, Mathf.Infinity, LayerMask.GetMask("Ground")))
+        {
+            Vector3 spawnPosition = hit.point;
+            spawnPosition.y += skillRangeHeight; // Y 좌표 조정
+
+            AthenaSkill.SetActive(true);
+            AthenaSkill.transform.position = spawnPosition;
+
+            StartCoroutine(Novision(3f));
+        }
 
         isSkillReady_2 = false;
         CancelSkill();
