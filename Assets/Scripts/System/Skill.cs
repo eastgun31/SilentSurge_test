@@ -92,8 +92,8 @@ public class Skill : MonoBehaviour
                 }               
                 else if (Skill_Set.instance.Hades_S)
                 {
-                    UseHadesSkill();
                     audio_Manager.PlaySFX(audio_Manager.Hades);
+                    UseHadesSkill();
                 }            
                 else { }
             }
