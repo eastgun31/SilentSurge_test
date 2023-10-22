@@ -26,6 +26,7 @@ public class UnitController : MonoBehaviour
     public float uattackPower;
     public float udefense;
     public float umoveSpeed;
+    public Transform starPosition;
 
     float original_ushieldValue;
     public float ushieldValue; //보호막 변수
@@ -76,8 +77,10 @@ public class UnitController : MonoBehaviour
         maxhp = uhealth;
         maxS = ushieldValue; //
         maxS = maxhp;
-
-        StartCoroutine(Shieldcheck()); //보호막 체크
+        if(Skill_Set.instance.Poseidon_S)
+        {
+            StartCoroutine(Shieldcheck()); //보호막 체크
+        }
     }
 
     private void FixedUpdate()
@@ -421,6 +424,8 @@ public class UnitController : MonoBehaviour
                 udefense += 3;
             }
         }
+
+        transform.position = Vector3.MoveTowards(transform.position, starPosition.position, umoveSpeed * Time.deltaTime);
     }
 
     private void OnTriggerEnter(Collider other) //점령지확인
@@ -498,7 +503,7 @@ public class UnitController : MonoBehaviour
 
     IEnumerator Shieldcheck()
     {
-        WaitForSeconds wait = new WaitForSeconds(0.1f);
+        WaitForSeconds wait = new WaitForSeconds(0.5f);
 
         if (ushieldValue <= 0)
         {

@@ -142,7 +142,7 @@ public class Points : MonoBehaviour
         {
             time += Time.deltaTime;
 
-            if (time > 10f)
+            if (time > 15f)
             {
                 pointcheck = 1;
 
@@ -173,55 +173,61 @@ public class Points : MonoBehaviour
         {
             time += Time.deltaTime;
 
-            if (pointcheck == 1) //플레이어가 적 거점 뺏었을시
-            {
-                GameManager.instance.attacking = true;
-
-                switch (value)
-                {
-                    case 0:
-                        GameManager.instance.attackPoint = 0;
-                        break;
-                    case 1:
-                        GameManager.instance.attackPoint = 1;
-                        break;
-                    case 2:
-                        GameManager.instance.attackPoint = 2;
-                        break;
-                    case 3:
-                        GameManager.instance.attackPoint = 3;
-                        break;
-                    case 4:
-                        GameManager.instance.attackPoint = 4;
-                        break;
-                }
-            }
-
-            if (time > 10f) //플레이어가 점령시
+            if (time > 15f) //플레이어가 점령시
             {
                 time = 0;
                 pointcheck = 2;
 
-                   switch (value)
+                switch (value)
                 {
                     case 0:
                         GameManager.instance.check[0] = pointcheck;
+                        GameManager.instance.attacking = false;
                         break;
                     case 1:
                         GameManager.instance.check[1] = pointcheck;
+                        GameManager.instance.attacking = false;
                         break;
                     case 2:
                         GameManager.instance.check[2] = pointcheck;
+                        GameManager.instance.attacking = false;
                         break;
                     case 3:
                         GameManager.instance.check[3] = pointcheck;
+                        GameManager.instance.attacking = false;
                         break;
                     case 4:
                         GameManager.instance.check[4] = pointcheck;
+                        GameManager.instance.attacking = false;
                         break;
                 }
             }
         }
+
+        if (pointcheck == 1 && p_distance <= 10f) //플레이어가 적 거점 뺏었을시
+        {
+            GameManager.instance.attacking = true;
+
+            switch (value)
+            {
+                case 0:
+                    GameManager.instance.attackPoint = 0;
+                    break;
+                case 1:
+                    GameManager.instance.attackPoint = 1;
+                    break;
+                case 2:
+                    GameManager.instance.attackPoint = 2;
+                    break;
+                case 3:
+                    GameManager.instance.attackPoint = 3;
+                    break;
+                case 4:
+                    GameManager.instance.attackPoint = 4;
+                    break;
+            }
+        }
+
 
         if (e_distance <= 10f && p_distance <= 10f) //거점에서 전투시
         {

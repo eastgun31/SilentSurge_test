@@ -62,11 +62,6 @@ public class EnemySkillManager : MonoBehaviour
         itemLimit = 3;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     public void E_UseSkill(Vector3 dir, Vector3 dir2, UnitController unit, Vector3 pointPosition)
     {
@@ -212,7 +207,7 @@ public class EnemySkillManager : MonoBehaviour
 
         useSkill = false;
 
-        StartCoroutine(Num1_Skill_Cooldown(10f));
+        StartCoroutine(Num1_Skill_Cooldown(15f));
         StartCoroutine(DeactiveSkill(ZeusSkill, 3f));
     }
     void UsePoseidonSkill(Vector3 dir)
@@ -234,7 +229,7 @@ public class EnemySkillManager : MonoBehaviour
         }
 
         useSkill = false;
-        StartCoroutine(Num1_Skill_Cooldown(10f));
+        StartCoroutine(Num1_Skill_Cooldown(15f));
         StartCoroutine(DeactiveSkill(PoseidonSkill, 4f));
     }
     void UseHadesSkill(Vector3 dir)
@@ -251,7 +246,7 @@ public class EnemySkillManager : MonoBehaviour
         }
 
         useSkill = false;
-        StartCoroutine(Num1_Skill_Cooldown(5f));
+        StartCoroutine(Num1_Skill_Cooldown(15f));
         StartCoroutine(DeactiveSkill(HadesSkill, 4f));
     }
     //2번 액티브 스킬-------------------------------------------------------------------------------------------
@@ -272,7 +267,7 @@ public class EnemySkillManager : MonoBehaviour
         }
 
         useSkill = false;
-        StartCoroutine(Num2_Skill_Cooldown(10f));
+        StartCoroutine(Num2_Skill_Cooldown(20f));
         StartCoroutine(DeactiveSkill(HeraSkill, 1f));
     }
 
@@ -294,13 +289,13 @@ public class EnemySkillManager : MonoBehaviour
         }
 
         useSkill = false;
-        StartCoroutine(Num2_Skill_Cooldown(10f));
+        StartCoroutine(Num2_Skill_Cooldown(20f));
         StartCoroutine(DeactiveSkill(ApolloSkill,3f));
     }
     void UseAthenaSkill()
     {
         useSkill = false;
-        StartCoroutine(Num2_Skill_Cooldown(3f));
+        StartCoroutine(Num2_Skill_Cooldown(20f));
     }
     void UseAphroditeSkill(Vector3 dir, UnitController unit, Vector3 pointPosition)
     {
@@ -308,7 +303,7 @@ public class EnemySkillManager : MonoBehaviour
         p_unit.AphroditeChange(dir, pointPosition);
 
         useSkill = false;
-        StartCoroutine(Num2_Skill_Cooldown(3f));
+        StartCoroutine(Num2_Skill_Cooldown(20f));
     }
 
     //소모스킬-------------------------------------------------------------------------------------------

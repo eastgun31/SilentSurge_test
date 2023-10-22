@@ -1007,6 +1007,7 @@ MonoBehaviour:
   uattackPower: 0
   udefense: 0
   umoveSpeed: 0
+  starPosition: {fileID: 7953956445323189573, guid: 1d1459d15d90fb44b89eee225fea5f47, type: 3}
   ushieldValue: 0
   targetUnit: {fileID: 0}
   point: {fileID: 0}
@@ -1017,6 +1018,7 @@ MonoBehaviour:
   maxS: 0
   isHades: 0
   u_State: 0
+  t_State: 0
 --- !u!195 &237265588284140132
 NavMeshAgent:
   m_ObjectHideFlags: 0

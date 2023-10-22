@@ -19,31 +19,6 @@ public class AttackRange : MonoBehaviour
         StartCoroutine("Find_Target");
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        //if (targets != null)
-        //{
-        //    for (int i = 0; i < targets.Count; i++)
-        //    {
-        //        target = targets[i].transform.position;
-        //        p_unit = targets[i].GetComponent<UnitController>();
-        //        if (p_unit.uhealth > 0 && parent.ehealth > 0)
-        //        {
-        //            parent.Attakc(target, p_unit);
-        //            parent.e_State = E_unitMove.E_UnitState.Battle;
-        //        }
-        //        if (p_unit.uhealth <= 0)
-        //        {
-        //            p_unit = null;
-        //            targets.Remove(targets[i]);
-        //            parent.e_State = E_unitMove.E_UnitState.Idle;
-        //        }
-        //    }
-        //}
-
-    }
-
     private void OnTriggerEnter(Collider col)
     {
         if (col.CompareTag(player))

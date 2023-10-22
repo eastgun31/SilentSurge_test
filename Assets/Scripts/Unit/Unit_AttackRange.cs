@@ -28,29 +28,6 @@ public class Unit_AttackRange : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        //if (targets != null)
-        //{
-        //    for (int i = 0; i < targets.Count; i++)
-        //    {
-        //        target = targets[i].transform.position;
-        //        e_unit = targets[i].GetComponent<E_unitMove>();
-        //        if (e_unit.ehealth > 0 && parent.uhealth > 0)
-        //        {
-        //            parent.Attack(target, e_unit);
-        //            parent.u_State = UnitController.unitState.Battle;
-        //        }
-        //        if (e_unit.ehealth <= 0)
-        //        {
-        //            e_unit = null;
-        //            targets.Remove(targets[i]);
-        //            parent.u_State = UnitController.unitState.Idle;
-        //        }
-        //    }
-
-        //}
-    }
 
     private void OnTriggerEnter(Collider col)
     {

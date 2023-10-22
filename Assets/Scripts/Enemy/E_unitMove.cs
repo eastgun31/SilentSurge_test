@@ -74,7 +74,10 @@ public class E_unitMove : MonoBehaviour
         maxS = eshieldValue; //
         maxS = maxhp; //
         StartCoroutine(Pcheck()); //À¯´Ö hpÃ¼Å©ÈÄ Á×À½
-        StartCoroutine(Shieldcheck());
+        if(EnemySkillManager.instance.e_active_skillnum == 2)
+        {
+            StartCoroutine(Shieldcheck());
+        }
         StartCoroutine(usingItem());
     }
 
@@ -452,7 +455,7 @@ public class E_unitMove : MonoBehaviour
 
     IEnumerator Shieldcheck()
     {
-        WaitForSeconds wait = new WaitForSeconds(0.1f);
+        WaitForSeconds wait = new WaitForSeconds(0.5f);
 
         if (eshieldValue <= 0)
         {

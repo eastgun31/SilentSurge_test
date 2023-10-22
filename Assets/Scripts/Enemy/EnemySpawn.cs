@@ -156,7 +156,6 @@ public class EnemySpawn : MonoBehaviour
 
     void SpawnUnit(int i, int j)
     {
-        Debug.Log("spawn");
         GameObject enemy = Instantiate(e_unit[i], this.transform.position, Quaternion.identity);
         enemy.transform.parent = unitController[j].transform;
         GameManager.instance.e_population++;
