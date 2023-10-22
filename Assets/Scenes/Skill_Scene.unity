@@ -45300,6 +45300,10 @@ MonoBehaviour:
   Apollo: {fileID: 8300000, guid: ebd3d0d1454e91d40ba3b5649a5be5c5, type: 3}
   Athena: {fileID: 8300000, guid: d2e5868019bb6fa45b25bf00771c8af0, type: 3}
   Aphrodite: {fileID: 8300000, guid: dccb4e05894613a40881a4ad7efcf4e3, type: 3}
+  Hermes: {fileID: 8300000, guid: 1529460454004ca44b24bd3ba4192b08, type: 3}
+  Hestia: {fileID: 8300000, guid: 20217edc4fe73e14998e4f7dad5de5a3, type: 3}
+  Dionysus: {fileID: 8300000, guid: 4ef745c8938391a4d98257e01d3d31c4, type: 3}
+  Demeter: {fileID: 8300000, guid: 6934d7bb07396014abfb0b1dacb4b6a2, type: 3}
 --- !u!4 &1017395005
 Transform:
   m_ObjectHideFlags: 0

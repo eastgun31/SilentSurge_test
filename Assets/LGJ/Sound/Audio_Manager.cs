@@ -39,6 +39,11 @@ public class Audio_Manager : MonoBehaviour
     public AudioClip Athena;
     public AudioClip Aphrodite;
 
+    public AudioClip Hermes;
+    public AudioClip Hestia;
+    public AudioClip Dionysus;
+    public AudioClip Demeter;
+
 
     public void Loby_Music()
     {

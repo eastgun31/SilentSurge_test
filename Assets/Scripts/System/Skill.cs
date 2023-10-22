@@ -158,13 +158,25 @@ public class Skill : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha3) && !isBuffActive && itemLimit > 0)
         {
             if (Skill_Set.instance.Hermes_S)
+            {               
                 UseHermesSkill();
+                audio_Manager.PlaySFX(audio_Manager.Hermes);
+            }             
             else if (Skill_Set.instance.Hestia_S)
+            {               
                 UseHestiaSkill();
+                audio_Manager.PlaySFX(audio_Manager.Hestia);
+            }              
             else if (Skill_Set.instance.Dionysus_S)
+            {
                 UseDionysusSkill();
+                audio_Manager.PlaySFX(audio_Manager.Dionysus);
+            }              
             else if (Skill_Set.instance.Demeter_S)
+            {
                 UseDemeterSkill();
+                audio_Manager.PlaySFX(audio_Manager.Demeter);
+            }              
             else { }
         }
 

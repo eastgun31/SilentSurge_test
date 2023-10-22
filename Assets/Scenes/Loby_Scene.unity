@@ -739,7 +739,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.6312502, y: 0.17462747}
   m_AnchorMax: {x: 0.88250023, y: 0.82922226}
-  m_AnchoredPosition: {x: 167.63522, y: -13.5546875}
+  m_AnchoredPosition: {x: 167.63525, y: -13.5546875}
   m_SizeDelta: {x: 147.3307, y: 93.71498}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &280042155
@@ -1006,7 +1006,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.6312502, y: 0.17462747}
   m_AnchorMax: {x: 0.88250023, y: 0.82922226}
-  m_AnchoredPosition: {x: 167.63522, y: -13.5546875}
+  m_AnchoredPosition: {x: 167.63525, y: -13.5546875}
   m_SizeDelta: {x: 147.3307, y: 93.71498}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &326516944
@@ -1197,7 +1197,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.6312502, y: 0.17462747}
   m_AnchorMax: {x: 0.88250023, y: 0.82922226}
-  m_AnchoredPosition: {x: 167.63522, y: -13.5546875}
+  m_AnchoredPosition: {x: 167.63525, y: -13.5546875}
   m_SizeDelta: {x: 147.3307, y: 93.71498}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &405101171
@@ -1279,7 +1279,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.6312502, y: 0.17462747}
   m_AnchorMax: {x: 0.88250023, y: 0.82922226}
-  m_AnchoredPosition: {x: 167.63522, y: -13.5546875}
+  m_AnchoredPosition: {x: 167.63525, y: -13.5546875}
   m_SizeDelta: {x: 147.3307, y: 93.71498}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &498252965
@@ -2472,7 +2472,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.6312502, y: 0.17462747}
   m_AnchorMax: {x: 0.88250023, y: 0.82922226}
-  m_AnchoredPosition: {x: 167.63522, y: -124.571655}
+  m_AnchoredPosition: {x: 167.63525, y: -124.571655}
   m_SizeDelta: {x: 147.33069, y: 239.61964}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &958238561
@@ -3287,7 +3287,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.6312502, y: 0.17462747}
   m_AnchorMax: {x: 0.88250023, y: 0.82922226}
-  m_AnchoredPosition: {x: 167.63522, y: -13.5546875}
+  m_AnchoredPosition: {x: 167.63525, y: -13.5546875}
   m_SizeDelta: {x: 147.3307, y: 93.71498}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1286561698
@@ -3367,7 +3367,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.6312502, y: 0.17462747}
   m_AnchorMax: {x: 0.88250023, y: 0.82922226}
-  m_AnchoredPosition: {x: 167.63522, y: -13.5546875}
+  m_AnchoredPosition: {x: 167.63525, y: -13.5546875}
   m_SizeDelta: {x: 147.3307, y: 93.71498}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1329185833
@@ -4617,7 +4617,7 @@ MonoBehaviour:
   Loby_background: {fileID: 8300000, guid: be8b1fb6d70718b429b90f76126d6f43, type: 3}
   Main_background: {fileID: 8300000, guid: bf2994a770742fd43b99a40a7e51ef3c, type: 3}
   Story_background: {fileID: 8300000, guid: ac0636d4c3c46e84d89fb4e7703a863d, type: 3}
-  AudioButton: {fileID: 8300000, guid: e1c29b4db74c7d74596e2b612748fa14, type: 3}
+  AudioButton: {fileID: 8300000, guid: 7ac467cba635557479852a8fb2399c5e, type: 3}
   Zeus: {fileID: 8300000, guid: 3a4ab50255f07304ba2e2087acf9964d, type: 3}
   Poseidon: {fileID: 8300000, guid: 79684ebfa2470554699b1d9f1a3d3240, type: 3}
   Hades: {fileID: 8300000, guid: 72878fd5f4f1e984085bc49f79afafab, type: 3}
@@ -4625,6 +4625,10 @@ MonoBehaviour:
   Apollo: {fileID: 8300000, guid: ebd3d0d1454e91d40ba3b5649a5be5c5, type: 3}
   Athena: {fileID: 8300000, guid: d2e5868019bb6fa45b25bf00771c8af0, type: 3}
   Aphrodite: {fileID: 8300000, guid: dccb4e05894613a40881a4ad7efcf4e3, type: 3}
+  Hermes: {fileID: 8300000, guid: 1529460454004ca44b24bd3ba4192b08, type: 3}
+  Hestia: {fileID: 8300000, guid: 20217edc4fe73e14998e4f7dad5de5a3, type: 3}
+  Dionysus: {fileID: 8300000, guid: 4ef745c8938391a4d98257e01d3d31c4, type: 3}
+  Demeter: {fileID: 8300000, guid: 6934d7bb07396014abfb0b1dacb4b6a2, type: 3}
 --- !u!4 &1676683210
 Transform:
   m_ObjectHideFlags: 0
