@@ -47,14 +47,21 @@ public class Fow_Script : MonoBehaviour {
         for (int i = 0; i < fogPlaneColors.Length; i++) {
             fogPlaneColors[i] = color_fog;
         }
-    }
 
-    void Update() {
-
+        //메인 카메라 위치를 가져와 시야에 적용
         fogPlane.transform.position = new Vector3(mainCamera.transform.position.x, 0, mainCamera.transform.position.z) + planeOffset; // make the fog plane follow the camera with an offset
         fogPlane.transform.localScale = fowPlaneScale;
         fogPlane.transform.localRotation = Quaternion.Euler(270, 0, planeRotation);
         fowCamera.fieldOfView = mainCamera.fieldOfView;
+
+    }
+
+    void Update() {
+
+        //fogPlane.transform.position = new Vector3(mainCamera.transform.position.x, 0, mainCamera.transform.position.z) + planeOffset; // make the fog plane follow the camera with an offset
+        //fogPlane.transform.localScale = fowPlaneScale;
+        //fogPlane.transform.localRotation = Quaternion.Euler(270, 0, planeRotation);
+        //fowCamera.fieldOfView = mainCamera.fieldOfView;
 
         updateTimer -= 1 * Time.deltaTime;
         if (updateTimer <= 0) {
