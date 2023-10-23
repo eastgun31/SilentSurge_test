@@ -445,7 +445,7 @@ public class UnitController : MonoBehaviour
 
     IEnumerator Pcheck()    //À¯´Ö Á×´Â ÄÚ·çÆ¾ ÇÔ¼ö
     {
-        WaitForSeconds wait = new WaitForSeconds(0.1f);
+        WaitForSeconds wait = new WaitForSeconds(1f);
 
         if (uhealth <= 0 && isHades)
         {
@@ -458,6 +458,7 @@ public class UnitController : MonoBehaviour
         {
             navMeshAgent.isStopped = true;
             navMeshAgent.velocity = Vector3.zero;
+            P_attackRange.SetActive(false);
 
             RTSUnitController.instance.UnitList.Remove(this);
             RTSUnitController.instance.selectedUnitList.Remove(this);

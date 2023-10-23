@@ -388,7 +388,7 @@ public class E_unitMove : MonoBehaviour
 
     IEnumerator Pcheck()
     {
-        WaitForSeconds wait = new WaitForSeconds(0.1f);
+        WaitForSeconds wait = new WaitForSeconds(1f);
 
         if (ehealth <= 0 && isHades)
         {
@@ -400,8 +400,8 @@ public class E_unitMove : MonoBehaviour
         {
             moving.isStopped = true;
             moving.velocity = Vector3.zero;
+            E_attackRange.SetActive(false);
 
-            
             GameManager.instance.gold += 2;
 
             enemyAnim.SetTrigger("death");
