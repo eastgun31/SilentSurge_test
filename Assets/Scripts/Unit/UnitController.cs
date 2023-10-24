@@ -452,6 +452,8 @@ public class UnitController : MonoBehaviour
             Hades.SetActive(false);
             uhealth = maxhp / 2;
             isHades = false;
+            StopCoroutine("HadesDuration");
+            //하데스 코루틴 중단 이거말고 다른방식으로 스탑하고싶은데 임시로 이거 넣었습니다
         }
 
         if (uhealth <= 0 && !isHades)
