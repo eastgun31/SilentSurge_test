@@ -17,17 +17,6 @@ public class MouseEvent : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-
-        if ((FindAnyObjectByType<HT_OP_Window>().HTP_ON.activeSelf == true) ||
-            (FindAnyObjectByType<HT_OP_Window>().OP_ON.activeSelf == true))
-        {
-            im_check = false;
-        }
-        else
-        {
-            im_check = true;
-        }
         
     }
 
