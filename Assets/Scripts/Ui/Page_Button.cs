@@ -42,22 +42,8 @@ public class Page_Button : MonoBehaviour //건들지 말것
             Debug.Log("액티브 스킬이 활성화 되어있지않습니다");
         }
     }
-    public void Page01_NEXT_Page02_button()
-    {
-        Audio_Manager.PlaySFX(Audio_Manager.AudioButton);
-        if (FindAnyObjectByType<Skill_Select>().Hephaestus_ON.activeSelf || FindAnyObjectByType<Skill_Select>().Artemis_ON.activeSelf ||
-            FindAnyObjectByType<Skill_Select>().Ares_ON.activeSelf == true)
-        {
-            Page_On.SetActive(true);
-            Page_Off.SetActive(false);
-        }
-        else
-        {
-            Debug.Log("패시브 스킬이 활성화 되어있지않습니다");
-        }
-    }
 
-    public void Page02_NEXT_Page03_button()
+    public void Page01_NEXT_Page02_button()
     {
         Audio_Manager.PlaySFX(Audio_Manager.AudioButton);
         if (FindAnyObjectByType<Skill_Select>().Hera_ON.activeSelf || FindAnyObjectByType<Skill_Select>().Apollo_ON.activeSelf ||
@@ -65,6 +51,7 @@ public class Page_Button : MonoBehaviour //건들지 말것
         {
             Page_On.SetActive(true);
             Page_Off.SetActive(false);
+
         }
         else
         {
@@ -72,11 +59,29 @@ public class Page_Button : MonoBehaviour //건들지 말것
         }
     }
 
-    public void NEXT_button()
+    public void Page02_NEXT_Page03_button()
     {
         Audio_Manager.PlaySFX(Audio_Manager.AudioButton);
         if (FindAnyObjectByType<Skill_Select>().Hermes_ON.activeSelf || FindAnyObjectByType<Skill_Select>().Hestia_ON.activeSelf ||
             FindAnyObjectByType<Skill_Select>().Dionysus_ON.activeSelf || FindAnyObjectByType<Skill_Select>().Demeter_ON.activeSelf == true)
+        {
+            //opacity_image.SetActive(false);
+            //bar_image.SetActive(false);
+            Page_On.SetActive(true);
+            Page_Off.SetActive(false);
+
+            //EnemySkillManager.instance.enemySkills.SetActive(true);
+        }
+        else
+        {
+            Debug.Log("소모품 스킬이 활성화 되어있지않습니다");
+        } 
+    }
+    public void NEXT_button()
+    {
+        Audio_Manager.PlaySFX(Audio_Manager.AudioButton);
+        if (FindAnyObjectByType<Skill_Select>().Hephaestus_ON.activeSelf || FindAnyObjectByType<Skill_Select>().Artemis_ON.activeSelf ||
+            FindAnyObjectByType<Skill_Select>().Ares_ON.activeSelf == true)
         {
             opacity_image.SetActive(false);
             bar_image.SetActive(false);
@@ -87,8 +92,7 @@ public class Page_Button : MonoBehaviour //건들지 말것
         }
         else
         {
-            Debug.Log("소모품 스킬이 활성화 되어있지않습니다");
+            Debug.Log("패시브 스킬이 활성화 되어있지않습니다");
         }
-        
     }
 }
