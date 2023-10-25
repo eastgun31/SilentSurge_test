@@ -56,7 +56,8 @@ public class Fow_Script : MonoBehaviour {
 
     }
 
-    void Update() {
+    void Update() 
+    {
 
         //fogPlane.transform.position = new Vector3(mainCamera.transform.position.x, 0, mainCamera.transform.position.z) + planeOffset; // make the fog plane follow the camera with an offset
         //fogPlane.transform.localScale = fowPlaneScale;
