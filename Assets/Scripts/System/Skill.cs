@@ -52,8 +52,9 @@ public class Skill : MonoBehaviour
 
     public GameObject HeraSkill; //헤라 액티브
     public GameObject ApolloSkill; //아폴론 액티브
-
     public GameObject AthenaSkill; // 아테나 시야
+    public GameObject AphroditeSkill; //아프로디테 이펙트
+
     Audio_Manager audio_Manager;
     void Awake()
     {
@@ -118,7 +119,6 @@ public class Skill : MonoBehaviour
                 else if (Skill_Set.instance.Aphrodite_S)
                 {
                     UseAphroditeSkill();
-                    audio_Manager.PlaySFX(audio_Manager.Aphrodite);
                 }                 
                 else { }
             }
@@ -454,12 +454,16 @@ public class Skill : MonoBehaviour
             Collider collider = hit.collider;
             E_unitMove e_unit = collider.GetComponent<E_unitMove>();
             e_unit.AphroditeChange(spawnPosition);
+            audio_Manager.PlaySFX(audio_Manager.Aphrodite);
 
+            AphroditeSkill.SetActive(true);
+            AphroditeSkill.transform.position = spawnPosition;
             StartCoroutine(Num2_Skill_Cooldown(3f));
         }
         isSkillReady_2 = false;
 
         CancelSkill();
+        StartCoroutine(DeactiveSkill(AphroditeSkill, 2f));
     }
 
     //소모스킬-------------------------------------------------------------------------------------------

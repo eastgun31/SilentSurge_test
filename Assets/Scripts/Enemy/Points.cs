@@ -27,6 +27,8 @@ public class Points : MonoBehaviour
     public GameObject GobjBlue;
     public GameObject GobjRed;
 
+    public GameObject GetPoint; //포인트 이펙트
+
     // Start is called before the first frame update
     void Start()
     {
@@ -313,4 +315,13 @@ public class Points : MonoBehaviour
 
         StartCoroutine("eUnitNewPoint", other.gameObject);
     }
+
+    //IEnumerator DeactiveEffect(GameObject effect)
+    //{
+    //    WaitForSeconds wait = new WaitForSeconds(2f);
+
+    //    yield return wait;
+
+    //    GetPoint.SetActive(false);
+    //}
 }
