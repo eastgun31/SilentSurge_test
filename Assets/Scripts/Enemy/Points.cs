@@ -28,7 +28,8 @@ public class Points : MonoBehaviour
     public GameObject GobjRed;
 
     public GameObject GetPoint; //∆˜¿Œ∆Æ ¿Ã∆Â∆Æ
-
+    capture Capture;
+    mini_capture Mini_capture;
     // Start is called before the first frame update
     void Start()
     {
@@ -40,6 +41,8 @@ public class Points : MonoBehaviour
         SetGameObjectActive(GobjBlue, false);
 
         StartCoroutine(PointCheckCoroutine());
+        Capture = FindAnyObjectByType<capture>();
+        Mini_capture = FindAnyObjectByType<mini_capture>();
     }
 
     // Update is called once per frame
@@ -152,18 +155,63 @@ public class Points : MonoBehaviour
                 {
                     case 0:
                         GameManager.instance.check[0] = pointcheck;
+                        #region Capture ∏  & πÃ¥œ∏ 
+                        Capture.A_Blue.SetActive(false);
+                        Capture.A_Red.SetActive(true);
+                        Capture.A_3.SetActive(false);
+
+                        Mini_capture.A_Blue.SetActive(false);
+                        Mini_capture.A_Red.SetActive(true);
+                        Mini_capture.A_3.SetActive(false);
+                        #endregion
                         break;
                     case 1:
                         GameManager.instance.check[1] = pointcheck;
+                        #region Capture ∏  & πÃ¥œ∏ 
+                        Capture.B_Blue.SetActive(false);
+                        Capture.B_Red.SetActive(true);
+                        Capture.B_3.SetActive(false);
+
+                        Mini_capture.B_Blue.SetActive(false);
+                        Mini_capture.B_Red.SetActive(true);
+                        Mini_capture.B_3.SetActive(false);
+                        #endregion
                         break;
                     case 2:
                         GameManager.instance.check[2] = pointcheck;
+                        #region Capture ∏  & πÃ¥œ∏ 
+                        Capture.C_Blue.SetActive(false);
+                        Capture.C_Red.SetActive(true);
+                        Capture.C_3.SetActive(false);
+
+                        Mini_capture.C_Blue.SetActive(false);
+                        Mini_capture.C_Red.SetActive(true);
+                        Mini_capture.C_3.SetActive(false);
+                        #endregion
                         break;
                     case 3:
                         GameManager.instance.check[3] = pointcheck;
+                        #region Capture ∏  & πÃ¥œ∏ 
+                        Capture.D_Blue.SetActive(false);
+                        Capture.D_Red.SetActive(true);
+                        Capture.D_3.SetActive(false);
+
+                        Mini_capture.D_Blue.SetActive(false);
+                        Mini_capture.D_Red.SetActive(true);
+                        Mini_capture.D_3.SetActive(false);
+                        #endregion
                         break;
                     case 4:
                         GameManager.instance.check[4] = pointcheck;
+                        #region Capture ∏  & πÃ¥œ∏ 
+                        Capture.E_Blue.SetActive(false);
+                        Capture.E_Red.SetActive(true);
+                        Capture.E_3.SetActive(false);
+
+                        Mini_capture.E_Blue.SetActive(false);
+                        Mini_capture.E_Red.SetActive(true);
+                        Mini_capture.E_3.SetActive(false);
+                        #endregion
                         break;
                 }
 
@@ -185,22 +233,67 @@ public class Points : MonoBehaviour
                     case 0:
                         GameManager.instance.check[0] = pointcheck;
                         GameManager.instance.attacking = false;
+                        #region Capture ∏  & πÃ¥œ∏ 
+                        Capture.A_Blue.SetActive(true);
+                        Capture.A_Red.SetActive(false);
+                        Capture.A_3.SetActive(false);
+
+                        Mini_capture.A_Blue.SetActive(true);
+                        Mini_capture.A_Red.SetActive(false);
+                        Mini_capture.A_3.SetActive(false);
+                        #endregion
                         break;
                     case 1:
                         GameManager.instance.check[1] = pointcheck;
                         GameManager.instance.attacking = false;
+                        #region Capture ∏  & πÃ¥œ∏ 
+                        Capture.B_Blue.SetActive(true);
+                        Capture.B_Red.SetActive(false);
+                        Capture.B_3.SetActive(false);
+
+                        Mini_capture.B_Blue.SetActive(true);
+                        Mini_capture.B_Red.SetActive(false);
+                        Mini_capture.B_3.SetActive(false);
+                        #endregion
                         break;
                     case 2:
                         GameManager.instance.check[2] = pointcheck;
                         GameManager.instance.attacking = false;
+                        #region Capture ∏  & πÃ¥œ∏ 
+                        Capture.C_Blue.SetActive(true);
+                        Capture.C_Red.SetActive(false);
+                        Capture.C_3.SetActive(false);
+                        
+                        Mini_capture.C_Blue.SetActive(true);
+                        Mini_capture.C_Red.SetActive(false);
+                        Mini_capture.C_3.SetActive(false);
+                        #endregion
                         break;
                     case 3:
                         GameManager.instance.check[3] = pointcheck;
                         GameManager.instance.attacking = false;
+                        #region Capture ∏  & πÃ¥œ∏ 
+                        Capture.D_Blue.SetActive(true);
+                        Capture.D_Red.SetActive(false);
+                        Capture.D_3.SetActive(false);
+
+                        Mini_capture.D_Blue.SetActive(true);
+                        Mini_capture.D_Red.SetActive(false);
+                        Mini_capture.D_3.SetActive(false);
+                        #endregion
                         break;
                     case 4:
                         GameManager.instance.check[4] = pointcheck;
                         GameManager.instance.attacking = false;
+                        #region Capture ∏  & πÃ¥œ∏ 
+                        Capture.E_Blue.SetActive(true);
+                        Capture.E_Red.SetActive(false);
+                        Capture.E_3.SetActive(false);
+
+                        Mini_capture.E_Blue.SetActive(true);
+                        Mini_capture.E_Red.SetActive(false);
+                        Mini_capture.E_3.SetActive(false);
+                        #endregion
                         break;
                 }
             }
@@ -214,18 +307,63 @@ public class Points : MonoBehaviour
             {
                 case 0:
                     GameManager.instance.attackPoint = 0;
+                    #region Capture ∏  & πÃ¥œ∏ 
+                    Capture.A_Blue.SetActive(false);
+                    Capture.A_Red.SetActive(true);
+                    Capture.A_3.SetActive(false);
+
+                    Mini_capture.A_Blue.SetActive(false);
+                    Mini_capture.A_Red.SetActive(true);
+                    Mini_capture.A_3.SetActive(false);
+                    #endregion
                     break;
                 case 1:
                     GameManager.instance.attackPoint = 1;
+                    #region Capture ∏  & πÃ¥œ∏ 
+                    Capture.B_Blue.SetActive(false);
+                    Capture.B_Red.SetActive(true);
+                    Capture.B_3.SetActive(false);
+
+                    Mini_capture.B_Blue.SetActive(false);
+                    Mini_capture.B_Red.SetActive(true);
+                    Mini_capture.B_3.SetActive(false);
+                    #endregion
                     break;
                 case 2:
                     GameManager.instance.attackPoint = 2;
+                    #region Capture ∏  & πÃ¥œ∏ 
+                    Capture.C_Blue.SetActive(false);
+                    Capture.C_Red.SetActive(true);
+                    Capture.C_3.SetActive(false);
+
+                    Mini_capture.C_Blue.SetActive(false);
+                    Mini_capture.C_Red.SetActive(true);
+                    Mini_capture.C_3.SetActive(false);
+                    #endregion
                     break;
                 case 3:
                     GameManager.instance.attackPoint = 3;
+                    #region Capture ∏  & πÃ¥œ∏ 
+                    Capture.D_Blue.SetActive(false);
+                    Capture.D_Red.SetActive(true);
+                    Capture.D_3.SetActive(false);
+
+                    Mini_capture.D_Blue.SetActive(false);
+                    Mini_capture.D_Red.SetActive(true);
+                    Mini_capture.D_3.SetActive(false);
+                    #endregion
                     break;
                 case 4:
                     GameManager.instance.attackPoint = 4;
+                    #region Capture ∏  & πÃ¥œ∏ 
+                    Capture.E_Blue.SetActive(false);
+                    Capture.E_Red.SetActive(true);
+                    Capture.E_3.SetActive(false);
+
+                    Mini_capture.E_Blue.SetActive(false);
+                    Mini_capture.E_Red.SetActive(true);
+                    Mini_capture.E_3.SetActive(false);
+                    #endregion
                     break;
             }
         }
@@ -243,18 +381,63 @@ public class Points : MonoBehaviour
                 {
                     case 0:
                         GameManager.instance.check[0] = pointcheck;
+                        #region Capture ∏  & πÃ¥œ∏ 
+                        Capture.A_Red.SetActive(false);
+                        Capture.A_Blue.SetActive(false);
+                        Capture.A_3.SetActive(true);
+
+                        Mini_capture.A_Red.SetActive(false);
+                        Mini_capture.A_Blue.SetActive(false);
+                        Mini_capture.A_3.SetActive(true);
+                        #endregion
                         break;
                     case 1:
                         GameManager.instance.check[1] = pointcheck;
+                        #region Capture ∏  & πÃ¥œ∏ 
+                        Capture.B_Red.SetActive(false);
+                        Capture.B_Blue.SetActive(false);
+                        Capture.B_3.SetActive(true);
+
+                        Mini_capture.B_Red.SetActive(false);
+                        Mini_capture.B_Blue.SetActive(false);
+                        Mini_capture.B_3.SetActive(true);
+                        #endregion
                         break;
                     case 2:
                         GameManager.instance.check[2] = pointcheck;
+                        #region Capture ∏  & πÃ¥œ∏ 
+                        Capture.C_Red.SetActive(false);
+                        Capture.C_Blue.SetActive(false);
+                        Capture.C_3.SetActive(true);
+
+                        Mini_capture.C_Red.SetActive(false);
+                        Mini_capture.C_Blue.SetActive(false);
+                        Mini_capture.C_3.SetActive(true);
+                        #endregion
                         break;
                     case 3:
                         GameManager.instance.check[3] = pointcheck;
+                        #region Capture ∏  & πÃ¥œ∏ 
+                        Capture.D_Red.SetActive(false);
+                        Capture.D_Blue.SetActive(false);
+                        Capture.D_3.SetActive(true);
+
+                        Mini_capture.D_Red.SetActive(false);
+                        Mini_capture.D_Blue.SetActive(false);
+                        Mini_capture.D_3.SetActive(true);
+                        #endregion
                         break;
                     case 4:
                         GameManager.instance.check[4] = pointcheck;
+                        #region Capture ∏  & πÃ¥œ∏ 
+                        Capture.E_Red.SetActive(false);
+                        Capture.E_Blue.SetActive(false);
+                        Capture.E_3.SetActive(true);
+
+                        Mini_capture.E_Red.SetActive(false);
+                        Mini_capture.E_Blue.SetActive(false);
+                        Mini_capture.E_3.SetActive(true);
+                        #endregion
                         break;
                 }
 
