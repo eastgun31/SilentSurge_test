@@ -30,11 +30,6 @@ public class capture : MonoBehaviour
 
     //public int[] check = { 0, 0, 0, 0, 0 };   //거점, 0 중립, 1 적이점령, 2플레이어, 3거점에서 전투
 
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void Update()
     {
