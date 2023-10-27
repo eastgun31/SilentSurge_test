@@ -59,6 +59,20 @@ public class Points : MonoBehaviour
                     SetGameObjectActive(GobjRed, true);
                     SetGameObjectActive(GobjWhite, false);
                     SetGameObjectActive(GobjBlue, false);
+
+
+                    if (ppoint == 0)
+                    {
+                        EnemySpawn.instance.gold += 200;
+                    }
+                    else if(ppoint == 2)
+                    {
+                        EnemySpawn.instance.gold += 100;
+                    }
+                    else if (ppoint == 3)
+                    {
+                            EnemySpawn.instance.gold += 100;
+                    }
                 }
                 else if (pointcheck == 2) //pointcheck가 0이었다가 2가 되면 재화 획득
                 {
@@ -72,12 +86,18 @@ public class Points : MonoBehaviour
                     }
                     else if (ppoint == 3)
                     {
-                        GameManager.instance.gold += 100;
+                            GameManager.instance.gold += 100;
                     }
 
                     SetGameObjectActive(GobjRed, false);
                     SetGameObjectActive(GobjWhite, false);
                     SetGameObjectActive(GobjBlue, true);
+                }
+                else if(pointcheck==3)
+                {
+                    SetGameObjectActive(GobjRed, false);
+                    SetGameObjectActive(GobjWhite, true);
+                    SetGameObjectActive(GobjBlue, false);
                 }
             }
 
