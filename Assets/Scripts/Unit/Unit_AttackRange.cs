@@ -43,12 +43,13 @@ public class Unit_AttackRange : MonoBehaviour
         {
             targets.Remove(col.gameObject);
             e_unit = null;
+            parent.u_State = UnitController.unitState.Idle;
         }
     }
 
     IEnumerator Find_Target()
     {
-        WaitForSeconds wait = new WaitForSeconds(0.1f);
+        WaitForSeconds wait = new WaitForSeconds(1f);
 
         if (targets != null)
         {

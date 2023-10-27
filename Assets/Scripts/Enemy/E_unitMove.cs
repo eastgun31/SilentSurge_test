@@ -145,14 +145,23 @@ public class E_unitMove : MonoBehaviour
         if (p_unit.uhealth > 0)
         {
             targetUnit = p_unit;
-            Find_Target(dir, p_unit);
+            Find_Target(dir, targetUnit);
         }
     }
 
     void Find_Target(Vector3 dir, UnitController p_unit)
     {
-        moving.SetDestination(dir);
-        moving.stoppingDistance = 2f;
+        if (ehealth <= 0)
+            return;
+
+        if (ehealth > 0)
+        {
+            moving.SetDestination(dir);
+            moving.stoppingDistance = 2f;
+        }
+
+        //moving.SetDestination(dir);
+        //moving.stoppingDistance = 2f;
 
         if (p_unit.uhealth <= 0)
         {
@@ -192,7 +201,7 @@ public class E_unitMove : MonoBehaviour
             //EnemySkillManager.instance.useSkill = false;
         }
 
-        if (p_unit.uhealth > 0 && time > 1f && e_State == E_UnitState.Battle)
+        if (ehealth > 0 && p_unit.uhealth > 0 && time > 1f && e_State == E_UnitState.Battle)
         {
             time = 0;
             transform.LookAt(dir);
@@ -233,23 +242,6 @@ public class E_unitMove : MonoBehaviour
         }
     }
 
-    void E_Die()
-    {
-        moving.isStopped = true;
-        moving.velocity = Vector3.zero;
-
-        GameManager.instance.e_population--;
-        GameManager.instance.gold += 2;
-
-        if (point)
-        {
-            point.e_distance = 100f;
-        }
-
-        //enemyAnim.SetTrigger("death");
-
-        Destroy(gameObject);
-    }
 
     private void OnEnable()
     {
@@ -388,7 +380,7 @@ public class E_unitMove : MonoBehaviour
 
     IEnumerator Pcheck()
     {
-        WaitForSeconds wait = new WaitForSeconds(1f);
+        WaitForSeconds wait = new WaitForSeconds(0.5f);
 
         if (ehealth <= 0 && isHades)
         {
@@ -396,11 +388,12 @@ public class E_unitMove : MonoBehaviour
             isHades = false;
         }
 
-        if (ehealth <= 0)
+        if (ehealth <= 0 && !isHades)
         {
             moving.isStopped = true;
             moving.velocity = Vector3.zero;
             E_attackRange.SetActive(false);
+            targetUnit = null;
 
             GameManager.instance.gold += 2;
 

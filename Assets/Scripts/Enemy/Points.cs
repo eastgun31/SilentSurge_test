@@ -64,10 +64,13 @@ public class Points : MonoBehaviour
                     if (ppoint == 0)
                     {
                         EnemySpawn.instance.gold += 200;
+                        GameManager.instance.e_score++;
                     }
                     else if(ppoint == 2)
                     {
                         EnemySpawn.instance.gold += 100;
+                        GameManager.instance.e_score++;
+                        GameManager.instance.p_score--;
                     }
                     else if (ppoint == 3)
                     {
@@ -79,10 +82,13 @@ public class Points : MonoBehaviour
                     if (ppoint == 0)
                     {
                         GameManager.instance.gold += 200;
+                        GameManager.instance.p_score++;
                     }
                     else if (ppoint == 1)
                     {
                         GameManager.instance.gold += 100;
+                        GameManager.instance.p_score++;
+                        GameManager.instance.e_score--;
                     }
                     else if (ppoint == 3)
                     {

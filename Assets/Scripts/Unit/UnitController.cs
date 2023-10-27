@@ -119,6 +119,7 @@ public class UnitController : MonoBehaviour
             Unit_AttackRange enemylist = P_attackRange.GetComponent<Unit_AttackRange>();
             enemylist.targets.Clear();
             P_attackRange.SetActive(false);
+            targetUnit = null;
             navMeshAgent.SetDestination(end);
             Invoke(reattack, 3f);
             if (P_attackRange)
@@ -156,16 +157,15 @@ public class UnitController : MonoBehaviour
 
     void U_Idle()   //유닛상태함수 가만히있을때
     {
-        time = 0;
 
         targetUnit = null;
         navMeshAgent.isStopped = false;
 
-        if (time > 2)
-        {
-            time = 0;
-            StopAllCoroutines();
-        }
+        //if (time > 2 && uhealth <= 0)
+        //{
+        //    time = 0;
+        //    StopAllCoroutines();
+        //}
     }
 
     void U_GoPoint()    //유닛상태함수
@@ -182,14 +182,20 @@ public class UnitController : MonoBehaviour
         if (e_unit.ehealth > 0)
         {
             targetUnit = e_unit;
-            Find_Target(dir, e_unit);
+            Find_Target(dir, targetUnit);
         }
     }
 
     void Find_Target(Vector3 dir, E_unitMove e_unit)    //공격할 유닛 지정
     {
-        navMeshAgent.SetDestination(dir);
-        navMeshAgent.stoppingDistance = 2f;
+        if (uhealth <= 0)
+            return;
+
+        if (uhealth > 0)
+        {
+            navMeshAgent.SetDestination(dir);
+            navMeshAgent.stoppingDistance = 2f;
+        }
 
         if (e_unit.ehealth <= 0)
         {
@@ -222,9 +228,9 @@ public class UnitController : MonoBehaviour
     {
         WaitForSeconds wait = new WaitForSeconds(1f);
 
-        yield return wait;
+        //yield return wait;
 
-        if (e_unit.ehealth > 0 && time > 1f && u_State == unitState.Battle)
+        if (uhealth > 0 && e_unit.ehealth > 0 && time > 1f && u_State == unitState.Battle)
         {
             time = 0;
             transform.LookAt(dir);
@@ -244,8 +250,6 @@ public class UnitController : MonoBehaviour
                 e_unit.ehealth -= uattackPower;
 
 
-            Debug.Log("적 공격");
-
             yield return wait;
 
             StartCoroutine(Damage(dir, e_unit));
@@ -255,28 +259,9 @@ public class UnitController : MonoBehaviour
         {
             u_State = unitState.Idle;
             targetUnit = null;
-            Debug.Log("적들 죽음");
             navMeshAgent.isStopped = false;
             StopCoroutine("Damage");
         }
-    }
-
-
-    void P_Die()    //플레이어 유닛 죽음
-    {
-        RTSUnitController.instance.UnitList.Remove(this);
-        RTSUnitController.instance.selectedUnitList.Remove(this);
-
-        GameManager.instance.All_Obj--;
-        GameManager.instance.Aobj();
-        EnemySpawn.instance.gold += 2; //아군 유닛 죽였을 때 적 재화 획득
-
-        if (point)
-        {
-            point.p_distance = 100f;
-        }
-
-        Destroy(gameObject);
     }
 
     private void OnEnable()
@@ -445,7 +430,7 @@ public class UnitController : MonoBehaviour
 
     IEnumerator Pcheck()    //유닛 죽는 코루틴 함수
     {
-        WaitForSeconds wait = new WaitForSeconds(1f);
+        WaitForSeconds wait = new WaitForSeconds(0.5f);
 
         if (uhealth <= 0 && isHades)
         {
@@ -461,6 +446,7 @@ public class UnitController : MonoBehaviour
             navMeshAgent.isStopped = true;
             navMeshAgent.velocity = Vector3.zero;
             P_attackRange.SetActive(false);
+            targetUnit = null;
 
             RTSUnitController.instance.UnitList.Remove(this);
             RTSUnitController.instance.selectedUnitList.Remove(this);

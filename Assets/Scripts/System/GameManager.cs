@@ -34,6 +34,9 @@ public class GameManager : MonoBehaviour
 
     public bool pointCan = false;
 
+    public int p_score = 0;
+    public int e_score = 0;
+
     //게임 시간
     public Text timerText;
     private float startTime;
@@ -106,8 +109,16 @@ public class GameManager : MonoBehaviour
             }
             else if (a == b)
             {
-                Debug.Log("무승부");
-                draw.SetActive(true);
+                if (e_score > p_score)
+                {
+                    Debug.Log("패배");
+                    lose.SetActive(true);
+                }
+                else if (e_score < p_score)
+                {
+                    Debug.Log("승리");
+                    win.SetActive(true);
+                }
             }
 
         }
