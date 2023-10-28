@@ -18,7 +18,7 @@ public class GameManager : MonoBehaviour
     public float moveSpeed = 7;
 
     public Text Allgold_text; //현재 재화 상태
-    public int gold = 1000; //초기 재화 + 
+    public int gold = 300; //초기 재화 + 
 
     public Text All_ObjText;//유닛 수 보여주는 텍스트
     public int All_Obj = 0;//현재 총 유닛 수
@@ -63,6 +63,8 @@ public class GameManager : MonoBehaviour
         startTime = currentTime;
         active_Skill.gameObject.SetActive(false);
         buff_Skill.gameObject.SetActive(false);
+
+        gold = 300;
 
         InvokeRepeating("Upgold", 1.0f, 1.0f); //1초 후에 1초마다
     }
@@ -134,7 +136,7 @@ public class GameManager : MonoBehaviour
 
     private void Upgold()
     {
-        gold += 2; //재화 2씩 증가
+        gold += 5; //재화 2씩 증가
     }
 
     public void Aobj()

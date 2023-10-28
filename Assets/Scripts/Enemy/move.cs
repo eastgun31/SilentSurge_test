@@ -26,10 +26,10 @@ public class move : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        for (int i = 0; i < 4; i++)
-        {
-            transform.GetChild(i).gameObject.SetActive(true);
-        }
+        //for (int i = 0; i < 4; i++)
+        //{
+        //    transform.GetChild(i).gameObject.SetActive(true);
+        //}
 
         random = Random.Range(0, 5);
         enemies = EnemyState.spawn;

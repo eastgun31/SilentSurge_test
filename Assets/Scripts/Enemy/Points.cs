@@ -72,10 +72,6 @@ public class Points : MonoBehaviour
                         GameManager.instance.e_score++;
                         GameManager.instance.p_score--;
                     }
-                    else if (ppoint == 3)
-                    {
-                            EnemySpawn.instance.gold += 100;
-                    }
                 }
                 else if (pointcheck == 2) //pointcheck가 0이었다가 2가 되면 재화 획득
                 {
@@ -90,20 +86,9 @@ public class Points : MonoBehaviour
                         GameManager.instance.p_score++;
                         GameManager.instance.e_score--;
                     }
-                    else if (ppoint == 3)
-                    {
-                            GameManager.instance.gold += 100;
-                    }
-
                     SetGameObjectActive(GobjRed, false);
                     SetGameObjectActive(GobjWhite, false);
                     SetGameObjectActive(GobjBlue, true);
-                }
-                else if(pointcheck==3)
-                {
-                    SetGameObjectActive(GobjRed, false);
-                    SetGameObjectActive(GobjWhite, true);
-                    SetGameObjectActive(GobjBlue, false);
                 }
             }
 

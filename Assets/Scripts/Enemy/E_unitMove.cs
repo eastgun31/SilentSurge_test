@@ -395,7 +395,7 @@ public class E_unitMove : MonoBehaviour
             E_attackRange.SetActive(false);
             targetUnit = null;
 
-            GameManager.instance.gold += 2;
+            GameManager.instance.gold += 10;
 
             enemyAnim.SetTrigger("death");
 

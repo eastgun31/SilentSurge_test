@@ -19,7 +19,7 @@ public class EnemySpawn : MonoBehaviour
         }
     }
 
-    public float gold = 50;
+    public float gold = 300;
     public int population;
     int random;
     float spawnCool = 0;
@@ -34,6 +34,7 @@ public class EnemySpawn : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        gold = 300;
         InvokeRepeating("Upgold", 1.0f, 1.0f); //1초 후에 1초마다
 
         StartCoroutine(upgradecheck);
@@ -48,20 +49,12 @@ public class EnemySpawn : MonoBehaviour
         {
             RandomSpawn(0);
         }
-        //else if (unitController[1].transform.position == gameObject.transform.position && unitController[1].transform.childCount <= 10)
-        //{
-        //    RandomSpawn(1);
-        //}
-        //else if (unitController[2].transform.position == gameObject.transform.position && unitController[2].transform.childCount <= 10)
-        //{
-        //    RandomSpawn(2);
-        //}
 
     }
 
     private void Upgold()
     {
-        gold += 2; //재화 2씩 증가
+        gold += 5; //재화 2씩 증가
     }
 
     void RandomSpawn(int i)
@@ -74,24 +67,24 @@ public class EnemySpawn : MonoBehaviour
             {
                 random = Random.Range(0, 4);
 
-                if (random == 0 && gold >= 10)
+                if (random == 0 && gold >= 50)
                 {
-                    gold -= 10;
+                    gold -= 50;
                     SpawnUnit(random, i);
                 }
-                if (random == 1 && gold >= 10)
+                if (random == 1 && gold >= 50)
                 {
-                    gold -= 10;
+                    gold -= 50;
                     SpawnUnit(random, i);
                 }
-                if (random == 2 && gold >= 16)
+                if (random == 2 && gold >= 80)
                 {
-                    gold -= 16;
+                    gold -= 80;
                     SpawnUnit(random, i);
                 }
-                if (random == 3 && gold >= 30)
+                if (random == 3 && gold >= 150)
                 {
-                    gold -= 30;
+                    gold -= 150;
                     SpawnUnit(random, i);
                 }
             }
@@ -100,24 +93,24 @@ public class EnemySpawn : MonoBehaviour
             {
                 random = Random.Range(4, 8);
 
-                if (random == 4 && gold >= 5)
+                if (random == 4 && gold >= 50)
                 {
-                    gold -= 5;
+                    gold -= 50;
                     SpawnUnit(random, i);
                 }
-                if (random == 5 && gold >= 5)
+                if (random == 5 && gold >= 50)
                 {
-                    gold -= 5;
+                    gold -= 50;
                     SpawnUnit(random, i);
                 }
-                if (random == 6 && gold >= 8)
+                if (random == 6 && gold >= 80)
                 {
-                    gold -= 8;
+                    gold -= 80;
                     SpawnUnit(random, i);
                 }
-                if (random == 7 && gold >= 15)
+                if (random == 7 && gold >= 150)
                 {
-                    gold -= 15;
+                    gold -= 150;
                     SpawnUnit(random, i);
                 }
             }
@@ -126,24 +119,24 @@ public class EnemySpawn : MonoBehaviour
             {
                 random = Random.Range(8, 12);
 
-                if (random == 8 && gold >= 5)
+                if (random == 8 && gold >= 50)
                 {
-                    gold -= 5;
+                    gold -= 50;
                     SpawnUnit(random, i);
                 }
-                if (random == 9 && gold >= 5)
+                if (random == 9 && gold >= 50)
                 {
-                    gold -= 5;
+                    gold -= 50;
                     SpawnUnit(random, i);
                 }
-                if (random == 10 && gold >= 8)
+                if (random == 10 && gold >= 80)
                 {
-                    gold -= 8;
+                    gold -= 80;
                     SpawnUnit(random, i);
                 }
-                if (random == 11 && gold >= 15)
+                if (random == 11 && gold >= 150)
                 {
-                    gold -= 15;
+                    gold -= 150;
                     SpawnUnit(random, i);
                 }
             }
@@ -168,15 +161,15 @@ public class EnemySpawn : MonoBehaviour
             StopCoroutine(upgradecheck);
         }
 
-        if (gold >= 35 && upgradeLV == 0)
+        if (gold >= 350 && upgradeLV == 0)
         {
-            gold -= 35;
+            gold -= 350;
             E_Upgrade();
         }
 
-        if (gold >= 60 && upgradeLV == 1)
+        if (gold >= 600 && upgradeLV == 1)
         {
-            gold -= 60;
+            gold -= 600;
             E_Upgrade();
         }
 
