@@ -145,7 +145,7 @@ public class move : MonoBehaviour
             enemies = EnemyState.move;
         }
 
-        if (transform.childCount >= 10)
+        if (transform.childCount >= 6)
         {
             enemies = EnemyState.Idle;
         }

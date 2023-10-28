@@ -27,7 +27,7 @@ public class GameManager : MonoBehaviour
 
     public bool attacking = false;  //적이 공격받는상태
     public int attackPoint = 0;     //적이 공격받는 거점
-    public int e_population = 4;    //적유닛수
+    public int e_population = 0;    //적유닛수
 
     public bool pointBattle = false; //전투상태
     public bool battle = false;      //전투상태
@@ -60,6 +60,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        e_population = 0;
         startTime = currentTime;
         active_Skill.gameObject.SetActive(false);
         buff_Skill.gameObject.SetActive(false);

@@ -45,7 +45,7 @@ public class EnemySpawn : MonoBehaviour
     {
         population = GameManager.instance.e_population;
 
-        if (unitController[0].transform.childCount <= 10)
+        if (unitController[0].transform.childCount <= 6)
         {
             RandomSpawn(0);
         }
@@ -63,7 +63,7 @@ public class EnemySpawn : MonoBehaviour
 
         if (spawnCool > 1f)
         {
-            if (population <= 30 && upgradeLV == 0)
+            if (population < 30 && upgradeLV == 0)
             {
                 random = Random.Range(0, 4);
 
@@ -89,7 +89,7 @@ public class EnemySpawn : MonoBehaviour
                 }
             }
 
-            if (population <= 30 && upgradeLV == 1)
+            if (population < 30 && upgradeLV == 1)
             {
                 random = Random.Range(4, 8);
 
@@ -115,7 +115,7 @@ public class EnemySpawn : MonoBehaviour
                 }
             }
 
-            if (population <= 30 && upgradeLV == 2)
+            if (population < 30 && upgradeLV == 2)
             {
                 random = Random.Range(8, 12);
 
