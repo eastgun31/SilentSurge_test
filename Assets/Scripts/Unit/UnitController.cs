@@ -121,10 +121,10 @@ public class UnitController : MonoBehaviour
             P_attackRange.SetActive(false);
             targetUnit = null;
             navMeshAgent.SetDestination(end);
-            Invoke(reattack, 3f);
+            Invoke(reattack, 2f);
             if (P_attackRange)
             {
-                Invoke("ReAttack", 3f);
+                Invoke("ReAttack", 2f);
             }
         }
     }
@@ -195,6 +195,12 @@ public class UnitController : MonoBehaviour
         {
             navMeshAgent.SetDestination(dir);
             navMeshAgent.stoppingDistance = 2f;
+
+            if(Vector3.Distance(transform.position, dir) <= 3f)
+            {
+                navMeshAgent.isStopped = true;
+                navMeshAgent.velocity = Vector3.zero;
+            }
         }
 
         if (e_unit.ehealth <= 0)

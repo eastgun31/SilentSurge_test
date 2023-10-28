@@ -158,6 +158,12 @@ public class E_unitMove : MonoBehaviour
         {
             moving.SetDestination(dir);
             moving.stoppingDistance = 2f;
+
+            if(Vector3.Distance(transform.position, dir) <= 3f)
+            {
+                moving.isStopped = true;
+                moving.velocity = Vector3.zero;
+            }
         }
 
         //moving.SetDestination(dir);
