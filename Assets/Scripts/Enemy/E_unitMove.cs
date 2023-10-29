@@ -548,6 +548,7 @@ public class E_unitMove : MonoBehaviour
         {
             if (EnemySkillManager.instance.e_item_skillnum == 1)
             {
+                EnemySkillManager.instance.usingItem = false;
                 Hermes.SetActive(true);
                 //EnemySkillManager.instance.usingItem = false;
 
@@ -562,6 +563,7 @@ public class E_unitMove : MonoBehaviour
 
             if (EnemySkillManager.instance.e_item_skillnum == 2)
             {
+                EnemySkillManager.instance.usingItem = false;
                 Hestia.SetActive(true);
                 //EnemySkillManager.instance.usingItem = false;
 
@@ -574,6 +576,7 @@ public class E_unitMove : MonoBehaviour
 
             if (EnemySkillManager.instance.e_item_skillnum == 3)
             {
+                EnemySkillManager.instance.usingItem = false;
                 Dionysus.SetActive(true);
                 //EnemySkillManager.instance.usingItem = false;
 

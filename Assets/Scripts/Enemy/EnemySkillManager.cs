@@ -91,7 +91,7 @@ public class EnemySkillManager : MonoBehaviour
             }
         }
 
-        if (random == 1 && currentCooldown_2 == 0f && useSkill)
+        if (random == 1 && currentCooldown_1 == 0f && useSkill)
         {
             switch (e_buff_skillnum)
             {
@@ -105,7 +105,6 @@ public class EnemySkillManager : MonoBehaviour
                     break;
                 case 3:
                     UseAthenaSkill();
-                    audio_Manager.PlaySFX(audio_Manager.Athena);
                     break;
                 case 4:
                     UseAphroditeSkill(dir, unit, pointPosition);
@@ -114,7 +113,7 @@ public class EnemySkillManager : MonoBehaviour
             }
         }
 
-        if (random == 2 && currentCooldown_3 == 0f && useSkill)
+        if (random == 2 && currentCooldown_1 == 0f && useSkill)
         {
             switch (e_item_skillnum)
             {
@@ -267,7 +266,7 @@ public class EnemySkillManager : MonoBehaviour
         }
 
         useSkill = false;
-        StartCoroutine(Num2_Skill_Cooldown(20f));
+        StartCoroutine(Num1_Skill_Cooldown(20f));
         StartCoroutine(DeactiveSkill(HeraSkill, 1f));
     }
 
@@ -289,13 +288,13 @@ public class EnemySkillManager : MonoBehaviour
         }
 
         useSkill = false;
-        StartCoroutine(Num2_Skill_Cooldown(20f));
+        StartCoroutine(Num1_Skill_Cooldown(20f));
         StartCoroutine(DeactiveSkill(ApolloSkill,3f));
     }
     void UseAthenaSkill()
     {
         useSkill = false;
-        StartCoroutine(Num2_Skill_Cooldown(20f));
+        StartCoroutine(Num1_Skill_Cooldown(20f));
     }
     void UseAphroditeSkill(Vector3 dir, UnitController unit, Vector3 pointPosition)
     {
@@ -303,7 +302,7 @@ public class EnemySkillManager : MonoBehaviour
         p_unit.AphroditeChange(dir, pointPosition);
 
         useSkill = false;
-        StartCoroutine(Num2_Skill_Cooldown(20f));
+        StartCoroutine(Num1_Skill_Cooldown(20f));
     }
 
     //소모스킬-------------------------------------------------------------------------------------------
@@ -311,7 +310,7 @@ public class EnemySkillManager : MonoBehaviour
     {
         useSkill = false;
         usingItem = true;
-        StartCoroutine(Num3_Skill_Cooldown(15f));
+        StartCoroutine(Num1_Skill_Cooldown(15f));
         itemLimit--;
     }
 
@@ -319,7 +318,7 @@ public class EnemySkillManager : MonoBehaviour
     {
         useSkill = false;
         usingItem = true;
-        StartCoroutine(Num3_Skill_Cooldown(15f));
+        StartCoroutine(Num1_Skill_Cooldown(15f));
         itemLimit--;
     }
 
@@ -327,7 +326,7 @@ public class EnemySkillManager : MonoBehaviour
     {
         useSkill = false;
         usingItem = true;
-        StartCoroutine(Num3_Skill_Cooldown(15f));
+        StartCoroutine(Num1_Skill_Cooldown(15f));
         itemLimit--;
     }
 
@@ -337,7 +336,7 @@ public class EnemySkillManager : MonoBehaviour
 
         EnemySpawn.instance.gold += 100;
 
-        StartCoroutine(Num3_Skill_Cooldown(15f));
+        StartCoroutine(Num1_Skill_Cooldown(15f));
         itemLimit--;
     }
 
