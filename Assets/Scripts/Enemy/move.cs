@@ -44,9 +44,6 @@ public class move : MonoBehaviour
 
         switch (enemies)
         {
-            case EnemyState.firstMove:
-                E_firstMove();
-                break;
             case EnemyState.Idle:
                 E_Idle();
                 break;
@@ -55,9 +52,6 @@ public class move : MonoBehaviour
                 break;
             case EnemyState.spawn:
                 E_Spawn();
-                break;
-            case EnemyState.back:
-                E_Back();
                 break;
         }
     }

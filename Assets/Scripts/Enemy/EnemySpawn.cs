@@ -6,18 +6,14 @@ public class EnemySpawn : MonoBehaviour
 {
     public static EnemySpawn instance;
 
-    public void Awake()
+    private void Awake()
     {
-        if (null == instance)
-        {
-            instance = this;
-            DontDestroyOnLoad(this.gameObject);
-        }
+        if (instance != null)
+            Destroy(gameObject);
         else
-        {
-            Destroy(this.gameObject);
-        }
+            instance = this;
     }
+
 
     public float gold = 300;
     public int population;
@@ -156,6 +152,8 @@ public class EnemySpawn : MonoBehaviour
 
     IEnumerator UpgradeCheck()
     {
+        WaitForSeconds wait = new WaitForSeconds(1f);
+
         if (upgradeLV == 2)
         {
             StopCoroutine(upgradecheck);
@@ -173,7 +171,7 @@ public class EnemySpawn : MonoBehaviour
             E_Upgrade();
         }
 
-        yield return new WaitForSeconds(1f);
+        yield return wait;
 
         StartCoroutine(upgradecheck);
     }
@@ -188,6 +186,7 @@ public class EnemySpawn : MonoBehaviour
         GameObject newObject = Instantiate(e_unit[0], spawnPoint, Quaternion.identity);
         E_unitMove e_newunit = newObject.GetComponent<E_unitMove>();
         e_newunit.lastDesti = pointPosition;
+        e_newunit.e_State = E_unitMove.E_UnitState.Battle;
         GameManager.instance.e_population++;
     }
     public void Aphrodite_Shield(Vector3 spawnPoint, Vector3 pointPosition)
@@ -195,6 +194,7 @@ public class EnemySpawn : MonoBehaviour
         GameObject newObject = Instantiate(e_unit[1], spawnPoint, Quaternion.identity);
         E_unitMove e_newunit = newObject.GetComponent<E_unitMove>();
         e_newunit.lastDesti = pointPosition;
+        e_newunit.e_State = E_unitMove.E_UnitState.Battle;
         GameManager.instance.e_population++;
     }
     public void Aphrodite_Archer(Vector3 spawnPoint, Vector3 pointPosition)
@@ -202,6 +202,7 @@ public class EnemySpawn : MonoBehaviour
         GameObject newObject = Instantiate(e_unit[2], spawnPoint, Quaternion.identity);
         E_unitMove e_newunit = newObject.GetComponent<E_unitMove>();
         e_newunit.lastDesti = pointPosition;
+        e_newunit.e_State = E_unitMove.E_UnitState.Battle;
         GameManager.instance.e_population++;
     }
     public void Aphrodite_HorseMan(Vector3 spawnPoint, Vector3 pointPosition)
@@ -209,6 +210,7 @@ public class EnemySpawn : MonoBehaviour
         GameObject newObject = Instantiate(e_unit[3], spawnPoint, Quaternion.identity);
         E_unitMove e_newunit = newObject.GetComponent<E_unitMove>();
         e_newunit.lastDesti = pointPosition;
+        e_newunit.e_State = E_unitMove.E_UnitState.Battle;
         GameManager.instance.e_population++;
     }
 

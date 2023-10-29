@@ -16,13 +16,14 @@ public class AttackRange : MonoBehaviour
     {
         parent = transform.GetComponentInParent<E_unitMove>();
 
-        StartCoroutine("Find_Target");
+        //StartCoroutine("Find_Target");
     }
 
     private void OnTriggerEnter(Collider col)
     {
         if (col.CompareTag(player))
         {
+            StartCoroutine("Find_Target");
             targets.Add(col.gameObject);
         }
     }
@@ -33,7 +34,12 @@ public class AttackRange : MonoBehaviour
         {
             targets.Remove(col.gameObject);
             p_unit = null;
-            parent.e_State = E_unitMove.E_UnitState.Idle;
+
+            if (targets == null)
+            {
+                StopCoroutine("Find_Target");
+                parent.e_State = E_unitMove.E_UnitState.Idle;
+            }
         }
     }
 

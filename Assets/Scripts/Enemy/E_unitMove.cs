@@ -83,11 +83,6 @@ public class E_unitMove : MonoBehaviour
 
     private void FixedUpdate()
     {
-        //if (ehealth <= 0)         //ÇöÀç ¹Ì»ç¿ëÀÎµ¥ È¤½Ã¸ô¶ó ÀÏ´Ü ³öµÒ
-        //{
-        //    Invoke("E_Die", 3f);
-        //}
-
         Eslider.value = ehealth / maxhp; 
         ESslider.value = eshieldValue / maxS; //
     }
@@ -157,7 +152,7 @@ public class E_unitMove : MonoBehaviour
         if (ehealth > 0)
         {
             moving.SetDestination(dir);
-            moving.stoppingDistance = 2f;
+            //moving.stoppingDistance = 2f;
 
             if(Vector3.Distance(transform.position, dir) <= 3f)
             {
@@ -181,14 +176,14 @@ public class E_unitMove : MonoBehaviour
 
             StartCoroutine(Damage(dir, p_unit));
         }
-        else if (Vector3.Distance(transform.position, dir) <= 3f && p_unit.uhealth > 0)
+        else if (Vector3.Distance(transform.position, dir) <= 5f && p_unit.uhealth > 0)
         {
             moving.isStopped = true;
             moving.velocity = Vector3.zero;
 
             StartCoroutine(Damage(dir, p_unit));
         }
-        else if (Vector3.Distance(transform.position, dir) > 3f)
+        else if (Vector3.Distance(transform.position, dir) > 5f)
         {
             moving.isStopped = false;
             moving.SetDestination(dir);
@@ -200,6 +195,10 @@ public class E_unitMove : MonoBehaviour
     IEnumerator Damage(Vector3 dir, UnitController p_unit)
     {
         WaitForSeconds wait = new WaitForSeconds(1f);
+
+        moving.isStopped = true;
+        moving.velocity = Vector3.zero;
+        transform.LookAt(dir);
 
         if (EnemySkillManager.instance.useSkill)
         {
@@ -490,6 +489,7 @@ public class E_unitMove : MonoBehaviour
         }
 
         E_attackRange.SetActive(false);
+        targetUnit = null;
         Hera.SetActive(true);
 
         yield return new WaitForSeconds(sec);

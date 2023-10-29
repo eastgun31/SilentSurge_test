@@ -89,12 +89,6 @@ public class UnitController : MonoBehaviour
 
         Uslider.value = uhealth / maxhp;
         Sslider.value = ushieldValue / maxS; //
-
-
-        //if (uhealth <= 0)             //ÇöÀç ¹Ì»ç¿ëÀÎµ¥ È¤½Ã¸ô¶ó ÀÏ´Ü ³öµÒ
-        //{
-        //    Invoke("P_Die", 3f);
-        //}
     }
 
     public void SelectUnit()
@@ -194,7 +188,7 @@ public class UnitController : MonoBehaviour
         if (uhealth > 0)
         {
             navMeshAgent.SetDestination(dir);
-            navMeshAgent.stoppingDistance = 2f;
+            //navMeshAgent.stoppingDistance = 2f;
 
             if(Vector3.Distance(transform.position, dir) <= 3f)
             {
@@ -234,7 +228,9 @@ public class UnitController : MonoBehaviour
     {
         WaitForSeconds wait = new WaitForSeconds(1f);
 
-        //yield return wait;
+        navMeshAgent.isStopped = true;
+        navMeshAgent.velocity = Vector3.zero;
+        transform.LookAt(dir);
 
         if (uhealth > 0 && e_unit.ehealth > 0 && time > 1f && u_State == unitState.Battle)
         {
@@ -525,8 +521,9 @@ public class UnitController : MonoBehaviour
     {
         navMeshAgent.isStopped = true;
         navMeshAgent.velocity = Vector3.zero;
-
         P_attackRange.SetActive(false);
+        targetUnit = null;
+
         Hera.SetActive(true);
 
         yield return new WaitForSeconds(sec);

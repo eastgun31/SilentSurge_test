@@ -54,6 +54,7 @@ public class Fow_Script : MonoBehaviour {
         fogPlane.transform.localRotation = Quaternion.Euler(270, 0, planeRotation);
         fowCamera.fieldOfView = mainCamera.fieldOfView;
 
+        fogPlaneMesh.colors = fogPlaneColors;
     }
 
     void Update() 

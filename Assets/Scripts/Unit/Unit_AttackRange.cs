@@ -24,15 +24,15 @@ public class Unit_AttackRange : MonoBehaviour
     {
         parent = transform.GetComponentInParent<UnitController>();
 
-        StartCoroutine("Find_Target");
+        //StartCoroutine("Find_Target");
     }
 
-    // Update is called once per frame
 
     private void OnTriggerEnter(Collider col)
     {
         if (col.CompareTag(enemy))
         {
+            StartCoroutine("Find_Target");
             targets.Add(col.gameObject);
         }
     }
@@ -43,7 +43,12 @@ public class Unit_AttackRange : MonoBehaviour
         {
             targets.Remove(col.gameObject);
             e_unit = null;
-            parent.u_State = UnitController.unitState.Idle;
+
+            if (targets == null)
+            {
+                parent.u_State = UnitController.unitState.Idle;
+                StopCoroutine("Find_Target");
+            }
         }
     }
 
