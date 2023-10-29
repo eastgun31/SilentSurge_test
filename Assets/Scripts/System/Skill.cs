@@ -119,7 +119,6 @@ public class Skill : MonoBehaviour
                 else if (Skill_Set.instance.Aphrodite_S)
                 {
                     UseAphroditeSkill();
-                    audio_Manager.PlaySFX(audio_Manager.Aphrodite);
                 }                 
                 else { }
             }
