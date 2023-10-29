@@ -9,10 +9,4 @@ public class Loby : MonoBehaviour
     {
         FindAnyObjectByType<Audio_Manager>().Loby_Music();
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

@@ -9,10 +9,4 @@ public class story : MonoBehaviour
     {
         FindAnyObjectByType<Audio_Manager>().Story_Music();
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

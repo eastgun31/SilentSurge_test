@@ -10,10 +10,4 @@ public class Main : MonoBehaviour
     {
         FindAnyObjectByType<Audio_Manager>().Main_Music();
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
