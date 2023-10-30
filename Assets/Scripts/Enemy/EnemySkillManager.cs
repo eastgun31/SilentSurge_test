@@ -51,6 +51,7 @@ public class EnemySkillManager : MonoBehaviour
     public GameObject PoseidonSkill;
     public GameObject HadesSkill;
     public GameObject HeraSkill;
+    public GameObject AphroditeSkill;
     public GameObject ApolloSkill; //아폴론 액티브
 
     // Start is called before the first frame update
@@ -240,6 +241,8 @@ public class EnemySkillManager : MonoBehaviour
             if (e_unit != null)
             {
                 e_unit.isHades = true;
+                e_unit.Hades.SetActive(true);
+
                 StartCoroutine(e_unit.HadesDuration(15f));
             }
         }
@@ -301,6 +304,8 @@ public class EnemySkillManager : MonoBehaviour
         UnitController p_unit = unit.GetComponent<UnitController>();
         p_unit.AphroditeChange(dir, pointPosition);
 
+        AphroditeSkill.SetActive(true);
+        AphroditeSkill.transform.position = dir;
         useSkill = false;
         StartCoroutine(Num1_Skill_Cooldown(20f));
     }

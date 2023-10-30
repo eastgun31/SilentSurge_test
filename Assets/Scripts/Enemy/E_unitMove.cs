@@ -505,7 +505,11 @@ public class E_unitMove : MonoBehaviour
         yield return new WaitForSeconds(duration);
 
         if (isHades)
+        {
             isHades = false;
+            Hades.SetActive(false);
+        }
+            
     }
 
     public void AphroditeChange(Vector3 spawnPoint)

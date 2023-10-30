@@ -71,6 +71,7 @@ public class Points : MonoBehaviour
                         EnemySpawn.instance.gold += 100;
                         GameManager.instance.e_score++;
                         GameManager.instance.p_score--;
+                        GameManager.instance.attacking = false;
                     }
                 }
                 else if (pointcheck == 2) //pointcheck가 0이었다가 2가 되면 재화 획득
