@@ -527,7 +527,7 @@ public class Skill : MonoBehaviour
 
     void UseDemeterSkill() //¿Á»≠
     {
-        GameManager.instance.gold += 100;
+        GameManager.instance.gold += 70;
 
         itemLimit--;
     }
