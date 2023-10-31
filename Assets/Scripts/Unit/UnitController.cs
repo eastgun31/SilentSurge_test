@@ -489,7 +489,7 @@ public class UnitController : MonoBehaviour
     {
         ushieldValue += shield;
 
-        StartCoroutine(Delay(original_ushieldValue, 10f));
+        StartCoroutine(Delay(original_ushieldValue, 7f));
     }
 
     IEnumerator Shieldcheck()

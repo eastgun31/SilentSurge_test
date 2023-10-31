@@ -60,7 +60,7 @@ public class EnemySkillManager : MonoBehaviour
     {
         audio_Manager = FindAnyObjectByType<Audio_Manager>();
         useSkill = true;
-        itemLimit = 3;
+        itemLimit = 5;
     }
 
 
@@ -201,13 +201,13 @@ public class EnemySkillManager : MonoBehaviour
             if (unit != null)
             {
                 // 스킬로 인한 데미지 적용
-                unit.ZuesDamage(20);
+                unit.ZuesDamage(50);
             }
         }
 
         useSkill = false;
 
-        StartCoroutine(Num1_Skill_Cooldown(15f));
+        StartCoroutine(Num1_Skill_Cooldown(10f));
         StartCoroutine(DeactiveSkill(ZeusSkill, 3f));
     }
     void UsePoseidonSkill(Vector3 dir)
@@ -243,12 +243,12 @@ public class EnemySkillManager : MonoBehaviour
                 e_unit.isHades = true;
                 e_unit.Hades.SetActive(true);
 
-                StartCoroutine(e_unit.HadesDuration(15f));
+                StartCoroutine(e_unit.HadesDuration(10f));
             }
         }
 
         useSkill = false;
-        StartCoroutine(Num1_Skill_Cooldown(15f));
+        StartCoroutine(Num1_Skill_Cooldown(20f));
         StartCoroutine(DeactiveSkill(HadesSkill, 4f));
     }
     //2번 액티브 스킬-------------------------------------------------------------------------------------------
@@ -264,7 +264,7 @@ public class EnemySkillManager : MonoBehaviour
             if (unit != null)
             {
                 //속박 코드
-                StartCoroutine(unit.HeraStun(3));
+                StartCoroutine(unit.HeraStun(5));
             }
         }
 
@@ -286,18 +286,18 @@ public class EnemySkillManager : MonoBehaviour
             if (e_unit != null)
             {
                 //힐량 조정
-                e_unit.ApolloHeal(50);
+                e_unit.ApolloHeal(30);
             }
         }
 
         useSkill = false;
-        StartCoroutine(Num1_Skill_Cooldown(20f));
+        StartCoroutine(Num1_Skill_Cooldown(15f));
         StartCoroutine(DeactiveSkill(ApolloSkill,3f));
     }
     void UseAthenaSkill()
     {
         useSkill = false;
-        StartCoroutine(Num1_Skill_Cooldown(20f));
+        StartCoroutine(Num1_Skill_Cooldown(10f));
     }
     void UseAphroditeSkill(Vector3 dir, UnitController unit, Vector3 pointPosition)
     {
@@ -307,7 +307,7 @@ public class EnemySkillManager : MonoBehaviour
         AphroditeSkill.SetActive(true);
         AphroditeSkill.transform.position = dir;
         useSkill = false;
-        StartCoroutine(Num1_Skill_Cooldown(20f));
+        StartCoroutine(Num1_Skill_Cooldown(15f));
     }
 
     //소모스킬-------------------------------------------------------------------------------------------

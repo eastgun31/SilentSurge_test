@@ -448,7 +448,7 @@ public class E_unitMove : MonoBehaviour
     {
         eshieldValue += shield;
 
-        StartCoroutine(Delay(original_eshieldValue, 5f));
+        StartCoroutine(Delay(original_eshieldValue, 7f));
     }
 
     IEnumerator Shieldcheck()
@@ -571,7 +571,7 @@ public class E_unitMove : MonoBehaviour
                 Hestia.SetActive(true);
                 //EnemySkillManager.instance.usingItem = false;
 
-                ehealth += 20;
+                ehealth += 15;
 
                 yield return new WaitForSeconds(2f);
 

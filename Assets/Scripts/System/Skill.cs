@@ -32,7 +32,7 @@ public class Skill : MonoBehaviour
 
     float buffDuration = 5f; // 스킬 지속 시간
     bool isBuffActive = false; // 스킬 활성화 여부
-    public int itemLimit = 3; // 스킬 횟수 제한
+    public int itemLimit; // 스킬 횟수 제한
 
     public GameObject skillRangePrefab; // 범위 표시용 프리팹
     private GameObject skillRangeInstance; // 범위 표시용 인스턴스
@@ -65,6 +65,7 @@ public class Skill : MonoBehaviour
     }
     private void Start()
     {
+        itemLimit = 5;
         audio_Manager = FindAnyObjectByType<Audio_Manager>();
     }
 
@@ -282,14 +283,14 @@ public class Skill : MonoBehaviour
                 if (E_unit != null)
                 {
                     // 스킬로 인한 데미지 적용
-                    E_unit.ZeusDamage(20);
+                    E_unit.ZeusDamage(50);
                 }
             }
         }
         isSkillReady_1 = false;
 
         CancelSkill();
-        StartCoroutine(Num1_Skill_Cooldown(5f));
+        StartCoroutine(Num1_Skill_Cooldown(10f));
         StartCoroutine(DeactiveSkill(ZeusSkill, 3f));
     }
     void UsePoseidonSkill()
@@ -320,7 +321,7 @@ public class Skill : MonoBehaviour
         isSkillReady_1 = false;
 
         CancelSkill();
-        StartCoroutine(Num1_Skill_Cooldown(3f)); //쿨타임 적용
+        StartCoroutine(Num1_Skill_Cooldown(15f)); //쿨타임 적용
         StartCoroutine(DeactiveSkill(PoseidonSkill, 4f));
     }
     //하데스 스킬
@@ -346,14 +347,14 @@ public class Skill : MonoBehaviour
                     unit.isHades = true; //부활 온
                     unit.Hades.SetActive(true); //유닛 내부 하데스 이펙트
 
-                    StartCoroutine(unit.HadesDuration(15f));
+                    StartCoroutine(unit.HadesDuration(10f));
                 }
             }
         }
         isSkillReady_1 = false;
 
         CancelSkill();
-        StartCoroutine(Num1_Skill_Cooldown(3f)); //쿨타임 적용
+        StartCoroutine(Num1_Skill_Cooldown(20f)); //쿨타임 적용
         StartCoroutine(DeactiveSkill(HadesSkill, 4f));
     }
     //2번 액티브 스킬-------------------------------------------------------------------------------------------
@@ -378,14 +379,14 @@ public class Skill : MonoBehaviour
                 if (E_unit != null)
                 {
                     //속박 코드
-                    StartCoroutine(E_unit.HeraStun(3));
+                    StartCoroutine(E_unit.HeraStun(5));
                 }
             }
         }
         isSkillReady_2 = false;
 
         CancelSkill();
-        StartCoroutine(Num2_Skill_Cooldown(3f)); //쿨타임 적용
+        StartCoroutine(Num2_Skill_Cooldown(20f)); //쿨타임 적용
         StartCoroutine(DeactiveSkill(HeraSkill, 1f));
     }
     //아폴론 스킬
@@ -410,14 +411,14 @@ public class Skill : MonoBehaviour
                 if (unit != null)
                 {
                     //힐량 조정
-                    unit.ApolloHeal(50);
+                    unit.ApolloHeal(30);
                 }
             }
         }
         isSkillReady_2 = false;
 
         CancelSkill();
-        StartCoroutine(Num2_Skill_Cooldown(3f)); //쿨타임 적용
+        StartCoroutine(Num2_Skill_Cooldown(15f)); //쿨타임 적용
         StartCoroutine(DeactiveSkill(ApolloSkill, 3f));
     }
     //아테나 스킬
@@ -439,7 +440,7 @@ public class Skill : MonoBehaviour
 
         isSkillReady_2 = false;
         CancelSkill();
-        StartCoroutine(Num2_Skill_Cooldown(5f));
+        StartCoroutine(Num2_Skill_Cooldown(10f));
     }
     //아프로디테 스킬
     void UseAphroditeSkill()
@@ -463,6 +464,7 @@ public class Skill : MonoBehaviour
         isSkillReady_2 = false;
 
         CancelSkill();
+        StartCoroutine(Num2_Skill_Cooldown(15f));
         StartCoroutine(DeactiveSkill(AphroditeSkill, 2f));
     }
 
@@ -493,7 +495,7 @@ public class Skill : MonoBehaviour
             //리스트안에 있는 유닛 전부에게 적용
             if (IsUnitInList(unit))
             {
-                unit.uhealth += 20;
+                unit.uhealth += 15;
 
                 unit.Hestia.SetActive(true);
 
