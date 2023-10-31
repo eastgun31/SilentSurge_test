@@ -290,7 +290,7 @@ public class Skill : MonoBehaviour
         isSkillReady_1 = false;
 
         CancelSkill();
-        StartCoroutine(Num1_Skill_Cooldown(10f));
+        StartCoroutine(Num1_Skill_Cooldown(20f));
         StartCoroutine(DeactiveSkill(ZeusSkill, 3f));
     }
     void UsePoseidonSkill()
@@ -321,7 +321,7 @@ public class Skill : MonoBehaviour
         isSkillReady_1 = false;
 
         CancelSkill();
-        StartCoroutine(Num1_Skill_Cooldown(15f)); //쿨타임 적용
+        StartCoroutine(Num1_Skill_Cooldown(25f)); //쿨타임 적용
         StartCoroutine(DeactiveSkill(PoseidonSkill, 4f));
     }
     //하데스 스킬
@@ -354,7 +354,7 @@ public class Skill : MonoBehaviour
         isSkillReady_1 = false;
 
         CancelSkill();
-        StartCoroutine(Num1_Skill_Cooldown(20f)); //쿨타임 적용
+        StartCoroutine(Num1_Skill_Cooldown(30f)); //쿨타임 적용
         StartCoroutine(DeactiveSkill(HadesSkill, 4f));
     }
     //2번 액티브 스킬-------------------------------------------------------------------------------------------
@@ -386,7 +386,7 @@ public class Skill : MonoBehaviour
         isSkillReady_2 = false;
 
         CancelSkill();
-        StartCoroutine(Num2_Skill_Cooldown(20f)); //쿨타임 적용
+        StartCoroutine(Num2_Skill_Cooldown(25f)); //쿨타임 적용
         StartCoroutine(DeactiveSkill(HeraSkill, 1f));
     }
     //아폴론 스킬
@@ -418,7 +418,7 @@ public class Skill : MonoBehaviour
         isSkillReady_2 = false;
 
         CancelSkill();
-        StartCoroutine(Num2_Skill_Cooldown(15f)); //쿨타임 적용
+        StartCoroutine(Num2_Skill_Cooldown(20f)); //쿨타임 적용
         StartCoroutine(DeactiveSkill(ApolloSkill, 3f));
     }
     //아테나 스킬
@@ -440,7 +440,7 @@ public class Skill : MonoBehaviour
 
         isSkillReady_2 = false;
         CancelSkill();
-        StartCoroutine(Num2_Skill_Cooldown(10f));
+        StartCoroutine(Num2_Skill_Cooldown(15f));
     }
     //아프로디테 스킬
     void UseAphroditeSkill()
@@ -459,7 +459,7 @@ public class Skill : MonoBehaviour
 
             AphroditeSkill.SetActive(true);
             AphroditeSkill.transform.position = spawnPosition;
-            StartCoroutine(Num2_Skill_Cooldown(15f));
+            StartCoroutine(Num2_Skill_Cooldown(20f));
         }
         isSkillReady_2 = false;
 
@@ -513,7 +513,7 @@ public class Skill : MonoBehaviour
             if (IsUnitInList(unit))
             {
                 originalDamage = unit.uattackPower;
-                unit.uattackPower += 5;
+                unit.uattackPower *= 2;
 
                 unit.Dionysus.SetActive(true);
 

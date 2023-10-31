@@ -207,7 +207,7 @@ public class EnemySkillManager : MonoBehaviour
 
         useSkill = false;
 
-        StartCoroutine(Num1_Skill_Cooldown(10f));
+        StartCoroutine(Num1_Skill_Cooldown(20f));
         StartCoroutine(DeactiveSkill(ZeusSkill, 3f));
     }
     void UsePoseidonSkill(Vector3 dir)
@@ -229,7 +229,7 @@ public class EnemySkillManager : MonoBehaviour
         }
 
         useSkill = false;
-        StartCoroutine(Num1_Skill_Cooldown(15f));
+        StartCoroutine(Num1_Skill_Cooldown(25f));
         StartCoroutine(DeactiveSkill(PoseidonSkill, 4f));
     }
     void UseHadesSkill(Vector3 dir)
@@ -248,7 +248,7 @@ public class EnemySkillManager : MonoBehaviour
         }
 
         useSkill = false;
-        StartCoroutine(Num1_Skill_Cooldown(20f));
+        StartCoroutine(Num1_Skill_Cooldown(30f));
         StartCoroutine(DeactiveSkill(HadesSkill, 4f));
     }
     //2번 액티브 스킬-------------------------------------------------------------------------------------------
@@ -269,7 +269,7 @@ public class EnemySkillManager : MonoBehaviour
         }
 
         useSkill = false;
-        StartCoroutine(Num1_Skill_Cooldown(20f));
+        StartCoroutine(Num1_Skill_Cooldown(25f));
         StartCoroutine(DeactiveSkill(HeraSkill, 1f));
     }
 
@@ -286,12 +286,12 @@ public class EnemySkillManager : MonoBehaviour
             if (e_unit != null)
             {
                 //힐량 조정
-                e_unit.ApolloHeal(30);
+                e_unit.ApolloHeal(40);
             }
         }
 
         useSkill = false;
-        StartCoroutine(Num1_Skill_Cooldown(15f));
+        StartCoroutine(Num1_Skill_Cooldown(20f));
         StartCoroutine(DeactiveSkill(ApolloSkill,3f));
     }
     void UseAthenaSkill()
@@ -307,7 +307,7 @@ public class EnemySkillManager : MonoBehaviour
         AphroditeSkill.SetActive(true);
         AphroditeSkill.transform.position = dir;
         useSkill = false;
-        StartCoroutine(Num1_Skill_Cooldown(15f));
+        StartCoroutine(Num1_Skill_Cooldown(20f));
     }
 
     //소모스킬-------------------------------------------------------------------------------------------

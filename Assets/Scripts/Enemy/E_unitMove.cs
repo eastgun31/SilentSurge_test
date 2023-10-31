@@ -585,7 +585,7 @@ public class E_unitMove : MonoBehaviour
                 //EnemySkillManager.instance.usingItem = false;
 
                 float originalDamage = eattackPower;
-                eattackPower += 5;
+                eattackPower *= 2;
 
                 yield return new WaitForSeconds(5f);
 
