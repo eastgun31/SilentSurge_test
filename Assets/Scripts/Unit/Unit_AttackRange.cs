@@ -54,7 +54,7 @@ public class Unit_AttackRange : MonoBehaviour
 
     IEnumerator Find_Target()
     {
-        WaitForSeconds wait = new WaitForSeconds(1f);
+        WaitForSeconds wait = new WaitForSeconds(0.5f);
 
         if (targets != null)
         {

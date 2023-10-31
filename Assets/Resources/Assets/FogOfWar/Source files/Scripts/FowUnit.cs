@@ -20,8 +20,4 @@ public class FowUnit : MonoBehaviour {
         Fow_Script2D.fowUnits.Remove(this);
     }
 
-    // Update is called once per frame
-    void Update () {
-		
-	}
 }

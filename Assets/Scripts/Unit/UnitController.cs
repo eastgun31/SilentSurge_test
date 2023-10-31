@@ -41,6 +41,8 @@ public class UnitController : MonoBehaviour
     public float maxhp;
     public Slider Sslider; //
     public float maxS; //
+    public GameObject arrow; //화살
+    public Transform shotpos; //발사위치
 
 
     //최적화 변수들
@@ -237,6 +239,13 @@ public class UnitController : MonoBehaviour
             time = 0;
             transform.LookAt(dir);
             playerAnim.SetTrigger(attack);
+
+            if(unitType == 1)
+            {
+                Instantiate(arrow, shotpos.position, Quaternion.identity);
+                //arrow.transform.rotation = Quaternion.Euler(-90, 0, 0);
+                arrow.GetComponent<Arrow>().shotdir = dir;
+            }
 
             if (e_unit.eshieldValue > 0)
             {
@@ -478,6 +487,7 @@ public class UnitController : MonoBehaviour
     public void ZuesDamage(float damage)
     {
         uhealth -= damage;
+        playerAnim.SetTrigger("hit");
     }
 
     public void ApolloHeal(float heal)

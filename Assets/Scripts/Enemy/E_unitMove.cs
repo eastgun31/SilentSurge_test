@@ -45,6 +45,8 @@ public class E_unitMove : MonoBehaviour
 
     public Slider ESslider; //
     public float maxS; //
+    public GameObject arrow;
+    public Transform shotpos;
 
     private Animator enemyAnim;
 
@@ -176,7 +178,7 @@ public class E_unitMove : MonoBehaviour
 
             StartCoroutine(Damage(dir, p_unit));
         }
-        else if (Vector3.Distance(transform.position, dir) <= 5f && p_unit.uhealth > 0)
+        else if (Vector3.Distance(transform.position, dir) <= 3f && p_unit.uhealth > 0)
         {
             moving.isStopped = true;
             moving.velocity = Vector3.zero;
@@ -211,6 +213,13 @@ public class E_unitMove : MonoBehaviour
             time = 0;
             transform.LookAt(dir);
             enemyAnim.SetTrigger(attack);
+
+            if (unitType == 1)
+            {
+                Instantiate(arrow, shotpos.position, Quaternion.identity);
+                //arrow.transform.rotation = Quaternion.Euler(-90, 0, 0);
+                arrow.GetComponent<Arrow>().shotdir = dir;
+            }
 
             if (p_unit.ushieldValue > 0)
             {
@@ -442,6 +451,7 @@ public class E_unitMove : MonoBehaviour
     public void ZeusDamage(float damage)
     {
         ehealth -= damage;
+        enemyAnim.SetTrigger("hit");
     }
 
     public void PoseidonShield(int shield)
