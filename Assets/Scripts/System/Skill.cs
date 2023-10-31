@@ -459,12 +459,11 @@ public class Skill : MonoBehaviour
 
             AphroditeSkill.SetActive(true);
             AphroditeSkill.transform.position = spawnPosition;
-            StartCoroutine(Num2_Skill_Cooldown(3f));
+            StartCoroutine(Num2_Skill_Cooldown(15f));
         }
         isSkillReady_2 = false;
 
         CancelSkill();
-        StartCoroutine(Num2_Skill_Cooldown(15f));
         StartCoroutine(DeactiveSkill(AphroditeSkill, 2f));
     }
 
