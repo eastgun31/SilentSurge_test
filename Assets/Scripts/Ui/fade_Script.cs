@@ -9,8 +9,6 @@ public class fade_Script : MonoBehaviour
     public Image image;
     public Image image2;
 
-    public GameObject text_box;
-
     public GameObject im_0;
     public GameObject im_1;
     public GameObject im_2;
@@ -23,7 +21,6 @@ public class fade_Script : MonoBehaviour
     public GameObject im_9;
     public GameObject im_10;
 
-    public Text Name;
     public Text _text;
 
     public int i = 0;
@@ -36,8 +33,7 @@ public class fade_Script : MonoBehaviour
         if (i == 0)
         {
             im_0.SetActive(true);
-            Name.text = "이름";
-            _text.text = "대화내용";
+            _text.text = "여느때와 같이 올림포스의 신들이 연회를 즐기고 있다";
         }
     }
 
@@ -87,7 +83,6 @@ public class fade_Script : MonoBehaviour
     IEnumerator textboxon()
     {
         yield return new WaitForSeconds(2f);
-        text_box.SetActive(true);
     }
 
     public void Quit()
@@ -103,20 +98,17 @@ public class fade_Script : MonoBehaviour
         {
             im_0.SetActive(false);
             im_1.SetActive(true);
-            Name.text = "1";
-            _text.text = "1";
+            _text.text = "그들 중 유독 제우스가 지루한 표정으로 술잔을 들이키고 있다";
         }
         else if (i == 2)
         {
             im_2.SetActive(true);
-            Name.text = "2";
-            _text.text = "2";
+            _text.text = "그 모습을 본 하데스가 인간들이 요새 연극을 즐기는데 우리도 비슷한걸 해보자고 제안한다";
         }
         else if (i == 3)
         {
             im_3.SetActive(true);
-            Name.text = "3";
-            _text.text = "3";
+            _text.text = "흥미를 느낀 헤라가 그럼 섬안에 인간들을 가둬 서로 싸움을 붙이자 제안한다";
         }
         else if (i == 4)
         {
@@ -125,20 +117,17 @@ public class fade_Script : MonoBehaviour
             im_3.SetActive(false);
 
             im_4.SetActive(true);
-            Name.text = "4";
-            _text.text = "4";
+            _text.text = "디오니소스도 흥미를 느낀다";
         }
         else if (i == 5)
         {
             im_5.SetActive(true);
-            Name.text = "5";
-            _text.text = "5";
+            _text.text = "아테나가 그럼 진형을 둘로 나눠 전쟁을 벌이게 하자면서 세세한 요소들을 제안한다";
         }
         else if (i == 6)
         {
             im_6.SetActive(true);
-            Name.text = "6";
-            _text.text = "6";
+            _text.text = "아프로디테가 각각 진형에 자신들의 축복을 내리고 우리끼리 내기를 하자 말한다";
         }
         else if (i == 7)
         {
@@ -147,20 +136,17 @@ public class fade_Script : MonoBehaviour
             im_6.SetActive(false);
 
             im_7.SetActive(true);
-            Name.text = "7";
-            _text.text = "7";
+            _text.text = "헤파이토스가 망치를 집어들고 당장 준비를 하러 가겠다고 한다";
         }
         else if (i == 8)
         {
             im_8.SetActive(true);
-            Name.text = "8";
-            _text.text = "8";
+            _text.text = "아르테미스도 헤타이토스를 돕겠다며 맞장구를 친다";
         }
         else if (i == 9)
         {
             im_9.SetActive(true);
-            Name.text = "9";
-            _text.text = "9";
+            _text.text = "아폴론이 그럼 바로 일을 진행하자고 제안한다";
         }
         else if (i == 10)
         {
@@ -169,8 +155,7 @@ public class fade_Script : MonoBehaviour
             im_9.SetActive(false);
 
             im_10.SetActive(true);
-            Name.text = "10";
-            _text.text = "10";
+            _text.text = "포세이돈이 흡족한 표정으로 말한다. 당장 진행시켜!";
         }
         else if (i == 11)
         {
