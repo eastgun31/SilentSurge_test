@@ -338,6 +338,7 @@ public class All_Lv_LCL : MonoBehaviour
     {
         GameObject newObject = Instantiate(Warrior_1L_Obj, spawnPoint, Quaternion.identity);
         GameManager.instance.All_Obj++;
+        GameManager.instance.e_population--;
         GameManager.instance.Aobj();
 
         //리스트에 추가
@@ -349,6 +350,7 @@ public class All_Lv_LCL : MonoBehaviour
     {
         GameObject newObject = Instantiate(Shield_1L_Obj, spawnPoint, Quaternion.identity);
         GameManager.instance.All_Obj++;
+        GameManager.instance.e_population--;
         GameManager.instance.Aobj();
 
         //리스트에 추가
@@ -360,6 +362,7 @@ public class All_Lv_LCL : MonoBehaviour
     {
         GameObject newObject = Instantiate(Archer_1L_Obj, spawnPoint, Quaternion.identity);
         GameManager.instance.All_Obj++;
+        GameManager.instance.e_population--;
         GameManager.instance.Aobj();
 
         //리스트에 추가
@@ -371,6 +374,7 @@ public class All_Lv_LCL : MonoBehaviour
     {
         GameObject newObject = Instantiate(HorseMan_1L_Obj, spawnPoint, Quaternion.identity);
         GameManager.instance.All_Obj++;
+        GameManager.instance.e_population--;
         GameManager.instance.Aobj();
 
         //리스트에 추가

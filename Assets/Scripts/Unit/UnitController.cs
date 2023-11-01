@@ -240,12 +240,12 @@ public class UnitController : MonoBehaviour
             transform.LookAt(dir);
             playerAnim.SetTrigger(attack);
 
-            if(unitType == 1)
-            {
-                Instantiate(arrow, shotpos.position, Quaternion.identity);
-                //arrow.transform.rotation = Quaternion.Euler(-90, 0, 0);
-                arrow.GetComponent<Arrow>().shotdir = dir;
-            }
+            //if(unitType == 1)
+            //{
+            //    Instantiate(arrow, shotpos.position, Quaternion.identity);
+            //    //arrow.transform.rotation = Quaternion.Euler(-90, 0, 0);
+            //    arrow.GetComponent<Arrow>().shotdir = dir;
+            //}
 
             if (e_unit.eshieldValue > 0)
             {
@@ -462,19 +462,18 @@ public class UnitController : MonoBehaviour
             RTSUnitController.instance.UnitList.Remove(this);
             RTSUnitController.instance.selectedUnitList.Remove(this);
 
-            GameManager.instance.Aobj();
             EnemySpawn.instance.gold += 2; //¾Æ±º À¯´Ö Á×¿´À» ¶§ Àû ÀçÈ­ È¹µæ
 
-
             playerAnim.SetTrigger("death");
+            GameManager.instance.All_Obj--;
+            GameManager.instance.Aobj();
+
             yield return new WaitForSeconds(2f);
 
             if (point)
             {
                 point.p_distance = 100f;
             }
-
-            GameManager.instance.All_Obj--;
 
             Destroy(gameObject);
             StopCoroutine(Pcheck());
@@ -573,9 +572,6 @@ public class UnitController : MonoBehaviour
         uhealth = 0;
 
         yield return new WaitForSeconds(0.2f);
-
-        GameManager.instance.All_Obj--;
-        GameManager.instance.e_population++;
 
         uhealth = 0;
 

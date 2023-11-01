@@ -60,6 +60,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        Aobj();
         e_population = 0;
         startTime = currentTime;
         active_Skill.gameObject.SetActive(false);

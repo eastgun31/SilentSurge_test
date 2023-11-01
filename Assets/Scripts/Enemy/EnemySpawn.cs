@@ -188,6 +188,8 @@ public class EnemySpawn : MonoBehaviour
         e_newunit.lastDesti = pointPosition;
         e_newunit.e_State = E_unitMove.E_UnitState.Battle;
         GameManager.instance.e_population++;
+        GameManager.instance.All_Obj--;
+        GameManager.instance.Aobj();
     }
     public void Aphrodite_Shield(Vector3 spawnPoint, Vector3 pointPosition)
     {
@@ -196,6 +198,8 @@ public class EnemySpawn : MonoBehaviour
         e_newunit.lastDesti = pointPosition;
         e_newunit.e_State = E_unitMove.E_UnitState.Battle;
         GameManager.instance.e_population++;
+        GameManager.instance.All_Obj--;
+        GameManager.instance.Aobj();
     }
     public void Aphrodite_Archer(Vector3 spawnPoint, Vector3 pointPosition)
     {
@@ -204,6 +208,8 @@ public class EnemySpawn : MonoBehaviour
         e_newunit.lastDesti = pointPosition;
         e_newunit.e_State = E_unitMove.E_UnitState.Battle;
         GameManager.instance.e_population++;
+        GameManager.instance.All_Obj--;
+        GameManager.instance.Aobj();
     }
     public void Aphrodite_HorseMan(Vector3 spawnPoint, Vector3 pointPosition)
     {
@@ -212,6 +218,8 @@ public class EnemySpawn : MonoBehaviour
         e_newunit.lastDesti = pointPosition;
         e_newunit.e_State = E_unitMove.E_UnitState.Battle;
         GameManager.instance.e_population++;
+        GameManager.instance.All_Obj--;
+        GameManager.instance.Aobj();
     }
 
 }

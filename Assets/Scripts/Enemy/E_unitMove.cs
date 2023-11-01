@@ -214,12 +214,12 @@ public class E_unitMove : MonoBehaviour
             transform.LookAt(dir);
             enemyAnim.SetTrigger(attack);
 
-            if (unitType == 1)
-            {
-                Instantiate(arrow, shotpos.position, Quaternion.identity);
-                //arrow.transform.rotation = Quaternion.Euler(-90, 0, 0);
-                arrow.GetComponent<Arrow>().shotdir = dir;
-            }
+            //if (unitType == 1)
+            //{
+            //    Instantiate(arrow, shotpos.position, Quaternion.identity);
+            //    //arrow.transform.rotation = Quaternion.Euler(-90, 0, 0);
+            //    arrow.GetComponent<Arrow>().shotdir = dir;
+            //}
 
             if (p_unit.ushieldValue > 0)
             {
@@ -537,9 +537,6 @@ public class E_unitMove : MonoBehaviour
             All_Lv_LCL.instance.Aphrodite_Archer(spawnPoint);
         else
             All_Lv_LCL.instance.Aphrodite_HorseMan(spawnPoint);
-
-        GameManager.instance.e_population--;
-        GameManager.instance.All_Obj++;
 
         ehealth = 0;
 
