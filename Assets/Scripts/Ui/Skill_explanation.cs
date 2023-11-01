@@ -18,6 +18,31 @@ public class Skill_explanation : MonoBehaviour
     public string nametext;
     public string explanationtext;
 
+    IEnumerator WaitForIt_1()
+    {
+        yield return new WaitForSeconds(5.0f);
+        ON_1 = true;
+        background_1.SetActive(false);
+    }
+    IEnumerator WaitForIt_2()
+    {
+        yield return new WaitForSeconds(5.0f);
+        ON_2 = true;
+        background_2.SetActive(false);
+    }
+    IEnumerator WaitForIt_3()
+    {
+        yield return new WaitForSeconds(5.0f);
+        ON_3 = true;
+        background_3.SetActive(false);
+    }
+    IEnumerator WaitForIt_4()
+    {
+        yield return new WaitForSeconds(5.0f);
+        ON_4 = true;
+        background_4.SetActive(false);
+    }
+
     public void Click_1()
     {
         if (ON_1 || background_1.activeSelf == false) 
@@ -29,15 +54,8 @@ public class Skill_explanation : MonoBehaviour
             Name.text = nametext;
             explanation.text = explanationtext;
             ON_1 = false;
+            StartCoroutine(WaitForIt_1());
         }
-        //else if (background_1.activeSelf == false)
-        //{
-        //    ON_1 = true;
-        //    background_1.SetActive(true);
-        //    background_2.SetActive(false);
-        //    background_3.SetActive(false);
-        //    background_4.SetActive(false);
-        //}
         else if (!ON_1 && background_1.activeSelf == true)
         {
             background_1.SetActive(false);
@@ -60,15 +78,8 @@ public class Skill_explanation : MonoBehaviour
             Name.text = nametext;
             explanation.text = explanationtext;
             ON_2 = false;
+            StartCoroutine(WaitForIt_2());
         }
-        //else if (background_2.activeSelf == false)
-        //{
-        //    ON_2 = true;
-        //    background_1.SetActive(false);
-        //    background_2.SetActive(true);
-        //    background_3.SetActive(false);
-        //    background_4.SetActive(false);
-        //}
         else if (!ON_2 && background_2.activeSelf == true)
         {
             background_1.SetActive(false);
@@ -91,15 +102,8 @@ public class Skill_explanation : MonoBehaviour
             Name.text = nametext;
             explanation.text = explanationtext;
             ON_3 = false;
+            StartCoroutine(WaitForIt_3());
         }
-        //else if (background_3.activeSelf == false)
-        //{
-        //    ON_3 = true;
-        //    background_1.SetActive(false);
-        //    background_2.SetActive(false);
-        //    background_3.SetActive(true);
-        //    background_4.SetActive(false);
-        //}
         else if (!ON_3 && background_3.activeSelf == true)
         {
             background_1.SetActive(false);
@@ -121,15 +125,8 @@ public class Skill_explanation : MonoBehaviour
             Name.text = nametext;
             explanation.text = explanationtext;
             ON_4 = false;
+            StartCoroutine(WaitForIt_4());
         }
-        //else if (background_4.activeSelf == false)
-        //{
-        //    ON_4 = true;
-        //    background_1.SetActive(false);
-        //    background_2.SetActive(false);
-        //    background_3.SetActive(false);
-        //    background_4.SetActive(true);
-        //}
         else if (!ON_4 && background_4.activeSelf == true)
         {
             background_1.SetActive(false);
