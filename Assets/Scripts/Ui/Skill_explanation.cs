@@ -20,24 +20,36 @@ public class Skill_explanation : MonoBehaviour
 
     IEnumerator WaitForIt_1()
     {
+        StopCoroutine("WaitForIt_2");
+        StopCoroutine("WaitForIt_3");
+        StopCoroutine("WaitForIt_4");
         yield return new WaitForSeconds(5.0f);
         ON_1 = true;
         background_1.SetActive(false);
     }
     IEnumerator WaitForIt_2()
     {
+        StopCoroutine("WaitForIt_1");
+        StopCoroutine("WaitForIt_3");
+        StopCoroutine("WaitForIt_4");
         yield return new WaitForSeconds(5.0f);
         ON_2 = true;
         background_2.SetActive(false);
     }
     IEnumerator WaitForIt_3()
     {
+        StopCoroutine("WaitForIt_1");
+        StopCoroutine("WaitForIt_2");
+        StopCoroutine("WaitForIt_4");
         yield return new WaitForSeconds(5.0f);
         ON_3 = true;
         background_3.SetActive(false);
     }
     IEnumerator WaitForIt_4()
     {
+        StopCoroutine("WaitForIt_1");
+        StopCoroutine("WaitForIt_2");
+        StopCoroutine("WaitForIt_3");
         yield return new WaitForSeconds(5.0f);
         ON_4 = true;
         background_4.SetActive(false);
@@ -54,7 +66,7 @@ public class Skill_explanation : MonoBehaviour
             Name.text = nametext;
             explanation.text = explanationtext;
             ON_1 = false;
-            StartCoroutine(WaitForIt_1());
+            StartCoroutine("WaitForIt_1");
         }
         else if (!ON_1 && background_1.activeSelf == true)
         {
@@ -78,7 +90,7 @@ public class Skill_explanation : MonoBehaviour
             Name.text = nametext;
             explanation.text = explanationtext;
             ON_2 = false;
-            StartCoroutine(WaitForIt_2());
+            StartCoroutine("WaitForIt_2");
         }
         else if (!ON_2 && background_2.activeSelf == true)
         {
@@ -102,7 +114,7 @@ public class Skill_explanation : MonoBehaviour
             Name.text = nametext;
             explanation.text = explanationtext;
             ON_3 = false;
-            StartCoroutine(WaitForIt_3());
+            StartCoroutine("WaitForIt_3");
         }
         else if (!ON_3 && background_3.activeSelf == true)
         {
@@ -125,7 +137,7 @@ public class Skill_explanation : MonoBehaviour
             Name.text = nametext;
             explanation.text = explanationtext;
             ON_4 = false;
-            StartCoroutine(WaitForIt_4());
+            StartCoroutine("WaitForIt_4");
         }
         else if (!ON_4 && background_4.activeSelf == true)
         {
