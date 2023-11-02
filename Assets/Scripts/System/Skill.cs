@@ -411,7 +411,7 @@ public class Skill : MonoBehaviour
                 if (unit != null)
                 {
                     //Èú·® Á¶Á¤
-                    unit.ApolloHeal(30);
+                    unit.ApolloHeal(40);
                 }
             }
         }
@@ -495,6 +495,8 @@ public class Skill : MonoBehaviour
             if (IsUnitInList(unit))
             {
                 unit.uhealth += 15;
+                if (unit.uhealth > unit.maxhp)
+                    unit.uhealth = unit.maxhp;
 
                 unit.Hestia.SetActive(true);
 

@@ -485,13 +485,28 @@ public class UnitController : MonoBehaviour
 
     public void ZuesDamage(float damage)
     {
-        uhealth -= damage;
         playerAnim.SetTrigger("hit");
+
+        if (ushieldValue >= damage)
+        {
+            ushieldValue -= damage;
+        }
+        else if (ushieldValue < damage)
+        {
+            uhealth += ushieldValue - damage;
+
+            ushieldValue = 0;
+        }
+        else
+            uhealth -= damage;
     }
 
     public void ApolloHeal(float heal)
     {
         uhealth += heal;
+
+        if (uhealth > maxhp)
+            uhealth = maxhp;
     }
 
     public void PoseidonShield(int shield)

@@ -450,8 +450,20 @@ public class E_unitMove : MonoBehaviour
 
     public void ZeusDamage(float damage)
     {
-        ehealth -= damage;
         enemyAnim.SetTrigger("hit");
+
+        if (eshieldValue >= damage)
+        {
+            eshieldValue -= damage;
+        }
+        else if (eshieldValue < damage)
+        {
+            ehealth += eshieldValue - damage;
+
+            eshieldValue = 0;
+        }
+        else
+            ehealth -= damage;
     }
 
     public void PoseidonShield(int shield)
@@ -486,6 +498,9 @@ public class E_unitMove : MonoBehaviour
     public void ApolloHeal(float heal)
     {
         ehealth += heal;
+
+        if (ehealth > maxhp)
+            ehealth = maxhp;
     }
 
     public IEnumerator HeraStun(float sec)
@@ -579,6 +594,9 @@ public class E_unitMove : MonoBehaviour
                 //EnemySkillManager.instance.usingItem = false;
 
                 ehealth += 15;
+
+                if (ehealth > maxhp)
+                    ehealth = maxhp;
 
                 yield return new WaitForSeconds(2f);
 
