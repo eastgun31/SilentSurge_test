@@ -9,7 +9,11 @@ public class GameManager : MonoBehaviour
 
     public GameObject scoreboard;  //스코어보드화면
     public Text Win_lose;  //승리 텍스트
-    //public GameObject draw; //무승부화면
+    public Text Player_Gold_Text; //플레이어 골드표시 텍스트
+    public Text Player_Unit; //플레이어 유닛표시 텍스트
+    public Text Enemy_Unit; //적 유닛표시 텍스트
+    public Text Player_Point;//점령지 표시
+    public Text Enemy_Point; //적군 점령지 표시
 
     //유닛스탯
     public int health = 100;
@@ -40,7 +44,7 @@ public class GameManager : MonoBehaviour
     //게임 시간
     public Text timerText;
     private float startTime;
-    private float currentTime = 181.0f;
+    private float currentTime = 181.0f; //181 = 3분
 
     //스킬 쿨타임
     public Text active_Skill;
@@ -90,6 +94,11 @@ public class GameManager : MonoBehaviour
         {
             Time.timeScale = 0;
             currentTime = 0;
+            scoreboard.SetActive(true); // 게임끝나고 스코어보드 표시
+            Player_Gold_Text.text = gold.ToString() + "G"; // 게임 끝나고 남은 재화 표시
+            Player_Unit.text = All_Obj.ToString() + " / 30"; //게임 끝나고 표시된 우리 유닛
+            Enemy_Unit.text = e_population.ToString() + " / 30"; // 게임 끝나고 표시된 적군 유닛
+
             // 타이머가 끝났을 때 게임종료 추후에 여기 추가
             int a = 0;
             int b = 0;
@@ -104,29 +113,29 @@ public class GameManager : MonoBehaviour
             if (a > b)
             {
                 Debug.Log("패배");
-                scoreboard.SetActive(true);
                 Win_lose.text = "패배";
                 Win_lose.color = Color.red;
+                Enemy_Point.text = a.ToString() + "/5"; //스코어보드 점령지 표시
+                Player_Point.text = b.ToString() + "/5";//스코어보드 점령지 표시
             }
             else if (a < b)
             {
                 Debug.Log("승리");
-                scoreboard.SetActive(true);
                 Win_lose.text = "승리";
+                Enemy_Point.text = a.ToString() + "/5";//스코어보드 점령지 표시
+                Player_Point.text = b.ToString() + "/5";//스코어보드 점령지 표시
             }
             else if (a == b)
             {
                 if (e_score > p_score)
                 {
                     Debug.Log("패배");
-                    scoreboard.SetActive(true);
                     Win_lose.text = "패배";
                     Win_lose.color = Color.red;
                 }
                 else if (e_score < p_score)
                 {
                     Debug.Log("승리");
-                    scoreboard.SetActive(true);
                     Win_lose.text = "승리";
                 }
             }
