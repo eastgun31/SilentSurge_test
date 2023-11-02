@@ -171,7 +171,7 @@ public class E_unitMove : MonoBehaviour
             targetUnit = null;
         }
 
-        if (unitType == 1 && Vector3.Distance(transform.position, dir) <= 10f && p_unit.uhealth > 0)
+        if (unitType == 1 && Vector3.Distance(transform.position, dir) <= 15f && p_unit.uhealth > 0)
         {
             moving.isStopped = true;
             moving.velocity = Vector3.zero;

@@ -204,7 +204,7 @@ public class UnitController : MonoBehaviour
             targetUnit = null;
         }
 
-        if (unitType == 1 && Vector3.Distance(transform.position, dir) <= 10f && e_unit.ehealth > 0)
+        if (unitType == 1 && Vector3.Distance(transform.position, dir) <= 15f && e_unit.ehealth > 0)
         {
             navMeshAgent.isStopped = true;
             navMeshAgent.velocity = Vector3.zero;
