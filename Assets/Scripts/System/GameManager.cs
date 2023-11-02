@@ -8,8 +8,10 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
 
     public GameObject scoreboard;  //스코어보드화면
-    public Text Win_lose;  //승리 텍스트
+    public Text Player_Text;  //승리 텍스트
+    public Text Enemy_Text;  //승리 텍스트
     public Text Player_Gold_Text; //플레이어 골드표시 텍스트
+    public Text Enemy_Gold_Text; //플레이어 골드표시 텍스트
     public Text Player_Unit; //플레이어 유닛표시 텍스트
     public Text Enemy_Unit; //적 유닛표시 텍스트
     public Text Player_Point;//점령지 표시
@@ -96,6 +98,7 @@ public class GameManager : MonoBehaviour
             currentTime = 0;
             scoreboard.SetActive(true); // 게임끝나고 스코어보드 표시
             Player_Gold_Text.text = gold.ToString() + "G"; // 게임 끝나고 남은 재화 표시
+            Enemy_Gold_Text.text = EnemySpawn.instance.gold.ToString() + "G"; //게임 끝나고 남은 적의 재화 표시
             Player_Unit.text = All_Obj.ToString() + " / 30"; //게임 끝나고 표시된 우리 유닛
             Enemy_Unit.text = e_population.ToString() + " / 30"; // 게임 끝나고 표시된 적군 유닛
 
@@ -105,40 +108,43 @@ public class GameManager : MonoBehaviour
             for (int i = 0; i < 5; i++)
             {
                 if (check[i] == 1)
-                    a++;
+                    ++a;
                 if (check[i] == 2)
-                    b++;
+                    ++b;
+                Enemy_Point.text = a.ToString() + "/5";//스코어보드 점령지 표시
+                Player_Point.text = b.ToString() + "/5";//스코어보드 점령지 표시
             }
 
             if (a > b)
             {
                 Debug.Log("패배");
-                Win_lose.text = "패배";
-                Win_lose.color = Color.red;
-                Enemy_Point.text = a.ToString() + "/5"; //스코어보드 점령지 표시
-                Player_Point.text = b.ToString() + "/5";//스코어보드 점령지 표시
+                Enemy_Text.text = "승리";
+                Player_Text.text = "패배";
+                Enemy_Text.color = Color.yellow;
+                Player_Text.color = Color.red;
             }
             else if (a < b)
             {
                 Debug.Log("승리");
-                Win_lose.text = "승리";
-                Enemy_Point.text = a.ToString() + "/5";//스코어보드 점령지 표시
-                Player_Point.text = b.ToString() + "/5";//스코어보드 점령지 표시
+                Player_Text.text = "승리";
+                Enemy_Text.text = "패배";
+                Player_Text.color = Color.yellow;
+                Enemy_Text.color = Color.red;
             }
-            else if (a == b)
-            {
-                if (e_score > p_score)
-                {
-                    Debug.Log("패배");
-                    Win_lose.text = "패배";
-                    Win_lose.color = Color.red;
-                }
-                else if (e_score < p_score)
-                {
-                    Debug.Log("승리");
-                    Win_lose.text = "승리";
-                }
-            }
+            //else if (a == b)
+            //{
+            //    if (e_score > p_score)
+            //    {
+            //        Debug.Log("패배");
+            //        Win_lose.text = "패배";
+            //        Win_lose.color = Color.red;
+            //    }
+            //    else if (e_score < p_score)
+            //    {
+            //        Debug.Log("승리");
+            //        Win_lose.text = "승리";
+            //    }
+            //}
 
         }
 
