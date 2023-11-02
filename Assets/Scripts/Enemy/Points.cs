@@ -64,11 +64,13 @@ public class Points : MonoBehaviour
                     if (ppoint == 0)
                     {
                         EnemySpawn.instance.gold += 250;
+                        EnemySpawn.instance.etotal_gold += 250;
                         GameManager.instance.e_score++;
                     }
                     else if(ppoint == 2)
                     {
                         EnemySpawn.instance.gold += 150;
+                        EnemySpawn.instance.etotal_gold += 150;
                         GameManager.instance.e_score++;
                         GameManager.instance.p_score--;
                         GameManager.instance.attacking = false;
@@ -79,11 +81,13 @@ public class Points : MonoBehaviour
                     if (ppoint == 0)
                     {
                         GameManager.instance.gold += 250;
+                        GameManager.instance.total_gold += 250;
                         GameManager.instance.p_score++;
                     }
                     else if (ppoint == 1)
                     {
                         GameManager.instance.gold += 150;
+                        GameManager.instance.total_gold += 150;
                         GameManager.instance.p_score++;
                         GameManager.instance.e_score--;
                     }

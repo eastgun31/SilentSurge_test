@@ -93,18 +93,18 @@ public class All_Lv_LCL : MonoBehaviour
         //HorseMan_spawnPosition = new Vector3(36, 0, 30);
 
         button_warrio_1Lr.interactable = (Gold >= 50); //검사 1레벨 5코인이 없을 시 버튼 비활성화
-        button_shield_1Lr.interactable = (Gold >= 50); //방패병 1레벨 5코인이 없을 시 버튼 비활성화
-        button_archer_1L.interactable = (Gold >= 80); //궁수 1레벨 8코인이 없을 시 버튼 비활성화
+        button_shield_1Lr.interactable = (Gold >= 70); //방패병 1레벨 5코인이 없을 시 버튼 비활성화
+        button_archer_1L.interactable = (Gold >= 70); //궁수 1레벨 8코인이 없을 시 버튼 비활성화
         button_horseMan_1L.interactable = (Gold >= 150); //기마병 1레벨 15코인이 없을 시 버튼 비활성화
 
         button_warrio_2Lr.interactable = (Gold >= 50); //검사 2레벨 5코인이 없을 시 버튼 비활성화
-        button_shield_2Lr.interactable = (Gold >= 50); //방패병 2레벨 5코인이 없을 시 버튼 비활성화
-        button_archer_2L.interactable = (Gold >= 80); //궁수 2레벨 8코인이 없을 시 버튼 비활성화
+        button_shield_2Lr.interactable = (Gold >= 70); //방패병 2레벨 5코인이 없을 시 버튼 비활성화
+        button_archer_2L.interactable = (Gold >= 70); //궁수 2레벨 8코인이 없을 시 버튼 비활성화
         button_horseMan_2L.interactable = (Gold >= 150); //기마병 2레벨 15코인이 없을 시 버튼 비활성화
 
         button_warrio_3Lr.interactable = (Gold >= 50); //검사 2레벨 5코인이 없을 시 버튼 비활성화
-        button_shield_3Lr.interactable = (Gold >= 50); //방패병 2레벨 5코인이 없을 시 버튼 비활성화
-        button_archer_3L.interactable = (Gold >= 80); //궁수 2레벨 8코인이 없을 시 버튼 비활성화
+        button_shield_3Lr.interactable = (Gold >= 70); //방패병 2레벨 5코인이 없을 시 버튼 비활성화
+        button_archer_3L.interactable = (Gold >= 70); //궁수 2레벨 8코인이 없을 시 버튼 비활성화
         button_horseMan_3L.interactable = (Gold >= 150); //기마병 2레벨 15코인이 없을 시 버튼 비활성화
 
         UpButton2L.interactable = (Gold >= 350); //본부 2레벨로 업그레이드 350코인이 없을 시 버튼 비활성화
@@ -134,9 +134,9 @@ public class All_Lv_LCL : MonoBehaviour
     private void Down_shield_1L()
     {
         if (U < 30)//방패병 유닛 제한 30
-            if (Gold >= 50)
+            if (Gold >= 70)
             {
-                GameManager.instance.gold -= 50; //버튼을 누르면 검사 1레벨 필요 재화 5씩 없앰
+                GameManager.instance.gold -= 70; //버튼을 누르면 방패병 1레벨 필요 재화 소모
                 GameObject newObject = Instantiate(Shield_1L_Obj, ShieldPoaition.transform.position, Quaternion.identity); //방패병 1레벨 유닛 생성
                // newObject.transform.position = ShieldPoaition.transform.position;
                 GameManager.instance.All_Obj++;
@@ -151,9 +151,9 @@ public class All_Lv_LCL : MonoBehaviour
     private void Down_archer_1L()
     {
         if (U < 30)//궁수 유닛 제한 30
-            if (Gold >= 80)
+            if (Gold >= 70)
             {
-                GameManager.instance.gold -= 80; //버튼을 누르면 궁수 1레벨 필요 재화 8씩 없앰
+                GameManager.instance.gold -= 70; //버튼을 누르면 궁수 1레벨 필요 재화 8씩 없앰
                 GameObject newObject = Instantiate(Archer_1L_Obj, ArcherPoaition.transform.position, Quaternion.identity); //궁수 1레벨 유닛 생성
                 //newObject.transform.position = ArcherPoaition.transform.position;
                 GameManager.instance.All_Obj++;
@@ -202,9 +202,9 @@ public class All_Lv_LCL : MonoBehaviour
     private void Down_shield_2L()
     {
         if (U < 30)//방패병 유닛 제한 30
-            if (Gold >= 50)
+            if (Gold >= 70)
             {
-                GameManager.instance.gold -= 50; //버튼을 누르면 검사 1레벨 필요 재화 5씩 없앰
+                GameManager.instance.gold -= 70; //버튼을 누르면 검사 1레벨 필요 재화 5씩 없앰
                 GameObject newObject = Instantiate(Shield_2L_Obj, ShieldPoaition.transform.position, Quaternion.identity); //방패병 2레벨 유닛 생성
                 //newObject.transform.position = ShieldPoaition.transform.position;
                 GameManager.instance.All_Obj++;
@@ -218,9 +218,9 @@ public class All_Lv_LCL : MonoBehaviour
     private void Down_archer_2L()
     {
         if (U < 30)//궁수 유닛 제한 30
-            if (Gold >= 80)
+            if (Gold >= 70)
             {
-                GameManager.instance.gold -= 80; //버튼을 누르면 궁수 1레벨 필요 재화 8씩 없앰
+                GameManager.instance.gold -= 70; //버튼을 누르면 궁수 1레벨 필요 재화 8씩 없앰
                 GameObject newObject = Instantiate(Archer_2L_Obj, ArcherPoaition.transform.position, Quaternion.identity); //궁수 2레벨 유닛 생성
                 //newObject.transform.position = ArcherPoaition.transform.position;
                 GameManager.instance.All_Obj++;
@@ -269,9 +269,9 @@ public class All_Lv_LCL : MonoBehaviour
     private void Down_shield_3L()
     {
         if (U < 30)//방패병 유닛 제한 30
-            if (Gold >= 50)
+            if (Gold >= 70)
             {
-                GameManager.instance.gold -= 50; //버튼을 누르면 검사 1레벨 필요 재화 5씩 없앰
+                GameManager.instance.gold -= 70; //버튼을 누르면 검사 1레벨 필요 재화 5씩 없앰
                 GameObject newObject = Instantiate(Shield_3L_Obj, ShieldPoaition.transform.position, Quaternion.identity); //방패병 2레벨 유닛 생성
                 //newObject.transform.position = ShieldPoaition.transform.position;
                 GameManager.instance.All_Obj++;
@@ -285,9 +285,9 @@ public class All_Lv_LCL : MonoBehaviour
     private void Down_archer_3L()
     {
         if (U < 30)//궁수 유닛 제한 30
-            if (Gold >= 80)
+            if (Gold >= 70)
             {
-                GameManager.instance.gold -= 80; //버튼을 누르면 궁수 1레벨 필요 재화 8씩 없앰
+                GameManager.instance.gold -= 70; //버튼을 누르면 궁수 1레벨 필요 재화 8씩 없앰
                 GameObject newObject = Instantiate(Archer_3L_Obj, ArcherPoaition.transform.position, Quaternion.identity); //궁수 2레벨 유닛 생성
                 //newObject.transform.position = ArcherPoaition.transform.position;
                 GameManager.instance.All_Obj++;

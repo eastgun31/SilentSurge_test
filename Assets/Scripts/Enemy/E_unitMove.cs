@@ -256,142 +256,6 @@ public class E_unitMove : MonoBehaviour
         }
     }
 
-
-    private void OnEnable()
-    {
-        if (unitNum == 0)
-        {
-            unitType = 0;
-            ehealth = GameManager.instance.health;
-            eattackPower = GameManager.instance.attackPower;
-            edefense = GameManager.instance.defense;
-            emoveSpeed = GameManager.instance.moveSpeed;
-        }
-        if (unitNum == 1)
-        {
-            unitType = 0;
-            ehealth = GameManager.instance.health + 50;
-            eattackPower = GameManager.instance.attackPower - 2;
-            edefense = GameManager.instance.defense + 2;
-            emoveSpeed = GameManager.instance.moveSpeed - 2;
-        }
-        if (unitNum == 2)
-        {
-            unitType = 1;
-            ehealth = GameManager.instance.health - 20;
-            eattackPower = GameManager.instance.attackPower + 3;
-            edefense = GameManager.instance.defense - 1;
-            emoveSpeed = GameManager.instance.moveSpeed + 1;
-        }
-        if (unitNum == 3)
-        {
-            unitType = 0;
-            ehealth = GameManager.instance.health + 100;
-            eattackPower = GameManager.instance.attackPower + 5;
-            edefense = GameManager.instance.defense + 5;
-            emoveSpeed = GameManager.instance.moveSpeed + 3;
-        }
-
-        if (unitNum == 4)
-        {
-            unitType = 0;
-            ehealth = GameManager.instance.health + 50;
-            eattackPower = GameManager.instance.attackPower + 5;
-            edefense = GameManager.instance.defense + 5;
-            emoveSpeed = GameManager.instance.moveSpeed;
-        }
-        if (unitNum == 5)
-        {
-            unitType = 0;
-            ehealth = GameManager.instance.health + 100;
-            eattackPower = GameManager.instance.attackPower + 3;
-            edefense = GameManager.instance.defense + 7;
-            emoveSpeed = GameManager.instance.moveSpeed - 2;
-        }
-        if (unitNum == 6)
-        {
-            unitType = 1;
-            ehealth = GameManager.instance.health + 30;
-            eattackPower = GameManager.instance.attackPower + 8;
-            edefense = GameManager.instance.defense + 4;
-            emoveSpeed = GameManager.instance.moveSpeed + 1;
-        }
-        if (unitNum == 7)
-        {
-            unitType = 0;
-            ehealth = GameManager.instance.health + 150;
-            eattackPower = GameManager.instance.attackPower + 10;
-            edefense = GameManager.instance.defense + 10;
-            emoveSpeed = GameManager.instance.moveSpeed + 3;
-        }
-
-        if (unitNum == 8)
-        {
-            unitType = 0;
-            ehealth = GameManager.instance.health + 100;
-            eattackPower = GameManager.instance.attackPower + 10;
-            edefense = GameManager.instance.defense + 10;
-            emoveSpeed = GameManager.instance.moveSpeed;
-        }
-        if (unitNum == 9)
-        {
-            unitType = 0;
-            ehealth = GameManager.instance.health + 150;
-            eattackPower = GameManager.instance.attackPower + 8;
-            edefense = GameManager.instance.defense + 12;
-            emoveSpeed = GameManager.instance.moveSpeed - 2;
-        }
-        if (unitNum == 10)
-        {
-            unitType = 1;
-            ehealth = GameManager.instance.health + 80;
-            eattackPower = GameManager.instance.attackPower + 13;
-            edefense = GameManager.instance.defense + 9;
-            emoveSpeed = GameManager.instance.moveSpeed + 1;
-        }
-        if (unitNum == 11)
-        {
-            unitType = 0;
-            ehealth = GameManager.instance.health + 200;
-            eattackPower = GameManager.instance.attackPower + 15;
-            edefense = GameManager.instance.defense + 15;
-            emoveSpeed = GameManager.instance.moveSpeed + 3;
-        }
-
-        //패시브--------------------------------------------------------------------
-        //검사 패시브가 켜지면   
-        if (EnemySkillManager.instance.e_passiveNow == 3)
-        {
-            if (unitNum == 0 || unitNum == 4 || unitNum == 8)
-            {
-                ehealth += 30;
-                eattackPower += 3;
-                edefense += 3;
-            }
-        }
-        //방패병
-        if (EnemySkillManager.instance.e_passiveNow == 1)
-        {
-            if (unitNum == 1 || unitNum == 5 || unitNum == 9)
-            {
-                ehealth += 30;
-                eattackPower += 3;
-                edefense += 3;
-            }
-        }
-        //궁수
-        if (EnemySkillManager.instance.e_passiveNow == 2)
-        {
-            if (unitNum == 2 || unitNum == 6 || unitNum == 10)
-            {
-                ehealth += 30;
-                eattackPower += 3;
-                edefense += 3;
-            }
-        }
-
-    }
-
     IEnumerator Pcheck()
     {
         WaitForSeconds wait = new WaitForSeconds(0.5f);
@@ -410,6 +274,7 @@ public class E_unitMove : MonoBehaviour
             targetUnit = null;
 
             GameManager.instance.gold += 10;
+            GameManager.instance.total_gold += 10;
 
             enemyAnim.SetTrigger("death");
 
@@ -629,5 +494,140 @@ public class E_unitMove : MonoBehaviour
         }
 
         StartCoroutine(usingItem());
+    }
+
+    private void OnEnable()
+    {
+        if (unitNum == 0)
+        {
+            unitType = 0;
+            ehealth = GameManager.instance.health;
+            eattackPower = GameManager.instance.attackPower;
+            edefense = GameManager.instance.defense;
+            emoveSpeed = GameManager.instance.moveSpeed;
+        }
+        if (unitNum == 1)
+        {
+            unitType = 0;
+            ehealth = GameManager.instance.health + 30;
+            eattackPower = GameManager.instance.attackPower - 3;
+            edefense = GameManager.instance.defense + 2;
+            emoveSpeed = GameManager.instance.moveSpeed - 1;
+        }
+        if (unitNum == 2)
+        {
+            unitType = 1;
+            ehealth = GameManager.instance.health - 20;
+            eattackPower = GameManager.instance.attackPower + 5;
+            edefense = GameManager.instance.defense - 1;
+            emoveSpeed = GameManager.instance.moveSpeed + 1;
+        }
+        if (unitNum == 3)
+        {
+            unitType = 0;
+            ehealth = GameManager.instance.health + 80;
+            eattackPower = GameManager.instance.attackPower + 7;
+            edefense = GameManager.instance.defense + 5;
+            emoveSpeed = GameManager.instance.moveSpeed + 3;
+        }
+
+        if (unitNum == 4)
+        {
+            unitType = 0;
+            ehealth = GameManager.instance.health + 50;
+            eattackPower = GameManager.instance.attackPower + 5;
+            edefense = GameManager.instance.defense + 5;
+            emoveSpeed = GameManager.instance.moveSpeed;
+        }
+        if (unitNum == 5)
+        {
+            unitType = 0;
+            ehealth = GameManager.instance.health + 80;
+            eattackPower = GameManager.instance.attackPower + 2;
+            edefense = GameManager.instance.defense + 7;
+            emoveSpeed = GameManager.instance.moveSpeed - 1;
+        }
+        if (unitNum == 6)
+        {
+            unitType = 1;
+            ehealth = GameManager.instance.health + 30;
+            eattackPower = GameManager.instance.attackPower + 10;
+            edefense = GameManager.instance.defense + 4;
+            emoveSpeed = GameManager.instance.moveSpeed + 1;
+        }
+        if (unitNum == 7)
+        {
+            unitType = 0;
+            ehealth = GameManager.instance.health + 130;
+            eattackPower = GameManager.instance.attackPower + 12;
+            edefense = GameManager.instance.defense + 10;
+            emoveSpeed = GameManager.instance.moveSpeed + 3;
+        }
+
+        if (unitNum == 8)
+        {
+            unitType = 0;
+            ehealth = GameManager.instance.health + 100;
+            eattackPower = GameManager.instance.attackPower + 10;
+            edefense = GameManager.instance.defense + 10;
+            emoveSpeed = GameManager.instance.moveSpeed;
+        }
+        if (unitNum == 9)
+        {
+            unitType = 0;
+            ehealth = GameManager.instance.health + 130;
+            eattackPower = GameManager.instance.attackPower + 7;
+            edefense = GameManager.instance.defense + 12;
+            emoveSpeed = GameManager.instance.moveSpeed - 1;
+        }
+        if (unitNum == 10)
+        {
+            unitType = 1;
+            ehealth = GameManager.instance.health + 80;
+            eattackPower = GameManager.instance.attackPower + 15;
+            edefense = GameManager.instance.defense + 9;
+            emoveSpeed = GameManager.instance.moveSpeed + 1;
+        }
+        if (unitNum == 11)
+        {
+            unitType = 0;
+            ehealth = GameManager.instance.health + 180;
+            eattackPower = GameManager.instance.attackPower + 17;
+            edefense = GameManager.instance.defense + 15;
+            emoveSpeed = GameManager.instance.moveSpeed + 3;
+        }
+
+        //패시브--------------------------------------------------------------------
+        //검사 패시브가 켜지면   
+        if (EnemySkillManager.instance.e_passiveNow == 3)
+        {
+            if (unitNum == 0 || unitNum == 4 || unitNum == 8)
+            {
+                ehealth += 30;
+                eattackPower += 3;
+                edefense += 3;
+            }
+        }
+        //방패병
+        if (EnemySkillManager.instance.e_passiveNow == 1)
+        {
+            if (unitNum == 1 || unitNum == 5 || unitNum == 9)
+            {
+                ehealth += 30;
+                eattackPower += 3;
+                edefense += 3;
+            }
+        }
+        //궁수
+        if (EnemySkillManager.instance.e_passiveNow == 2)
+        {
+            if (unitNum == 2 || unitNum == 6 || unitNum == 10)
+            {
+                ehealth += 30;
+                eattackPower += 3;
+                edefense += 3;
+            }
+        }
+
     }
 }

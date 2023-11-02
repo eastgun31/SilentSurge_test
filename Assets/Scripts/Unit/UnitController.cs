@@ -275,155 +275,6 @@ public class UnitController : MonoBehaviour
         }
     }
 
-    private void OnEnable()
-    {
-        //1·¾À¯´Ö
-        if (unitnumber == 0)
-        {
-            unitType = 0;
-            t_State = typeState.Sword;
-            uhealth = GameManager.instance.health;
-            uattackPower = GameManager.instance.attackPower;
-            udefense = GameManager.instance.defense;
-            umoveSpeed = GameManager.instance.moveSpeed;
-        }
-        if (unitnumber == 1)
-        {
-            unitType = 0;
-            t_State = typeState.Shield;
-            uhealth = GameManager.instance.health + 50;
-            uattackPower = GameManager.instance.attackPower - 2;
-            udefense = GameManager.instance.defense + 2;
-            umoveSpeed = GameManager.instance.moveSpeed - 2;
-        }
-        if (unitnumber == 2)
-        {
-            unitType = 1;
-            t_State = typeState.Archer;
-            uhealth = GameManager.instance.health - 20;
-            uattackPower = GameManager.instance.attackPower + 3;
-            udefense = GameManager.instance.defense - 1;
-            umoveSpeed = GameManager.instance.moveSpeed + 1;
-        }
-        if (unitnumber == 3)
-        {
-            unitType = 0;
-            t_State = typeState.Horse;
-            uhealth = GameManager.instance.health + 100;
-            uattackPower = GameManager.instance.attackPower + 5;
-            udefense = GameManager.instance.defense + 5;
-            umoveSpeed = GameManager.instance.moveSpeed + 3;
-        }
-        //2·¾À¯´Ö
-        if (unitnumber == 4)
-        {
-            unitType = 0;
-            t_State = typeState.Sword;
-            uhealth = GameManager.instance.health + 50;
-            uattackPower = GameManager.instance.attackPower + 5;
-            udefense = GameManager.instance.defense + 5;
-            umoveSpeed = GameManager.instance.moveSpeed;
-        }
-        if (unitnumber == 5)
-        {
-            unitType = 0;
-            t_State = typeState.Shield;
-            uhealth = GameManager.instance.health + 100;
-            uattackPower = GameManager.instance.attackPower + 3;
-            udefense = GameManager.instance.defense + 7;
-            umoveSpeed = GameManager.instance.moveSpeed - 2;
-        }
-        if (unitnumber == 6)
-        {
-            unitType = 1;
-            t_State = typeState.Archer;
-            uhealth = GameManager.instance.health + 30;
-            uattackPower = GameManager.instance.attackPower + 8;
-            udefense = GameManager.instance.defense + 4;
-            umoveSpeed = GameManager.instance.moveSpeed + 1;
-        }
-        if (unitnumber == 7)
-        {
-            unitType = 0;
-            t_State = typeState.Horse;
-            uhealth = GameManager.instance.health + 150;
-            uattackPower = GameManager.instance.attackPower + 10;
-            udefense = GameManager.instance.defense + 10;
-            umoveSpeed = GameManager.instance.moveSpeed + 3;
-        }
-        //3·¾ À¯´Ö
-        if (unitnumber == 8)
-        {
-            unitType = 0;
-            t_State = typeState.Sword;
-            uhealth = GameManager.instance.health + 100;
-            uattackPower = GameManager.instance.attackPower + 10;
-            udefense = GameManager.instance.defense + 10;
-            umoveSpeed = GameManager.instance.moveSpeed;
-        }
-        if (unitnumber == 9)
-        {
-            unitType = 0;
-            t_State = typeState.Shield;
-            uhealth = GameManager.instance.health + 150;
-            uattackPower = GameManager.instance.attackPower + 8;
-            udefense = GameManager.instance.defense + 12;
-            umoveSpeed = GameManager.instance.moveSpeed - 2;
-        }
-        if (unitnumber == 10)
-        {
-            unitType = 1;
-            t_State = typeState.Archer;
-            uhealth = GameManager.instance.health + 80;
-            uattackPower = GameManager.instance.attackPower + 13;
-            udefense = GameManager.instance.defense + 9;
-            umoveSpeed = GameManager.instance.moveSpeed + 1;
-        }
-        if (unitnumber == 11)
-        {
-            unitType = 0;
-            t_State = typeState.Horse;
-            uhealth = GameManager.instance.health + 200;
-            uattackPower = GameManager.instance.attackPower + 15;
-            udefense = GameManager.instance.defense + 15;
-            umoveSpeed = GameManager.instance.moveSpeed + 3;
-        }
-
-        //ÆÐ½Ãºê--------------------------------------------------------------------
-        //°Ë»ç ÆÐ½Ãºê°¡ ÄÑÁö¸é   
-        if (Skill_Set.instance.Ares_S)
-        {
-            if (unitnumber == 0 || unitnumber == 4 || unitnumber == 8)
-            {
-                uhealth += 30;
-                uattackPower += 3;
-                udefense += 3;
-            }
-        }
-        //¹æÆÐº´
-        if (Skill_Set.instance.Hephaestus_S)
-        {
-            if (unitnumber == 1 || unitnumber == 5 || unitnumber == 9)
-            {
-                uhealth += 30;
-                uattackPower += 3;
-                udefense += 3;
-            }
-        }
-        //±Ã¼ö
-        if (Skill_Set.instance.Artemis_S)
-        {
-            if (unitnumber == 2 || unitnumber == 6 || unitnumber == 10)
-            {
-                uhealth += 30;
-                uattackPower += 3;
-                udefense += 3;
-            }
-        }
-
-        transform.position = Vector3.MoveTowards(transform.position, starPosition.position, umoveSpeed * Time.deltaTime);
-    }
-
     private void OnTriggerEnter(Collider other) //Á¡·ÉÁöÈ®ÀÎ
     {
         if (other.CompareTag(_point))
@@ -462,7 +313,8 @@ public class UnitController : MonoBehaviour
             RTSUnitController.instance.UnitList.Remove(this);
             RTSUnitController.instance.selectedUnitList.Remove(this);
 
-            EnemySpawn.instance.gold += 2; //¾Æ±º À¯´Ö Á×¿´À» ¶§ Àû ÀçÈ­ È¹µæ
+            EnemySpawn.instance.gold += 10; //¾Æ±º À¯´Ö Á×¿´À» ¶§ Àû ÀçÈ­ È¹µæ
+            EnemySpawn.instance.etotal_gold += 10;
 
             playerAnim.SetTrigger("death");
             GameManager.instance.All_Obj--;
@@ -599,5 +451,155 @@ public class UnitController : MonoBehaviour
         RTSUnitController.instance.selectedUnitList.Remove(this);
 
         Destroy(gameObject);
+    }
+
+    private void OnEnable()
+    {
+        //1·¾À¯´Ö
+        if (unitnumber == 0)
+        {
+            unitType = 0;
+            t_State = typeState.Sword;
+            uhealth = GameManager.instance.health;
+            uattackPower = GameManager.instance.attackPower;
+            udefense = GameManager.instance.defense;
+            umoveSpeed = GameManager.instance.moveSpeed;
+        }
+        if (unitnumber == 1) //¹æÆÐ
+        {
+            unitType = 0;
+            t_State = typeState.Shield;
+            uhealth = GameManager.instance.health + 30;
+            uattackPower = GameManager.instance.attackPower - 3;
+            udefense = GameManager.instance.defense + 2;
+            umoveSpeed = GameManager.instance.moveSpeed - 1;
+        }
+        if (unitnumber == 2) //±Ã¼ö
+        {
+            unitType = 1;
+            t_State = typeState.Archer;
+            uhealth = GameManager.instance.health - 20;
+            uattackPower = GameManager.instance.attackPower + 5;
+            udefense = GameManager.instance.defense - 1;
+            umoveSpeed = GameManager.instance.moveSpeed + 1;
+        }
+        if (unitnumber == 3) //±â¸¶
+        {
+            unitType = 0;
+            t_State = typeState.Horse;
+            uhealth = GameManager.instance.health + 80;
+            uattackPower = GameManager.instance.attackPower + 7;
+            udefense = GameManager.instance.defense + 5;
+            umoveSpeed = GameManager.instance.moveSpeed + 3;
+        }
+
+        //2·¾À¯´Ö
+        if (unitnumber == 4)
+        {
+            unitType = 0;
+            t_State = typeState.Sword;
+            uhealth = GameManager.instance.health + 50;
+            uattackPower = GameManager.instance.attackPower + 8;
+            udefense = GameManager.instance.defense + 5;
+            umoveSpeed = GameManager.instance.moveSpeed;
+        }
+        if (unitnumber == 5)
+        {
+            unitType = 0;
+            t_State = typeState.Shield;
+            uhealth = GameManager.instance.health + 80;
+            uattackPower = GameManager.instance.attackPower + 2;
+            udefense = GameManager.instance.defense + 7;
+            umoveSpeed = GameManager.instance.moveSpeed - 1;
+        }
+        if (unitnumber == 6)
+        {
+            unitType = 1;
+            t_State = typeState.Archer;
+            uhealth = GameManager.instance.health + 30;
+            uattackPower = GameManager.instance.attackPower + 10;
+            udefense = GameManager.instance.defense + 4;
+            umoveSpeed = GameManager.instance.moveSpeed + 1;
+        }
+        if (unitnumber == 7)
+        {
+            unitType = 0;
+            t_State = typeState.Horse;
+            uhealth = GameManager.instance.health + 130;
+            uattackPower = GameManager.instance.attackPower + 12;
+            udefense = GameManager.instance.defense + 10;
+            umoveSpeed = GameManager.instance.moveSpeed + 3;
+        }
+        //3·¾ À¯´Ö
+        if (unitnumber == 8)
+        {
+            unitType = 0;
+            t_State = typeState.Sword;
+            uhealth = GameManager.instance.health + 100;
+            uattackPower = GameManager.instance.attackPower + 10;
+            udefense = GameManager.instance.defense + 10;
+            umoveSpeed = GameManager.instance.moveSpeed;
+        }
+        if (unitnumber == 9)
+        {
+            unitType = 0;
+            t_State = typeState.Shield;
+            uhealth = GameManager.instance.health + 130;
+            uattackPower = GameManager.instance.attackPower + 7;
+            udefense = GameManager.instance.defense + 12;
+            umoveSpeed = GameManager.instance.moveSpeed - 1;
+        }
+        if (unitnumber == 10)
+        {
+            unitType = 1;
+            t_State = typeState.Archer;
+            uhealth = GameManager.instance.health + 80;
+            uattackPower = GameManager.instance.attackPower + 15;
+            udefense = GameManager.instance.defense + 9;
+            umoveSpeed = GameManager.instance.moveSpeed + 1;
+        }
+        if (unitnumber == 11)
+        {
+            unitType = 0;
+            t_State = typeState.Horse;
+            uhealth = GameManager.instance.health + 180;
+            uattackPower = GameManager.instance.attackPower + 17;
+            udefense = GameManager.instance.defense + 15;
+            umoveSpeed = GameManager.instance.moveSpeed + 3;
+        }
+
+        //ÆÐ½Ãºê--------------------------------------------------------------------
+        //°Ë»ç ÆÐ½Ãºê°¡ ÄÑÁö¸é   
+        if (Skill_Set.instance.Ares_S)
+        {
+            if (unitnumber == 0 || unitnumber == 4 || unitnumber == 8)
+            {
+                uhealth += 30;
+                uattackPower += 3;
+                udefense += 3;
+            }
+        }
+        //¹æÆÐº´
+        if (Skill_Set.instance.Hephaestus_S)
+        {
+            if (unitnumber == 1 || unitnumber == 5 || unitnumber == 9)
+            {
+                uhealth += 30;
+                uattackPower += 3;
+                udefense += 3;
+            }
+        }
+        //±Ã¼ö
+        if (Skill_Set.instance.Artemis_S)
+        {
+            if (unitnumber == 2 || unitnumber == 6 || unitnumber == 10)
+            {
+                uhealth += 30;
+                uattackPower += 3;
+                udefense += 3;
+            }
+        }
+
+        transform.position = Vector3.MoveTowards(transform.position, starPosition.position, umoveSpeed * Time.deltaTime);
     }
 }

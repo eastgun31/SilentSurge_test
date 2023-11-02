@@ -340,6 +340,7 @@ public class EnemySkillManager : MonoBehaviour
         useSkill = false;
 
         EnemySpawn.instance.gold += 70;
+        EnemySpawn.instance.etotal_gold += 70;
 
         StartCoroutine(Num1_Skill_Cooldown(15f));
         itemLimit--;

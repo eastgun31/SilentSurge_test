@@ -17,7 +17,7 @@ public class CameraMiniMap : MonoBehaviour, IPointerClickHandler
         {
             Debug.Log("로컬 좌표" + localClick);
             Vector3 worldPosition = new Vector3
-                (localClick.x+250, mainCamera.transform.position.y, localClick.y+250);
+                (localClick.x+253, mainCamera.transform.position.y, localClick.y+245);
 
             // 카메라를 해당 위치로 이동합니다.
             mainCamera.transform.position = worldPosition;

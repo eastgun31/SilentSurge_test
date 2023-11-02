@@ -17,14 +17,15 @@ public class GameManager : MonoBehaviour
     public Text Player_Point;//점령지 표시
     public Text Enemy_Point; //적군 점령지 표시
 
-    //유닛스탯
+    //유닛스탯 기본 검사 능력치
     public int health = 100;
-    public int attackPower = 10;
-    public int defense = 3;
+    public int attackPower = 13;
+    public int defense = 3; //현재 방어력 미사용
     public float moveSpeed = 7;
 
     public Text Allgold_text; //현재 재화 상태
     public int gold = 300; //초기 재화 + 
+    public int total_gold = 0;
 
     public Text All_ObjText;//유닛 수 보여주는 텍스트
     public int All_Obj = 0;//현재 총 유닛 수
@@ -73,6 +74,7 @@ public class GameManager : MonoBehaviour
         buff_Skill.gameObject.SetActive(false);
 
         gold = 300;
+        total_gold += gold;
 
         InvokeRepeating("Upgold", 1.0f, 1.0f); //1초 후에 1초마다
     }
@@ -97,8 +99,8 @@ public class GameManager : MonoBehaviour
             Time.timeScale = 0;
             currentTime = 0;
             scoreboard.SetActive(true); // 게임끝나고 스코어보드 표시
-            Player_Gold_Text.text = gold.ToString() + "G"; // 게임 끝나고 남은 재화 표시
-            Enemy_Gold_Text.text = EnemySpawn.instance.gold.ToString() + "G"; //게임 끝나고 남은 적의 재화 표시
+            Player_Gold_Text.text = total_gold.ToString() + "G"; // 게임 끝나고 남은 재화 표시
+            Enemy_Gold_Text.text = EnemySpawn.instance.etotal_gold.ToString() + "G"; //게임 끝나고 남은 적의 재화 표시
             Player_Unit.text = All_Obj.ToString() + " / 30"; //게임 끝나고 표시된 우리 유닛
             Enemy_Unit.text = e_population.ToString() + " / 30"; // 게임 끝나고 표시된 적군 유닛
 
@@ -131,6 +133,7 @@ public class GameManager : MonoBehaviour
                 Player_Text.color = Color.yellow;
                 Enemy_Text.color = Color.red;
             }
+
             //else if (a == b)
             //{
             //    if (e_score > p_score)
@@ -142,7 +145,6 @@ public class GameManager : MonoBehaviour
             //        Debug.Log("승리");
             //    }
             //}
-
         }
 
         // 시간을 분:초 형식으로 표시
@@ -156,7 +158,8 @@ public class GameManager : MonoBehaviour
 
     private void Upgold()
     {
-        gold += 5; //재화 2씩 증가
+        gold += 5; //재화 5씩 증가
+        total_gold += 5;
     }
 
     public void Aobj()

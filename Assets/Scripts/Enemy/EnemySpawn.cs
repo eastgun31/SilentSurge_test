@@ -15,7 +15,9 @@ public class EnemySpawn : MonoBehaviour
     }
 
 
-    public float gold = 300;
+    public int gold = 300;
+    public int etotal_gold = 0;
+
     public int population;
     int random;
     float spawnCool = 0;
@@ -31,6 +33,8 @@ public class EnemySpawn : MonoBehaviour
     void Start()
     {
         gold = 300;
+        etotal_gold += gold;
+
         InvokeRepeating("Upgold", 1.0f, 1.0f); //1초 후에 1초마다
 
         StartCoroutine(upgradecheck);
@@ -50,7 +54,8 @@ public class EnemySpawn : MonoBehaviour
 
     private void Upgold()
     {
-        gold += 5; //재화 2씩 증가
+        gold += 5; //재화 5씩 증가
+        etotal_gold += 5;
     }
 
     void RandomSpawn(int i)
