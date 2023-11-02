@@ -136,13 +136,10 @@ public class GameManager : MonoBehaviour
             //    if (e_score > p_score)
             //    {
             //        Debug.Log("ÆÐ¹è");
-            //        Win_lose.text = "ÆÐ¹è";
-            //        Win_lose.color = Color.red;
             //    }
             //    else if (e_score < p_score)
             //    {
             //        Debug.Log("½Â¸®");
-            //        Win_lose.text = "½Â¸®";
             //    }
             //}
 
