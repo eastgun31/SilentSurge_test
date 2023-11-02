@@ -394,61 +394,61 @@ public class Points : MonoBehaviour
                     case 0:
                         GameManager.instance.check[0] = pointcheck;
                         #region Capture ¸Ê & ¹Ì´Ï¸Ê
-                        Capture.A_Red.SetActive(false);
-                        Capture.A_Blue.SetActive(false);
-                        Capture.A_3.SetActive(true);
+                        //Capture.A_Red.SetActive(false);
+                        //Capture.A_Blue.SetActive(false);
+                        //Capture.A_3.SetActive(true);
 
-                        Mini_capture.A_Red.SetActive(false);
-                        Mini_capture.A_Blue.SetActive(false);
-                        Mini_capture.A_3.SetActive(true);
+                        //Mini_capture.A_Red.SetActive(false);
+                        //Mini_capture.A_Blue.SetActive(false);
+                        //Mini_capture.A_3.SetActive(true);
                         #endregion
                         break;
                     case 1:
                         GameManager.instance.check[1] = pointcheck;
                         #region Capture ¸Ê & ¹Ì´Ï¸Ê
-                        Capture.B_Red.SetActive(false);
-                        Capture.B_Blue.SetActive(false);
-                        Capture.B_3.SetActive(true);
+                        //Capture.B_Red.SetActive(false);
+                        //Capture.B_Blue.SetActive(false);
+                        //Capture.B_3.SetActive(true);
 
-                        Mini_capture.B_Red.SetActive(false);
-                        Mini_capture.B_Blue.SetActive(false);
-                        Mini_capture.B_3.SetActive(true);
+                        //Mini_capture.B_Red.SetActive(false);
+                        //Mini_capture.B_Blue.SetActive(false);
+                        //Mini_capture.B_3.SetActive(true);
                         #endregion
                         break;
                     case 2:
                         GameManager.instance.check[2] = pointcheck;
                         #region Capture ¸Ê & ¹Ì´Ï¸Ê
-                        Capture.C_Red.SetActive(false);
-                        Capture.C_Blue.SetActive(false);
-                        Capture.C_3.SetActive(true);
+                        //Capture.C_Red.SetActive(false);
+                        //Capture.C_Blue.SetActive(false);
+                        //Capture.C_3.SetActive(true);
 
-                        Mini_capture.C_Red.SetActive(false);
-                        Mini_capture.C_Blue.SetActive(false);
-                        Mini_capture.C_3.SetActive(true);
+                        //Mini_capture.C_Red.SetActive(false);
+                        //Mini_capture.C_Blue.SetActive(false);
+                        //Mini_capture.C_3.SetActive(true);
                         #endregion
                         break;
                     case 3:
                         GameManager.instance.check[3] = pointcheck;
                         #region Capture ¸Ê & ¹Ì´Ï¸Ê
-                        Capture.D_Red.SetActive(false);
-                        Capture.D_Blue.SetActive(false);
-                        Capture.D_3.SetActive(true);
+                        //Capture.D_Red.SetActive(false);
+                        //Capture.D_Blue.SetActive(false);
+                        //Capture.D_3.SetActive(true);
 
-                        Mini_capture.D_Red.SetActive(false);
-                        Mini_capture.D_Blue.SetActive(false);
-                        Mini_capture.D_3.SetActive(true);
+                        //Mini_capture.D_Red.SetActive(false);
+                        //Mini_capture.D_Blue.SetActive(false);
+                        //Mini_capture.D_3.SetActive(true);
                         #endregion
                         break;
                     case 4:
                         GameManager.instance.check[4] = pointcheck;
                         #region Capture ¸Ê & ¹Ì´Ï¸Ê
-                        Capture.E_Red.SetActive(false);
-                        Capture.E_Blue.SetActive(false);
-                        Capture.E_3.SetActive(true);
+                        //Capture.E_Red.SetActive(false);
+                        //Capture.E_Blue.SetActive(false);
+                        //Capture.E_3.SetActive(true);
 
-                        Mini_capture.E_Red.SetActive(false);
-                        Mini_capture.E_Blue.SetActive(false);
-                        Mini_capture.E_3.SetActive(true);
+                        //Mini_capture.E_Red.SetActive(false);
+                        //Mini_capture.E_Blue.SetActive(false);
+                        //Mini_capture.E_3.SetActive(true);
                         #endregion
                         break;
                 }

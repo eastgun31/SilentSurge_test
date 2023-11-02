@@ -7,9 +7,9 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
 
-    public GameObject win;  //½Â¸®È­¸é
-    public GameObject lose; //ÆÐ¹èÈ­¸é
-    public GameObject draw; //¹«½ÂºÎÈ­¸é
+    public GameObject scoreboard;  //½ºÄÚ¾îº¸µåÈ­¸é
+    public Text Win_lose;  //½Â¸® ÅØ½ºÆ®
+    //public GameObject draw; //¹«½ÂºÎÈ­¸é
 
     //À¯´Ö½ºÅÈ
     public int health = 100;
@@ -104,24 +104,30 @@ public class GameManager : MonoBehaviour
             if (a > b)
             {
                 Debug.Log("ÆÐ¹è");
-                lose.SetActive(true);
+                scoreboard.SetActive(true);
+                Win_lose.text = "ÆÐ¹è";
+                Win_lose.color = Color.red;
             }
             else if (a < b)
             {
                 Debug.Log("½Â¸®");
-                win.SetActive(true);
+                scoreboard.SetActive(true);
+                Win_lose.text = "½Â¸®";
             }
             else if (a == b)
             {
                 if (e_score > p_score)
                 {
                     Debug.Log("ÆÐ¹è");
-                    lose.SetActive(true);
+                    scoreboard.SetActive(true);
+                    Win_lose.text = "ÆÐ¹è";
+                    Win_lose.color = Color.red;
                 }
                 else if (e_score < p_score)
                 {
                     Debug.Log("½Â¸®");
-                    win.SetActive(true);
+                    scoreboard.SetActive(true);
+                    Win_lose.text = "½Â¸®";
                 }
             }
 
