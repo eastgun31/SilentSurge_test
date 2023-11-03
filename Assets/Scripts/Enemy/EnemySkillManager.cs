@@ -262,7 +262,7 @@ public class EnemySkillManager : MonoBehaviour
             if (unit != null)
             {
                 //속박 코드
-                StartCoroutine(unit.HeraStun(5));
+                unit.StartCoroutine(unit.HeraStun(5));
             }
         }
 

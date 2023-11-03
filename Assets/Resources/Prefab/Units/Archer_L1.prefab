@@ -890,7 +890,7 @@ MonoBehaviour:
   maxhp: 0
   Sslider: {fileID: 4039017102838523099}
   maxS: 0
-  arrow: {fileID: 5376708964488122766, guid: a6c251eb3e29fea4987f0336c5f49646, type: 3}
+  arrow: {fileID: 8720745823615386119, guid: 0db55d7017d24aa4c9de2c8ee1179d40, type: 3}
   shotpos: {fileID: 3381418412493270629}
   isHades: 0
   u_State: 0

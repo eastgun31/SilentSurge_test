@@ -11,12 +11,9 @@ public class Arrow : MonoBehaviour
     void Start()
     {
         rigid = GetComponent<Rigidbody>();
-        Destroy(gameObject, 2f);
-    }
+        rigid.velocity = transform.forward * 10f;
 
-    private void Update()
-    {
-        rigid.AddForce(shotdir * 1.5f);
+        Destroy(gameObject, 2f);
     }
 
 

@@ -374,7 +374,7 @@ public class Skill : MonoBehaviour
                 if (E_unit != null)
                 {
                     //속박 코드
-                    StartCoroutine(E_unit.HeraStun(5));
+                    E_unit.StartCoroutine(E_unit.HeraStun(5));
                 }
             }
         }

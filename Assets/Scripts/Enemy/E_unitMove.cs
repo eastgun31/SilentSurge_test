@@ -87,11 +87,7 @@ public class E_unitMove : MonoBehaviour
     {
         Eslider.value = ehealth / maxhp; 
         ESslider.value = eshieldValue / maxS; //
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
         time += Time.deltaTime;
 
         switch (e_State)
@@ -106,6 +102,24 @@ public class E_unitMove : MonoBehaviour
 
         enemyAnim.SetFloat(run, moving.desiredVelocity.magnitude);
     }
+
+    // Update is called once per frame
+    //void Update()
+    //{
+    //    time += Time.deltaTime;
+
+    //    switch (e_State)
+    //    {
+    //        case E_UnitState.Idle:
+    //            E_Idle();
+    //            break;
+    //        case E_UnitState.goPoint:
+    //            E_GoPoint();
+    //            break;
+    //    }
+
+        
+    //}
 
     void E_Idle()
     {
@@ -216,9 +230,9 @@ public class E_unitMove : MonoBehaviour
 
             //if (unitType == 1)
             //{
-            //    Instantiate(arrow, shotpos.position, Quaternion.identity);
+            //    Instantiate(arrow, shotpos.position, transform.rotation);
             //    //arrow.transform.rotation = Quaternion.Euler(-90, 0, 0);
-            //    arrow.GetComponent<Arrow>().shotdir = dir;
+            //    arrow.transform.LookAt(dir);
             //}
 
             if (p_unit.ushieldValue > 0)

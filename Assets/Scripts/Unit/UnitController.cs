@@ -91,6 +91,20 @@ public class UnitController : MonoBehaviour
 
         Uslider.value = uhealth / maxhp;
         Sslider.value = ushieldValue / maxS; //
+
+        time += Time.deltaTime;
+
+        switch (u_State)
+        {
+            case unitState.Idle:
+                U_Idle();
+                break;
+            case unitState.goPoint:
+                U_GoPoint();
+                break;
+        }
+
+        playerAnim.SetFloat(run, navMeshAgent.velocity.magnitude);
     }
 
     public void SelectUnit()
@@ -125,23 +139,20 @@ public class UnitController : MonoBehaviour
         }
     }
 
-    void Update()
-    {
-        time += Time.deltaTime;
+    //void Update()
+    //{
+    //    time += Time.deltaTime;
 
-        switch (u_State)
-        {
-            case unitState.Idle:
-                U_Idle();
-                break;
-            case unitState.goPoint:
-                U_GoPoint();
-                break;
-        }
-
-        playerAnim.SetFloat(run, navMeshAgent.velocity.magnitude);
-
-    }
+    //    switch (u_State)
+    //    {
+    //        case unitState.Idle:
+    //            U_Idle();
+    //            break;
+    //        case unitState.goPoint:
+    //            U_GoPoint();
+    //            break;
+    //    }
+    //}
 
     void RemoveList()
     {
@@ -240,11 +251,11 @@ public class UnitController : MonoBehaviour
             transform.LookAt(dir);
             playerAnim.SetTrigger(attack);
 
-            //if(unitType == 1)
+            //if (unitType == 1)
             //{
-            //    Instantiate(arrow, shotpos.position, Quaternion.identity);
+            //    Instantiate(arrow, shotpos.position, transform.rotation);
             //    //arrow.transform.rotation = Quaternion.Euler(-90, 0, 0);
-            //    arrow.GetComponent<Arrow>().shotdir = dir;
+            //    arrow.transform.LookAt(dir);
             //}
 
             if (e_unit.eshieldValue > 0)
