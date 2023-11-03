@@ -39,7 +39,7 @@ public class EnemySkillManager : MonoBehaviour
     public int e_item_skillnum;
     public int e_passiveNow;
 
-    public int itemLimit;
+    public int itemLimit = 5;
     public float currentCooldown_1 = 0.0f; //현재 쿨타임
     public float currentCooldown_2 = 0.0f; //현재 쿨타임
     public float currentCooldown_3 = 0.0f; //현재 쿨타임
@@ -55,12 +55,10 @@ public class EnemySkillManager : MonoBehaviour
     public GameObject ApolloSkill; //아폴론 액티브
 
     // Start is called before the first frame update
-    Audio_Manager audio_Manager;
+    public Audio_Manager audio_Manager;
     void Start()
     {
-        audio_Manager = FindAnyObjectByType<Audio_Manager>();
         useSkill = true;
-        itemLimit = 5;
     }
 
 
@@ -297,7 +295,7 @@ public class EnemySkillManager : MonoBehaviour
     void UseAthenaSkill()
     {
         useSkill = false;
-        StartCoroutine(Num1_Skill_Cooldown(10f));
+        StartCoroutine(Num1_Skill_Cooldown(15f));
     }
     void UseAphroditeSkill(Vector3 dir, UnitController unit, Vector3 pointPosition)
     {

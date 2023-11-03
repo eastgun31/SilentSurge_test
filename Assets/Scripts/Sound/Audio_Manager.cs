@@ -1,10 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Audio_Manager : MonoBehaviour
 {
-    private static Audio_Manager instance;
+    //private static Audio_Manager instance;
 
     //public void Awake()
     //{
@@ -44,21 +45,23 @@ public class Audio_Manager : MonoBehaviour
     public AudioClip Dionysus;
     public AudioClip Demeter;
 
+    void Start()
+    {
+        string currentSceneName = SceneManager.GetActiveScene().name;
 
-    public void Loby_Music()
-    {
-        MusicSource.clip = Loby_background;
-        MusicSource.Play();
-    }
+        if (currentSceneName == "Loby_Scene")
+        {
+            MusicSource.clip = Loby_background;
+        }
+        else if (currentSceneName == "Story_Scene")
+        {
+            MusicSource.clip = Story_background;
+        }
+        else if (currentSceneName == "MainScene")
+        {
+            MusicSource.clip = Main_background;
+        }
 
-    public void Main_Music()
-    {
-        MusicSource.clip = Main_background;
-        MusicSource.Play();
-    }
-    public void Story_Music()
-    {
-        MusicSource.clip = Story_background;
         MusicSource.Play();
     }
 

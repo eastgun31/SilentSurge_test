@@ -63,7 +63,8 @@ public class MouseClick : MonoBehaviour
             RaycastHit hit;
             Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
 
-            // 유닛 오브젝트(layerUnit)를 클릭했을 때
+            Skill.instance.CancelSkill();
+
             if (Physics.Raycast(ray, out hit, Mathf.Infinity, layerGround))
             {
                 // 원형 정렬을 위한 변수 설정

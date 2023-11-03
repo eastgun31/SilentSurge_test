@@ -9,7 +9,7 @@ public enum Skills
 {
     Zeus,       //제우스        1 A  o
     Poseidon,   //포세이돈      2 A  o
-    Hades,      //하데스        3 A  
+    Hades,      //하데스        3 A  o
     Hera,       //헤라          4 B  o
     Apollo,     //아폴론        5 B  o
     Athena,     //아테나        6 B  v
@@ -32,7 +32,7 @@ public class Skill : MonoBehaviour
 
     float buffDuration = 5f; // 스킬 지속 시간
     bool isBuffActive = false; // 스킬 활성화 여부
-    public int itemLimit; // 스킬 횟수 제한
+    public int itemLimit = 5; // 스킬 횟수 제한
 
     public GameObject skillRangePrefab; // 범위 표시용 프리팹
     private GameObject skillRangeInstance; // 범위 표시용 인스턴스
@@ -55,18 +55,13 @@ public class Skill : MonoBehaviour
     public GameObject AthenaSkill; // 아테나 시야
     public GameObject AphroditeSkill; //아프로디테 이펙트
 
-    Audio_Manager audio_Manager;
+    public Audio_Manager audio_Manager;
     void Awake()
     {
         if (instance != null)
             Destroy(gameObject);
         else
             instance = this;
-    }
-    private void Start()
-    {
-        itemLimit = 5;
-        audio_Manager = FindAnyObjectByType<Audio_Manager>();
     }
 
     void Update()
@@ -195,7 +190,7 @@ public class Skill : MonoBehaviour
     }
 
     //스킬 취소, 스킬을 사용해서 표시되는 범위를 삭제할때도 사용
-    void CancelSkill()
+    public void CancelSkill()
     {
         isShowSkillRange = false;
         //Destroy(skillRangeInstance);
