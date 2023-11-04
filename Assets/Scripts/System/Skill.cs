@@ -81,17 +81,17 @@ public class Skill : MonoBehaviour
                 {
                     UseZeusSkill();
                     audio_Manager.PlaySFX(audio_Manager.Zeus);
-                }                  
+                }
                 else if (Skill_Set.instance.Poseidon_S)
                 {
                     UsePoseidonSkill();
                     audio_Manager.PlaySFX(audio_Manager.Poseidon);
-                }               
+                }
                 else if (Skill_Set.instance.Hades_S)
                 {
                     audio_Manager.PlaySFX(audio_Manager.Hades);
                     UseHadesSkill();
-                }            
+                }
                 else { }
             }
 
@@ -101,21 +101,21 @@ public class Skill : MonoBehaviour
                 {
                     UseHeraSkill();
                     audio_Manager.PlaySFX(audio_Manager.Hera);
-                }             
+                }
                 else if (Skill_Set.instance.Apollo_S)
                 {
                     UseApolloSkill();
                     audio_Manager.PlaySFX(audio_Manager.Apollo);
-                }             
+                }
                 else if (Skill_Set.instance.Athena_S)
                 {
                     UseAthenaSkill();
                     audio_Manager.PlaySFX(audio_Manager.Athena);
-                } 
+                }
                 else if (Skill_Set.instance.Aphrodite_S)
                 {
                     UseAphroditeSkill();
-                }                 
+                }
                 else { }
             }
         }
@@ -153,26 +153,26 @@ public class Skill : MonoBehaviour
         // 3번 키를 누르면 3번 스킬 사용
         if (Input.GetKeyDown(KeyCode.Alpha3) && !isBuffActive && itemLimit > 0)
         {
-            if (Skill_Set.instance.Hermes_S)
-            {               
+            if (Skill_Set.instance.Hermes_S && GameManager.instance.All_Obj > 0)
+            {
                 UseHermesSkill();
                 audio_Manager.PlaySFX(audio_Manager.Hermes);
-            }             
-            else if (Skill_Set.instance.Hestia_S)
-            {               
+            }
+            else if (Skill_Set.instance.Hestia_S && GameManager.instance.All_Obj > 0)
+            {
                 UseHestiaSkill();
                 audio_Manager.PlaySFX(audio_Manager.Hestia);
-            }              
-            else if (Skill_Set.instance.Dionysus_S)
+            }
+            else if (Skill_Set.instance.Dionysus_S && GameManager.instance.All_Obj > 0)
             {
                 UseDionysusSkill();
                 audio_Manager.PlaySFX(audio_Manager.Dionysus);
-            }              
+            }
             else if (Skill_Set.instance.Demeter_S)
             {
                 UseDemeterSkill();
                 audio_Manager.PlaySFX(audio_Manager.Demeter);
-            }              
+            }
             else { }
         }
 
