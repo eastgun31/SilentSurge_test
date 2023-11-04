@@ -47,7 +47,7 @@ public class GameManager : MonoBehaviour
     //게임 시간
     public Text timerText;
     private float startTime;
-    private float currentTime = 181.0f; //181 = 3분
+    private float currentTime = 301.0f; //5분
 
     //스킬 쿨타임
     public Text active_Skill;
@@ -158,8 +158,8 @@ public class GameManager : MonoBehaviour
 
     private void Upgold()
     {
-        gold += 5; //재화 5씩 증가
-        total_gold += 5;
+        gold += 10; //재화 5씩 증가
+        total_gold += 10;
     }
 
     public void Aobj()

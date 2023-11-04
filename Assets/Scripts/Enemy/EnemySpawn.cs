@@ -54,8 +54,8 @@ public class EnemySpawn : MonoBehaviour
 
     private void Upgold()
     {
-        gold += 5; //재화 5씩 증가
-        etotal_gold += 5;
+        gold += 10; //재화 5씩 증가
+        etotal_gold += 10;
     }
 
     void RandomSpawn(int i)
