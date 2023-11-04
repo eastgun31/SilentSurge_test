@@ -1197,6 +1197,9 @@ MonoBehaviour:
   maxhp: 0
   Sslider: {fileID: 4394125342728902315}
   maxS: 0
+  arrow: {fileID: 0}
+  shotpos: {fileID: 0}
+  arrowSpawn: {fileID: 0}
   isHades: 0
   u_State: 0
   t_State: 0
@@ -1228,8 +1231,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33be6d8915785834eab16a8ff7a71c74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 20
-  edgeSharpness: 20
+  radius: 10
+  edgeSharpness: 10
 --- !u!1 &182750
 GameObject:
   m_ObjectHideFlags: 0

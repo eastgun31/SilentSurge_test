@@ -1001,8 +1001,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33be6d8915785834eab16a8ff7a71c74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 20
-  edgeSharpness: 20
+  radius: 10
+  edgeSharpness: 10
 --- !u!1 &179158
 GameObject:
   m_ObjectHideFlags: 0
