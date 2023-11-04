@@ -28,6 +28,7 @@ public class Points : MonoBehaviour
     public GameObject GobjRed;
 
     public GameObject GetPoint; //포인트 이펙트
+    public GameObject E_GetPoint; //포인트 이펙트
     capture Capture;
     mini_capture Mini_capture;
     // Start is called before the first frame update
@@ -39,6 +40,8 @@ public class Points : MonoBehaviour
         SetGameObjectActive(GobjRed, false);
         SetGameObjectActive(GobjWhite, true);
         SetGameObjectActive(GobjBlue, false);
+        GetPoint.SetActive(false);
+        E_GetPoint.SetActive(false);
 
         StartCoroutine(PointCheckCoroutine());
         Capture = FindAnyObjectByType<capture>();
@@ -59,7 +62,10 @@ public class Points : MonoBehaviour
                     SetGameObjectActive(GobjRed, true);
                     SetGameObjectActive(GobjWhite, false);
                     SetGameObjectActive(GobjBlue, false);
+                    E_GetPoint.SetActive(true);
 
+                    if (E_GetPoint == true)
+                        GetPoint.SetActive(false);
 
                     if (ppoint == 0)
                     {
@@ -75,6 +81,7 @@ public class Points : MonoBehaviour
                         GameManager.instance.p_score--;
                         GameManager.instance.attacking = false;
                     }
+
                 }
                 else if (pointcheck == 2) //pointcheck가 0이었다가 2가 되면 재화 획득
                 {
@@ -94,6 +101,11 @@ public class Points : MonoBehaviour
                     SetGameObjectActive(GobjRed, false);
                     SetGameObjectActive(GobjWhite, false);
                     SetGameObjectActive(GobjBlue, true);
+                    GetPoint.SetActive(true);
+
+                    if (GetPoint == true)
+                        E_GetPoint.SetActive(false);
+
                 }
             }
 
