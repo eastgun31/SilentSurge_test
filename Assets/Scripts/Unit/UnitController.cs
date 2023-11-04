@@ -43,7 +43,7 @@ public class UnitController : MonoBehaviour
     public float maxS; //
     public GameObject arrow; //화살
     public Transform shotpos; //발사위치
-
+    public ArrowSpawn arrowSpawn;
 
     //최적화 변수들
     string run = "run";
@@ -253,9 +253,18 @@ public class UnitController : MonoBehaviour
 
             //if (unitType == 1)
             //{
-            //    Instantiate(arrow, shotpos.position, transform.rotation);
-            //    //arrow.transform.rotation = Quaternion.Euler(-90, 0, 0);
-            //    arrow.transform.LookAt(dir);
+            //    for (int i = 0; i < arrowSpawn.arPoolsize; i++)
+            //    {
+            //        if (!arrowSpawn._arrow1[i].activeSelf)
+            //        {
+            //            arrowSpawn._arrow1[i].SetActive(true);
+            //            arrowSpawn._arrow1[i].transform.position = shotpos.position;
+                        
+            //            arrowSpawn._arrow1[i].GetComponent<Arrow>().target = dir;
+
+            //            break;
+            //        }
+            //    }
             //}
 
             if (e_unit.eshieldValue > 0)

@@ -5,27 +5,32 @@ using UnityEngine;
 public class Arrow : MonoBehaviour
 {
     public int value;
-    Rigidbody rigid;
-    public Vector3 shotdir;
+    public Vector3 target;
 
-    void Start()
+    private void OnEnable()
     {
-        rigid = GetComponent<Rigidbody>();
-        rigid.velocity = transform.forward * 10f;
-
-        Destroy(gameObject, 2f);
+        Invoke("Off_Arrow", 2f);
     }
 
+    private void Update()
+    {
+        transform.position = Vector3.MoveTowards(transform.position, target, 10f * Time.deltaTime);
+    }
+
+    void Off_Arrow()
+    {
+        gameObject.SetActive(false);
+    }
 
     private void OnTriggerEnter(Collider other)
     {
         if(value == 1 && other.gameObject.tag == "Player")
         {
-            Destroy(gameObject);
+            gameObject.SetActive(false);
         }
         if(value == 2 && other.gameObject.tag == "Enemy")
         {
-            Destroy(gameObject);
+            gameObject.SetActive(false);
         }
     }
 

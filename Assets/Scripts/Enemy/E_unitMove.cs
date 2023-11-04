@@ -47,6 +47,7 @@ public class E_unitMove : MonoBehaviour
     public float maxS; //
     public GameObject arrow;
     public Transform shotpos;
+    public ArrowSpawn arrowSpawn;
 
     private Animator enemyAnim;
 
@@ -230,9 +231,18 @@ public class E_unitMove : MonoBehaviour
 
             //if (unitType == 1)
             //{
-            //    Instantiate(arrow, shotpos.position, transform.rotation);
-            //    //arrow.transform.rotation = Quaternion.Euler(-90, 0, 0);
-            //    arrow.transform.LookAt(dir);
+            //    for (int i = 0; i < arrowSpawn.arPoolsize; i++)
+            //    {
+            //        if (!arrowSpawn._arrow1[i].activeSelf)
+            //        {
+            //            arrowSpawn._arrow1[i].SetActive(true);
+            //            arrowSpawn._arrow1[i].transform.position = shotpos.position;
+
+            //            arrowSpawn._arrow1[i].GetComponent<Arrow>().target = dir;
+
+            //            break;
+            //        }
+            //    }
             //}
 
             if (p_unit.ushieldValue > 0)
