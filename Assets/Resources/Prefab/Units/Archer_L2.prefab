@@ -1017,9 +1017,9 @@ MonoBehaviour:
   maxhp: 0
   Sslider: {fileID: 4956718694639063776}
   maxS: 0
-  arrow: {fileID: 8720745823615386119, guid: 0db55d7017d24aa4c9de2c8ee1179d40, type: 3}
+  arrow: {fileID: 0}
   shotpos: {fileID: 5159838517723267519}
-  arrowSpawn: {fileID: 6325820866373813654, guid: 75ae304a59200b247947cac7209fce4e, type: 3}
+  arrowSpawn: {fileID: 0}
   isHades: 0
   u_State: 0
   t_State: 0

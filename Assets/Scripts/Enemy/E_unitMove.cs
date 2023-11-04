@@ -229,21 +229,23 @@ public class E_unitMove : MonoBehaviour
             transform.LookAt(dir);
             enemyAnim.SetTrigger(attack);
 
-            //if (unitType == 1)
-            //{
-            //    for (int i = 0; i < arrowSpawn.arPoolsize; i++)
-            //    {
-            //        if (!arrowSpawn._arrow1[i].activeSelf)
-            //        {
-            //            arrowSpawn._arrow1[i].SetActive(true);
-            //            arrowSpawn._arrow1[i].transform.position = shotpos.position;
+            if (unitType == 1)
+            {
+                arrowSpawn = EnemySpawn.instance.arrowPool.GetComponent<ArrowSpawn>();
 
-            //            arrowSpawn._arrow1[i].GetComponent<Arrow>().target = dir;
+                for (int i = 0; i < arrowSpawn._arrow1.Length; i++)
+                {
+                    if (!arrowSpawn._arrow1[i].activeSelf)
+                    {
+                        arrowSpawn._arrow1[i].SetActive(true);
+                        arrowSpawn._arrow1[i].transform.position = shotpos.position;
 
-            //            break;
-            //        }
-            //    }
-            //}
+                        arrowSpawn._arrow1[i].GetComponent<Arrow>().target = dir;
+
+                        break;
+                    }
+                }
+            }
 
             if (p_unit.ushieldValue > 0)
             {

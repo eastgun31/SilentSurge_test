@@ -894,8 +894,9 @@ MonoBehaviour:
   point: {fileID: 0}
   ESslider: {fileID: 2516569025256252708}
   maxS: 0
-  arrow: {fileID: 8720745823615386119, guid: d3d2b697f5775924f9c80c3e3947a4e0, type: 3}
+  arrow: {fileID: 0}
   shotpos: {fileID: 565872552048266835}
+  arrowSpawn: {fileID: 0}
   isHades: 0
   e_State: 0
 --- !u!54 &2785421533852495019

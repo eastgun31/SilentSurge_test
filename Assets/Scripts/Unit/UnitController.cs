@@ -251,21 +251,23 @@ public class UnitController : MonoBehaviour
             transform.LookAt(dir);
             playerAnim.SetTrigger(attack);
 
-            //if (unitType == 1)
-            //{
-            //    for (int i = 0; i < arrowSpawn.arPoolsize; i++)
-            //    {
-            //        if (!arrowSpawn._arrow1[i].activeSelf)
-            //        {
-            //            arrowSpawn._arrow1[i].SetActive(true);
-            //            arrowSpawn._arrow1[i].transform.position = shotpos.position;
-                        
-            //            arrowSpawn._arrow1[i].GetComponent<Arrow>().target = dir;
+            if (unitType == 1)
+            {
+                arrowSpawn = EnemySpawn.instance.arrowPool.GetComponent<ArrowSpawn>();
 
-            //            break;
-            //        }
-            //    }
-            //}
+                for (int i = 0; i < arrowSpawn._arrow1.Length; i++)
+                {
+                    if (!arrowSpawn._arrow1[i].activeSelf)
+                    {
+                        arrowSpawn._arrow2[i].SetActive(true);
+                        arrowSpawn._arrow2[i].transform.position = shotpos.position;
+
+                        arrowSpawn._arrow2[i].GetComponent<Arrow>().target = dir;
+
+                        break;
+                    }
+                }
+            }
 
             if (e_unit.eshieldValue > 0)
             {

@@ -9,12 +9,12 @@ public class Arrow : MonoBehaviour
 
     private void OnEnable()
     {
-        Invoke("Off_Arrow", 2f);
+        Invoke("Off_Arrow", 5f);
     }
 
     private void Update()
     {
-        transform.position = Vector3.MoveTowards(transform.position, target, 10f * Time.deltaTime);
+        transform.position = Vector3.MoveTowards(transform.position, target, 15f * Time.deltaTime);
     }
 
     void Off_Arrow()

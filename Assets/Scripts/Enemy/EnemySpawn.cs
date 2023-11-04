@@ -26,12 +26,16 @@ public class EnemySpawn : MonoBehaviour
 
     public GameObject[] e_unit;
 
+    public GameObject arrowPool;
+
     public int upgradeLV = 0;
     string upgradecheck = "UpgradeCheck";
 
     // Start is called before the first frame update
     void Start()
     {
+        
+
         gold = 300;
         etotal_gold += gold;
 
