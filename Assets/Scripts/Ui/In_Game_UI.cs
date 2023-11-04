@@ -120,6 +120,11 @@ public class In_Game_UI : MonoBehaviour
         }
     }
 
+    public void RePlay()
+    {
+        SceneManager.LoadScene("MainScene");
+    }
+
     public void Quit()
     {
         Audio_Manager.PlaySFX(Audio_Manager.AudioButton);
