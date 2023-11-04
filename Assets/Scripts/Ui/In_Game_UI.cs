@@ -66,12 +66,13 @@ public class In_Game_UI : MonoBehaviour
             _OK_ = false;
             Time.timeScale = 0; //ESC를 누르면 시간이 멈춘다
         }
-        else if (Input.GetKeyDown(KeyCode.Escape) && (On.activeSelf == true) && (ESC_bool == false) && (Option_window.activeSelf == false))
+        else if (Input.GetKeyDown(KeyCode.Escape) && (On.activeSelf == true) && (ESC_bool == false)) //&& (Option_window.activeSelf == false))
         {
             Audio_Manager.PlaySFX(Audio_Manager.AudioButton);
             ESC_image.SetActive(false);
             ESC_bool = true;
             _OK_ = true;
+            Option_window.SetActive(false);
             Time.timeScale = 1; //ESC를 다시 누르면 시간이 흐른다.
         }
         else
@@ -88,6 +89,7 @@ public class In_Game_UI : MonoBehaviour
             ESC_image.SetActive(false);
             ESC_bool = true;
             _OK_ = true;
+           // Option_window.SetActive(false);
             Time.timeScale = 1; //ESC를 다시 누르면 시간이 흐른다.
         }
     }
@@ -102,12 +104,13 @@ public class In_Game_UI : MonoBehaviour
             _OK_ = false;
             Time.timeScale = 0; //ESC를 누르면 시간이 멈춘다
         }
-        else if ((On.activeSelf == true) && (ESC_bool == false) && (Option_window.activeSelf == false))
+        else if ((On.activeSelf == true) && (ESC_bool == false)) //&& (Option_window.activeSelf == false))
         {
             Audio_Manager.PlaySFX(Audio_Manager.AudioButton);
             ESC_image.SetActive(false);
             ESC_bool = true;
             _OK_ = true;
+            Option_window.SetActive(false);
             Time.timeScale = 1;
             //ESC를 다시 누르면 시간이 흐른다.
         }

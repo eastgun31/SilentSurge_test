@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 public class Kijung_GameManager : MonoBehaviour
 {
     public string Scene_Name;
+    public GameObject HOW;
+    public GameObject OP;
     void Start()
     {
         
@@ -14,7 +16,20 @@ public class Kijung_GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (HOW.activeSelf == true)
+        {
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                HOW.SetActive(false);
+            }
+        }
+        if (OP.activeSelf == true)
+        {
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                OP.SetActive(false);
+            }
+        }
     }
 
     public void Game_Start()

@@ -3988,6 +3988,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Scene_Name: Story_Scene
+  HOW: {fileID: 249081224}
+  OP: {fileID: 20568336}
 --- !u!4 &592112497
 Transform:
   m_ObjectHideFlags: 0
