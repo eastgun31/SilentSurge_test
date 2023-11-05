@@ -65,6 +65,8 @@ public class Fow_Script : MonoBehaviour {
 
         yield return wait;
 
+
+
         updateTimer -= 1 * Time.deltaTime;
         if (updateTimer <= 0)
         {

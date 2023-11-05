@@ -15,8 +15,6 @@ public class AttackRange : MonoBehaviour
     private void OnEnable()
     {
         parent = transform.GetComponentInParent<E_unitMove>();
-
-        //StartCoroutine("Find_Target");
     }
 
     private void OnTriggerEnter(Collider col)
@@ -45,7 +43,7 @@ public class AttackRange : MonoBehaviour
 
     IEnumerator Find_Target()
     {
-        WaitForSeconds wait = new WaitForSeconds(0.5f);
+        WaitForSeconds wait = new WaitForSeconds(1f);
 
         if (targets != null)
         {

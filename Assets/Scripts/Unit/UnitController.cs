@@ -87,12 +87,11 @@ public class UnitController : MonoBehaviour
 
     private void FixedUpdate()
     {
+        time += Time.deltaTime;
         navMeshAgent.speed = umoveSpeed;
 
         Uslider.value = uhealth / maxhp;
         Sslider.value = ushieldValue / maxS; //
-
-        time += Time.deltaTime;
 
         switch (u_State)
         {
@@ -248,6 +247,7 @@ public class UnitController : MonoBehaviour
         if (uhealth > 0 && e_unit.ehealth > 0 && time > 1f && u_State == unitState.Battle)
         {
             time = 0;
+
             transform.LookAt(dir);
             playerAnim.SetTrigger(attack);
 
@@ -417,10 +417,10 @@ public class UnitController : MonoBehaviour
 
     public IEnumerator HeraStun(float sec)
     {
-        navMeshAgent.isStopped = true;
-        navMeshAgent.velocity = Vector3.zero;
         P_attackRange.SetActive(false);
         targetUnit = null;
+        navMeshAgent.isStopped = true;
+        navMeshAgent.velocity = Vector3.zero;
 
         Hera.SetActive(true);
 

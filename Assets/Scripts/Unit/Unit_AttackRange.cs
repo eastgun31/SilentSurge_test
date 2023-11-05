@@ -12,19 +12,9 @@ public class Unit_AttackRange : MonoBehaviour
 
     string enemy = "Enemy";
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        //parent = transform.GetComponentInParent<UnitController>();
-
-        //StartCoroutine("Find_Target");
-    }
-
     private void OnEnable()
     {
         parent = transform.GetComponentInParent<UnitController>();
-
-        //StartCoroutine("Find_Target");
     }
 
 
@@ -54,7 +44,7 @@ public class Unit_AttackRange : MonoBehaviour
 
     IEnumerator Find_Target()
     {
-        WaitForSeconds wait = new WaitForSeconds(0.5f);
+        WaitForSeconds wait = new WaitForSeconds(1f);
 
         if (targets != null)
         {

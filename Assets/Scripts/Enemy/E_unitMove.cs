@@ -86,10 +86,10 @@ public class E_unitMove : MonoBehaviour
 
     private void FixedUpdate()
     {
+        time += Time.deltaTime;
+
         Eslider.value = ehealth / maxhp; 
         ESslider.value = eshieldValue / maxS; //
-
-        time += Time.deltaTime;
 
         switch (e_State)
         {
@@ -226,6 +226,7 @@ public class E_unitMove : MonoBehaviour
         if (ehealth > 0 && p_unit.uhealth > 0 && time > 1f && e_State == E_UnitState.Battle)
         {
             time = 0;
+
             transform.LookAt(dir);
             enemyAnim.SetTrigger(attack);
 
@@ -398,14 +399,16 @@ public class E_unitMove : MonoBehaviour
     {
         e_State = E_UnitState.Stun;
 
+        E_attackRange.SetActive(false);
+        targetUnit = null;
+
         if (e_State == E_UnitState.Stun)
         {
             moving.isStopped = true;
             moving.velocity = Vector3.zero;
         }
 
-        E_attackRange.SetActive(false);
-        targetUnit = null;
+
         Hera.SetActive(true);
 
         yield return new WaitForSeconds(sec);
