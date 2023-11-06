@@ -123,18 +123,22 @@ public class UnitController : MonoBehaviour
 
     public void MoveTo(Vector3 end)
     {
+        Unit_AttackRange enemylist = P_attackRange.GetComponent<Unit_AttackRange>();
+        enemylist.targets.Clear();
+        enemylist.e_unit = null;
+        targetUnit = null;
+        P_attackRange.SetActive(false);
+        
+
         if(uhealth>0)
         {
-            Unit_AttackRange enemylist = P_attackRange.GetComponent<Unit_AttackRange>();
-            enemylist.targets.Clear();
-            P_attackRange.SetActive(false);
-            targetUnit = null;
             navMeshAgent.SetDestination(end);
-            Invoke(reattack, 2f);
-            if (P_attackRange)
-            {
-                Invoke("ReAttack", 2f);
-            }
+
+            Invoke(reattack, 3f);
+            //if (!P_attackRange)
+            //{
+            //    Invoke("ReAttack", 4f);
+            //}
         }
     }
 
