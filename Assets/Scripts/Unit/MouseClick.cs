@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using static UnitController;
+using UnityEngine.EventSystems;
 
 public class MouseClick : MonoBehaviour
 {
@@ -50,7 +51,7 @@ public class MouseClick : MonoBehaviour
             // 광선에 부딪히는 오브젝트가 없을 때
             else
             {
-                if (!Input.GetKey(KeyCode.LeftShift))
+                if (!Input.GetKey(KeyCode.LeftShift) && EventSystem.current.IsPointerOverGameObject() == false)
                 {
                     rtsUnitController.DeselectAll();
                 }
