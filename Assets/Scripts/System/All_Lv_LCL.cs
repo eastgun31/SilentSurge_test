@@ -343,6 +343,7 @@ public class All_Lv_LCL : MonoBehaviour
 
         //리스트에 추가
         UnitController unit = newObject.GetComponent<UnitController>();
+        
         unit.u_State = UnitController.unitState.Battle;
         RTSUnitController.instance.UnitList.Add(unit);
     }

@@ -479,6 +479,13 @@ public class UnitController : MonoBehaviour
         Destroy(gameObject);
     }
 
+    IEnumerator AttaRangeReset()
+    {
+        P_attackRange.SetActive(false);
+        yield return new WaitForSeconds(2f);
+        P_attackRange.SetActive(true);
+    }
+
     private void OnEnable()
     {
         //1·¾À¯´Ö
@@ -628,5 +635,6 @@ public class UnitController : MonoBehaviour
 
         transform.position = Vector3.MoveTowards(transform.position, starPosition.position, umoveSpeed * Time.deltaTime);
         targetUnit = null;
+        StartCoroutine(AttaRangeReset());
     }
 }

@@ -525,6 +525,13 @@ public class E_unitMove : MonoBehaviour
         StartCoroutine(usingItem());
     }
 
+    IEnumerator AttaRangeReset()
+    {
+        E_attackRange.SetActive(false);
+        yield return new WaitForSeconds(2f);
+        E_attackRange.SetActive(true);
+    }
+
     private void OnEnable()
     {
         if (unitNum == 0)
@@ -659,6 +666,6 @@ public class E_unitMove : MonoBehaviour
         }
 
         targetUnit = null;
-
+        StartCoroutine(AttaRangeReset());
     }
 }
