@@ -105,7 +105,7 @@ public class fade_Script : MonoBehaviour
         {
             im_2.SetActive(false);
             im_3.SetActive(true);
-            _text.text = "대체자는 신들에게서 능력을 부여 받아 서로 싸웠고";
+            _text.text = "대체자는 신들에게서 능력을 부여받아 서로 싸웠고";
         }
         else if (i == 4)
         {
@@ -120,7 +120,7 @@ public class fade_Script : MonoBehaviour
         {
             im_4.SetActive(false);
             im_5.SetActive(true);
-            _text.text = "흑자는 그것을 신들의 유희라고 불렀다";
+            _text.text = "혹자는 그것을 신들의 유희라고 불렀다";
         }
         else if (i == 6)
         {

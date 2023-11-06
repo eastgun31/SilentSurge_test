@@ -158,7 +158,7 @@ public class Skill_Set : MonoBehaviour
         else if ((Athena_S == true) && (_3_3 == false) && (start.activeSelf == true))
         {
             Athena_i.SetActive(true);
-            Skill_num2.text = "헤파이토스";
+            Skill_num2.text = "아테나";
             _3_3 = true;
         }
         else if ((Aphrodite_S == true) && (_3_4 == false) && (start.activeSelf == true))
