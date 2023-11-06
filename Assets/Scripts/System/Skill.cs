@@ -541,7 +541,7 @@ public class Skill : MonoBehaviour
             isBuffActive = false;
         }
 
-        if (Skill_Set.instance.Ares_S)
+        if (Skill_Set.instance.Dionysus_S)
         {
             unit.uattackPower = originalValue;
             isBuffActive = false;
