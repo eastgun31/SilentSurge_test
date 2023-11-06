@@ -171,7 +171,7 @@ public class Points : MonoBehaviour
             }
         }
 
-        if (e_distance <= 10f && p_distance > 10f) //적 점령시
+        if (e_distance <= 15f && p_distance > 15f) //적 점령시
         {
             time += Time.deltaTime;
 
@@ -247,7 +247,7 @@ public class Points : MonoBehaviour
             }
         }
 
-        if (p_distance <= 10f && e_distance > 10f)
+        if (p_distance <= 15f && e_distance > 15f)
         {
             time += Time.deltaTime;
 
