@@ -658,5 +658,7 @@ public class E_unitMove : MonoBehaviour
             }
         }
 
+        targetUnit = null;
+
     }
 }

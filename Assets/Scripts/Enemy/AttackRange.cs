@@ -15,6 +15,7 @@ public class AttackRange : MonoBehaviour
     private void OnEnable()
     {
         parent = transform.GetComponentInParent<E_unitMove>();
+        targets.Clear();
     }
 
     private void OnTriggerEnter(Collider col)

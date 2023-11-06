@@ -15,6 +15,7 @@ public class Unit_AttackRange : MonoBehaviour
     private void OnEnable()
     {
         parent = transform.GetComponentInParent<UnitController>();
+        targets.Clear();
     }
 
 

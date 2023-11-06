@@ -623,5 +623,6 @@ public class UnitController : MonoBehaviour
         }
 
         transform.position = Vector3.MoveTowards(transform.position, starPosition.position, umoveSpeed * Time.deltaTime);
+        targetUnit = null;
     }
 }
