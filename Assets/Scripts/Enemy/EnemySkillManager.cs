@@ -298,7 +298,7 @@ public class EnemySkillManager : MonoBehaviour
     void UseAthenaSkill()
     {
         useSkill = false;
-        StartCoroutine(Num1_Skill_Cooldown(5f));
+        StartCoroutine(Num1_Skill_Cooldown(3f));
     }
     void UseAphroditeSkill(Vector3 dir, UnitController unit, Vector3 pointPosition)
     {
