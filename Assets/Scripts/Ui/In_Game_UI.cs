@@ -11,17 +11,20 @@ public class In_Game_UI : MonoBehaviour
     public GameObject On;
     public GameObject ESC_image;
     public GameObject Option_window;
+    public RectTransform _Tab;
 
     public bool ESC_bool = true;
     public bool ESC_ON = true;
     public bool _OK_ = true;
     public bool Game_Start = true;
+    public bool TTab = true;
 
     Audio_Manager Audio_Manager;
 
     void Start()
     {
         Audio_Manager = FindAnyObjectByType<Audio_Manager>();
+        _Tab.anchoredPosition = new Vector2(-915, -10);
     }
 
     
@@ -41,18 +44,25 @@ public class In_Game_UI : MonoBehaviour
 
         }
 
-        if (Input.GetKeyDown(KeyCode.Tab) && ( On.activeSelf == true) && (_OK_ == true))
+        if (Input.GetKeyDown(KeyCode.Tab) && ( On.activeSelf == true) && TTab == true)// && (_OK_ == true))
         {
             Audio_Manager.PlaySFX(Audio_Manager.AudioButton);
-            Tab.SetTrigger("On");
-            ESC_ON = false;
-
+            _Tab.anchoredPosition = new Vector2(-613, -10);
+            //Tab.SetTrigger("On");
+            //ESC_ON = false;
+            TTab = false;
         }
-        else if (Input.GetKeyUp(KeyCode.Tab) && (On.activeSelf == true) && (_OK_ == true))
+        else if (Input.GetKeyDown(KeyCode.Tab) && (On.activeSelf == true) && TTab == false)
         {
-            Tab.SetTrigger("Off");
-            ESC_ON = true;
+            Audio_Manager.PlaySFX(Audio_Manager.AudioButton);
+            _Tab.anchoredPosition = new Vector2(-915, -10);
+            TTab = true;
         }
+        //else if (Input.GetKeyUp(KeyCode.Tab) && (On.activeSelf == true) && (_OK_ == true))
+        //{
+        //    Tab.SetTrigger("Off");
+        //    ESC_ON = true;
+        //}
         else
         {
 
