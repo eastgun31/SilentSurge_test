@@ -232,6 +232,9 @@ public class EnemySkillManager : MonoBehaviour
     }
     void UseHadesSkill(Vector3 dir)
     {
+        HadesSkill.SetActive(true);
+        HadesSkill.transform.position = dir;
+
         Collider[] colliders = Physics.OverlapSphere(dir, 4.5f, LayerMask.GetMask("E_Unit"));
         foreach (Collider collider in colliders)
         {
@@ -295,7 +298,7 @@ public class EnemySkillManager : MonoBehaviour
     void UseAthenaSkill()
     {
         useSkill = false;
-        StartCoroutine(Num1_Skill_Cooldown(15f));
+        StartCoroutine(Num1_Skill_Cooldown(5f));
     }
     void UseAphroditeSkill(Vector3 dir, UnitController unit, Vector3 pointPosition)
     {

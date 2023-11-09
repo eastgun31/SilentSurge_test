@@ -171,7 +171,7 @@ public class Points : MonoBehaviour
             }
         }
 
-        if (e_distance <= 15f && p_distance > 15f) //적 점령시
+        if (e_distance <= 20f && p_distance > 20f) //적 점령시
         {
             time += Time.deltaTime;
 
@@ -247,7 +247,7 @@ public class Points : MonoBehaviour
             }
         }
 
-        if (p_distance <= 15f && e_distance > 15f)
+        if (p_distance <= 20f && e_distance > 20f)
         {
             time += Time.deltaTime;
 
@@ -327,7 +327,7 @@ public class Points : MonoBehaviour
             }
         }
 
-        if (pointcheck == 1 && p_distance <= 10f) //플레이어가 적 거점 뺏었을시
+        if (pointcheck == 1 && p_distance <= 20f) //플레이어가 적 거점 뺏었을시
         {
             GameManager.instance.attacking = true;
 

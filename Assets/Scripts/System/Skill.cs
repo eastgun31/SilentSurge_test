@@ -435,7 +435,7 @@ public class Skill : MonoBehaviour
 
         isSkillReady_2 = false;
         CancelSkill();
-        StartCoroutine(Num2_Skill_Cooldown(15f));
+        StartCoroutine(Num2_Skill_Cooldown(10f));
     }
     //아프로디테 스킬
     void UseAphroditeSkill()
