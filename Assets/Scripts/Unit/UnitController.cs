@@ -607,9 +607,8 @@ public class UnitController : MonoBehaviour
         {
             if (unitnumber == 0 || unitnumber == 4 || unitnumber == 8)
             {
-                uhealth += 30;
-                uattackPower += 3;
-                udefense += 3;
+                uhealth += uhealth * 0.2f;
+                uattackPower += uattackPower * 0.2f;
             }
         }
         //¹æÆÐº´
@@ -617,9 +616,8 @@ public class UnitController : MonoBehaviour
         {
             if (unitnumber == 1 || unitnumber == 5 || unitnumber == 9)
             {
-                uhealth += 30;
-                uattackPower += 3;
-                udefense += 3;
+                uhealth += uhealth * 0.2f;
+                uattackPower += uattackPower * 0.2f;
             }
         }
         //±Ã¼ö
@@ -627,9 +625,8 @@ public class UnitController : MonoBehaviour
         {
             if (unitnumber == 2 || unitnumber == 6 || unitnumber == 10)
             {
-                uhealth += 30;
-                uattackPower += 3;
-                udefense += 3;
+                uhealth += uhealth * 0.2f;
+                uattackPower += uattackPower * 0.2f;
             }
         }
 

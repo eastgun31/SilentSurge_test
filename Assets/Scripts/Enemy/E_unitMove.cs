@@ -639,9 +639,8 @@ public class E_unitMove : MonoBehaviour
         {
             if (unitNum == 0 || unitNum == 4 || unitNum == 8)
             {
-                ehealth += 30;
-                eattackPower += 3;
-                edefense += 3;
+                ehealth += ehealth * 0.2f;
+                eattackPower += eattackPower * 0.2f;
             }
         }
         //¹æÆÐº´
@@ -649,9 +648,8 @@ public class E_unitMove : MonoBehaviour
         {
             if (unitNum == 1 || unitNum == 5 || unitNum == 9)
             {
-                ehealth += 30;
-                eattackPower += 3;
-                edefense += 3;
+                ehealth += ehealth * 0.2f;
+                eattackPower += eattackPower * 0.2f;
             }
         }
         //±Ã¼ö
@@ -659,9 +657,8 @@ public class E_unitMove : MonoBehaviour
         {
             if (unitNum == 2 || unitNum == 6 || unitNum == 10)
             {
-                ehealth += 30;
-                eattackPower += 3;
-                edefense += 3;
+                ehealth += ehealth * 0.2f;
+                eattackPower += eattackPower * 0.2f;
             }
         }
 
