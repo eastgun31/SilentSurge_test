@@ -520,7 +520,7 @@ public class UnitController : MonoBehaviour
         {
             unitType = 0;
             t_State = typeState.Horse;
-            uhealth = GameManager.instance.health + 80;
+            uhealth = GameManager.instance.health + 130;
             uattackPower = GameManager.instance.attackPower + 7;
             udefense = GameManager.instance.defense + 5;
             umoveSpeed = GameManager.instance.moveSpeed + 3;
@@ -558,7 +558,7 @@ public class UnitController : MonoBehaviour
         {
             unitType = 0;
             t_State = typeState.Horse;
-            uhealth = GameManager.instance.health + 130;
+            uhealth = GameManager.instance.health + 180;
             uattackPower = GameManager.instance.attackPower + 12;
             udefense = GameManager.instance.defense + 10;
             umoveSpeed = GameManager.instance.moveSpeed + 3;
@@ -595,7 +595,7 @@ public class UnitController : MonoBehaviour
         {
             unitType = 0;
             t_State = typeState.Horse;
-            uhealth = GameManager.instance.health + 180;
+            uhealth = GameManager.instance.health + 230;
             uattackPower = GameManager.instance.attackPower + 17;
             udefense = GameManager.instance.defense + 15;
             umoveSpeed = GameManager.instance.moveSpeed + 3;
