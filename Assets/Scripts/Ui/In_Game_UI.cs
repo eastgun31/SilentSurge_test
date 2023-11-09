@@ -49,14 +49,14 @@ public class In_Game_UI : MonoBehaviour
             Audio_Manager.PlaySFX(Audio_Manager.AudioButton);
             _Tab.anchoredPosition = new Vector2(-613, -10);
             //Tab.SetTrigger("On");
-            ESC_ON = false;
+            //ESC_ON = false;
             TTab = false;
         }
         else if (Input.GetKeyDown(KeyCode.Tab) && (On.activeSelf == true) && (TTab == false) && (_OK_ == true))
         {
             Audio_Manager.PlaySFX(Audio_Manager.AudioButton);
             _Tab.anchoredPosition = new Vector2(-915, -10);
-            ESC_ON = true;
+            //ESC_ON = true;
             TTab = true;
         }
         //else if (Input.GetKeyUp(KeyCode.Tab) && (On.activeSelf == true) && (_OK_ == true))
