@@ -168,10 +168,23 @@ public class Skill_Select : MonoBehaviour
 
         int random = Random.Range(0, 2);
 
-        if (random == 0)
+        if(random == 0)
+        {
+            EnemySkillManager.instance.e_Zeus_S = false;
             EnemySkillManager.instance.e_Poseidon_S = true;
+            EnemySkillManager.instance.e_Hades_S = false;
+        }
         else
+        {
+            EnemySkillManager.instance.e_Zeus_S = false;
+            EnemySkillManager.instance.e_Poseidon_S = false;
             EnemySkillManager.instance.e_Hades_S = true;
+        }
+
+        //if (random == 0)
+        //    EnemySkillManager.instance.e_Poseidon_S = true;
+        //else
+        //    EnemySkillManager.instance.e_Hades_S = true;
 
     }
     public void Poseidon_ON_Select_Button()
@@ -184,9 +197,22 @@ public class Skill_Select : MonoBehaviour
         int random = Random.Range(0, 2);
 
         if (random == 0)
+        {
             EnemySkillManager.instance.e_Zeus_S = true;
+            EnemySkillManager.instance.e_Poseidon_S = false;
+            EnemySkillManager.instance.e_Hades_S = false;
+        }
         else
+        {
+            EnemySkillManager.instance.e_Zeus_S = false;
+            EnemySkillManager.instance.e_Poseidon_S = false;
             EnemySkillManager.instance.e_Hades_S = true;
+        }
+
+        //if (random == 0)
+        //    EnemySkillManager.instance.e_Zeus_S = true;
+        //else
+        //    EnemySkillManager.instance.e_Hades_S = true;
 
     }
     public void Hades_ON_Select_Button()
@@ -199,9 +225,22 @@ public class Skill_Select : MonoBehaviour
         int random = Random.Range(0, 2);
 
         if (random == 0)
+        {
             EnemySkillManager.instance.e_Zeus_S = true;
+            EnemySkillManager.instance.e_Poseidon_S = false;
+            EnemySkillManager.instance.e_Hades_S = false;
+        }
         else
+        {
+            EnemySkillManager.instance.e_Zeus_S = false;
             EnemySkillManager.instance.e_Poseidon_S = true;
+            EnemySkillManager.instance.e_Hades_S = false;
+        }
+
+        //if (random == 0)
+        //    EnemySkillManager.instance.e_Zeus_S = true;
+        //else
+        //    EnemySkillManager.instance.e_Poseidon_S = true;
 
 
     }
@@ -216,9 +255,22 @@ public class Skill_Select : MonoBehaviour
         int random = Random.Range(0, 2);
 
         if (random == 0)
+        {
+            EnemySkillManager.instance.e_Hephaestus_S = false;
             EnemySkillManager.instance.e_Artemis_S = true;
+            EnemySkillManager.instance.e_Ares_S = false;
+        }
         else
+        {
+            EnemySkillManager.instance.e_Hephaestus_S = false;
+            EnemySkillManager.instance.e_Artemis_S = false;
             EnemySkillManager.instance.e_Ares_S = true;
+        }
+
+        //if (random == 0)
+        //    EnemySkillManager.instance.e_Artemis_S = true;
+        //else
+        //    EnemySkillManager.instance.e_Ares_S = true;
     }
     public void Artemis_ON_Select_Button()
     {
@@ -230,9 +282,22 @@ public class Skill_Select : MonoBehaviour
         int random = Random.Range(0, 2);
 
         if (random == 0)
+        {
             EnemySkillManager.instance.e_Hephaestus_S = true;
+            EnemySkillManager.instance.e_Artemis_S = false;
+            EnemySkillManager.instance.e_Ares_S = false;
+        }
         else
+        {
+            EnemySkillManager.instance.e_Hephaestus_S = false;
+            EnemySkillManager.instance.e_Artemis_S = false;
             EnemySkillManager.instance.e_Ares_S = true;
+        }
+
+        //if (random == 0)
+        //    EnemySkillManager.instance.e_Hephaestus_S = true;
+        //else
+        //    EnemySkillManager.instance.e_Ares_S = true;
     }
     public void Ares_ON_Select_Button()
     {
@@ -244,9 +309,22 @@ public class Skill_Select : MonoBehaviour
         int random = Random.Range(0, 2);
 
         if (random == 0)
+        {
             EnemySkillManager.instance.e_Hephaestus_S = true;
+            EnemySkillManager.instance.e_Artemis_S = false;
+            EnemySkillManager.instance.e_Ares_S = false;
+        }
         else
+        {
+            EnemySkillManager.instance.e_Hephaestus_S = false;
             EnemySkillManager.instance.e_Artemis_S = true;
+            EnemySkillManager.instance.e_Ares_S = false;
+        }
+
+        //if (random == 0)
+        //    EnemySkillManager.instance.e_Hephaestus_S = true;
+        //else
+        //    EnemySkillManager.instance.e_Artemis_S = true;
     }
     //---------------------------------군중제어 및 디버프 버튼---------------------------------//
     public void Hera_ON_Select_Button()
@@ -260,11 +338,33 @@ public class Skill_Select : MonoBehaviour
         int random = Random.Range(0, 3);
 
         if (random == 0)
+        {
+            EnemySkillManager.instance.e_Hera_S = false;
             EnemySkillManager.instance.e_Apollo_S = true;
-        else if (random == 1)
+            EnemySkillManager.instance.e_Athena_S = false;
+            EnemySkillManager.instance.e_Aphrodite_S = false;
+        }
+        else if(random == 1)
+        {
+            EnemySkillManager.instance.e_Hera_S = false;
+            EnemySkillManager.instance.e_Apollo_S = false;
             EnemySkillManager.instance.e_Athena_S = true;
+            EnemySkillManager.instance.e_Aphrodite_S = false;
+        }
         else
+        {
+            EnemySkillManager.instance.e_Hera_S = false;
+            EnemySkillManager.instance.e_Apollo_S = false;
+            EnemySkillManager.instance.e_Athena_S = false;
             EnemySkillManager.instance.e_Aphrodite_S = true;
+        }
+
+        //if (random == 0)
+        //    EnemySkillManager.instance.e_Apollo_S = true;
+        //else if (random == 1)
+        //    EnemySkillManager.instance.e_Athena_S = true;
+        //else
+        //    EnemySkillManager.instance.e_Aphrodite_S = true;
     }
     public void Apollo_ON_Select_Button()
     {
@@ -277,11 +377,33 @@ public class Skill_Select : MonoBehaviour
         int random = Random.Range(0, 3);
 
         if (random == 0)
+        {
             EnemySkillManager.instance.e_Hera_S = true;
+            EnemySkillManager.instance.e_Apollo_S = false;
+            EnemySkillManager.instance.e_Athena_S = false;
+            EnemySkillManager.instance.e_Aphrodite_S = false;
+        }
         else if (random == 1)
+        {
+            EnemySkillManager.instance.e_Hera_S = false;
+            EnemySkillManager.instance.e_Apollo_S = false;
             EnemySkillManager.instance.e_Athena_S = true;
+            EnemySkillManager.instance.e_Aphrodite_S = false;
+        }
         else
+        {
+            EnemySkillManager.instance.e_Hera_S = false;
+            EnemySkillManager.instance.e_Apollo_S = false;
+            EnemySkillManager.instance.e_Athena_S = false;
             EnemySkillManager.instance.e_Aphrodite_S = true;
+        }
+
+        //if (random == 0)
+        //    EnemySkillManager.instance.e_Hera_S = true;
+        //else if (random == 1)
+        //    EnemySkillManager.instance.e_Athena_S = true;
+        //else
+        //    EnemySkillManager.instance.e_Aphrodite_S = true;
     }
     public void Athena_ON_Select_Button()
     {
@@ -294,11 +416,33 @@ public class Skill_Select : MonoBehaviour
         int random = Random.Range(0, 3);
 
         if (random == 0)
+        {
             EnemySkillManager.instance.e_Hera_S = true;
+            EnemySkillManager.instance.e_Apollo_S = false;
+            EnemySkillManager.instance.e_Athena_S = false;
+            EnemySkillManager.instance.e_Aphrodite_S = false;
+        }
         else if (random == 1)
+        {
+            EnemySkillManager.instance.e_Hera_S = false;
             EnemySkillManager.instance.e_Apollo_S = true;
+            EnemySkillManager.instance.e_Athena_S = false;
+            EnemySkillManager.instance.e_Aphrodite_S = false;
+        }
         else
+        {
+            EnemySkillManager.instance.e_Hera_S = false;
+            EnemySkillManager.instance.e_Apollo_S = false;
+            EnemySkillManager.instance.e_Athena_S = false;
             EnemySkillManager.instance.e_Aphrodite_S = true;
+        }
+
+        //if (random == 0)
+        //    EnemySkillManager.instance.e_Hera_S = true;
+        //else if (random == 1)
+        //    EnemySkillManager.instance.e_Apollo_S = true;
+        //else
+        //    EnemySkillManager.instance.e_Aphrodite_S = true;
     }
     public void Aphrodite_ON_Select_Button()
     {
@@ -311,11 +455,33 @@ public class Skill_Select : MonoBehaviour
         int random = Random.Range(0, 3);
 
         if (random == 0)
+        {
             EnemySkillManager.instance.e_Hera_S = true;
+            EnemySkillManager.instance.e_Apollo_S = false;
+            EnemySkillManager.instance.e_Athena_S = false;
+            EnemySkillManager.instance.e_Aphrodite_S = false;
+        }
         else if (random == 1)
+        {
+            EnemySkillManager.instance.e_Hera_S = false;
             EnemySkillManager.instance.e_Apollo_S = true;
+            EnemySkillManager.instance.e_Athena_S = false;
+            EnemySkillManager.instance.e_Aphrodite_S = false;
+        }
         else
+        {
+            EnemySkillManager.instance.e_Hera_S = false;
+            EnemySkillManager.instance.e_Apollo_S = false;
             EnemySkillManager.instance.e_Athena_S = true;
+            EnemySkillManager.instance.e_Aphrodite_S = false;
+        }
+
+        //if (random == 0)
+        //    EnemySkillManager.instance.e_Hera_S = true;
+        //else if (random == 1)
+        //    EnemySkillManager.instance.e_Apollo_S = true;
+        //else
+        //    EnemySkillManager.instance.e_Athena_S = true;
     }
     //---------------------------------------소모품 버튼--------------------------------------//
     public void Hermes_ON_Select_Button()
@@ -329,11 +495,33 @@ public class Skill_Select : MonoBehaviour
         int random = Random.Range(0, 3);
 
         if (random == 0)
+        {
+            EnemySkillManager.instance.e_Hermes_S = false;
             EnemySkillManager.instance.e_Hestia_S = true;
+            EnemySkillManager.instance.e_Dionysus_S = false;
+            EnemySkillManager.instance.e_Demeter_S = false;
+        }
         else if (random == 1)
+        {
+            EnemySkillManager.instance.e_Hermes_S = false;
+            EnemySkillManager.instance.e_Hestia_S = false;
             EnemySkillManager.instance.e_Dionysus_S = true;
+            EnemySkillManager.instance.e_Demeter_S = false;
+        }
         else
+        {
+            EnemySkillManager.instance.e_Hermes_S = false;
+            EnemySkillManager.instance.e_Hestia_S = false;
+            EnemySkillManager.instance.e_Dionysus_S = false;
             EnemySkillManager.instance.e_Demeter_S = true;
+        }
+
+        //if (random == 0)
+        //    EnemySkillManager.instance.e_Hestia_S = true;
+        //else if (random == 1)
+        //    EnemySkillManager.instance.e_Dionysus_S = true;
+        //else
+        //    EnemySkillManager.instance.e_Demeter_S = true;
     }
     public void Hestia_ON_Select_Button()
     {
@@ -346,11 +534,33 @@ public class Skill_Select : MonoBehaviour
         int random = Random.Range(0, 3);
 
         if (random == 0)
+        {
             EnemySkillManager.instance.e_Hermes_S = true;
+            EnemySkillManager.instance.e_Hestia_S = false;
+            EnemySkillManager.instance.e_Dionysus_S = false;
+            EnemySkillManager.instance.e_Demeter_S = false;
+        }
         else if (random == 1)
+        {
+            EnemySkillManager.instance.e_Hermes_S = false;
+            EnemySkillManager.instance.e_Hestia_S = false;
             EnemySkillManager.instance.e_Dionysus_S = true;
+            EnemySkillManager.instance.e_Demeter_S = false;
+        }
         else
+        {
+            EnemySkillManager.instance.e_Hermes_S = false;
+            EnemySkillManager.instance.e_Hestia_S = false;
+            EnemySkillManager.instance.e_Dionysus_S = false;
             EnemySkillManager.instance.e_Demeter_S = true;
+        }
+
+        //if (random == 0)
+        //    EnemySkillManager.instance.e_Hermes_S = true;
+        //else if (random == 1)
+        //    EnemySkillManager.instance.e_Dionysus_S = true;
+        //else
+        //    EnemySkillManager.instance.e_Demeter_S = true;
     }
     public void Dionysus_ON_Select_Button()
     {
@@ -363,11 +573,33 @@ public class Skill_Select : MonoBehaviour
         int random = Random.Range(0, 3);
 
         if (random == 0)
+        {
             EnemySkillManager.instance.e_Hermes_S = true;
+            EnemySkillManager.instance.e_Hestia_S = false;
+            EnemySkillManager.instance.e_Dionysus_S = false;
+            EnemySkillManager.instance.e_Demeter_S = false;
+        }
         else if (random == 1)
+        {
+            EnemySkillManager.instance.e_Hermes_S = false;
             EnemySkillManager.instance.e_Hestia_S = true;
+            EnemySkillManager.instance.e_Dionysus_S = false;
+            EnemySkillManager.instance.e_Demeter_S = false;
+        }
         else
+        {
+            EnemySkillManager.instance.e_Hermes_S = false;
+            EnemySkillManager.instance.e_Hestia_S = false;
+            EnemySkillManager.instance.e_Dionysus_S = false;
             EnemySkillManager.instance.e_Demeter_S = true;
+        }
+
+        //if (random == 0)
+        //    EnemySkillManager.instance.e_Hermes_S = true;
+        //else if (random == 1)
+        //    EnemySkillManager.instance.e_Hestia_S = true;
+        //else
+        //    EnemySkillManager.instance.e_Demeter_S = true;
     }
     public void Demeter_ON_Select_Button()
     {
@@ -380,11 +612,33 @@ public class Skill_Select : MonoBehaviour
         int random = Random.Range(0, 3);
 
         if (random == 0)
+        {
             EnemySkillManager.instance.e_Hermes_S = true;
+            EnemySkillManager.instance.e_Hestia_S = false;
+            EnemySkillManager.instance.e_Dionysus_S = false;
+            EnemySkillManager.instance.e_Demeter_S = false;
+        }
         else if (random == 1)
+        {
+            EnemySkillManager.instance.e_Hermes_S = false;
             EnemySkillManager.instance.e_Hestia_S = true;
+            EnemySkillManager.instance.e_Dionysus_S = false;
+            EnemySkillManager.instance.e_Demeter_S = false;
+        }
         else
+        {
+            EnemySkillManager.instance.e_Hermes_S = false;
+            EnemySkillManager.instance.e_Hestia_S = false;
             EnemySkillManager.instance.e_Dionysus_S = true;
+            EnemySkillManager.instance.e_Demeter_S = false;
+        }
+
+        //if (random == 0)
+        //    EnemySkillManager.instance.e_Hermes_S = true;
+        //else if (random == 1)
+        //    EnemySkillManager.instance.e_Hestia_S = true;
+        //else
+        //    EnemySkillManager.instance.e_Dionysus_S = true;
     }
     //----------------------------------------------------------------------------------//
 }
