@@ -66,116 +66,119 @@ public class Skill : MonoBehaviour
 
     void Update()
     {
-        // 마우스 위치에 스킬 범위를 따라다니도록 업데이트
-        if (isShowSkillRange)
+        if (Time.timeScale == 1)
         {
-            UpdateSkillRangePosition();
-        }
-
-        //마우스 클릭
-        if (Input.GetMouseButtonDown(0))
-        {
-            if (isSkillReady_1 && isShowSkillRange)
+            // 마우스 위치에 스킬 범위를 따라다니도록 업데이트
+            if (isShowSkillRange)
             {
-                if (Skill_Set.instance.Zeus_S)
+                UpdateSkillRangePosition();
+            }
+
+            //마우스 클릭
+            if (Input.GetMouseButtonDown(0))
+            {
+                if (isSkillReady_1 && isShowSkillRange)
                 {
-                    UseZeusSkill();
-                    audio_Manager.PlaySFX(audio_Manager.Zeus);
+                    if (Skill_Set.instance.Zeus_S)
+                    {
+                        UseZeusSkill();
+                        audio_Manager.PlaySFX(audio_Manager.Zeus);
+                    }
+                    else if (Skill_Set.instance.Poseidon_S)
+                    {
+                        UsePoseidonSkill();
+                        audio_Manager.PlaySFX(audio_Manager.Poseidon);
+                    }
+                    else if (Skill_Set.instance.Hades_S)
+                    {
+                        audio_Manager.PlaySFX(audio_Manager.Hades);
+                        UseHadesSkill();
+                    }
+                    else { }
                 }
-                else if (Skill_Set.instance.Poseidon_S)
+
+                if (isSkillReady_2 && isShowSkillRange)
                 {
-                    UsePoseidonSkill();
-                    audio_Manager.PlaySFX(audio_Manager.Poseidon);
+                    if (Skill_Set.instance.Hera_S)
+                    {
+                        UseHeraSkill();
+                        audio_Manager.PlaySFX(audio_Manager.Hera);
+                    }
+                    else if (Skill_Set.instance.Apollo_S)
+                    {
+                        UseApolloSkill();
+                        audio_Manager.PlaySFX(audio_Manager.Apollo);
+                    }
+                    else if (Skill_Set.instance.Athena_S)
+                    {
+                        UseAthenaSkill();
+                        audio_Manager.PlaySFX(audio_Manager.Athena);
+                    }
+                    else if (Skill_Set.instance.Aphrodite_S)
+                    {
+                        UseAphroditeSkill();
+                    }
+                    else { }
                 }
-                else if (Skill_Set.instance.Hades_S)
+            }
+
+            // 1번 키를 누를 때 스킬 범위를 표시
+            if (Input.GetKeyDown(KeyCode.Alpha1) && currentCooldown_1 <= 0f)
+            {
+                if (isShowSkillRange)
                 {
-                    audio_Manager.PlaySFX(audio_Manager.Hades);
-                    UseHadesSkill();
+                    isSkillReady_1 = false;
+                    CancelSkill();
+                }
+                else
+                {
+                    isSkillReady_1 = true;
+                    isSkillReady_2 = false;
+                    ShowSkillRange();
+                }
+            }
+            // 2번 키를 누를 때 스킬 범위를 표시
+            if (Input.GetKeyDown(KeyCode.Alpha2) && currentCooldown_2 <= 0f)
+            {
+                if (isShowSkillRange)
+                {
+                    isSkillReady_2 = false;
+                    CancelSkill();
+                }
+                else
+                {
+                    isSkillReady_2 = true;
+                    isSkillReady_1 = false;
+                    ShowSkillRange();
+                }
+            }
+            // 3번 키를 누르면 3번 스킬 사용
+            if (Input.GetKeyDown(KeyCode.Alpha3) && !isBuffActive && itemLimit > 0)
+            {
+                if (Skill_Set.instance.Hermes_S && GameManager.instance.All_Obj > 0)
+                {
+                    UseHermesSkill();
+                    audio_Manager.PlaySFX(audio_Manager.Hermes);
+                }
+                else if (Skill_Set.instance.Hestia_S && GameManager.instance.All_Obj > 0)
+                {
+                    UseHestiaSkill();
+                    audio_Manager.PlaySFX(audio_Manager.Hestia);
+                }
+                else if (Skill_Set.instance.Dionysus_S && GameManager.instance.All_Obj > 0)
+                {
+                    UseDionysusSkill();
+                    audio_Manager.PlaySFX(audio_Manager.Dionysus);
+                }
+                else if (Skill_Set.instance.Demeter_S)
+                {
+                    UseDemeterSkill();
+                    audio_Manager.PlaySFX(audio_Manager.Demeter);
                 }
                 else { }
             }
-
-            if (isSkillReady_2 && isShowSkillRange)
-            {
-                if (Skill_Set.instance.Hera_S)
-                {
-                    UseHeraSkill();
-                    audio_Manager.PlaySFX(audio_Manager.Hera);
-                }
-                else if (Skill_Set.instance.Apollo_S)
-                {
-                    UseApolloSkill();
-                    audio_Manager.PlaySFX(audio_Manager.Apollo);
-                }
-                else if (Skill_Set.instance.Athena_S)
-                {
-                    UseAthenaSkill();
-                    audio_Manager.PlaySFX(audio_Manager.Athena);
-                }
-                else if (Skill_Set.instance.Aphrodite_S)
-                {
-                    UseAphroditeSkill();
-                }
-                else { }
-            }
         }
-
-        // 1번 키를 누를 때 스킬 범위를 표시
-        if (Input.GetKeyDown(KeyCode.Alpha1) && currentCooldown_1 <= 0f)
-        {
-            if (isShowSkillRange)
-            {
-                isSkillReady_1 = false;
-                CancelSkill();
-            }
-            else
-            {
-                isSkillReady_1 = true;
-                isSkillReady_2 = false;
-                ShowSkillRange();
-            }
-        }
-        // 2번 키를 누를 때 스킬 범위를 표시
-        if (Input.GetKeyDown(KeyCode.Alpha2) && currentCooldown_2 <= 0f)
-        {
-            if (isShowSkillRange)
-            {
-                isSkillReady_2 = false;
-                CancelSkill();
-            }
-            else
-            {
-                isSkillReady_2 = true;
-                isSkillReady_1 = false;
-                ShowSkillRange();
-            }
-        }
-        // 3번 키를 누르면 3번 스킬 사용
-        if (Input.GetKeyDown(KeyCode.Alpha3) && !isBuffActive && itemLimit > 0)
-        {
-            if (Skill_Set.instance.Hermes_S && GameManager.instance.All_Obj > 0)
-            {
-                UseHermesSkill();
-                audio_Manager.PlaySFX(audio_Manager.Hermes);
-            }
-            else if (Skill_Set.instance.Hestia_S && GameManager.instance.All_Obj > 0)
-            {
-                UseHestiaSkill();
-                audio_Manager.PlaySFX(audio_Manager.Hestia);
-            }
-            else if (Skill_Set.instance.Dionysus_S && GameManager.instance.All_Obj > 0)
-            {
-                UseDionysusSkill();
-                audio_Manager.PlaySFX(audio_Manager.Dionysus);
-            }
-            else if (Skill_Set.instance.Demeter_S)
-            {
-                UseDemeterSkill();
-                audio_Manager.PlaySFX(audio_Manager.Demeter);
-            }
-            else { }
-        }
-
+        
     }
     //------------------------------------------------------------------
 
