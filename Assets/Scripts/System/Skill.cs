@@ -229,7 +229,6 @@ public class Skill : MonoBehaviour
         }
 
         currentCooldown_1 = 0f;
-        Debug.Log(cooldown + " 스킬 쿨타임 종료!");
     }
 
     private IEnumerator Num2_Skill_Cooldown(float cooldown)
@@ -243,7 +242,6 @@ public class Skill : MonoBehaviour
         }
 
         currentCooldown_2 = 0f;
-        Debug.Log(cooldown + " 스킬 쿨타임 종료!");
     }
 
     IEnumerator DeactiveSkill(GameObject skill, float time)

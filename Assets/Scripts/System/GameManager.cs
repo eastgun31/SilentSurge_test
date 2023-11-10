@@ -20,7 +20,6 @@ public class GameManager : MonoBehaviour
     //유닛스탯 기본 검사 능력치
     public int health = 100;
     public int attackPower = 13;
-    public int defense = 3; //현재 방어력 미사용
     public float moveSpeed = 7;
 
     public Text Allgold_text; //현재 재화 상태
