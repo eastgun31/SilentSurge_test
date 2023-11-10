@@ -15,13 +15,11 @@ public class CameraMiniMap : MonoBehaviour, IPointerClickHandler
         if (RectTransformUtility.ScreenPointToLocalPointInRectangle
             (miniMapRect, eventData.position, eventData.pressEventCamera, out localClick))
         {
-            Debug.Log("로컬 좌표" + localClick);
             Vector3 worldPosition = new Vector3
-                (localClick.x+253, mainCamera.transform.position.y, localClick.y+245);
+                (localClick.x+248, mainCamera.transform.position.y, localClick.y+235);
 
             // 카메라를 해당 위치로 이동합니다.
             mainCamera.transform.position = worldPosition;
-            Debug.Log("월드 좌표" + worldPosition);
             // 카메라를 해당 위치로 이동합니다.
             mainCamera.transform.position = worldPosition;
         }
