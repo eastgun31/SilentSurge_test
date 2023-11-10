@@ -490,7 +490,7 @@ public class Skill : MonoBehaviour
             //리스트안에 있는 유닛 전부에게 적용
             if (IsUnitInList(unit))
             {
-                unit.uhealth += 15;
+                unit.uhealth += 25;
                 if (unit.uhealth > unit.maxhp)
                     unit.uhealth = unit.maxhp;
 

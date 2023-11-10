@@ -15,7 +15,7 @@ public class EnemySpawn : MonoBehaviour
     }
 
 
-    public int gold = 300;
+    public int gold = 200;
     public int etotal_gold = 0;
 
     public int population;
@@ -36,7 +36,7 @@ public class EnemySpawn : MonoBehaviour
     {
         
 
-        gold = 300;
+        gold = 200;
         etotal_gold += gold;
 
         InvokeRepeating("Upgold", 1.0f, 1.0f); //1초 후에 1초마다
@@ -145,8 +145,6 @@ public class EnemySpawn : MonoBehaviour
                     SpawnUnit(random, i);
                 }
             }
-
-
 
             spawnCool = 0;
         }

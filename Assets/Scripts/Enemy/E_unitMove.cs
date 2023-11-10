@@ -487,7 +487,7 @@ public class E_unitMove : MonoBehaviour
                 Hestia.SetActive(true);
                 //EnemySkillManager.instance.usingItem = false;
 
-                ehealth += 15;
+                ehealth += 25;
 
                 if (ehealth > maxhp)
                     ehealth = maxhp;
