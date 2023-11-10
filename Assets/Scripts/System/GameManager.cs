@@ -90,7 +90,7 @@ public class GameManager : MonoBehaviour
                 Time.timeScale = 0;
         }
 
-        Allgold_text.text = " " + gold; //현재 재화
+        Allgold_text.text = " " + gold + "G"; //현재 재화
 
         currentTime -= Time.deltaTime;
 
