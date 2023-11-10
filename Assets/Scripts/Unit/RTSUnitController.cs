@@ -111,5 +111,13 @@ public class RTSUnitController : MonoBehaviour
         selectedUnitList.Remove(newUnit);
     }
 
+    //선택된 유닛들의 타겟 초기화
+    public void targetClear()
+    {
+        for (int i = 0; i < selectedUnitList.Count; ++i)
+        {
+            selectedUnitList[i].targetUnit = null;
+        }
+    }
 }
 

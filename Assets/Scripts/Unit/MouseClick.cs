@@ -27,6 +27,7 @@ public class MouseClick : MonoBehaviour
         //R키를 누르면 선택 전부 해제
         if(Input.GetKeyDown(KeyCode.R))
         {
+            rtsUnitController.targetClear();
             rtsUnitController.DeselectAll();
         }
 
