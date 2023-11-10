@@ -24,6 +24,12 @@ public class MouseClick : MonoBehaviour
 
     private void Update()
     {
+        //R키를 누르면 선택 전부 해제
+        if(Input.GetKeyDown(KeyCode.R))
+        {
+            rtsUnitController.DeselectAll();
+        }
+
         // 마우스 왼쪽 클릭으로 유닛 선택 or 해제
         if (Input.GetMouseButtonDown(0))
         {

@@ -539,15 +539,14 @@ public class Skill : MonoBehaviour
         if (Skill_Set.instance.Hermes_S)
         {
             unit.umoveSpeed = originalValue;
-            isBuffActive = false;
         }
 
         if (Skill_Set.instance.Dionysus_S)
         {
             unit.uattackPower = originalValue;
-            isBuffActive = false;
         }
 
+        isBuffActive = false;
         effectObject.SetActive(false);
     }
 
