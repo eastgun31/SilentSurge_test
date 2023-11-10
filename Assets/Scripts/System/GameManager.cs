@@ -47,13 +47,16 @@ public class GameManager : MonoBehaviour
     //게임 시간
     public Text timerText;
     private float startTime;
-    private float currentTime = 301.0f; //5분
+    private float currentTime = 60.0f; //5분 = 301
 
     //스킬 쿨타임
     public Text active_Skill;
     public Text buff_Skill;
     //소모 스킬 남은 횟수
     public Text item_Skill;
+    Audio_Manager Audio_Manager;
+
+    public bool Sound_ = true; // 사운드 한번만 나오게 bool형 추가
 
     public void Awake()
     {
@@ -67,6 +70,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        Audio_Manager = FindAnyObjectByType<Audio_Manager>();
         Aobj();
         e_population = 0;
         startTime = currentTime;
@@ -96,6 +100,7 @@ public class GameManager : MonoBehaviour
 
         if (currentTime <= 0)
         {
+            Audio_Manager.StopMusic(Audio_Manager.Main_background);
             Time.timeScale = 0;
             currentTime = 0;
             scoreboard.SetActive(true); // 게임끝나고 스코어보드 표시
@@ -119,6 +124,11 @@ public class GameManager : MonoBehaviour
 
             if (a > b)
             {
+                if (Sound_)
+                {
+                    Audio_Manager.WinMusic(Audio_Manager.loser);
+                    Sound_ = false;
+                }
                 Debug.Log("패배");
                 Enemy_Text.text = "승리";
                 Player_Text.text = "패배";
@@ -127,6 +137,11 @@ public class GameManager : MonoBehaviour
             }
             else if (a < b)
             {
+                if (Sound_)
+                {
+                    Audio_Manager.WinMusic(Audio_Manager.Win);
+                    Sound_ = false;
+                }              
                 Debug.Log("승리");
                 Player_Text.text = "승리";
                 Enemy_Text.text = "패배";

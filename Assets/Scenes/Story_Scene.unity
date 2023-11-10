@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028377, g: 0.22571409, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -360,6 +360,8 @@ MonoBehaviour:
   Main_background: {fileID: 8300000, guid: bf2994a770742fd43b99a40a7e51ef3c, type: 3}
   Story_background: {fileID: 8300000, guid: ac0636d4c3c46e84d89fb4e7703a863d, type: 3}
   AudioButton: {fileID: 8300000, guid: 2b7da2e3052782e40aa781f1f1587e1c, type: 3}
+  Win: {fileID: 8300000, guid: 14f8a1db22c3964409c8965dada469bf, type: 3}
+  loser: {fileID: 8300000, guid: ce028a93753b1de4a8ee871ee8b30305, type: 3}
   Zeus: {fileID: 8300000, guid: ffe0a0345e93e3c4693a41b552060e05, type: 3}
   Poseidon: {fileID: 8300000, guid: d668300d289fa8542b6cd579c4584932, type: 3}
   Hades: {fileID: 8300000, guid: 72878fd5f4f1e984085bc49f79afafab, type: 3}

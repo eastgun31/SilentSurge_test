@@ -31,6 +31,9 @@ public class Audio_Manager : MonoBehaviour
     public AudioClip Story_background;
     public AudioClip AudioButton;
 
+    public AudioClip Win;
+    public AudioClip loser;
+
     public AudioClip Zeus;
     public AudioClip Poseidon;
     public AudioClip Hades;
@@ -70,6 +73,20 @@ public class Audio_Manager : MonoBehaviour
         SFXSource.PlayOneShot(clip);
     }
 
+    public void StopMusic(AudioClip clip)
+    {
+        MusicSource.Stop();
+    }
+
+    public void WinMusic(AudioClip clip)
+    {
+        SFXSource.PlayOneShot(clip);
+    }
+
+    public void loserMusic(AudioClip clip)
+    {
+        SFXSource.PlayOneShot(clip);
+    }
 }
 
 
