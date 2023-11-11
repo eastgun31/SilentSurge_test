@@ -127,17 +127,16 @@ public class UnitController : MonoBehaviour
         enemylist.targets.Clear();
         enemylist.e_unit = null;
         targetUnit = null;
-        P_attackRange.SetActive(false);
         
-
         if(uhealth>0)
         {
             navMeshAgent.SetDestination(end);
-
-            Invoke(reattack, 3f);
+            P_attackRange.SetActive(false);
+            Invoke("ReAttack", 3f);
             //if (!P_attackRange)
             //{
-            //    Invoke("ReAttack", 4f);
+
+            //    Invoke("ReAttack", 3f);
             //}
         }
     }
