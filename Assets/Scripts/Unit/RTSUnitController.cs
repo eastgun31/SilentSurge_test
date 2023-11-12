@@ -117,6 +117,9 @@ public class RTSUnitController : MonoBehaviour
         for (int i = 0; i < selectedUnitList.Count; ++i)
         {
             selectedUnitList[i].targetUnit = null;
+            Unit_AttackRange unitTarget = selectedUnitList[i].P_attackRange.GetComponent<Unit_AttackRange>();
+            unitTarget.e_unit = null;
+            unitTarget.targets.Clear();
         }
     }
 }

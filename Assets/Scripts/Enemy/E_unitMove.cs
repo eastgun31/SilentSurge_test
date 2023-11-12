@@ -538,7 +538,7 @@ public class E_unitMove : MonoBehaviour
         {
             unitType = 0;
             ehealth = GameManager.instance.health;
-            eattackPower = GameManager.instance.attackPower;
+            eattackPower = GameManager.instance.attackPower - 3;
             emoveSpeed = GameManager.instance.moveSpeed;
         }
         if (unitNum == 1)
@@ -567,7 +567,7 @@ public class E_unitMove : MonoBehaviour
         {
             unitType = 0;
             ehealth = GameManager.instance.health + 50;
-            eattackPower = GameManager.instance.attackPower + 5;
+            eattackPower = GameManager.instance.attackPower + 2;
             emoveSpeed = GameManager.instance.moveSpeed;
         }
         if (unitNum == 5)
@@ -596,7 +596,7 @@ public class E_unitMove : MonoBehaviour
         {
             unitType = 0;
             ehealth = GameManager.instance.health + 100;
-            eattackPower = GameManager.instance.attackPower + 10;
+            eattackPower = GameManager.instance.attackPower + 7;
             emoveSpeed = GameManager.instance.moveSpeed;
         }
         if (unitNum == 9)

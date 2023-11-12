@@ -493,7 +493,7 @@ public class UnitController : MonoBehaviour
             unitType = 0;
             t_State = typeState.Sword;
             uhealth = GameManager.instance.health;
-            uattackPower = GameManager.instance.attackPower;
+            uattackPower = GameManager.instance.attackPower -3;
             umoveSpeed = GameManager.instance.moveSpeed;
         }
         if (unitnumber == 1) //πÊ∆–
@@ -527,7 +527,7 @@ public class UnitController : MonoBehaviour
             unitType = 0;
             t_State = typeState.Sword;
             uhealth = GameManager.instance.health + 50;
-            uattackPower = GameManager.instance.attackPower + 8;
+            uattackPower = GameManager.instance.attackPower + 5;
             umoveSpeed = GameManager.instance.moveSpeed;
         }
         if (unitnumber == 5)
@@ -560,7 +560,7 @@ public class UnitController : MonoBehaviour
             unitType = 0;
             t_State = typeState.Sword;
             uhealth = GameManager.instance.health + 100;
-            uattackPower = GameManager.instance.attackPower + 10;
+            uattackPower = GameManager.instance.attackPower + 7;
             umoveSpeed = GameManager.instance.moveSpeed;
         }
         if (unitnumber == 9)
