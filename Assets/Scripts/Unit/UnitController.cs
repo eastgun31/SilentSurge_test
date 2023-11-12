@@ -527,7 +527,7 @@ public class UnitController : MonoBehaviour
             unitType = 0;
             t_State = typeState.Sword;
             uhealth = GameManager.instance.health + 50;
-            uattackPower = GameManager.instance.attackPower + 5;
+            uattackPower = GameManager.instance.attackPower + 2;
             umoveSpeed = GameManager.instance.moveSpeed;
         }
         if (unitnumber == 5)
