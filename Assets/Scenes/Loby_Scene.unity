@@ -959,11 +959,11 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 897493665}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 265, y: 193}
+  m_AnchoredPosition: {x: 363, y: 190}
   m_SizeDelta: {x: 27.67, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &99329434
@@ -4052,6 +4052,7 @@ MonoBehaviour:
   Scene_Name: Story_Scene
   HOW: {fileID: 249081224}
   OP: {fileID: 20568336}
+  source_ON: {fileID: 897493664}
 --- !u!4 &592112497
 Transform:
   m_ObjectHideFlags: 0
@@ -4615,6 +4616,104 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 694861964}
+  m_CullTransparentMesh: 1
+--- !u!1 &704143658
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 704143659}
+  - component: {fileID: 704143661}
+  - component: {fileID: 704143660}
+  m_Layer: 5
+  m_Name: Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &704143659
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 704143658}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 897493665}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -2.9657, y: 3.5868}
+  m_SizeDelta: {x: 759.6, y: 412.83}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &704143660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 704143658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 3b9528a1c5fde514ca8d2d1dbed15162, type: 3}
+    m_FontSize: 10
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 4
+    m_MaxSize: 40
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: "AI \uADF8\uB9BC : MyEdit, https://myedit.online/kr/photo-editor\n\uAE00\uAF34
+    : \uC601\uB355\uB300\uAC8C\uCCB4, https://noonnu.cc/font_page/1192\n\n\uC5D0\uC14B:
+    \uB9F5 - https://assetstore.unity.com/packages/3d/environments/fantasy/low-poly-fantasy-medieval-village-163701(Low
+    Poly Fantasy Medieval Village)\n             -https://assetstore.unity.com/packages/3d/vegetation/trees/low-poly-trees-pack-73954(Low
+    Poly Trees - Pack)\n         \uC720\uB2DB\uBAA8\uB378 - https://assetstore.unity.com/packages/3d/characters/toony-tiny-rts-set-135258(Toony
+    Tiny RTS Set)\n                       - https://assetstore.unity.com/packages/3d/environments/simplistic-low-poly-nature-93894(Simplistic
+    Low Poly Nature)\n         \uC774\uD399\uD2B8 - https://assetstore.unity.com/packages/vfx/particles/spells/top-down-effects-191455(Top
+    Down Effects)\n                    - https://assetstore.unity.com/packages/vfx/particles/spells/rpg-vfx-bundle-133704(RPG
+    VFX Bundle)\n          UI - Wooden UI, https://assetstore.unity.com/packages/2d/gui/icons/wooden-ui-93545\n         
+    \uC2DC\uC57C - https://assetstore.unity.com/packages/tools/particles-effects/easy-fog-of-war-155932
+    ,(Easy Fog of War)\n          \uCEE4\uC11C-https://assetstore.unity.com/packages/2d/textures-materials/basic-rpg-cursors-139404(Basic
+    RPG Cursors)\n          \uC2A4\uD0AC \uC774\uBBF8\uC9C0 - https://assetstore.unity.com/packages/2d/gui/icons/spellbook-megapack-109615
+    (spellbook megapack)\n\n\n\n\uC0AC\uC6B4\uB4DC : Melodic and Atmospheric Fantasy
+    Music, https://assetstore.unity.com/packages/audio/music/melodic-and-atmospheric-fantasy-music-240001\n\nUI:   
+    \uC2A4\uD0AC \uC544\uC774\uCF58: spellBookMegapack \uC5D0\uC14B\r\n\t       
+    \uAE43\uBC1C \uC544\uC774\uCF58: https://www.teacherspayteachers.com/Product/Percy-Jackson-Cabin-Banners-8776540\r\n        
+    Tab skill \uC544\uC774\uCF58: https://www.flaticon.com/free-icon/star_10579770?related_id=8078571&origin=search\r\n       
+    \t\uD0A4\uBCF4\uB4DC,\uB9C8\uC6B0\uC2A4 image: https://www.flaticon.com/kr/packs/gadgets\r\n\t       
+    \uC0AC\uC6B4\uB4DC \uCD9C\uCC98: https://www.youtube.com/@DayDreamSound/featured
+    , https://www.youtube.com/@allsoundeffect\r\n"
+--- !u!222 &704143661
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 704143658}
   m_CullTransparentMesh: 1
 --- !u!1 &780070581
 GameObject:
@@ -5443,14 +5542,15 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 704143659}
   - {fileID: 99329433}
   m_Father: {fileID: 990493271}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -261.68405, y: 196.38}
-  m_SizeDelta: {x: 594.932, y: 442.75}
+  m_AnchoredPosition: {x: -366.318, y: 196.38}
+  m_SizeDelta: {x: 804.199, y: 442.75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &897493666
 MonoBehaviour:

@@ -8,6 +8,7 @@ public class Kijung_GameManager : MonoBehaviour
     public string Scene_Name;
     public GameObject HOW;
     public GameObject OP;
+    public GameObject source_ON;
     void Start()
     {
         
@@ -28,6 +29,13 @@ public class Kijung_GameManager : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Escape))
             {
                 OP.SetActive(false);
+            }
+        }
+        if (source_ON.activeSelf == true)
+        {
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                source_ON.SetActive(false);
             }
         }
     }
