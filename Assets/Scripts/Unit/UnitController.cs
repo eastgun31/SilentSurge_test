@@ -79,7 +79,7 @@ public class UnitController : MonoBehaviour
         maxhp = uhealth;
         maxS = ushieldValue; //
         maxS = maxhp;
-        if(Skill_Set.instance.Poseidon_S)
+        if (Skill_Set.instance.Poseidon_S)
         {
             StartCoroutine(Shieldcheck()); //보호막 체크
         }
@@ -127,8 +127,8 @@ public class UnitController : MonoBehaviour
         enemylist.targets.Clear();
         enemylist.e_unit = null;
         targetUnit = null;
-        
-        if(uhealth>0)
+
+        if (uhealth > 0)
         {
             navMeshAgent.SetDestination(end);
             P_attackRange.SetActive(false);
@@ -205,7 +205,7 @@ public class UnitController : MonoBehaviour
             navMeshAgent.SetDestination(dir);
             //navMeshAgent.stoppingDistance = 2f;
 
-            if(Vector3.Distance(transform.position, dir) <= 3f)
+            if (Vector3.Distance(transform.position, dir) <= 3f)
             {
                 navMeshAgent.isStopped = true;
                 navMeshAgent.velocity = Vector3.zero;
@@ -342,10 +342,12 @@ public class UnitController : MonoBehaviour
             EnemySpawn.instance.etotal_gold += 10;
 
             playerAnim.SetTrigger("death");
-            GameManager.instance.All_Obj--;
             GameManager.instance.Aobj();
 
             yield return new WaitForSeconds(2f);
+
+            if (GameManager.instance.All_Obj > 0)
+                GameManager.instance.All_Obj--;
 
             if (point)
             {
@@ -493,7 +495,7 @@ public class UnitController : MonoBehaviour
             unitType = 0;
             t_State = typeState.Sword;
             uhealth = GameManager.instance.health;
-            uattackPower = GameManager.instance.attackPower -3;
+            uattackPower = GameManager.instance.attackPower - 3;
             umoveSpeed = GameManager.instance.moveSpeed;
         }
         if (unitnumber == 1) //방패

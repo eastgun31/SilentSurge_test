@@ -77,7 +77,7 @@ public class E_unitMove : MonoBehaviour
         maxS = eshieldValue; //
         maxS = maxhp; //
         StartCoroutine(Pcheck()); //À¯´Ö hpÃ¼Å©ÈÄ Á×À½
-        if(EnemySkillManager.instance.e_active_skillnum == 2)
+        if (EnemySkillManager.instance.e_active_skillnum == 2)
         {
             StartCoroutine(Shieldcheck());
         }
@@ -88,7 +88,7 @@ public class E_unitMove : MonoBehaviour
     {
         time += Time.deltaTime;
 
-        Eslider.value = ehealth / maxhp; 
+        Eslider.value = ehealth / maxhp;
         ESslider.value = eshieldValue / maxS; //
 
         switch (e_State)
@@ -119,12 +119,12 @@ public class E_unitMove : MonoBehaviour
     //            break;
     //    }
 
-        
+
     //}
 
     void E_Idle()
     {
-        if(ehealth>0)
+        if (ehealth > 0)
         {
             time = 0;
             moving.isStopped = false;
@@ -171,7 +171,7 @@ public class E_unitMove : MonoBehaviour
             moving.SetDestination(dir);
             //moving.stoppingDistance = 2f;
 
-            if(Vector3.Distance(transform.position, dir) <= 3f)
+            if (Vector3.Distance(transform.position, dir) <= 3f)
             {
                 moving.isStopped = true;
                 moving.velocity = Vector3.zero;
@@ -307,7 +307,8 @@ public class E_unitMove : MonoBehaviour
 
             yield return new WaitForSeconds(2f);
 
-            GameManager.instance.e_population--;
+            if (GameManager.instance.e_population > 0)
+                GameManager.instance.e_population--;
 
             if (point)
             {
@@ -428,7 +429,7 @@ public class E_unitMove : MonoBehaviour
             isHades = false;
             Hades.SetActive(false);
         }
-            
+
     }
 
     public void AphroditeChange(Vector3 spawnPoint)
@@ -457,7 +458,7 @@ public class E_unitMove : MonoBehaviour
         {
             point.e_distance = 100f;
         }
-        
+
         Destroy(gameObject);
     }
     IEnumerator usingItem()
